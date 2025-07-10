@@ -1,0 +1,66 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build outputs
+dist/
+build/
+.next/
+.nuxt/
+.out/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.temp/
+.tmp/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+
+# Dependency files
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# Build tool specific
+.eslintcache
+.stylelintcache
+
+# Local Netlify folder
+.netlify
+
+# Local development
+.cache/
+coverage/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

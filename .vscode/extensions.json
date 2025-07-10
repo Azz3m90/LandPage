@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "octref.vetur",
+    "PKief.material-icon-theme",
+    "ritwickdey.LiveServer",
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker",
+    "stylelint.vscode-stylelint",
+    "mikestead.dotenv",
+    "formulahendry.auto-rename-tag",
+    "formulahendry.auto-close-tag"
+  ]
+}
