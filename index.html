@@ -216,9 +216,63 @@
             .flip-card, .client-logo { margin-bottom: 2rem; }
             .back-to-top { bottom: 20px; right: 20px; width: 48px; height: 48px; }
         }
+/* Loader overlay */
+  #global-loader {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Loader spinner */
+  .spinner {
+    border: 6px solid #ddd;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+  }
+
+  /* Blur effect on page content */
+  #page-content.blur {
+    filter: blur(6px);
+    pointer-events: none;
+    user-select: none;
+  }
+
     </style>
+    <script>
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('global-loader');
+    const content = document.getElementById('page-content');
+
+    // Hide loader and remove blur
+    loader.style.display = 'none';
+    content.classList.remove('blur');
+  });
+    </script>
 </head>
 <body class="bg-gray-50 antialiased">
+
+<!-- Loader Overlay -->
+<div id="global-loader">
+  <div class="spinner"></div>
+</div>
+
+<!-- Page content wrapper -->
+<div id="page-content" class="blur">
+
+
     <!-- Header -->
     <header class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-lg shadow-sm" id="header">
         <nav class="container relative mx-auto px-6 py-4 flex justify-between items-center" aria-label="Main navigation">
@@ -1300,5 +1354,6 @@
             };
         });
     </script>
+    </div>
 </body>
 </html>
