@@ -57,6 +57,8 @@
       type="image/webp"
       href="https://FAST CAISSE.be/FAST CAISSE/wp-content/uploads/2023/09/logoFC-1536x671.webp"
     />
+    <!-- Swiper CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -356,6 +358,243 @@
         pointer-events: none;
         user-select: none;
       }
+      /* Floating POS image */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      /* Badges container */
+      .badges-wrapper {
+        position: relative;
+        width: 100%;
+        height: 220px;
+        pointer-events: none;
+      }
+
+      /* Badge base styles */
+      .badge {
+        position: absolute;
+        width: 180px;
+        height: 80px;
+        padding: 0.75rem;
+        background: white;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        border-width: 1px;
+        border-style: solid;
+        z-index: 20;
+        cursor: default;
+      }
+
+      /* Positions and animations */
+      #badge-sales {
+        top: 10px;
+        left: 10%;
+        border-color: #93c5fd;
+        animation: float-path1 8s ease-in-out infinite;
+      }
+
+      #badge-checkout {
+        top: 10px;
+        left: 60%;
+        border-color: #86efac;
+        animation: float-path2 7.5s ease-in-out infinite;
+      }
+
+      #badge-satisfaction {
+        top: 120px;
+        left: 10%;
+        border-color: #fde68a;
+        animation: float-path3 9s ease-in-out infinite;
+      }
+
+      #badge-uptime {
+        top: 120px;
+        left: 60%;
+        border-color: #c4b5fd;
+        animation: float-path4 7s ease-in-out infinite;
+      }
+
+      /* Icon colors */
+      #badge-sales i {
+        color: #3b82f6;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+      #badge-checkout i {
+        color: #22c55e;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+      #badge-satisfaction i {
+        color: #ca8a04;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+      #badge-uptime i {
+        color: #7c3aed;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+
+      /* Text styles */
+      .badge p {
+        margin: 0;
+      }
+
+      .badge p:first-child {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #4b5563;
+        line-height: 1.1;
+      }
+
+      .badge p:last-child {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #111827;
+        line-height: 1.1;
+      }
+
+      /* Floating animations */
+      @keyframes float-path1 {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        25% {
+          transform: translate(8px, -6px) scale(1.05);
+        }
+        50% {
+          transform: translate(16px, 0) scale(1);
+        }
+        75% {
+          transform: translate(8px, 6px) scale(0.95);
+        }
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes float-path2 {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        25% {
+          transform: translate(-8px, 8px) scale(0.95);
+        }
+        50% {
+          transform: translate(-16px, 0) scale(1);
+        }
+        75% {
+          transform: translate(-8px, -8px) scale(1.05);
+        }
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes float-path3 {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        20% {
+          transform: translate(10px, 10px) scale(1.03);
+        }
+        40% {
+          transform: translate(12px, -10px) scale(1);
+        }
+        60% {
+          transform: translate(6px, -12px) scale(0.97);
+        }
+        80% {
+          transform: translate(-3px, -3px) scale(1);
+        }
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes float-path4 {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        25% {
+          transform: translate(-10px, -10px) scale(1.04);
+        }
+        50% {
+          transform: translate(-15px, -5px) scale(1);
+        }
+        75% {
+          transform: translate(-10px, 8px) scale(0.96);
+        }
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      /* Responsive for mobile */
+      @media (max-width: 767px) {
+        .badges-wrapper {
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          pointer-events: auto;
+          padding: 1rem 0;
+        }
+
+        .badge {
+          position: static !important;
+          width: 100%;
+          max-width: 320px;
+          height: 60px;
+          padding: 0.5rem 1rem;
+          animation: none !important;
+          cursor: default;
+          margin: 0 auto;
+          border-width: 1px;
+        }
+
+        #badge-sales,
+        #badge-checkout,
+        #badge-satisfaction,
+        #badge-uptime {
+          border-color: inherit;
+          top: auto !important;
+          left: auto !important;
+        }
+
+        /* Icon smaller */
+        .badge i {
+          font-size: 1.25rem !important;
+        }
+
+        .badge p:first-child {
+          font-size: 0.65rem;
+        }
+
+        .badge p:last-child {
+          font-size: 1rem;
+        }
+      }
+      /* Ensure swiper slides are centered vertically and horizontally */
+      .swiper-slide {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
     </style>
     <script>
       window.addEventListener("load", () => {
@@ -514,7 +753,7 @@
                 </h1>
                 <p class="text-xl text-blue-100 mb-8 max-w-lg">
                   Belgium's leading POS and CRM solution, designed to streamline operations for
-                  retailers and restaurants.
+                  restaurants, fast food and retailers
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                   <a
@@ -639,240 +878,6 @@
               </div>
             </div>
           </div>
-
-          <style>
-            /* Floating POS image */
-            @keyframes float {
-              0%,
-              100% {
-                transform: translateY(0);
-              }
-              50% {
-                transform: translateY(-12px);
-              }
-            }
-            .animate-float {
-              animation: float 6s ease-in-out infinite;
-            }
-
-            /* Badges container */
-            .badges-wrapper {
-              position: relative;
-              width: 100%;
-              height: 220px;
-              pointer-events: none;
-            }
-
-            /* Badge base styles */
-            .badge {
-              position: absolute;
-              width: 180px;
-              height: 80px;
-              padding: 0.75rem;
-              background: white;
-              border-radius: 0.75rem;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-              display: flex;
-              align-items: center;
-              gap: 0.75rem;
-              border-width: 1px;
-              border-style: solid;
-              z-index: 20;
-              cursor: default;
-            }
-
-            /* Positions and animations */
-            #badge-sales {
-              top: 10px;
-              left: 10%;
-              border-color: #93c5fd;
-              animation: float-path1 8s ease-in-out infinite;
-            }
-
-            #badge-checkout {
-              top: 10px;
-              left: 60%;
-              border-color: #86efac;
-              animation: float-path2 7.5s ease-in-out infinite;
-            }
-
-            #badge-satisfaction {
-              top: 120px;
-              left: 10%;
-              border-color: #fde68a;
-              animation: float-path3 9s ease-in-out infinite;
-            }
-
-            #badge-uptime {
-              top: 120px;
-              left: 60%;
-              border-color: #c4b5fd;
-              animation: float-path4 7s ease-in-out infinite;
-            }
-
-            /* Icon colors */
-            #badge-sales i {
-              color: #3b82f6;
-              font-size: 1.5rem;
-              flex-shrink: 0;
-            }
-            #badge-checkout i {
-              color: #22c55e;
-              font-size: 1.5rem;
-              flex-shrink: 0;
-            }
-            #badge-satisfaction i {
-              color: #ca8a04;
-              font-size: 1.5rem;
-              flex-shrink: 0;
-            }
-            #badge-uptime i {
-              color: #7c3aed;
-              font-size: 1.5rem;
-              flex-shrink: 0;
-            }
-
-            /* Text styles */
-            .badge p {
-              margin: 0;
-            }
-
-            .badge p:first-child {
-              font-size: 0.75rem;
-              font-weight: 600;
-              color: #4b5563;
-              line-height: 1.1;
-            }
-
-            .badge p:last-child {
-              font-size: 1.125rem;
-              font-weight: 700;
-              color: #111827;
-              line-height: 1.1;
-            }
-
-            /* Floating animations */
-            @keyframes float-path1 {
-              0% {
-                transform: translate(0, 0) scale(1);
-              }
-              25% {
-                transform: translate(8px, -6px) scale(1.05);
-              }
-              50% {
-                transform: translate(16px, 0) scale(1);
-              }
-              75% {
-                transform: translate(8px, 6px) scale(0.95);
-              }
-              100% {
-                transform: translate(0, 0) scale(1);
-              }
-            }
-
-            @keyframes float-path2 {
-              0% {
-                transform: translate(0, 0) scale(1);
-              }
-              25% {
-                transform: translate(-8px, 8px) scale(0.95);
-              }
-              50% {
-                transform: translate(-16px, 0) scale(1);
-              }
-              75% {
-                transform: translate(-8px, -8px) scale(1.05);
-              }
-              100% {
-                transform: translate(0, 0) scale(1);
-              }
-            }
-
-            @keyframes float-path3 {
-              0% {
-                transform: translate(0, 0) scale(1);
-              }
-              20% {
-                transform: translate(10px, 10px) scale(1.03);
-              }
-              40% {
-                transform: translate(12px, -10px) scale(1);
-              }
-              60% {
-                transform: translate(6px, -12px) scale(0.97);
-              }
-              80% {
-                transform: translate(-3px, -3px) scale(1);
-              }
-              100% {
-                transform: translate(0, 0) scale(1);
-              }
-            }
-
-            @keyframes float-path4 {
-              0% {
-                transform: translate(0, 0) scale(1);
-              }
-              25% {
-                transform: translate(-10px, -10px) scale(1.04);
-              }
-              50% {
-                transform: translate(-15px, -5px) scale(1);
-              }
-              75% {
-                transform: translate(-10px, 8px) scale(0.96);
-              }
-              100% {
-                transform: translate(0, 0) scale(1);
-              }
-            }
-
-            /* Responsive for mobile */
-            @media (max-width: 767px) {
-              .badges-wrapper {
-                height: auto;
-                display: flex;
-                flex-direction: column;
-                gap: 0.75rem;
-                pointer-events: auto;
-                padding: 1rem 0;
-              }
-
-              .badge {
-                position: static !important;
-                width: 100%;
-                max-width: 320px;
-                height: 60px;
-                padding: 0.5rem 1rem;
-                animation: none !important;
-                cursor: default;
-                margin: 0 auto;
-                border-width: 1px;
-              }
-
-              #badge-sales,
-              #badge-checkout,
-              #badge-satisfaction,
-              #badge-uptime {
-                border-color: inherit;
-                top: auto !important;
-                left: auto !important;
-              }
-
-              /* Icon smaller */
-              .badge i {
-                font-size: 1.25rem !important;
-              }
-
-              .badge p:first-child {
-                font-size: 0.65rem;
-              }
-
-              .badge p:last-child {
-                font-size: 1rem;
-              }
-            }
-          </style>
         </section>
 
         <!-- ABOUT SECTION -->
@@ -960,11 +965,11 @@
                 data-aos-delay="300"
               >
                 <h3 class="text-3xl font-bold text-gray-900 mb-6">
-                  Built for Belgian Retail and Hospitality
+                  Built for Belgian Horca and Retail Shops
                 </h3>
                 <p class="text-gray-700 mb-8 leading-relaxed">
-                  Based in Brussels, we deliver point-of-sale and entCRMrise software that supports
-                  growth, integrates compliance, and adapts to evolving business needs.
+                  Based in Brussels, we deliver 360° point-of-sale solution that supports growth,
+                  integrates compliance, and adapts to evolving business needs.
                 </p>
 
                 <div class="space-y-6 mb-8">
@@ -977,10 +982,9 @@
                       </div>
                     </div>
                     <div class="ml-4">
-                      <p class="text-gray-800 font-semibold">Cloud Access</p>
+                      <p class="text-gray-800 font-semibold">Access from anywhere</p>
                       <p class="text-gray-600 text-sm">
-                        Access your full system from any device, anytime. Hosted securely in the
-                        cloud.
+                        Access your system from any device, anytime.
                       </p>
                     </div>
                   </div>
@@ -1088,7 +1092,9 @@
                 <div class="p-8">
                   <h3 class="text-2xl font-bold text-gray-900 mb-3">FastCaisse Resto</h3>
                   <p class="text-gray-600 mb-6 min-h-[60px]">
-                    FPS-compliant restaurant POS with kitchen screen, kiosk, QR, and delivery links.
+                    Certified system (black box) with 360° features for restaurants and fast food
+                    restaurants, including: online ordering, self-ordering kiosk, integrations with
+                    Takaway, UberEats, and Deliveroo, kitchen screen, waiting screen, and more.
                   </p>
                   <div class="mb-6 bg-blue-700 text-white p-5 rounded-xl text-center">
                     <div class="text-xs uppercase tracking-widest">Starts from</div>
@@ -1189,7 +1195,8 @@
                 <div class="p-8">
                   <h3 class="text-2xl font-bold text-gray-900 mb-3">FastCaisse CRM</h3>
                   <p class="text-gray-600 mb-6 min-h-[60px]">
-                    CRM, inventory, sales, tasks and client management.
+                    Designed for semi-wholesalers, Fast Caisse Commerce offers customer management
+                    (CRM), inventory, sales operations, supplier orders, tasks, customers, etc.
                   </p>
                   <div class="mb-6 bg-indigo-700 text-white p-5 rounded-xl text-center">
                     <div class="text-xs uppercase tracking-widest">Starts from</div>
@@ -1478,53 +1485,6 @@
             </div>
           </div>
         </section>
-
-        <!-- Swiper CSS and JS -->
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-        <style>
-          /* Ensure swiper slides are centered vertically and horizontally */
-          .swiper-slide {
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-          }
-        </style>
-
-        <script>
-          new Swiper(".clients-swiper", {
-            loop: true,
-            centeredSlides: true,
-            autoplay: {
-              delay: 2500,
-              disableOnInteraction: false,
-            },
-            slidesPerView: 1,
-            spaceBetween: 24,
-            breakpoints: {
-              640: {
-                slidesPerView: 2,
-                centeredSlides: false,
-              },
-              768: {
-                slidesPerView: 3,
-                centeredSlides: false,
-              },
-              1024: {
-                slidesPerView: 5,
-                centeredSlides: false,
-              },
-            },
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-          });
-        </script>
 
         <!-- Contact Section -->
         <section
@@ -1863,6 +1823,37 @@
       <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+      <script>
+        new Swiper(".clients-swiper", {
+          loop: true,
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          slidesPerView: 1,
+          spaceBetween: 24,
+          breakpoints: {
+            640: {
+              slidesPerView: 2,
+              centeredSlides: false,
+            },
+            768: {
+              slidesPerView: 3,
+              centeredSlides: false,
+            },
+            1024: {
+              slidesPerView: 5,
+              centeredSlides: false,
+            },
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
       <script>
         // Initialize AOS
         AOS.init({
