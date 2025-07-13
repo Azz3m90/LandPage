@@ -595,151 +595,6 @@
         justify-content: center !important;
         align-items: center !important;
       }
-      body {
-        background-color: #f8fafc;
-        color: #1e293b;
-      }
-
-      header {
-        background: #ffffff;
-        box-shadow: 0 4px 20px rgba(30, 64, 175, 0.05);
-      }
-
-      .nav-link {
-        color: #1e293b;
-      }
-
-      .nav-link:hover {
-        color: #1d4ed8;
-        background-color: rgba(37, 99, 235, 0.1);
-      }
-
-      .nav-link::after {
-        background: #1d4ed8;
-      }
-
-      .logo-text {
-        color: #1d4ed8;
-      }
-
-      .flip-card-front {
-        background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-        color: #1e293b;
-      }
-
-      .flip-card-back {
-        background: linear-gradient(135deg, #1e3a8a, #2563eb);
-        color: #ffffff;
-      }
-
-      .form-input:focus {
-        border-color: #2563eb;
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-      }
-
-      .back-to-top {
-        background: linear-gradient(135deg, #1e40af, #1d4ed8);
-        color: white;
-        box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
-      }
-
-      .back-to-top:hover {
-        background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
-        box-shadow: 0 8px 30px rgba(30, 64, 175, 0.4);
-      }
-
-      .spinner {
-        border: 6px solid #e2e8f0;
-        border-top: 6px solid #1d4ed8;
-      }
-
-      /* الوضع الليلي */
-      @media (prefers-color-scheme: dark) {
-        body {
-          background-color: #0f172a;
-          color: #e2e8f0;
-        }
-
-        header {
-          background: #1e293b;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-link {
-          color: #e2e8f0;
-        }
-
-        .nav-link:hover {
-          color: #60a5fa;
-          background-color: rgba(96, 165, 250, 0.1);
-        }
-
-        .nav-link::after {
-          background: #60a5fa;
-        }
-
-        .logo-text {
-          color: #60a5fa;
-        }
-
-        .form-input,
-        .form-textarea,
-        .form-select {
-          background-color: #ffffff;
-          color: #e2e8f0;
-          border-color: #334155;
-        }
-
-        .form-input:focus {
-          border-color: #60a5fa;
-          box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
-        }
-
-        .flip-card-front {
-          background: linear-gradient(135deg, #1e293b, #0f172a);
-          color: #f1f5f9;
-        }
-
-        .flip-card-back {
-          background: linear-gradient(135deg, #1e3a8a, #2563eb);
-          color: #f1f5f9;
-        }
-
-        .back-to-top {
-          background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
-          box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
-          color: white;
-        }
-
-        .back-to-top:hover {
-          background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
-          box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
-        }
-
-        .badge {
-          background-color: #1e293b;
-          border-color: #334155;
-          color: #f1f5f9;
-        }
-
-        .badge p:first-child {
-          color: #cbd5e1;
-        }
-
-        .badge p:last-child {
-          color: #f8fafc;
-        }
-
-        .spinner {
-          border-color: #334155;
-          border-top-color: #60a5fa;
-        }
-
-        #mobile-menu {
-          background: #1e293b;
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-      }
     </style>
     <script>
       window.addEventListener("load", () => {
@@ -810,7 +665,7 @@
               id="menu-toggle"
               aria-expanded="false"
               aria-label="Toggle menu"
-              class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+              class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
             >
               <i class="fas fa-bars text-2xl transition-transform duration-300"></i>
             </button>
@@ -823,42 +678,42 @@
         >
           <a
             href="#home"
-            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
           >
             <i class="fas fa-home mr-2"></i>
             Home
           </a>
           <a
             href="#about"
-            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
           >
             <i class="fas fa-info-circle mr-2"></i>
             About
           </a>
           <a
             href="#solutions"
-            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
           >
             <i class="fas fa-tools mr-2"></i>
             Solutions
           </a>
           <a
             href="#services"
-            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
           >
             <i class="fas fa-cogs mr-2"></i>
             Services
           </a>
           <a
             href="#clients"
-            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
           >
             <i class="fas fa-users mr-2"></i>
             Clients
           </a>
           <a
             href="#contact"
-            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
           >
             <i class="fas fa-envelope mr-2"></i>
             Contact
@@ -1381,7 +1236,7 @@
         <!-- Services Section -->
         <section id="services" class="py-20 bg-white" data-aos="fade-up">
           <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-4xl font-extrabold text-center mb-16 text-gray-900">
+            <h2 class="text-4xl font-extrabold text-center mb-16">
               <i class="fas fa-cogs mr-2"></i>
               Our Services
             </h2>
@@ -1447,7 +1302,7 @@
         <!-- Clients Section as Slider -->
         <section id="clients" class="py-16 md:py-20 bg-gray-100" data-aos="fade-up">
           <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-900">
+            <h2 class="text-4xl font-extrabold text-center mb-12">
               <i class="fas fa-users mr-2"></i>
               Trusted by Leaders
             </h2>
@@ -1639,9 +1494,7 @@
         >
           <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
-              <h2 class="text-4xl font-extrabold mb-4 text-gray-900">
-                Transform Your Business Today
-              </h2>
+              <h2 class="text-4xl font-extrabold mb-4">Transform Your Business Today</h2>
               <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                 Contact our experts for a personalized demo and discover how FAST CAISSE can elevate
                 your business.
@@ -1655,7 +1508,7 @@
                 data-aos="fade-right"
                 data-aos-delay="200"
               >
-                <h3 class="text-2xl font-semibold mb-6 text-gray-900">Send a Message</h3>
+                <h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
                 <form id="contact-form" class="space-y-6 flex-1 flex flex-col justify-between">
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -1789,7 +1642,7 @@
                 data-aos="fade-left"
                 data-aos-delay="300"
               >
-                <h3 class="text-xl font-semibold mb-6 text-gray-900">Contact Us</h3>
+                <h3 class="text-xl font-semibold mb-6">Contact Us</h3>
                 <div class="space-y-6 flex-1">
                   <div class="flex items-start">
                     <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full text-blue-600">
