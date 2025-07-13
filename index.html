@@ -701,6 +701,118 @@
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
       }
+      /* Responsive adjustments for the About section */
+      @media (max-width: 767px) {
+        /* Full-width container on mobile */
+        #about .container {
+          padding-left: 0;
+          padding-right: 0;
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+          max-width: 100%;
+        }
+
+        /* Adjust section padding for mobile */
+        #about {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        /* Remove margins and padding from content row */
+        #about .flex {
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          width: 100%;
+        }
+
+        /* Center and adjust text section */
+        #about .text-center {
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        #about h2 {
+          font-size: 2rem; /* Smaller heading for mobile */
+          line-height: 2.25rem;
+        }
+
+        #about p {
+          font-size: 1rem; /* Slightly smaller paragraph text */
+        }
+
+        /* Ensure image takes full width */
+        #about .rounded-2xl.overflow-hidden {
+          height: auto; /* Allow height to adjust based on image */
+          max-height: 400px; /* Optional: cap height for better proportions */
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        #about img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+
+        /* Make stats grid full-width and compact */
+        #about .grid {
+          grid-template-columns: 1fr; /* Single column on mobile */
+          gap: 1rem;
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        #about .grid > div {
+          padding: 1rem;
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        /* Adjust text column for full width */
+        #about .bg-white\/80 {
+          padding: 1.5rem;
+          border-radius: 0; /* Remove rounded corners for edge-to-edge look */
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+        }
+
+        /* Make buttons full-width and stacked */
+        #about .flex-col.sm\:flex-row {
+          flex-direction: column;
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        #about .flex-col.sm\:flex-row a {
+          width: 100%;
+          text-align: center;
+          padding: 0.75rem 1rem;
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        /* Adjust feature list spacing */
+        #about .space-y-6 > div {
+          margin-bottom: 1rem;
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        /* Ensure background circles don’t interfere */
+        #about .absolute.inset-0 {
+          display: none; /* Optional: hide decorative circles on mobile for simplicity */
+        }
+      }
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -1017,6 +1129,7 @@
         </div>
       </section>
       <!-- ABOUT SECTION -->
+      <!-- ABOUT SECTION -->
       <section
         id="about"
         class="py-20 md:py-24 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden"
@@ -1154,11 +1267,11 @@
                   Request a Demo
                 </a>
                 <a
-                  href="https://FAST CAISSE.be/FAST CAISSE/en/about/"
+                  href="https://fastcaisse.be/FAST%20CAISSE/en/about/"
                   class="bg-white hover:bg-gray-50 text-blue-600 font-semibold py-3 px-8 rounded-lg border border-gray-200 transition-all duration-300 flex items-center justify-center"
                   aria-label="Read the full company story"
                 >
-                  Request a Demo
+                  Company History
                   <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i>
                 </a>
               </div>
