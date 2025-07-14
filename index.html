@@ -17,8 +17,8 @@
       property="og:description"
       content="Transform your business with FAST CAISSE's comprehensive POS and CRM solutions. Designed for Belgian businesses, by Belgians."
     />
-    <meta property="og:image" content="https://FAST CAISSE.be/og-image.jpg" />
-    <meta property="og:url" content="https://FAST CAISSE.be" />
+    <meta property="og:image" content="https://fastcaisse.be/og-image.jpg" />
+    <meta property="og:url" content="https://fastcaisse.be" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,7 +36,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://FAST CAISSE.be/FAST CAISSE/wp-content/uploads/2023/09/logoFC-1536x671.jpeg"
+      content="https://fastcaisse.be/FAST%20CAISSE/wp-content/uploads/2023/09/logoFC-1536x671.jpeg"
     />
     <title>FAST CAISSE - Premier POS & CRM Solutions for Restaurants and Retail in Belgium</title>
     <!-- CSS Libraries -->
@@ -49,13 +49,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous"
-      referrCRMolicy="no-referrer"
+      referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <link
       rel="icon"
       type="image/webp"
-      href="https://FAST CAISSE.be/FAST CAISSE/wp-content/uploads/2023/09/logoFC-1536x671.webp"
+      href="https://fastcaisse.be/FAST%20CAISSE/wp-content/uploads/2023/09/logoFC-1536x671.webp"
     />
     <!-- Swiper CSS and JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -64,8 +64,8 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "FAST CAISSE",
-        "url": "https://FAST CAISSE.be",
-        "logo": "https://FAST CAISSE.be/FAST CAISSE/wp-content/uploads/2023/09/logoFC-1536x671.webp",
+        "url": "https://fastcaisse.be",
+        "logo": "https://fastcaisse.be/FAST%20CAISSE/wp-content/uploads/2023/09/logoFC-1536x671.webp",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Chaussée de Haecht 1749",
@@ -98,6 +98,8 @@
         overflow-x: hidden;
         font-family: "Inter", sans-serif;
         max-width: 100%;
+        background-color: #ffffff;
+        color: #1e293b;
       }
       .container {
         max-width: 100%;
@@ -107,8 +109,8 @@
       }
       .hero-bg {
         background:
-          linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-          url("https://FAST CAISSE.be/FAST CAISSE/wp-content/uploads/2023/09/logoFC-1536x671.webp");
+          linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+          url("https://fastcaisse.be/FAST%20CAISSE/wp-content/uploads/2023/09/logoFC-1536x671.webp");
         background-size: cover;
         background-position: center;
       }
@@ -168,11 +170,11 @@
       }
       .flip-card-front {
         background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
+        color: #1e293b;
       }
       .flip-card-back {
-        background: linear-gradient(135deg, #1e40af, #2563eb) !important;
-        color: white;
-        transform: rotateY(180deg);
+        background: linear-gradient(135deg, #2563eb, #1e40af) !important;
+        color: #ffffff;
       }
       .back-to-top {
         position: fixed;
@@ -270,8 +272,6 @@
         box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         outline: none;
       }
-      /* Responsive Spacing */
-      /* Fix for footer clickable area */
       footer .absolute.inset-0 {
         pointer-events: none;
       }
@@ -289,11 +289,9 @@
           width: 48px;
           height: 48px;
         }
-        /* Standardize section padding for mobile */
         section {
           padding: 4rem 1.5rem;
         }
-        /* Adjust heading sizes for mobile */
         h1 {
           font-size: 2.25rem;
           line-height: 2.5rem;
@@ -302,7 +300,6 @@
           font-size: 1.875rem;
           line-height: 2.25rem;
         }
-        /* Improve button tap targets */
         .btn,
         button,
         [type="button"],
@@ -310,7 +307,6 @@
           min-height: 3rem;
           padding: 0.75rem 1.5rem;
         }
-        /* Better spacing for form elements */
         .form-input,
         .form-textarea,
         .form-select {
@@ -318,24 +314,18 @@
           margin-bottom: 1rem;
         }
       }
-      /* Loader Styles */
       #loader {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(
-          37,
-          99,
-          235,
-          0.9
-        ); /* Changed to a solid blue background for full coverage */
+        background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(4px);
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 9999; /* High z-index to cover everything */
+        z-index: 9999;
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s ease-in-out;
@@ -344,7 +334,6 @@
         opacity: 1;
         pointer-events: auto;
       }
-      /* Hide header and footer when loader is active */
       #loader:not(.hidden) ~ header,
       #loader:not(.hidden) ~ footer {
         visibility: hidden;
@@ -353,13 +342,11 @@
           visibility 0s,
           opacity 0.3s ease-in-out;
       }
-      /* Ensure header and footer are visible when loader is hidden */
       #loader.hidden ~ header,
       #loader.hidden ~ footer {
         visibility: visible;
         opacity: 1;
       }
-      /* Loader spinner */
       .animate-spin {
         animation: spin 1s linear infinite;
       }
@@ -371,11 +358,9 @@
           transform: rotate(360deg);
         }
       }
-      /* Disable scrolling when loader is active */
       body.loader-active {
         overflow: hidden;
       }
-      /* Floating POS image */
       @keyframes float {
         0%,
         100% {
@@ -388,20 +373,18 @@
       .animate-float {
         animation: float 6s ease-in-out infinite;
       }
-      /* Badges container */
       .badges-wrapper {
         position: relative;
         width: 100%;
         height: 220px;
         pointer-events: none;
       }
-      /* Badge base styles */
       .badge {
         position: absolute;
         width: 180px;
         height: 80px;
         padding: 0.75rem;
-        background: white;
+        background: #ffffff;
         border-radius: 0.75rem;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         display: flex;
@@ -412,7 +395,6 @@
         z-index: 20;
         cursor: default;
       }
-      /* Positions and animations */
       #badge-sales {
         top: 10px;
         left: 10%;
@@ -437,7 +419,6 @@
         border-color: #c4b5fd;
         animation: float-path4 7s ease-in-out infinite;
       }
-      /* Icon colors */
       #badge-sales i {
         color: #3b82f6;
         font-size: 1.5rem;
@@ -458,7 +439,6 @@
         font-size: 1.5rem;
         flex-shrink: 0;
       }
-      /* Text styles */
       .badge p {
         margin: 0;
       }
@@ -466,15 +446,12 @@
         font-size: 0.75rem;
         font-weight: 600;
         color: #4b5563;
-        line-height: 1.1;
       }
       .badge p:last-child {
         font-size: 1.125rem;
         font-weight: 700;
         color: #111827;
-        line-height: 1.1;
       }
-      /* Floating animations */
       @keyframes float-path1 {
         0% {
           transform: translate(0, 0) scale(1);
@@ -546,27 +523,24 @@
           transform: translate(0, 0) scale(1);
         }
       }
-      /* Responsive for mobile */
       @media (max-width: 767px) {
         #home .absolute.inset-0 > div,
         #about .absolute.inset-0 > div {
           display: none;
         }
-
         .badges-wrapper {
           height: auto;
           display: flex;
           flex-direction: column;
           gap: 0.75rem;
           pointer-events: auto;
-
           padding: 0 1rem;
           box-sizing: border-box;
         }
         .badge {
           position: static !important;
           max-width: 100%;
-          width: calc(100% - 2rem); /* Account for padding */
+          width: calc(100% - 2rem);
           height: 60px;
           padding: 0.5rem 1rem;
           animation: none !important;
@@ -582,7 +556,6 @@
           top: auto !important;
           left: auto !important;
         }
-        /* Icon smaller */
         .badge i {
           font-size: 1.25rem !important;
         }
@@ -603,7 +576,7 @@
         .client-logo {
           max-width: 100%;
           width: auto;
-          height: 80px; /* Adjust as needed */
+          height: 80px;
         }
         .swiper-button-prev,
         .swiper-button-next {
@@ -618,7 +591,7 @@
         #contact iframe {
           max-width: 100%;
           width: 100%;
-          height: 300px; /* Reduce height on mobile */
+          height: 300px;
         }
         @media (max-width: 767px) {
           #contact iframe {
@@ -638,7 +611,6 @@
           max-width: 100%;
           box-sizing: border-box;
         }
-        /* Ensure no negative margins cause overflow */
         [class*="absolute"],
         [class*="fixed"] {
           max-width: 100%;
@@ -646,131 +618,70 @@
           right: 0;
         }
       }
-      /* Ensure swiper slides are centered vertically and horizontally */
       .swiper-slide {
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
       }
-      body {
-        background-color: #f8fafc;
-        color: #1e293b;
-      }
       header {
         background: #ffffff;
-        box-shadow: 0 4px 20px rgba(30, 64, 175, 0.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
       }
       .nav-link {
         color: #1e293b;
       }
       .nav-link:hover {
-        color: #1d4ed8;
+        color: #2563eb;
         background-color: rgba(37, 99, 235, 0.1);
       }
       .nav-link::after {
-        background: #1d4ed8;
+        background: #2563eb;
       }
       .logo-text {
-        color: #1d4ed8;
+        color: #2563eb;
       }
-      .flip-card-front {
-        background: linear-gradient(135deg, #f1f5f9, #e2e8f0) !important;
+      .form-input,
+      .form-textarea,
+      .form-select {
+        background-color: #ffffff;
         color: #1e293b;
-      }
-      .flip-card-back {
-        background: linear-gradient(135deg, #1e3a8a, #2563eb) !important;
-        color: #ffffff;
       }
       .form-input:focus {
         border-color: #2563eb;
         box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
       }
       .back-to-top {
-        background: linear-gradient(135deg, #1e40af, #1d4ed8);
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
         color: white;
-        box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
       }
       .back-to-top:hover {
-        background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
-        box-shadow: 0 8px 30px rgba(30, 64, 175, 0.4);
+        background: linear-gradient(135deg, #1d4ed8, #1e40af);
+        box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
       .spinner {
-        border: 6px solid #e2e8f0;
-        border-top: 6px solid #1d4ed8;
+        width: 64px;
+        height: 64px;
+        border: 4px solid #e5e7eb; /* gray-200 */
+        border-top: 4px solid #2563eb; /* blue-600 */
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
       }
 
-      body {
-        background-color: #0f172a;
-        color: #e2e8f0;
-      }
-      header {
-        background: #1e293b;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      }
-      .nav-link {
-        color: #e2e8f0;
-      }
-      .nav-link:hover {
-        color: #60a5fa;
-        background-color: rgba(96, 165, 250, 0.1);
-      }
-      .nav-link::after {
-        background: #60a5fa;
-      }
-      .logo-text {
-        color: #60a5fa;
-      }
-      .form-input,
-      .form-textarea,
-      .form-select {
-        background-color: #ffffff;
-        color: #e2e8f0;
-      }
-      .form-input:focus {
-        border-color: #60a5fa;
-        box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
-      }
-      .flip-card-front {
-        background: linear-gradient(135deg, #1e293b, #0f172a);
-        color: #f1f5f9;
-      }
-      .flip-card-back {
-        background: linear-gradient(135deg, #1e3a8a, #2563eb);
-        color: #f1f5f9;
-      }
-      .back-to-top {
-        background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
-        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
-        color: white;
-      }
-      .back-to-top:hover {
-        background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
-        box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
-      }
-      .badge {
-        background-color: #1e293b;
-        border-color: #334155;
-        color: #f1f5f9;
-      }
-      .badge p:first-child {
-        color: #cbd5e1;
-      }
-      .badge p:last-child {
-        color: #f8fafc;
-      }
-      #mobile-menu {
-        background: #1e293b;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-      }
-
-      /* Responsive adjustments for the About section */
       @media (max-width: 767px) {
         img {
           max-width: 100%;
           height: auto;
           display: block;
         }
-        /* Full-width container on mobile */
         #about .container {
           padding-left: 0;
           padding-right: 0;
@@ -779,14 +690,10 @@
           width: 100%;
           max-width: 100%;
         }
-
-        /* Adjust section padding for mobile */
         #about {
           padding-left: 0;
           padding-right: 0;
         }
-
-        /* Remove margins and padding from content row */
         #about .flex {
           margin-left: 0;
           margin-right: 0;
@@ -794,63 +701,49 @@
           padding-right: 1rem;
           width: 100%;
         }
-
-        /* Center and adjust text section */
         #about .text-center {
           margin-left: 0;
           margin-right: 0;
           padding-left: 1rem;
           padding-right: 1rem;
         }
-
         #about h2 {
-          font-size: 2rem; /* Smaller heading for mobile */
+          font-size: 2rem;
           line-height: 2.25rem;
         }
-
         #about p {
-          font-size: 1rem; /* Slightly smaller paragraph text */
+          font-size: 1rem;
         }
-
-        /* Ensure image takes full width */
         #about .rounded-2xl.overflow-hidden {
           max-width: 100%;
           width: 100%;
           height: auto;
         }
-
         #about img {
           width: 100%;
           height: auto;
           object-fit: cover;
         }
-
-        /* Make stats grid full-width and compact */
         #about .grid {
-          grid-template-columns: 1fr; /* Single column on mobile */
+          grid-template-columns: 1fr;
           gap: 1rem;
           margin-left: 0;
           margin-right: 0;
           padding-left: 1rem;
           padding-right: 1rem;
         }
-
         #about .grid > div {
           padding: 1rem;
           margin-left: 0;
           margin-right: 0;
         }
-
-        /* Adjust text column for full width */
         #about {
           padding: 1.5rem;
-          border-radius: 0; /* Remove rounded corners for edge-to-edge look */
+          border-radius: 0;
           margin-left: 0;
           margin-right: 0;
           width: 100%;
         }
-
-        /* Make buttons full-width and stacked */
         #about .flex-col.sm\:flex-row {
           flex-direction: column;
           margin-left: 0;
@@ -858,7 +751,6 @@
           padding-left: 1rem;
           padding-right: 1rem;
         }
-
         #about .flex-col.sm\:flex-row a {
           width: 100%;
           text-align: center;
@@ -866,17 +758,13 @@
           margin-left: 0;
           margin-right: 0;
         }
-
-        /* Adjust feature list spacing */
         #about .space-y-6 > div {
           margin-bottom: 1rem;
           margin-left: 0;
           margin-right: 0;
         }
-
-        /* Ensure background circles don’t interfere */
         #about .absolute.inset-0 {
-          display: none; /* Optional: hide decorative circles on mobile for simplicity */
+          display: none;
         }
       }
     </style>
@@ -886,7 +774,6 @@
         const header = document.querySelector("header");
         const footer = document.querySelector("footer");
 
-        // Function to show loader and hide header/footer
         window.showLoader = function () {
           loader.classList.remove("hidden");
           document.body.classList.add("loader-active");
@@ -894,7 +781,6 @@
           if (footer) footer.style.visibility = "hidden";
         };
 
-        // Function to hide loader and show header/footer
         window.hideLoader = function () {
           loader.classList.add("hidden");
           document.body.classList.remove("loader-active");
@@ -902,47 +788,40 @@
           if (footer) footer.style.visibility = "visible";
         };
 
-        // Show loader on page load and hide after 3 seconds
         showLoader();
         setTimeout(hideLoader, 3000);
 
-        // Attach loader to form submissions (e.g., Contact form)
         const contactForm = document.getElementById("contact-form");
         if (contactForm) {
           contactForm.addEventListener("submit", (e) => {
             showLoader();
-            // Simulate async operation (replace with actual API call)
             setTimeout(() => {
               hideLoader();
             }, 2000);
           });
         }
 
-        // Example: Trigger loader on section navigation
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
           anchor.addEventListener("click", (e) => {
             showLoader();
             setTimeout(() => {
               hideLoader();
-            }, 1000); // Simulate navigation delay
+            }, 1000);
           });
         });
       });
     </script>
   </head>
-  <body class="bg-gray-50 antialiased">
+  <body class="bg-white text-gray-900 antialiased">
     <div
       id="loader"
-      class="fixed inset-0 bg-blue-600/30 backdrop-blur-sm flex items-center justify-center z-50 hidden"
+      class="fixed inset-0 bg-white/90 backdrop-blur-sm flex items-center justify-center z-50 hidden"
     >
-      <div
-        class="w-16 h-16 border-4 border-t-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"
-      ></div>
-      <span class="ml-4 text-white text-lg font-semibold"></span>
+      <div class="spinner"></div>
     </div>
-    <!-- Header -->
+
     <header
-      class="fixed w-full z-50 transition-all duration-300 backdrop-blur-lg shadow-sm"
+      class="fixed bg-white shadow-md text-gray-900 w-full z-50 transition-all duration-300 backdrop-blur-lg shadow-sm"
       id="header"
     >
       <nav
@@ -996,7 +875,6 @@
           </button>
         </div>
       </nav>
-      <!-- Mobile Menu -->
       <div
         id="mobile-menu"
         class="hidden md:hidden shadow-lg transform transition-all duration-300"
@@ -1045,51 +923,50 @@
         </a>
       </div>
     </header>
-    <!-- Main Content -->
     <main>
       <section
         id="home"
-        class="py-24 md:py-32 bg-gradient-to-br from-blue-600 to-blue-800 text-white relative overflow-hidden"
+        class="py-24 md:py-32 bg-white text-gray-900 relative overflow-hidden"
         data-aos="fade-up"
       >
         <div class="absolute inset-0 opacity-20">
           <div
-            class="absolute top-0 -left-8 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-2xl"
+            class="absolute top-0 -left-8 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-2xl"
           ></div>
           <div
-            class="absolute top-0 -right-8 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl"
+            class="absolute top-0 -right-8 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-2xl"
           ></div>
           <div
-            class="absolute -bottom-12 left-24 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-2xl"
+            class="absolute -bottom-12 left-24 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl"
           ></div>
         </div>
         <div class="container mx-auto px-6 relative z-10">
           <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right" data-aos-delay="100">
               <span
-                class="inline-block px-4 py-2 text-sm font-semibold text-blue-100 bg-blue-600/40 rounded-full mb-6"
+                class="inline-block px-4 py-2 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full mb-6"
               >
                 Trusted by 1000+ Belgian Businesses
               </span>
               <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
                 Empower Your Business with
-                <span class="text-blue-200">FAST CAISSE</span>
+                <span class="text-blue-600">FAST CAISSE</span>
               </h1>
-              <p class="text-xl text-blue-100 mb-8 max-w-lg">
+              <p class="text-xl text-gray-600 mb-8 max-w-lg">
                 Belgium's leading POS and CRM solution, designed to streamline operations for
                 restaurants, fast food, and retailers
               </p>
               <div class="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#contact"
-                  class="bg-blue-200 hover:bg-blue-300 text-blue-900 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center"
+                  class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center"
                 >
                   <i class="fas fa-play-circle mr-2"></i>
                   Watch Demo
                 </a>
                 <a
                   href="#contact"
-                  class="bg-transparent hover:bg-blue-100/20 text-white font-semibold py-4 px-8 rounded-full border-2 border-blue-200 transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                  class="bg-transparent hover:bg-blue-50 text-blue-600 font-semibold py-4 px-8 rounded-full border-2 border-blue-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
                 >
                   Get Started
                   <i class="fas fa-arrow-right ml-2"></i>
@@ -1116,10 +993,10 @@
                     loading="lazy"
                   />
                 </div>
-                <div class="text-blue-100">
+                <div class="text-gray-600">
                   <p class="font-semibold text-base">Trusted by 1000+ businesses</p>
                   <div class="flex items-center mt-2">
-                    <i class="fas fa-star text-blue-200 mr-1"></i>
+                    <i class="fas fa-star text-yellow-400 mr-1"></i>
                     <span class="text-sm">4.9/5 from 500+ reviews</span>
                   </div>
                 </div>
@@ -1130,7 +1007,6 @@
               data-aos="fade-left"
               data-aos-delay="200"
             >
-              <!-- Belgium map background -->
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Belgium_location_map.svg/1200px-Belgium_location_map.svg.png"
                 alt="Belgium map"
@@ -1138,13 +1014,10 @@
                 style="top: 50%; left: 50%; transform: translate(-50%, -50%)"
                 loading="lazy"
               />
-              <!-- POS Image container with floating animation -->
               <div
                 class="relative overflow-hidden transform transition-transform duration-500 hover:scale-105 animate-float z-10 max-w-md w-full"
               >
-                <!-- Badges container -->
                 <div class="badges-wrapper relative w-full h-[220px] pointer-events-none">
-                  <!-- Sales Growth -->
                   <div id="badge-sales" class="badge">
                     <div class="text-blue-600 text-4xl flex-shrink-0">
                       <i class="fas fa-chart-line"></i>
@@ -1154,7 +1027,6 @@
                       <p class="font-bold text-gray-900 text-lg leading-tight">+45%</p>
                     </div>
                   </div>
-                  <!-- Faster Checkout -->
                   <div id="badge-checkout" class="badge">
                     <div class="text-blue-600 text-4xl flex-shrink-0">
                       <i class="fas fa-bolt"></i>
@@ -1166,7 +1038,6 @@
                       <p class="font-bold text-gray-900 text-lg leading-tight">3x</p>
                     </div>
                   </div>
-                  <!-- Customer Satisfaction -->
                   <div id="badge-satisfaction" class="badge">
                     <div class="text-blue-600 text-4xl flex-shrink-0">
                       <i class="fas fa-smile"></i>
@@ -1178,7 +1049,6 @@
                       <p class="font-bold text-gray-900 text-lg leading-tight">98%</p>
                     </div>
                   </div>
-                  <!-- System Uptime -->
                   <div id="badge-uptime" class="badge">
                     <div class="text-blue-600 text-4xl flex-shrink-0">
                       <i class="fas fa-server"></i>
@@ -1194,21 +1064,19 @@
           </div>
         </div>
       </section>
-      <!-- ABOUT SECTION -->
-      <!-- ABOUT SECTION -->
       <section
         id="about"
-        class="py-20 md:py-24 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden"
+        class="py-20 md:py-24 bg-white relative overflow-hidden"
         data-aos="fade-up"
       >
         <div class="absolute inset-0 opacity-10" aria-hidden="true">
-          <div class="absolute -right-40 -top-40 w-96 h-96 bg-blue-100 rounded-full"></div>
-          <div class="absolute -left-40 bottom-0 w-80 h-80 bg-blue-200 rounded-full"></div>
+          <div class="absolute -right-40 -top-40 w-96 h-96 bg-blue-50 rounded-full"></div>
+          <div class="absolute -left-40 bottom-0 w-80 h-80 bg-blue-100 rounded-full"></div>
         </div>
         <div class="container mx-auto px-6 relative z-10">
           <div class="text-center max-w-4xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">
             <span
-              class="inline-block px-6 py-2 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full mb-6"
+              class="inline-block px-6 py-2 text-sm font-semibold text-blue-600 bg-blue-50 rounded-full mb-6"
             >
               <i class="fas fa-star text-blue-600 mr-2" aria-hidden="true"></i>
               Company Overview
@@ -1223,9 +1091,7 @@
               stay compliant.
             </p>
           </div>
-          <!-- Content Row -->
           <div class="flex flex-col lg:flex-row items-start gap-10">
-            <!-- Image Column -->
             <div class="w-full lg:w-1/2" data-aos="fade-right" data-aos-delay="200">
               <div class="rounded-2xl overflow-hidden h-[520px]">
                 <img
@@ -1238,33 +1104,62 @@
                   fetchpriority="low"
                 />
               </div>
-              <!-- Stats Below Image -->
-              <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div class="flex items-center rounded-2xl p-6">
+              <div id="about" class="mt-8 flex justify-between items-center gap-4 px-4">
+                <div class="flex items-center rounded-2xl p-3 bg-white shadow-sm flex-1 min-w-0">
                   <div
-                    class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-100 text-blue-600 mr-5"
+                    class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 text-blue-600 mr-3"
+                    aria-hidden="true"
                   >
-                    <i class="fas fa-building text-2xl" aria-hidden="true"></i>
+                    <i class="fas fa-building text-2xl"></i>
                   </div>
                   <div>
-                    <p class="text-3xl font-bold text-gray-900">1000+</p>
-                    <p class="text-sm text-gray-600 font-medium">Businesses Served</p>
+                    <p class="text-xl font-extrabold text-gray-900 leading-tight">1000+</p>
+                    <p class="text-xs text-gray-600 font-semibold mt-1">Businesses Served</p>
                   </div>
                 </div>
-                <div class="flex items-center rounded-2xl p-6">
+
+                <div class="flex items-center rounded-2xl p-3 bg-white shadow-sm flex-1 min-w-0">
                   <div
-                    class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-100 text-blue-600 mr-5"
+                    class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 text-blue-600 mr-3"
+                    aria-hidden="true"
                   >
-                    <i class="fas fa-medal text-2xl" aria-hidden="true"></i>
+                    <i class="fas fa-medal text-2xl"></i>
                   </div>
                   <div>
-                    <p class="text-3xl font-bold text-gray-900">12+ Years</p>
-                    <p class="text-sm text-gray-600 font-medium">Experience</p>
+                    <p class="text-xl font-extrabold text-gray-900 leading-tight">12+</p>
+                    <p class="text-xs text-gray-600 font-semibold mt-1">Years Experience</p>
                   </div>
                 </div>
               </div>
+
+              <style>
+                @media (max-width: 640px) {
+                  #about {
+                    flex-wrap: nowrap; /* keep both items on the same line */
+                  }
+                  #about > div {
+                    padding: 0.5rem;
+                    min-width: 45%;
+                  }
+                  #about .w-10 {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    margin-right: 0.5rem;
+                  }
+                  #about i {
+                    font-size: 1.5rem !important;
+                  }
+                  #about p.text-xl {
+                    font-size: 1.125rem;
+                    line-height: 1.25rem;
+                  }
+                  #about p.text-xs {
+                    font-size: 0.75rem;
+                    margin-top: 0.25rem;
+                  }
+                }
+              </style>
             </div>
-            <!-- Text Column -->
             <div
               class="w-full lg:w-1/2 backdrop-blur-md rounded-2xl p-8"
               data-aos="fade-left"
@@ -1281,7 +1176,7 @@
                 <div class="flex items-start">
                   <div class="flex-shrink-0 mt-1">
                     <div
-                      class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-100 text-blue-600"
+                      class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-50 text-blue-600"
                     >
                       <i class="fas fa-cloud text-lg" aria-hidden="true"></i>
                     </div>
@@ -1296,7 +1191,7 @@
                 <div class="flex items-start">
                   <div class="flex-shrink-0 mt-1">
                     <div
-                      class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-100 text-blue-600"
+                      class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-50 text-blue-600"
                     >
                       <i class="fas fa-map-marker-alt text-lg" aria-hidden="true"></i>
                     </div>
@@ -1311,7 +1206,7 @@
                 <div class="flex items-start">
                   <div class="flex-shrink-0 mt-1">
                     <div
-                      class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-100 text-blue-600"
+                      class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-50 text-blue-600"
                     >
                       <i class="fas fa-headset text-lg" aria-hidden="true"></i>
                     </div>
@@ -1334,7 +1229,7 @@
                 </a>
                 <a
                   href="https://fastcaisse.be/FAST%20CAISSE/en/about/"
-                  class="hover:bg-gray-50 text-blue-600 font-semibold py-3 px-8 rounded-lg border border-gray-200 transition-all duration-300 flex items-center justify-center"
+                  class="hover:bg-blue-50 text-blue-600 font-semibold py-3 px-8 rounded-lg border border-gray-200 transition-all duration-300 flex items-center justify-center"
                   aria-label="Read the full company story"
                 >
                   Company History
@@ -1345,19 +1240,18 @@
           </div>
         </div>
       </section>
-      <!-- Solutions Section -->
       <section
         id="solutions"
-        class="py-20 md:py-24 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden"
+        class="py-20 md:py-24 bg-white relative overflow-hidden"
         data-aos="fade-up"
       >
         <div
-          class="absolute top-0 left-0 right-0 h-80 bg-gradient-to-r from-blue-100 to-blue-200 transform -skew-y-6 -translate-y-44"
+          class="absolute top-0 left-0 right-0 h-80 bg-gradient-to-r from-blue-50 to-blue-100 transform -skew-y-6 -translate-y-44"
         ></div>
         <div class="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="100">
             <span
-              class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full text-sm font-semibold mb-6 shadow"
+              class="inline-block bg-blue-50 text-blue-600 px-6 py-2 rounded-full text-sm font-semibold mb-6 shadow"
             >
               <i class="fas fa-star text-yellow-400 mr-2"></i>
               Tailored SaaS Platforms
@@ -1374,22 +1268,20 @@
               commerce sectors.
             </p>
           </div>
-
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-            <!-- Resto -->
             <div
-              class="group rounded-3xl shadow-2xl overflow-hidden border border-blue-200 transition-all duration-300 hover:-translate-y-2"
+              class="group rounded-3xl shadow-2xl overflow-hidden border border-blue-100 transition-all duration-300 hover:-translate-y-2"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               <div
-                class="h-52 bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center"
+                class="h-52 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center"
               >
                 <i
                   class="fas fa-utensils text-8xl text-white opacity-90 group-hover:scale-110 transition duration-500"
                 ></i>
               </div>
-              <div class="p-8">
+              <div class="p-8 bg-white">
                 <h3 class="text-2xl font-bold text-gray-900 mb-3">FastCaisse Resto</h3>
                 <p class="text-gray-600 mb-6 min-h-[60px]">
                   Certified system (black box) with 360° features for restaurants and fast food
@@ -1427,21 +1319,19 @@
                 </a>
               </div>
             </div>
-
-            <!-- Shop -->
             <div
-              class="group rounded-3xl shadow-2xl overflow-hidden border border-blue-200 transition-all duration-300 hover:-translate-y-2"
+              class="group rounded-3xl shadow-2xl overflow-hidden border border-blue-100 transition-all duration-300 hover:-translate-y-2"
               data-aos="fade-up"
               data-aos-delay="300"
             >
               <div
-                class="h-52 bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center"
+                class="h-52 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center"
               >
                 <i
                   class="fas fa-store text-8xl text-white opacity-90 group-hover:scale-110 transition duration-500"
                 ></i>
               </div>
-              <div class="p-8">
+              <div class="p-8 bg-white">
                 <h3 class="text-2xl font-bold text-gray-900 mb-3">FastCaisse Shop</h3>
                 <p class="text-gray-600 mb-6 min-h-[60px]">
                   POS for retailers with barcode stock control, scale integration, and loyalty
@@ -1465,7 +1355,7 @@
                     Loyalty & rewards
                   </li>
                   <li class="flex items-start">
-                    <i class="icon text-green-500 mr-2 mt-1"></i>
+                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
                     Multi-terminal ready
                   </li>
                 </ul>
@@ -1478,21 +1368,19 @@
                 </a>
               </div>
             </div>
-
-            <!-- CRM -->
             <div
-              class="group rounded-3xl shadow-2xl overflow-hidden border border-blue-200 transition-all duration-300 hover:-translate-y-2"
+              class="group rounded-3xl shadow-2xl overflow-hidden border border-blue-100 transition-all duration-300 hover:-translate-y-2"
               data-aos="fade-up"
               data-aos-delay="400"
             >
               <div
-                class="h-52 bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center"
+                class="h-52 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center"
               >
                 <i
                   class="fas fa-user-cog text-8xl text-white opacity-90 group-hover:scale-110 transition duration-500"
                 ></i>
               </div>
-              <div class="p-8">
+              <div class="p-8 bg-white">
                 <h3 class="text-2xl font-bold text-gray-900 mb-3">FastCaisse CRM</h3>
                 <p class="text-gray-600 mb-6 min-h-[60px]">
                   Designed for semi-wholesalers, FastCaisse Commerce offers customer management
@@ -1532,229 +1420,703 @@
           </div>
         </div>
       </section>
-      <!-- Clients Section as Slider -->
       <section
         id="clients"
-        class="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-white"
+        class="py-16 md:py-20 bg-white"
         data-aos="fade-up"
+        aria-label="Trusted clients logos carousel"
       >
         <div class="container mx-auto px-6">
-          <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-900">
-            <i class="fas fa-users mr-2 text-blue-600"></i>
+          <h2 class="text-4xl font-extrabold text-center mb-4 text-gray-900">
+            <i class="fas fa-users mr-2 text-blue-600" aria-hidden="true"></i>
             Trusted by Leaders
           </h2>
+          <p class="text-center max-w-xl mx-auto text-gray-700 mb-12">
+            Our clients come from diverse industries, trusting us to deliver quality and
+            reliability.
+          </p>
+
           <div class="relative">
-            <div class="swiper clients-swiper">
+            <div
+              class="swiper clients-swiper"
+              role="region"
+              aria-live="polite"
+              aria-roledescription="carousel"
+            >
               <div class="swiper-wrapper">
-                <!-- 20 client logos -->
-                <div class="swiper-slide flex justify-center">
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Aahaar client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/aahaar.png"
+                    alt="Aahaar client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Aahaar"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="American 50 Diner client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/American_50diner.png"
+                    alt="American 50 Diner client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="American 50 Diner"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Bouba client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/bouba-150x150.png"
+                    alt="Bouba client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Bouba"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Bowling client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/Bowling.png"
+                    alt="Bowling client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Bowling"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Cantinetta client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/cantinetta-150x150.png"
+                    alt="Cantinetta client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Cantinetta"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Carpediem client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/carpediem.png"
+                    alt="Carpediem client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Carpediem"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Chezbb client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/chezbb.png"
+                    alt="Chezbb client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Chezbb"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Cicek client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/cicek.png"
+                    alt="Cicek client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Cicek"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Cosy client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/cosy.png"
+                    alt="Cosy client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Cosy"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Giardino client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/giardino.png"
+                    alt="Giardino client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Giardino"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Grande Marees client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/grande-marees.png"
+                    alt="Grande Marees client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Grande Marees"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Intertyres client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/intertyres.png"
+                    alt="Intertyres client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Intertyres"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Isard client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/Isard-150x150.png"
+                    alt="Isard client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Isard"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Italia client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/italia.png"
+                    alt="Italia client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Italia"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Judgy client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/Judgy.png"
+                    alt="Judgy client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Judgy"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Kefraya client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/kefraya.png"
+                    alt="Kefraya client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Kefraya"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="L-Catanesi client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/L-Catanesi.png"
+                    alt="L-Catanesi client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="L-Catanesi"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Le Moderne client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/le-moderne.png"
+                    alt="Le Moderne client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Le Moderne"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Leprince client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/leprince.png"
+                    alt="Leprince client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Leprince"
+                    tabindex="0"
                   />
                 </div>
-                <div class="swiper-slide flex justify-center">
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Lochristi client logo"
+                >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                    alt="Client logo"
+                    src="./images/clients/lochristi.png"
+                    alt="Lochristi client logo"
                     class="h-20 client-logo"
                     loading="lazy"
+                    title="Lochristi"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Logo Geco client logo"
+                >
+                  <img
+                    src="./images/clients/logo-geco-150x150.png"
+                    alt="Logo Geco client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Logo Geco"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Los A Moelle client logo"
+                >
+                  <img
+                    src="./images/clients/los-a-moelle-150x150.png"
+                    alt="Los A Moelle client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Los A Moelle"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Louise Eye Center client logo"
+                >
+                  <img
+                    src="./images/clients/LouiseEyeCenter-150x150.png"
+                    alt="Louise Eye Center client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Louise Eye Center"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Marquis client logo"
+                >
+                  <img
+                    src="./images/clients/Marquis-100x100.png"
+                    alt="Marquis client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Marquis"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Matthias client logo"
+                >
+                  <img
+                    src="./images/clients/matthias.png"
+                    alt="Matthias client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Matthias"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Milano client logo"
+                >
+                  <img
+                    src="./images/clients/Milano.png"
+                    alt="Milano client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Milano"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="MrWok client logo"
+                >
+                  <img
+                    src="./images/clients/MrWok-100x100.png"
+                    alt="MrWok client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="MrWok"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Nata client logo"
+                >
+                  <img
+                    src="./images/clients/nata-150x150.png"
+                    alt="Nata client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Nata"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Pizza Talia Original client logo"
+                >
+                  <img
+                    src="./images/clients/pizzaTaliaOriginal-150x150.png"
+                    alt="Pizza Talia Original client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Pizza Talia Original"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Pyramidslogo client logo"
+                >
+                  <img
+                    src="./images/clients/Pyramidslogo.png"
+                    alt="Pyramidslogo client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Pyramidslogo"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="RecA client logo"
+                >
+                  <img
+                    src="./images/clients/recA.png"
+                    alt="RecA client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="RecA"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Shahrazad client logo"
+                >
+                  <img
+                    src="./images/clients/Shahrazad.png"
+                    alt="Shahrazad client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Shahrazad"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Spicygrill client logo"
+                >
+                  <img
+                    src="./images/clients/spicygrill.png"
+                    alt="Spicygrill client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Spicygrill"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Talia75 client logo"
+                >
+                  <img
+                    src="./images/clients/Talia75.png"
+                    alt="Talia75 client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Talia75"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Tamarin client logo"
+                >
+                  <img
+                    src="./images/clients/tamarin.png"
+                    alt="Tamarin client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Tamarin"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Tennisclub client logo"
+                >
+                  <img
+                    src="./images/clients/tennisclub.png"
+                    alt="Tennisclub client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Tennisclub"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="ThaiTalks client logo"
+                >
+                  <img
+                    src="./images/clients/ThaiTalks.png"
+                    alt="ThaiTalks client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="ThaiTalks"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Tongfong client logo"
+                >
+                  <img
+                    src="./images/clients/tongfong.png"
+                    alt="Tongfong client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Tongfong"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Wadeleux-1 client logo"
+                >
+                  <img
+                    src="./images/clients/Wadeleux-1.png"
+                    alt="Wadeleux-1 client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Wadeleux-1"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="Wilrijkchicken client logo"
+                >
+                  <img
+                    src="./images/clients/wilrijkchicken.png"
+                    alt="Wilrijkchicken client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="Wilrijkchicken"
+                    tabindex="0"
+                  />
+                </div>
+
+                <div
+                  class="swiper-slide flex justify-center"
+                  role="group"
+                  aria-label="WokStyle client logo"
+                >
+                  <img
+                    src="./images/clients/wokStyle.png"
+                    alt="WokStyle client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                    title="WokStyle"
+                    tabindex="0"
                   />
                 </div>
               </div>
-            </div>
-            <!-- Navigation -->
-            <div class="absolute top-1/2 -translate-y-1/2 left-0 z-10">
+
+              <!-- Navigation buttons -->
               <button
-                class="swiper-button-prev w-9 h-9 flex items-center justify-center text-blue-600 transition duration-300"
+                class="swiper-button-prev w-10 h-10 flex items-center justify-center text-blue-600 transition duration-300 rounded-full hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                aria-label="Previous clients logo"
               >
-                <i class="fas fa-angle-left"></i>
+                <i class="fas fa-angle-left" aria-hidden="true"></i>
               </button>
-            </div>
-            <div class="absolute top-1/2 -translate-y-1/2 right-0 z-10">
               <button
-                class="swiper-button-next w-9 h-9 flex items-center justify-center text-blue-600 transition duration-300"
+                class="swiper-button-next w-10 h-10 flex items-center justify-center text-blue-600 transition duration-300 rounded-full hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                aria-label="Next clients logo"
               >
-                <i class="fas fa-angle-right"></i>
+                <i class="fas fa-angle-right" aria-hidden="true"></i>
               </button>
             </div>
           </div>
         </div>
+
+        <style>
+          .client-logo {
+            max-width: 100px;
+            max-height: 80px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+          }
+          .client-logo:hover,
+          .client-logo:focus {
+            transform: scale(1.1);
+            outline: none;
+          }
+        </style>
+
+        <script></script>
       </section>
-      <!-- Contact Section -->
-      <section
-        id="contact"
-        class="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-white"
-        data-aos="fade-up"
-      >
-        <div class="container mx-auto px-6">
-          <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="text-4xl font-extrabold mb-4 text-gray-900">
+
+      <section id="contact" class="py-12 md:py-20 bg-white" data-aos="fade-up">
+        <div class="container mx-auto px-4 sm:px-6">
+          <div class="text-center mb-12" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-gray-900">
               Transform Your Business Today
             </h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
               Contact our experts for a personalized demo and discover how FAST CAISSE can elevate
               your business.
             </p>
           </div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-            <!-- Send a Message -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             <div
-              class="rounded-2xl p-8 h-full flex flex-col justify-between"
+              class="rounded-2xl p-6 sm:p-8 h-full flex flex-col justify-between bg-gray-50"
               data-aos="fade-right"
               data-aos-delay="200"
             >
-              <h3 class="text-2xl font-semibold mb-6 text-gray-900">Send a Message</h3>
-              <form id="contact-form" class="space-y-6 flex-1 flex flex-col justify-between">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <h3 class="text-xl sm:text-2xl font-semibold mb-6 text-gray-900">Send a Message</h3>
+              <form id="contact-form" class="space-y-4 flex-1 flex flex-col justify-between">
+                <div class="grid grid-cols-1 gap-4">
                   <div>
-                    <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">
+                    <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">
                       First Name *
                     </label>
                     <input
@@ -1762,12 +2124,12 @@
                       id="first-name"
                       name="first-name"
                       required
-                      class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+                      class="form-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
                       placeholder="First Name"
                     />
                   </div>
                   <div>
-                    <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">
+                    <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">
                       Last Name *
                     </label>
                     <input
@@ -1775,61 +2137,61 @@
                       id="last-name"
                       name="last-name"
                       required
-                      class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+                      class="form-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
                       placeholder="Last Name"
                     />
                   </div>
-                </div>
-                <div>
-                  <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
-                    placeholder="your@email.com"
-                  />
-                </div>
-                <div>
-                  <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
-                    Subject
-                  </label>
-                  <select
-                    id="subject"
-                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="demo">Request a Demo</option>
-                    <option value="sales">Sales Inquiry</option>
-                    <option value="support">Technical Support</option>
-                    <option value="partnership">Partnership</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
-                    Your Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    required
-                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
-                    placeholder="How can we help you?"
-                  ></textarea>
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="form-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                  <div>
+                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">
+                      Subject
+                    </label>
+                    <select
+                      id="subject"
+                      class="form-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
+                    >
+                      <option value="">Select a subject</option>
+                      <option value="demo">Request a Demo</option>
+                      <option value="sales">Sales Inquiry</option>
+                      <option value="support">Technical Support</option>
+                      <option value="partnership">Partnership</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
+                      Your Message *
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      required
+                      class="form-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
+                      placeholder="How can we help you?"
+                    ></textarea>
+                  </div>
                 </div>
                 <div class="flex items-start">
                   <input
                     id="gdpr-consent"
                     name="gdpr-consent"
                     type="checkbox"
-                    class="h-5 w-5 text-blue-600 focus:ring-blue-600 border-gray-300 rounded mt-1"
+                    class="h-4 w-4 text-blue-600 focus:ring-blue-600 border-gray-300 rounded mt-1"
                     required
                   />
-                  <label for="gdpr-consent" class="ml-3 text-sm text-gray-700">
+                  <label for="gdpr-consent" class="ml-2 text-xs text-gray-700">
                     I agree to the
                     <a href="#" class="text-blue-600 hover:underline">privacy policy</a>
                     and
@@ -1842,7 +2204,7 @@
                   data-callback="enableBtn"
                   data-expired-callback="disableBtn"
                 ></div>
-                <p class="text-xs text-gray-500 mt-3">
+                <p class="text-xs text-gray-500 mt-2">
                   This site is protected by reCAPTCHA and the Google
                   <a
                     href="https://policies.google.com/privacy"
@@ -1859,40 +2221,38 @@
                 <button
                   id="submit-btn"
                   type="submit"
-                  class="w-full flex justify-center items-center px-6 py-3 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled
+                  class="w-full flex justify-center items-center px-4 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <i class="fas fa-paper-plane mr-2"></i>
                   Send Message
                 </button>
               </form>
             </div>
-            <!-- Contact Info -->
             <div
-              class="rounded-2xl p-8 h-full flex flex-col justify-between"
+              class="rounded-2xl p-6 sm:p-8 h-full flex flex-col justify-between bg-gray-50"
               data-aos="fade-left"
               data-aos-delay="300"
             >
-              <h3 class="text-xl font-semibold mb-6 text-gray-900">Contact Us</h3>
-              <div class="space-y-6 flex-1">
+              <h3 class="text-xl sm:text-2xl font-semibold mb-6 text-gray-900">Contact Us</h3>
+              <div class="space-y-4 flex-1">
                 <div class="flex items-start">
-                  <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full text-blue-600">
-                    <i class="fas fa-map-marker-alt text-lg"></i>
+                  <div class="flex-shrink-0 bg-blue-50 p-2 rounded-full text-blue-600">
+                    <i class="fas fa-map-marker-alt text-base"></i>
                   </div>
-                  <div class="ml-4">
+                  <div class="ml-3">
                     <h4 class="text-sm font-semibold text-gray-900">Our Office</h4>
-                    <p class="mt-1 text-sm text-gray-500">
+                    <p class="mt-1 text-xs text-gray-500">
                       Chaussée de Haecht 1749, 1130 Brussels, Belgium
                     </p>
                   </div>
                 </div>
                 <div class="flex items-start">
-                  <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full text-blue-600">
-                    <i class="fas fa-phone-alt text-lg"></i>
+                  <div class="flex-shrink-0 bg-blue-50 p-2 rounded-full text-blue-600">
+                    <i class="fas fa-phone-alt text-base"></i>
                   </div>
-                  <div class="ml-4">
+                  <div class="ml-3">
                     <h4 class="text-sm font-semibold text-gray-900">Phone</h4>
-                    <p class="mt-1 text-sm text-gray-500">
+                    <p class="mt-1 text-xs text-gray-500">
                       <a href="tel:+32485223448" class="hover:text-blue-600">
                         +32 485 22 34 48 (FR)
                       </a>
@@ -1904,12 +2264,12 @@
                   </div>
                 </div>
                 <div class="flex items-start">
-                  <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full text-blue-600">
-                    <i class="fas fa-envelope text-lg"></i>
+                  <div class="flex-shrink-0 bg-blue-50 p-2 rounded-full text-blue-600">
+                    <i class="fas fa-envelope text-base"></i>
                   </div>
-                  <div class="ml-4">
+                  <div class="ml-3">
                     <h4 class="text-sm font-semibold text-gray-900">Email</h4>
-                    <p class="mt-1 text-sm text-gray-500">
+                    <p class="mt-1 text-xs text-gray-500">
                       <a href="mailto:fc@fastcaisse.be" class="hover:text-blue-600">
                         fc@fastcaisse.be
                       </a>
@@ -1917,9 +2277,9 @@
                   </div>
                 </div>
               </div>
-              <div class="mt-8 pt-6 border-t border-gray-200">
-                <h4 class="text-sm font-semibold text-gray-900 mb-4">Business Hours</h4>
-                <dl class="space-y-3 text-sm">
+              <div class="mt-6 pt-4 border-t border-gray-200">
+                <h4 class="text-sm font-semibold text-gray-900 mb-3">Business Hours</h4>
+                <dl class="space-y-2 text-xs">
                   <div class="flex justify-between">
                     <dt class="text-gray-500">Monday - Friday</dt>
                     <dd class="font-medium text-gray-900">9:00 AM - 6:00 PM</dd>
@@ -1937,14 +2297,14 @@
             </div>
           </div>
           <div
-            class="mt-16 rounded-2xl overflow-hidden shadow-xl"
+            class="mt-12 rounded-2xl overflow-hidden shadow-xl"
             data-aos="zoom-in"
             data-aos-delay="400"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.072581940715!2d4.416876315745913!3d50.84655697953217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3dc8f8a1c7a0f%3A0x1c1d1d1d1d1d1d1d!2sChauss%C3%A9e%20de%20Haecht%201749%2C%201130%20Bruxelles%2C%20Belgium!5e0!3m2!1sen!2sbe!4v1620000000000!5m2!1sen!2sbe"
               width="100%"
-              height="450"
+              height="300"
               style="border: 0"
               allowfullscreen=""
               loading="lazy"
@@ -1952,91 +2312,216 @@
           </div>
         </div>
       </section>
+      <style>
+        @media (max-width: 767px) {
+          #contact .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+          #contact .grid {
+            gap: 1.5rem;
+          }
+          #contact .rounded-2xl {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+          }
+          #contact .form-input,
+          #contact .form-input:focus {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+          }
+          #contact textarea {
+            min-height: 80px;
+          }
+          #contact .g-recaptcha {
+            transform: scale(0.9);
+            transform-origin: 0 0;
+          }
+          #contact .flex.items-start {
+            align-items: center;
+          }
+          #contact .flex.items-start .ml-3,
+          #contact .flex.items-start .ml-2 {
+            font-size: 0.75rem;
+          }
+          #contact .space-y-4 > div {
+            align-items: center;
+          }
+          #contact iframe {
+            height: 250px;
+          }
+        }
+      </style>
     </main>
-    <!-- Footer -->
-    <footer
-      class="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-16 relative overflow-hidden"
-      data-aos="fade-up"
-    >
+    <footer class="bg-white text-gray-900 py-16 relative overflow-hidden" data-aos="fade-up">
       <div
         class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMDktMS43OTEtNC00LTRzLTQgMS43OTEtNCA0IDEuNzkxIDQgNCA0IDQtMS43OTEgNC00eiIvPjwvZz48L2c+PC9zdmc+')]"
       ></div>
       <div class="container mx-auto px-4 sm:px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <!-- Company Info -->
           <div>
             <h2 class="text-lg font-semibold mb-4">
-              <i class="fas fa-info-circle mr-2"></i>
+              <i class="fas fa-info-circle mr-2 text-blue-600"></i>
               FAST CAISSE
             </h2>
-            <p class="text-gray-400 leading-relaxed">
+            <p class="text-gray-600 leading-relaxed text-sm">
               Premier POS, CRM, and smart reporting tools for Belgian restaurants and retail.
+              Trusted by over 1,000 businesses since 2010.
             </p>
+            <img
+              src="https://fastcaisse.be/FAST%20CAISSE/wp-content/uploads/2023/09/logoFC-1536x671.webp"
+              alt="FAST CAISSE logo"
+              class="h-10 mt-6"
+              loading="lazy"
+            />
           </div>
+          <!-- Quick Links -->
           <div>
             <h2 class="text-lg font-semibold mb-4">
-              <i class="fas fa-link mr-2"></i>
+              <i class="fas fa-link mr-2 text-blue-600"></i>
               Quick Links
             </h2>
-            <ul class="space-y-2">
+            <ul class="space-y-2 text-sm">
               <li>
-                <a href="#home" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a>
+                <a href="#home" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
               </li>
               <li>
-                <a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">
                   About
                 </a>
               </li>
               <li>
-                <a href="#solutions" class="text-gray-400 hover:text-blue-400 transition-colors">
+                <a href="#solutions" class="text-gray-600 hover:text-blue-600 transition-colors">
                   Solutions
                 </a>
               </li>
               <li>
-                <a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">
+                <a href="#services" class="text-gray-600 hover:text-blue-600 transition-colors">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#clients" class="text-gray-400 hover:text-blue-400 transition-colors">
+                <a href="#clients" class="text-gray-600 hover:text-blue-600 transition-colors">
                   Clients
                 </a>
               </li>
               <li>
-                <a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors">
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">
                   Contact
                 </a>
               </li>
             </ul>
           </div>
+          <!-- Contact Info -->
           <div>
             <h2 class="text-lg font-semibold mb-4">
-              <i class="fas fa-users mr-2"></i>
-              Connect With Us
+              <i class="fas fa-envelope mr-2 text-blue-600"></i>
+              Contact Us
             </h2>
-            <div class="flex space-x-6">
-              <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
-                <i class="fab fa-facebook-f"></i>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt text-blue-600 mr-3 mt-1"></i>
+                <span class="text-gray-600">Chaussée de Haecht 1749, 1130 Brussels, Belgium</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-phone-alt text-blue-600 mr-3 mt-1"></i>
+                <span class="text-gray-600">
+                  <a href="tel:+32485223448" class="hover:text-blue-600">+32 485 22 34 48 (FR)</a>
+                  <br />
+                  <a href="tel:+32485223449" class="hover:text-blue-600">+32 485 22 34 49 (NL)</a>
+                </span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-envelope text-blue-600 mr-3 mt-1"></i>
+                <a href="mailto:fc@fastcaisse.be" class="text-gray-600 hover:text-blue-600">
+                  fc@fastcaisse.be
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Social Media & Newsletter -->
+          <div>
+            <h2 class="text-lg font-semibold mb-4">
+              <i class="fas fa-share-alt mr-2 text-blue-600"></i>
+              Stay Connected
+            </h2>
+            <p class="text-gray-600 text-sm mb-4">
+              Subscribe to our newsletter for updates and tips.
+            </p>
+            <form class="flex flex-col md:flex-row gap-3 mb-6">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="form-input flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-gray-900 bg-white md:min-w-0"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg transition-all duration-300 md:px-4"
+              >
+                Subscribe
+              </button>
+            </form>
+            <div class="flex space-x-4">
+              <a
+                href="https://facebook.com"
+                class="text-gray-600 hover:text-blue-600 transition-colors"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f text-xl"></i>
               </a>
-              <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
-                <i class="fab fa-twitter"></i>
+              <a
+                href="https://twitter.com"
+                class="text-gray-600 hover:text-blue-600 transition-colors"
+                aria-label="Twitter"
+              >
+                <i class="fab fa-twitter text-xl"></i>
               </a>
-              <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
-                <i class="fab fa-linkedin-in"></i>
+              <a
+                href="https://linkedin.com"
+                class="text-gray-600 hover:text-blue-600 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin-in text-xl"></i>
+              </a>
+              <a
+                href="https://instagram.com"
+                class="text-gray-600 hover:text-blue-600 transition-colors"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram text-xl"></i>
               </a>
             </div>
           </div>
+          <style>
+            @media (min-width: 768px) and (max-width: 1024px) {
+              footer .flex.md\:flex-row {
+                align-items: center;
+                justify-content: center;
+              }
+              footer .form-input {
+                font-size: 0.9rem;
+                padding: 0.65rem 1rem;
+              }
+              footer button[type="submit"] {
+                font-size: 0.9rem;
+                padding: 0.65rem 1.5rem;
+              }
+              footer .flex.space-x-4 {
+                justify-content: start;
+                margin-top: 0.5rem;
+              }
+            }
+          </style>
         </div>
-        <p class="text-center text-gray-400 mt-12">
-          © 2025 FAST CAISSE SRL. All rights reserved. |
-          <a
-            href="https://FAST CAISSE.be/FAST CAISSE/en/general-conditions/"
-            class="hover:text-blue-400"
-          >
-            General Conditions
-          </a>
-          |
-          <a href="#" class="hover:text-blue-400">GDPR Terms</a>
-        </p>
+        <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+          <p class="text-sm text-gray-600">
+            &copy; 2025 FAST CAISSE SRL. All rights reserved. |
+            <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>
+            |
+            <a href="#" class="text-blue-600 hover:underline">Terms of Service</a>
+          </p>
+        </div>
       </div>
     </footer>
     <!-- Back to Top Button -->
@@ -2052,6 +2537,10 @@
       new Swiper(".clients-swiper", {
         loop: true,
         centeredSlides: true,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+        },
         autoplay: {
           delay: 2500,
           disableOnInteraction: false,
@@ -2059,18 +2548,9 @@
         slidesPerView: 1,
         spaceBetween: 24,
         breakpoints: {
-          640: {
-            slidesPerView: 2,
-            centeredSlides: false,
-          },
-          768: {
-            slidesPerView: 3,
-            centeredSlides: false,
-          },
-          1024: {
-            slidesPerView: 5,
-            centeredSlides: false,
-          },
+          640: { slidesPerView: 2, centeredSlides: false },
+          768: { slidesPerView: 3, centeredSlides: false },
+          1024: { slidesPerView: 5, centeredSlides: false },
         },
         navigation: {
           nextEl: ".swiper-button-next",
