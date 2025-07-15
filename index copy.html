@@ -101,6 +101,9 @@
       }
       .container {
         max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
       }
       .hero-bg {
         background:
@@ -161,13 +164,13 @@
         align-items: center;
         padding: 2rem;
         border-radius: 1rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
       }
       .flip-card-front {
-        background: linear-gradient(135deg, #ffffff, #f8fafc);
+        background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
       }
       .flip-card-back {
-        background: linear-gradient(135deg, #1e40af, #2563eb);
+        background: linear-gradient(135deg, #1e40af, #2563eb) !important;
         color: white;
         transform: rotateY(180deg);
       }
@@ -272,7 +275,6 @@
       footer .absolute.inset-0 {
         pointer-events: none;
       }
-
       @media (max-width: 768px) {
         .hero-bg {
           background-position: top;
@@ -287,23 +289,19 @@
           width: 48px;
           height: 48px;
         }
-
         /* Standardize section padding for mobile */
         section {
           padding: 4rem 1.5rem;
         }
-
         /* Adjust heading sizes for mobile */
         h1 {
           font-size: 2.25rem;
           line-height: 2.5rem;
         }
-
         h2 {
           font-size: 1.875rem;
           line-height: 2.25rem;
         }
-
         /* Improve button tap targets */
         .btn,
         button,
@@ -312,7 +310,6 @@
           min-height: 3rem;
           padding: 0.75rem 1.5rem;
         }
-
         /* Better spacing for form elements */
         .form-input,
         .form-textarea,
@@ -321,28 +318,51 @@
           margin-bottom: 1rem;
         }
       }
-      /* Center the spinner loader on mobile devices */
-      #global-loader {
+      /* Loader Styles */
+      #loader {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 9999;
+        background: rgba(
+          37,
+          99,
+          235,
+          0.9
+        ); /* Changed to a solid blue background for full coverage */
+        backdrop-filter: blur(4px);
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 9999; /* High z-index to cover everything */
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-in-out;
       }
-
-      .spinner {
-        border: 6px solid #ddd;
-        border-top: 6px solid #3498db;
-        border-radius: 50%;
-        width: 64px;
-        height: 64px;
+      #loader:not(.hidden) {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      /* Hide header and footer when loader is active */
+      #loader:not(.hidden) ~ header,
+      #loader:not(.hidden) ~ footer {
+        visibility: hidden;
+        opacity: 0;
+        transition:
+          visibility 0s,
+          opacity 0.3s ease-in-out;
+      }
+      /* Ensure header and footer are visible when loader is hidden */
+      #loader.hidden ~ header,
+      #loader.hidden ~ footer {
+        visibility: visible;
+        opacity: 1;
+      }
+      /* Loader spinner */
+      .animate-spin {
         animation: spin 1s linear infinite;
       }
-
       @keyframes spin {
         0% {
           transform: rotate(0deg);
@@ -351,12 +371,9 @@
           transform: rotate(360deg);
         }
       }
-
-      /* Blur effect on page content */
-      #page-content.blur {
-        filter: blur(6px);
-        pointer-events: none;
-        user-select: none;
+      /* Disable scrolling when loader is active */
+      body.loader-active {
+        overflow: hidden;
       }
       /* Floating POS image */
       @keyframes float {
@@ -371,7 +388,6 @@
       .animate-float {
         animation: float 6s ease-in-out infinite;
       }
-
       /* Badges container */
       .badges-wrapper {
         position: relative;
@@ -379,7 +395,6 @@
         height: 220px;
         pointer-events: none;
       }
-
       /* Badge base styles */
       .badge {
         position: absolute;
@@ -397,7 +412,6 @@
         z-index: 20;
         cursor: default;
       }
-
       /* Positions and animations */
       #badge-sales {
         top: 10px;
@@ -405,28 +419,24 @@
         border-color: #93c5fd;
         animation: float-path1 8s ease-in-out infinite;
       }
-
       #badge-checkout {
         top: 10px;
         left: 60%;
         border-color: #86efac;
         animation: float-path2 7.5s ease-in-out infinite;
       }
-
       #badge-satisfaction {
         top: 120px;
         left: 10%;
         border-color: #fde68a;
         animation: float-path3 9s ease-in-out infinite;
       }
-
       #badge-uptime {
         top: 120px;
         left: 60%;
         border-color: #c4b5fd;
         animation: float-path4 7s ease-in-out infinite;
       }
-
       /* Icon colors */
       #badge-sales i {
         color: #3b82f6;
@@ -448,26 +458,22 @@
         font-size: 1.5rem;
         flex-shrink: 0;
       }
-
       /* Text styles */
       .badge p {
         margin: 0;
       }
-
       .badge p:first-child {
         font-size: 0.75rem;
         font-weight: 600;
         color: #4b5563;
         line-height: 1.1;
       }
-
       .badge p:last-child {
         font-size: 1.125rem;
         font-weight: 700;
         color: #111827;
         line-height: 1.1;
       }
-
       /* Floating animations */
       @keyframes float-path1 {
         0% {
@@ -486,7 +492,6 @@
           transform: translate(0, 0) scale(1);
         }
       }
-
       @keyframes float-path2 {
         0% {
           transform: translate(0, 0) scale(1);
@@ -504,7 +509,6 @@
           transform: translate(0, 0) scale(1);
         }
       }
-
       @keyframes float-path3 {
         0% {
           transform: translate(0, 0) scale(1);
@@ -525,7 +529,6 @@
           transform: translate(0, 0) scale(1);
         }
       }
-
       @keyframes float-path4 {
         0% {
           transform: translate(0, 0) scale(1);
@@ -543,22 +546,27 @@
           transform: translate(0, 0) scale(1);
         }
       }
-
       /* Responsive for mobile */
       @media (max-width: 767px) {
+        #home .absolute.inset-0 > div,
+        #about .absolute.inset-0 > div {
+          display: none;
+        }
+
         .badges-wrapper {
           height: auto;
           display: flex;
           flex-direction: column;
           gap: 0.75rem;
           pointer-events: auto;
-          padding: 1rem 0;
-        }
 
+          padding: 0 1rem;
+          box-sizing: border-box;
+        }
         .badge {
           position: static !important;
-          width: 100%;
-          max-width: 320px;
+          max-width: 100%;
+          width: calc(100% - 2rem); /* Account for padding */
           height: 60px;
           padding: 0.5rem 1rem;
           animation: none !important;
@@ -566,7 +574,6 @@
           margin: 0 auto;
           border-width: 1px;
         }
-
         #badge-sales,
         #badge-checkout,
         #badge-satisfaction,
@@ -575,18 +582,68 @@
           top: auto !important;
           left: auto !important;
         }
-
         /* Icon smaller */
         .badge i {
           font-size: 1.25rem !important;
         }
-
         .badge p:first-child {
           font-size: 0.65rem;
         }
-
         .badge p:last-child {
           font-size: 1rem;
+        }
+        .swiper {
+          max-width: 100%;
+          overflow: hidden;
+        }
+        .swiper-slide {
+          max-width: 100%;
+          flex-shrink: 0;
+        }
+        .client-logo {
+          max-width: 100%;
+          width: auto;
+          height: 80px; /* Adjust as needed */
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          width: 32px;
+          height: 32px;
+          margin: 0 8px;
+        }
+        #contact .rounded-2xl.overflow-hidden {
+          max-width: 100%;
+          overflow: hidden;
+        }
+        #contact iframe {
+          max-width: 100%;
+          width: 100%;
+          height: 300px; /* Reduce height on mobile */
+        }
+        @media (max-width: 767px) {
+          #contact iframe {
+            height: 250px;
+          }
+        }
+        html,
+        body {
+          width: 100%;
+          overflow-x: hidden;
+        }
+        .container,
+        section,
+        div,
+        img,
+        iframe {
+          max-width: 100%;
+          box-sizing: border-box;
+        }
+        /* Ensure no negative margins cause overflow */
+        [class*="absolute"],
+        [class*="fixed"] {
+          max-width: 100%;
+          left: 0;
+          right: 0;
         }
       }
       /* Ensure swiper slides are centered vertically and horizontally */
@@ -595,1403 +652,1569 @@
         justify-content: center !important;
         align-items: center !important;
       }
+      body {
+        background-color: #f8fafc;
+        color: #1e293b;
+      }
+      header {
+        background: #ffffff;
+        box-shadow: 0 4px 20px rgba(30, 64, 175, 0.05);
+      }
+      .nav-link {
+        color: #1e293b;
+      }
+      .nav-link:hover {
+        color: #1d4ed8;
+        background-color: rgba(37, 99, 235, 0.1);
+      }
+      .nav-link::after {
+        background: #1d4ed8;
+      }
+      .logo-text {
+        color: #1d4ed8;
+      }
+      .flip-card-front {
+        background: linear-gradient(135deg, #f1f5f9, #e2e8f0) !important;
+        color: #1e293b;
+      }
+      .flip-card-back {
+        background: linear-gradient(135deg, #1e3a8a, #2563eb) !important;
+        color: #ffffff;
+      }
+      .form-input:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+      .back-to-top {
+        background: linear-gradient(135deg, #1e40af, #1d4ed8);
+        color: white;
+        box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
+      }
+      .back-to-top:hover {
+        background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+        box-shadow: 0 8px 30px rgba(30, 64, 175, 0.4);
+      }
+      .spinner {
+        border: 6px solid #e2e8f0;
+        border-top: 6px solid #1d4ed8;
+      }
+
+      body {
+        background-color: #0f172a;
+        color: #e2e8f0;
+      }
+      header {
+        background: #1e293b;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+      .nav-link {
+        color: #e2e8f0;
+      }
+      .nav-link:hover {
+        color: #60a5fa;
+        background-color: rgba(96, 165, 250, 0.1);
+      }
+      .nav-link::after {
+        background: #60a5fa;
+      }
+      .logo-text {
+        color: #60a5fa;
+      }
+      .form-input,
+      .form-textarea,
+      .form-select {
+        background-color: #ffffff;
+        color: #e2e8f0;
+      }
+      .form-input:focus {
+        border-color: #60a5fa;
+        box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+      }
+      .flip-card-front {
+        background: linear-gradient(135deg, #1e293b, #0f172a);
+        color: #f1f5f9;
+      }
+      .flip-card-back {
+        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        color: #f1f5f9;
+      }
+      .back-to-top {
+        background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+      .back-to-top:hover {
+        background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+        box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+      }
+      .badge {
+        background-color: #1e293b;
+        border-color: #334155;
+        color: #f1f5f9;
+      }
+      .badge p:first-child {
+        color: #cbd5e1;
+      }
+      .badge p:last-child {
+        color: #f8fafc;
+      }
+      #mobile-menu {
+        background: #1e293b;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Responsive adjustments for the About section */
+      @media (max-width: 767px) {
+        img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+        }
+        /* Full-width container on mobile */
+        #about .container {
+          padding-left: 0;
+          padding-right: 0;
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+          max-width: 100%;
+        }
+
+        /* Adjust section padding for mobile */
+        #about {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        /* Remove margins and padding from content row */
+        #about .flex {
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          width: 100%;
+        }
+
+        /* Center and adjust text section */
+        #about .text-center {
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        #about h2 {
+          font-size: 2rem; /* Smaller heading for mobile */
+          line-height: 2.25rem;
+        }
+
+        #about p {
+          font-size: 1rem; /* Slightly smaller paragraph text */
+        }
+
+        /* Ensure image takes full width */
+        #about .rounded-2xl.overflow-hidden {
+          max-width: 100%;
+          width: 100%;
+          height: auto;
+        }
+
+        #about img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+
+        /* Make stats grid full-width and compact */
+        #about .grid {
+          grid-template-columns: 1fr; /* Single column on mobile */
+          gap: 1rem;
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        #about .grid > div {
+          padding: 1rem;
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        /* Adjust text column for full width */
+        #about {
+          padding: 1.5rem;
+          border-radius: 0; /* Remove rounded corners for edge-to-edge look */
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+        }
+
+        /* Make buttons full-width and stacked */
+        #about .flex-col.sm\:flex-row {
+          flex-direction: column;
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        #about .flex-col.sm\:flex-row a {
+          width: 100%;
+          text-align: center;
+          padding: 0.75rem 1rem;
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        /* Adjust feature list spacing */
+        #about .space-y-6 > div {
+          margin-bottom: 1rem;
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        /* Ensure background circles don’t interfere */
+        #about .absolute.inset-0 {
+          display: none; /* Optional: hide decorative circles on mobile for simplicity */
+        }
+      }
     </style>
     <script>
-      window.addEventListener("load", () => {
-        const loader = document.getElementById("global-loader");
-        const content = document.getElementById("page-content");
+      document.addEventListener("DOMContentLoaded", () => {
+        const loader = document.getElementById("loader");
+        const header = document.querySelector("header");
+        const footer = document.querySelector("footer");
 
-        // Hide loader and remove blur
-        loader.style.display = "none";
-        content.classList.remove("blur");
+        // Function to show loader and hide header/footer
+        window.showLoader = function () {
+          loader.classList.remove("hidden");
+          document.body.classList.add("loader-active");
+          if (header) header.style.visibility = "hidden";
+          if (footer) footer.style.visibility = "hidden";
+        };
+
+        // Function to hide loader and show header/footer
+        window.hideLoader = function () {
+          loader.classList.add("hidden");
+          document.body.classList.remove("loader-active");
+          if (header) header.style.visibility = "visible";
+          if (footer) footer.style.visibility = "visible";
+        };
+
+        // Show loader on page load and hide after 3 seconds
+        showLoader();
+        setTimeout(hideLoader, 3000);
+
+        // Attach loader to form submissions (e.g., Contact form)
+        const contactForm = document.getElementById("contact-form");
+        if (contactForm) {
+          contactForm.addEventListener("submit", (e) => {
+            showLoader();
+            // Simulate async operation (replace with actual API call)
+            setTimeout(() => {
+              hideLoader();
+            }, 2000);
+          });
+        }
+
+        // Example: Trigger loader on section navigation
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", (e) => {
+            showLoader();
+            setTimeout(() => {
+              hideLoader();
+            }, 1000); // Simulate navigation delay
+          });
+        });
       });
     </script>
   </head>
   <body class="bg-gray-50 antialiased">
-    <!-- Loader Overlay -->
-    <div id="global-loader">
-      <div class="spinner"></div>
+    <div
+      id="loader"
+      class="fixed inset-0 bg-blue-600/30 backdrop-blur-sm flex items-center justify-center z-50 hidden"
+    >
+      <div
+        class="w-16 h-16 border-4 border-t-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"
+      ></div>
+      <span class="ml-4 text-white text-lg font-semibold"></span>
     </div>
-
-    <!-- Page content wrapper -->
-    <div id="page-content" class="blur">
-      <!-- Header -->
-      <header
-        class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-lg shadow-sm"
-        id="header"
+    <!-- Header -->
+    <header
+      class="fixed w-full z-50 transition-all duration-300 backdrop-blur-lg shadow-sm"
+      id="header"
+    >
+      <nav
+        class="container relative mx-auto px-6 py-4 flex justify-between items-center"
+        aria-label="Main navigation"
       >
-        <nav
-          class="container relative mx-auto px-6 py-4 flex justify-between items-center"
-          aria-label="Main navigation"
-        >
-          <div class="flex items-center">
-            <img
-              src="./images/logoFC-1536x671.jpeg"
-              alt="FAST CAISSE logo"
-              class="h-14 transition-transform duration-300 hover:scale-105"
-              width="auto"
-              height="auto"
-              loading="lazy"
-            />
-          </div>
-          <div class="hidden md:flex space-x-3">
-            <a href="#home" class="nav-link">
-              <i class="fas fa-home mr-2"></i>
-              Home
-            </a>
-            <a href="#about" class="nav-link">
-              <i class="fas fa-info-circle mr-2"></i>
-              About
-            </a>
-            <a href="#solutions" class="nav-link">
-              <i class="fas fa-tools mr-2"></i>
-              Solutions
-            </a>
-            <a href="#services" class="nav-link">
-              <i class="fas fa-cogs mr-2"></i>
-              Services
-            </a>
-            <a href="#clients" class="nav-link">
-              <i class="fas fa-users mr-2"></i>
-              Clients
-            </a>
-            <a href="#contact" class="nav-link">
-              <i class="fas fa-envelope mr-2"></i>
-              Contact
-            </a>
-          </div>
-          <div class="md:hidden">
-            <button
-              id="menu-toggle"
-              aria-expanded="false"
-              aria-label="Toggle menu"
-              class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-            >
-              <i class="fas fa-bars text-2xl transition-transform duration-300"></i>
-            </button>
-          </div>
-        </nav>
-        <!-- Mobile Menu -->
-        <div
-          id="mobile-menu"
-          class="hidden md:hidden bg-white shadow-lg transform transition-all duration-300"
-        >
-          <a
-            href="#home"
-            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          >
+        <div class="flex items-center">
+          <img
+            src="./images/logoFC-1536x671.jpeg"
+            alt="FAST CAISSE logo"
+            class="h-14 transition-transform duration-300 hover:scale-105"
+            width="auto"
+            height="auto"
+            loading="lazy"
+          />
+        </div>
+        <div class="hidden md:flex space-x-3">
+          <a href="#home" class="nav-link">
             <i class="fas fa-home mr-2"></i>
             Home
           </a>
-          <a
-            href="#about"
-            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          >
+          <a href="#about" class="nav-link">
             <i class="fas fa-info-circle mr-2"></i>
             About
           </a>
-          <a
-            href="#solutions"
-            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          >
+          <a href="#solutions" class="nav-link">
             <i class="fas fa-tools mr-2"></i>
             Solutions
           </a>
-          <a
-            href="#services"
-            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          >
+          <a href="#services" class="nav-link">
             <i class="fas fa-cogs mr-2"></i>
             Services
           </a>
-          <a
-            href="#clients"
-            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          >
+          <a href="#clients" class="nav-link">
             <i class="fas fa-users mr-2"></i>
             Clients
           </a>
-          <a
-            href="#contact"
-            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          >
+          <a href="#contact" class="nav-link">
             <i class="fas fa-envelope mr-2"></i>
             Contact
           </a>
         </div>
-      </header>
-
-      <!-- Main Content -->
-      <main>
-        <section
-          id="home"
-          class="py-24 md:py-32 bg-gradient-to-br from-blue-700 to-blue-900 text-white relative overflow-hidden"
-          data-aos="fade-up"
+        <div class="md:hidden">
+          <button
+            id="menu-toggle"
+            aria-expanded="false"
+            aria-label="Toggle menu"
+            class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+          >
+            <i class="fas fa-bars text-2xl transition-transform duration-300"></i>
+          </button>
+        </div>
+      </nav>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden shadow-lg transform transition-all duration-300"
+      >
+        <a
+          href="#home"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
         >
-          <div class="absolute inset-0 opacity-20">
-            <div
-              class="absolute top-0 -left-8 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl"
-            ></div>
-            <div
-              class="absolute top-0 -right-8 w-80 h-80 bg-yellow-300 rounded-full mix-blend-multiply filter blur-2xl"
-            ></div>
-            <div
-              class="absolute -bottom-12 left-24 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl"
-            ></div>
-          </div>
-          <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center">
-              <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right" data-aos-delay="100">
-                <span
-                  class="inline-block px-4 py-2 text-sm font-semibold text-blue-100 bg-blue-600/40 rounded-full mb-6"
-                >
-                  Trusted by 1000+ Belgian Businesses
-                </span>
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-                  Empower Your Business with
-                  <span class="text-yellow-300">FAST CAISSE</span>
-                </h1>
-                <p class="text-xl text-blue-100 mb-8 max-w-lg">
-                  Belgium's leading POS and CRM solution, designed to streamline operations for
-                  restaurants, fast food and retailers
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="#contact"
-                    class="bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center"
-                  >
-                    <i class="fas fa-play-circle mr-2"></i>
-                    Watch Demo
-                  </a>
-                  <a
-                    href="#contact"
-                    class="bg-transparent hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-full border-2 border-white transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
-                  >
-                    Get Started
-                    <i class="fas fa-arrow-right ml-2"></i>
-                  </a>
-                </div>
-                <div class="mt-10 flex items-center space-x-6">
-                  <div class="flex -space-x-3">
-                    <img
-                      src="https://randomuser.me/api/portraits/women/44.jpg"
-                      class="w-12 h-12 rounded-full border-2 border-white"
-                      alt="Happy customer"
-                      loading="lazy"
-                    />
-                    <img
-                      src="https://randomuser.me/api/portraits/men/32.jpg"
-                      class="w-12 h-12 rounded-full border-2 border-white"
-                      alt="Happy customer"
-                      loading="lazy"
-                    />
-                    <img
-                      src="https://randomuser.me/api/portraits/women/68.jpg"
-                      class="w-12 h-12 rounded-full border-2 border-white"
-                      alt="Happy customer"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="text-blue-100">
-                    <p class="font-semibold text-base">Trusted by 1000+ businesses</p>
-                    <div class="flex items-center mt-2">
-                      <i class="fas fa-star text-yellow-300 mr-1"></i>
-                      <span class="text-sm">4.9/5 from 500+ reviews</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="md:w-1/2 relative flex justify-center items-center"
-                data-aos="fade-left"
-                data-aos-delay="200"
-              >
-                <!-- Belgium map background -->
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Belgium_location_map.svg/1200px-Belgium_location_map.svg.png"
-                  alt="Belgium map"
-                  class="absolute inset-0 w-full max-w-lg mx-auto opacity-20 filter blur-sm pointer-events-none select-none"
-                  style="top: 50%; left: 50%; transform: translate(-50%, -50%)"
-                  loading="lazy"
-                />
-
-                <!-- POS Image container with floating animation -->
-                <div
-                  class="relative overflow-hidden transform transition-transform duration-500 hover:scale-105 animate-float z-10 max-w-md w-full"
-                >
-                  <!-- Badges container -->
-                  <div class="badges-wrapper relative w-full h-[220px] pointer-events-none">
-                    <!-- Sales Growth -->
-                    <div id="badge-sales" class="badge">
-                      <div class="text-blue-600 text-4xl flex-shrink-0">
-                        <i class="fas fa-chart-line"></i>
-                      </div>
-                      <div class="flex flex-col justify-center">
-                        <p class="text-xs text-gray-600 font-semibold leading-tight">
-                          Sales Growth
-                        </p>
-                        <p class="font-bold text-gray-900 text-lg leading-tight">+45%</p>
-                      </div>
-                    </div>
-
-                    <!-- Faster Checkout -->
-                    <div id="badge-checkout" class="badge">
-                      <div class="text-green-600 text-4xl flex-shrink-0">
-                        <i class="fas fa-bolt"></i>
-                      </div>
-                      <div class="flex flex-col justify-center">
-                        <p class="text-xs text-gray-600 font-semibold leading-tight">
-                          Faster Checkout
-                        </p>
-                        <p class="font-bold text-gray-900 text-lg leading-tight">3x</p>
-                      </div>
-                    </div>
-
-                    <!-- Customer Satisfaction -->
-                    <div id="badge-satisfaction" class="badge">
-                      <div class="text-yellow-500 text-4xl flex-shrink-0">
-                        <i class="fas fa-smile"></i>
-                      </div>
-                      <div class="flex flex-col justify-center">
-                        <p class="text-xs text-gray-600 font-semibold leading-tight">
-                          Customer Satisfaction
-                        </p>
-                        <p class="font-bold text-gray-900 text-lg leading-tight">98%</p>
-                      </div>
-                    </div>
-
-                    <!-- System Uptime -->
-                    <div id="badge-uptime" class="badge">
-                      <div class="text-purple-600 text-4xl flex-shrink-0">
-                        <i class="fas fa-server"></i>
-                      </div>
-                      <div class="flex flex-col justify-center">
-                        <p class="text-xs text-gray-600 font-semibold leading-tight">
-                          System Uptime
-                        </p>
-                        <p class="font-bold text-gray-900 text-lg leading-tight">99.9%</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ABOUT SECTION -->
-        <section
-          id="about"
-          class="py-20 md:py-24 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden"
-          data-aos="fade-up"
+          <i class="fas fa-home mr-2"></i>
+          Home
+        </a>
+        <a
+          href="#about"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
         >
-          <div class="absolute inset-0 opacity-10" aria-hidden="true">
-            <div class="absolute -right-40 -top-40 w-96 h-96 bg-blue-100 rounded-full"></div>
-            <div class="absolute -left-40 bottom-0 w-80 h-80 bg-yellow-100 rounded-full"></div>
-          </div>
-
-          <div class="container mx-auto px-6 relative z-10">
-            <div
-              class="text-center max-w-4xl mx-auto mb-16"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+          <i class="fas fa-info-circle mr-2"></i>
+          About
+        </a>
+        <a
+          href="#solutions"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+        >
+          <i class="fas fa-tools mr-2"></i>
+          Solutions
+        </a>
+        <a
+          href="#services"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+        >
+          <i class="fas fa-cogs mr-2"></i>
+          Services
+        </a>
+        <a
+          href="#clients"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+        >
+          <i class="fas fa-users mr-2"></i>
+          Clients
+        </a>
+        <a
+          href="#contact"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+        >
+          <i class="fas fa-envelope mr-2"></i>
+          Contact
+        </a>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main>
+      <section
+        id="home"
+        class="py-24 md:py-32 bg-gradient-to-br from-blue-600 to-blue-800 text-white relative overflow-hidden"
+        data-aos="fade-up"
+      >
+        <div class="absolute inset-0 opacity-20">
+          <div
+            class="absolute top-0 -left-8 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-2xl"
+          ></div>
+          <div
+            class="absolute top-0 -right-8 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl"
+          ></div>
+          <div
+            class="absolute -bottom-12 left-24 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-2xl"
+          ></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right" data-aos-delay="100">
               <span
-                class="inline-block px-6 py-2 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full mb-6 shadow-md"
+                class="inline-block px-4 py-2 text-sm font-semibold text-blue-100 bg-blue-600/40 rounded-full mb-6"
               >
-                <i class="fas fa-star text-yellow-400 mr-2" aria-hidden="true"></i>
-                Company Overview
+                Trusted by 1000+ Belgian Businesses
               </span>
-              <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-                POS and CRM Solutions for Belgian Businesses
-                <span class="text-blue-600">Since 2010</span>
-              </h2>
-              <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                FAST CAISSE provides complete POS and CRM systems for restaurants and retail
-                businesses in Belgium. We help over 1,000 clients improve sales, reduce costs, and
-                stay compliant.
+              <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                Empower Your Business with
+                <span class="text-blue-200">FAST CAISSE</span>
+              </h1>
+              <p class="text-xl text-blue-100 mb-8 max-w-lg">
+                Belgium's leading POS and CRM solution, designed to streamline operations for
+                restaurants, fast food, and retailers
               </p>
-            </div>
-
-            <!-- Content Row -->
-            <div class="flex flex-col lg:flex-row items-start gap-10">
-              <!-- Image Column -->
-              <div class="w-full lg:w-1/2" data-aos="fade-right" data-aos-delay="200">
-                <div class="rounded-2xl overflow-hidden shadow-2xl h-[520px]">
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#contact"
+                  class="bg-blue-200 hover:bg-blue-300 text-blue-900 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center"
+                >
+                  <i class="fas fa-play-circle mr-2"></i>
+                  Watch Demo
+                </a>
+                <a
+                  href="#contact"
+                  class="bg-transparent hover:bg-blue-100/20 text-white font-semibold py-4 px-8 rounded-full border-2 border-blue-200 transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                >
+                  Get Started
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+              <div class="mt-10 flex items-center space-x-6">
+                <div class="flex -space-x-3">
                   <img
-                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                    alt="FAST CAISSE POS and CRM team at Brussels office"
-                    class="w-full h-full object-cover"
-                    width="800"
-                    height="520"
+                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                    class="w-12 h-12 rounded-full border-2 border-white"
+                    alt="Happy customer"
                     loading="lazy"
-                    fetchpriority="low"
+                  />
+                  <img
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    class="w-12 h-12 rounded-full border-2 border-white"
+                    alt="Happy customer"
+                    loading="lazy"
+                  />
+                  <img
+                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    class="w-12 h-12 rounded-full border-2 border-white"
+                    alt="Happy customer"
+                    loading="lazy"
                   />
                 </div>
-
-                <!-- Stats Below Image -->
-                <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div class="flex items-center bg-white rounded-2xl shadow-md p-6">
-                    <div
-                      class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-100 text-blue-600 mr-5"
-                    >
-                      <i class="fas fa-building text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                      <p class="text-3xl font-bold text-gray-900">1000+</p>
-                      <p class="text-sm text-gray-600 font-medium">Businesses Served</p>
-                    </div>
-                  </div>
-
-                  <div class="flex items-center bg-white rounded-2xl shadow-md p-6">
-                    <div
-                      class="flex items-center justify-center w-14 h-14 rounded-full bg-yellow-100 text-yellow-600 mr-5"
-                    >
-                      <i class="fas fa-medal text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                      <p class="text-3xl font-bold text-gray-900">12+ Years</p>
-                      <p class="text-sm text-gray-600 font-medium">Experience</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Text Column -->
-              <div
-                class="w-full lg:w-1/2 bg-white/80 backdrop-blur-md rounded-2xl shadow-md p-8"
-                data-aos="fade-left"
-                data-aos-delay="300"
-              >
-                <h3 class="text-3xl font-bold text-gray-900 mb-6">
-                  Built for Belgian Horca and Retail Shops
-                </h3>
-                <p class="text-gray-700 mb-8 leading-relaxed">
-                  Based in Brussels, we deliver 360° point-of-sale solution that supports growth,
-                  integrates compliance, and adapts to evolving business needs.
-                </p>
-
-                <div class="space-y-6 mb-8">
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1">
-                      <div
-                        class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-100 text-blue-600"
-                      >
-                        <i class="fas fa-cloud text-lg" aria-hidden="true"></i>
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <p class="text-gray-800 font-semibold">Access from anywhere</p>
-                      <p class="text-gray-600 text-sm">
-                        Access your system from any device, anytime.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1">
-                      <div
-                        class="flex items-center justify-center h-10 w-10 rounded-full bg-green-100 text-green-600"
-                      >
-                        <i class="fas fa-map-marker-alt text-lg" aria-hidden="true"></i>
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <p class="text-gray-800 font-semibold">Local Compliance</p>
-                      <p class="text-gray-600 text-sm">
-                        We follow Belgian tax rules, language laws, and fiscal device regulations.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1">
-                      <div
-                        class="flex items-center justify-center h-10 w-10 rounded-full bg-purple-100 text-purple-600"
-                      >
-                        <i class="fas fa-headset text-lg" aria-hidden="true"></i>
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <p class="text-gray-800 font-semibold">Multilingual Support</p>
-                      <p class="text-gray-600 text-sm">
-                        Get help in French, Dutch, or English. Available 24/7 from our Brussels
-                        team.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="#contact"
-                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
-                    aria-label="Request a FAST CAISSE demo or consultation"
-                  >
-                    Request a Demo
-                  </a>
-                  <a
-                    href="https://FAST CAISSE.be/FAST CAISSE/en/about/"
-                    class="bg-white hover:bg-gray-50 text-blue-600 font-semibold py-3 px-8 rounded-lg border border-gray-200 transition-all duration-300 flex items-center justify-center"
-                    aria-label="Read the full company story"
-                  >
-                    Company History
-                    <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Solutions Section -->
-        <section
-          id="solutions"
-          class="py-20 md:py-24 bg-gradient-to-b from-white to-slate-100 relative overflow-hidden"
-          data-aos="fade-up"
-        >
-          <div
-            class="absolute top-0 left-0 right-0 h-80 bg-gradient-to-r from-blue-600/10 to-blue-800/10 transform -skew-y-6 -translate-y-44"
-          ></div>
-          <div class="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
-            <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="100">
-              <span
-                class="inline-block bg-blue-100 text-blue-700 px-6 py-2 rounded-full text-sm font-semibold mb-6 shadow"
-              >
-                <i class="fas fa-star text-yellow-400 mr-2"></i>
-                Tailored SaaS Platforms
-              </span>
-              <h2
-                class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent"
-              >
-                The Core
-                <span class="text-blue-600">Systems</span>
-                You Need
-              </h2>
-              <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                All-in-one POS, CRM and smart reporting tools for Belgium’s retail, food and
-                commerce sectors.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-              <!-- Resto -->
-              <div
-                class="group bg-white rounded-3xl shadow-2xl overflow-hidden border border-blue-200 transition-all duration-300 hover:-translate-y-2"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div
-                  class="h-52 bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center"
-                >
-                  <i
-                    class="fas fa-utensils text-8xl text-white opacity-90 group-hover:scale-110 transition duration-500"
-                  ></i>
-                </div>
-                <div class="p-8">
-                  <h3 class="text-2xl font-bold text-gray-900 mb-3">FastCaisse Resto</h3>
-                  <p class="text-gray-600 mb-6 min-h-[60px]">
-                    Certified system (black box) with 360° features for restaurants and fast food
-                    restaurants, including: online ordering, self-ordering kiosk, integrations with
-                    Takaway, UberEats, and Deliveroo, kitchen screen, waiting screen, and more.
-                  </p>
-                  <div class="mb-6 bg-blue-700 text-white p-5 rounded-xl text-center">
-                    <div class="text-xs uppercase tracking-widest">Starts from</div>
-                    <div class="text-5xl font-extrabold mt-1">
-                      €69
-                      <span class="text-base font-normal">/mo</span>
-                    </div>
-                    <div class="text-sm mt-1">Annual plan: €828</div>
-                  </div>
-                  <ul class="space-y-4 mb-8 text-sm text-gray-800">
-                    <li class="flex items-start">
-                      <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
-                      Real-time kitchen display
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
-                      QR orders & delivery tools
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
-                      UberEats & Takeaway sync
-                    </li>
-                  </ul>
-                  <a
-                    href="#contact"
-                    class="block w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-4 px-6 rounded-xl text-center transition duration-300"
-                  >
-                    Request Demo
-                    <i class="fas fa-arrow-right ml-2"></i>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Shop -->
-              <div
-                class="group bg-white rounded-3xl shadow-2xl overflow-hidden border border-indigo-200 transition-all duration-300 hover:-translate-y-2"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <div
-                  class="h-52 bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center"
-                >
-                  <i
-                    class="fas fa-store text-8xl text-white opacity-90 group-hover:scale-110 transition duration-500"
-                  ></i>
-                </div>
-                <div class="p-8">
-                  <h3 class="text-2xl font-bold text-gray-900 mb-3">FastCaisse Shop</h3>
-                  <p class="text-gray-600 mb-6 min-h-[60px]">
-                    POS for retailers with barcode stock control, scale integration and loyalty
-                    tools.
-                  </p>
-                  <div class="mb-6 bg-indigo-700 text-white p-5 rounded-xl text-center">
-                    <div class="text-xs uppercase tracking-widest">Starts from</div>
-                    <div class="text-5xl font-extrabold mt-1">
-                      €59
-                      <span class="text-base font-normal">/mo</span>
-                    </div>
-                    <div class="text-sm mt-1">Annual plan: €708</div>
-                  </div>
-                  <ul class="space-y-4 mb-8 text-sm text-gray-800">
-                    <li class="flex items-start">
-                      <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
-                      Barcode & inventory tools
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
-                      Loyalty & rewards
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
-                      Multi-terminal ready
-                    </li>
-                  </ul>
-                  <a
-                    href="#contact"
-                    class="block w-full bg-indigo-700 hover:bg-indigo-800 text-white font-semibold py-4 px-6 rounded-xl text-center transition duration-300"
-                  >
-                    Request Demo
-                    <i class="fas fa-arrow-right ml-2"></i>
-                  </a>
-                </div>
-              </div>
-
-              <!-- CRM -->
-              <div
-                class="group bg-white rounded-3xl shadow-2xl overflow-hidden border border-indigo-200 transition-all duration-300 hover:-translate-y-2"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <div
-                  class="h-52 bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center"
-                >
-                  <i
-                    class="fas fa-user-cog text-8xl text-white opacity-90 group-hover:scale-110 transition duration-500"
-                  ></i>
-                </div>
-                <div class="p-8">
-                  <h3 class="text-2xl font-bold text-gray-900 mb-3">FastCaisse CRM</h3>
-                  <p class="text-gray-600 mb-6 min-h-[60px]">
-                    Designed for semi-wholesalers, Fast Caisse Commerce offers customer management
-                    (CRM), inventory, sales operations, supplier orders, tasks, customers, etc.
-                  </p>
-                  <div class="mb-6 bg-indigo-700 text-white p-5 rounded-xl text-center">
-                    <div class="text-xs uppercase tracking-widest">Starts from</div>
-                    <div class="text-5xl font-extrabold mt-1">
-                      €99
-                      <span class="text-base font-normal">/mo</span>
-                    </div>
-                    <div class="text-sm mt-1">Annual plan: €1,188</div>
-                  </div>
-                  <ul class="space-y-4 mb-8 text-sm text-gray-800">
-                    <li class="flex items-start">
-                      <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
-                      Unified dashboard
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
-                      Task tracking & expiry alerts
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
-                      Smart AI reporting
-                    </li>
-                  </ul>
-                  <a
-                    href="#contact"
-                    class="block w-full bg-indigo-700 hover:bg-indigo-800 text-white font-semibold py-4 px-6 rounded-xl text-center transition duration-300"
-                  >
-                    Request Demo
-                    <i class="fas fa-arrow-right ml-2"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="py-20 bg-white" data-aos="fade-up">
-          <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-4xl font-extrabold text-center mb-16">
-              <i class="fas fa-cogs mr-2"></i>
-              Our Services
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div class="flip-card" tabindex="0" data-aos="flip-left" data-aos-delay="100">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front text-center">
-                    <i class="fas fa-globe text-5xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-4">Website Creation</h3>
-                    <p class="text-gray-600">Custom websites to enhance your online presence.</p>
-                  </div>
-                  <div class="flip-card-back text-center">
-                    <p class="text-white">
-                      Tailored e-commerce and websites for businesses in Brussels and beyond.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="flip-card" tabindex="0" data-aos="flip-left" data-aos-delay="200">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front text-center">
-                    <i class="fas fa-code text-5xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-4">Custom Development</h3>
-                    <p class="text-gray-600">Bespoke software for your unique needs.</p>
-                  </div>
-                  <div class="flip-card-back text-center">
-                    <p class="text-white">
-                      Custom solutions to meet the specific demands of your business.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="flip-card" tabindex="0" data-aos="flip-left" data-aos-delay="300">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front text-center">
-                    <i class="fas fa-headset text-5xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-4">24/7 Support</h3>
-                    <p class="text-gray-600">Always-on assistance for your business.</p>
-                  </div>
-                  <div class="flip-card-back text-center">
-                    <p class="text-white">
-                      Multilingual support to ensure seamless operations across Belgium.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="flip-card" tabindex="0" data-aos="flip-left" data-aos-delay="400">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front text-center">
-                    <i class="fas fa-network-wired text-5xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-4">Network Solutions</h3>
-                    <p class="text-gray-600">Reliable connectivity for your business.</p>
-                  </div>
-                  <div class="flip-card-back text-center">
-                    <p class="text-white">Robust network solutions for seamless operations.</p>
+                <div class="text-blue-100">
+                  <p class="font-semibold text-base">Trusted by 1000+ businesses</p>
+                  <div class="flex items-center mt-2">
+                    <i class="fas fa-star text-blue-200 mr-1"></i>
+                    <span class="text-sm">4.9/5 from 500+ reviews</span>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        <!-- Clients Section as Slider -->
-        <section id="clients" class="py-16 md:py-20 bg-gray-100" data-aos="fade-up">
-          <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-extrabold text-center mb-12">
-              <i class="fas fa-users mr-2"></i>
-              Trusted by Leaders
-            </h2>
-
-            <div class="relative">
-              <div class="swiper clients-swiper">
-                <div class="swiper-wrapper">
-                  <!-- 20 identical client logos -->
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <!-- repeat above div 19 more times -->
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="swiper-slide flex justify-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                      alt="Client logo"
-                      class="h-20"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <!-- Navigation -->
-              <div class="absolute top-1/2 -translate-y-1/2 left-0 z-10">
-                <button
-                  class="swiper-button-prev w-9 h-9 flex items-center justify-center hover:bg-gray-100 transition duration-300"
-                >
-                  <i class="fas fa-angle-left text-blue-700"></i>
-                </button>
-              </div>
-              <div class="absolute top-1/2 -translate-y-1/2 right-0 z-10">
-                <button
-                  class="swiper-button-next w-9 h-9 flex items-center justify-center hover:bg-gray-100 transition duration-300"
-                >
-                  <i class="fas fa-angle-right text-blue-700"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section
-          id="contact"
-          class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white"
-          data-aos="fade-up"
-        >
-          <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
-              <h2 class="text-4xl font-extrabold mb-4">Transform Your Business Today</h2>
-              <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Contact our experts for a personalized demo and discover how FAST CAISSE can elevate
-                your business.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-              <!-- Send a Message -->
-              <div
-                class="bg-white rounded-2xl shadow-xl p-8 h-full flex flex-col justify-between"
-                data-aos="fade-right"
-                data-aos-delay="200"
-              >
-                <h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
-                <form id="contact-form" class="space-y-6 flex-1 flex flex-col justify-between">
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">
-                        First Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="first-name"
-                        name="first-name"
-                        required
-                        class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                        placeholder="First Name"
-                      />
-                    </div>
-                    <div>
-                      <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">
-                        Last Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="last-name"
-                        name="last-name"
-                        required
-                        class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                        placeholder="Last Name"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
-                      Subject
-                    </label>
-                    <select
-                      id="subject"
-                      class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="demo">Request a Demo</option>
-                      <option value="sales">Sales Inquiry</option>
-                      <option value="support">Technical Support</option>
-                      <option value="partnership">Partnership</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
-                      Your Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows="5"
-                      required
-                      class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                      placeholder="How can we help you?"
-                    ></textarea>
-                  </div>
-
-                  <div class="flex items-start">
-                    <input
-                      id="gdpr-consent"
-                      name="gdpr-consent"
-                      type="checkbox"
-                      class="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mt-1"
-                      required
-                    />
-                    <label for="gdpr-consent" class="ml-3 text-sm text-gray-700">
-                      I agree to the
-                      <a href="#" class="text-blue-600 hover:underline">privacy policy</a>
-                      and
-                      <a href="#" class="text-blue-600 hover:underline">terms of service</a>
-                    </label>
-                  </div>
-
-                  <div
-                    class="g-recaptcha"
-                    data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                    data-callback="enableBtn"
-                    data-expired-callback="disableBtn"
-                  ></div>
-
-                  <p class="text-xs text-gray-500 mt-3">
-                    This site is protected by reCAPTCHA and the Google
-                    <a
-                      href="https://policies.google.com/privacy"
-                      class="text-blue-600 hover:underline"
-                    >
-                      Privacy Policy
-                    </a>
-                    and
-                    <a
-                      href="https://policies.google.com/terms"
-                      class="text-blue-600 hover:underline"
-                    >
-                      Terms of Service
-                    </a>
-                    apply.
-                  </p>
-
-                  <button
-                    id="submit-btn"
-                    type="submit"
-                    class="w-full flex justify-center items-center px-6 py-3 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                    disabled
-                  >
-                    <i class="fas fa-paper-plane mr-2"></i>
-                    Send Message
-                  </button>
-                </form>
-              </div>
-
-              <!-- Contact Info -->
-              <div
-                class="bg-white rounded-2xl shadow-xl p-8 h-full flex flex-col justify-between"
-                data-aos="fade-left"
-                data-aos-delay="300"
-              >
-                <h3 class="text-xl font-semibold mb-6">Contact Us</h3>
-                <div class="space-y-6 flex-1">
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full text-blue-600">
-                      <i class="fas fa-map-marker-alt text-lg"></i>
-                    </div>
-                    <div class="ml-4">
-                      <h4 class="text-sm font-semibold text-gray-900">Our Office</h4>
-                      <p class="mt-1 text-sm text-gray-500">
-                        Chaussée de Haecht 1749, 1130 Brussels, Belgium
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full text-blue-600">
-                      <i class="fas fa-phone-alt text-lg"></i>
-                    </div>
-                    <div class="ml-4">
-                      <h4 class="text-sm font-semibold text-gray-900">Phone</h4>
-                      <p class="mt-1 text-sm text-gray-500">
-                        <a href="tel:+32485223448" class="hover:text-blue-600">
-                          +32 485 22 34 48 (FR)
-                        </a>
-                        <br />
-                        <a href="tel:+32485223449" class="hover:text-blue-600">
-                          +32 485 22 34 49 (NL)
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full text-blue-600">
-                      <i class="fas fa-envelope text-lg"></i>
-                    </div>
-                    <div class="ml-4">
-                      <h4 class="text-sm font-semibold text-gray-900">Email</h4>
-                      <p class="mt-1 text-sm text-gray-500">
-                        <a href="mailto:fc@fastcaisse.be" class="hover:text-blue-600">
-                          fc@fastcaisse.be
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mt-8 pt-6 border-t border-gray-200">
-                  <h4 class="text-sm font-semibold text-gray-900 mb-4">Business Hours</h4>
-                  <dl class="space-y-3 text-sm">
-                    <div class="flex justify-between">
-                      <dt class="text-gray-500">Monday - Friday</dt>
-                      <dd class="font-medium text-gray-900">9:00 AM - 6:00 PM</dd>
-                    </div>
-                    <div class="flex justify-between">
-                      <dt class="text-gray-500">Saturday</dt>
-                      <dd class="font-medium text-gray-900">10:00 AM - 4:00 PM</dd>
-                    </div>
-                    <div class="flex justify-between">
-                      <dt class="text-gray-500">Sunday</dt>
-                      <dd class="font-medium text-gray-900">Closed</dd>
-                    </div>
-                  </dl>
-                </div>
-              </div>
-            </div>
-
             <div
-              class="mt-16 rounded-2xl overflow-hidden shadow-xl"
-              data-aos="zoom-in"
-              data-aos-delay="400"
+              class="md:w-1/2 relative flex justify-center items-center"
+              data-aos="fade-left"
+              data-aos-delay="200"
             >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.072581940715!2d4.416876315745913!3d50.84655697953217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3dc8f8a1c7a0f%3A0x1c1d1d1d1d1d1d1d!2sChauss%C3%A9e%20de%20Haecht%201749%2C%201130%20Bruxelles%2C%20Belgium!5e0!3m2!1sen!2sbe!4v1620000000000!5m2!1sen!2sbe"
-                width="100%"
-                height="450"
-                style="border: 0"
-                allowfullscreen=""
+              <!-- Belgium map background -->
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Belgium_location_map.svg/1200px-Belgium_location_map.svg.png"
+                alt="Belgium map"
+                class="absolute inset-0 w-full max-w-lg mx-auto opacity-20 filter blur-sm pointer-events-none select-none"
+                style="top: 50%; left: 50%; transform: translate(-50%, -50%)"
                 loading="lazy"
-              ></iframe>
+              />
+              <!-- POS Image container with floating animation -->
+              <div
+                class="relative overflow-hidden transform transition-transform duration-500 hover:scale-105 animate-float z-10 max-w-md w-full"
+              >
+                <!-- Badges container -->
+                <div class="badges-wrapper relative w-full h-[220px] pointer-events-none">
+                  <!-- Sales Growth -->
+                  <div id="badge-sales" class="badge">
+                    <div class="text-blue-600 text-4xl flex-shrink-0">
+                      <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                      <p class="text-xs text-gray-600 font-semibold leading-tight">Sales Growth</p>
+                      <p class="font-bold text-gray-900 text-lg leading-tight">+45%</p>
+                    </div>
+                  </div>
+                  <!-- Faster Checkout -->
+                  <div id="badge-checkout" class="badge">
+                    <div class="text-blue-600 text-4xl flex-shrink-0">
+                      <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                      <p class="text-xs text-gray-600 font-semibold leading-tight">
+                        Faster Checkout
+                      </p>
+                      <p class="font-bold text-gray-900 text-lg leading-tight">3x</p>
+                    </div>
+                  </div>
+                  <!-- Customer Satisfaction -->
+                  <div id="badge-satisfaction" class="badge">
+                    <div class="text-blue-600 text-4xl flex-shrink-0">
+                      <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                      <p class="text-xs text-gray-600 font-semibold leading-tight">
+                        Customer Satisfaction
+                      </p>
+                      <p class="font-bold text-gray-900 text-lg leading-tight">98%</p>
+                    </div>
+                  </div>
+                  <!-- System Uptime -->
+                  <div id="badge-uptime" class="badge">
+                    <div class="text-blue-600 text-4xl flex-shrink-0">
+                      <i class="fas fa-server"></i>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                      <p class="text-xs text-gray-600 font-semibold leading-tight">System Uptime</p>
+                      <p class="font-bold text-gray-900 text-lg leading-tight">99.9%</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
-      </main>
-
-      <!-- Footer -->
-      <footer
-        class="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-16 relative overflow-hidden"
+        </div>
+      </section>
+      <!-- ABOUT SECTION -->
+      <!-- ABOUT SECTION -->
+      <section
+        id="about"
+        class="py-20 md:py-24 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden"
+        data-aos="fade-up"
+      >
+        <div class="absolute inset-0 opacity-10" aria-hidden="true">
+          <div class="absolute -right-40 -top-40 w-96 h-96 bg-blue-100 rounded-full"></div>
+          <div class="absolute -left-40 bottom-0 w-80 h-80 bg-blue-200 rounded-full"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center max-w-4xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">
+            <span
+              class="inline-block px-6 py-2 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full mb-6"
+            >
+              <i class="fas fa-star text-blue-600 mr-2" aria-hidden="true"></i>
+              Company Overview
+            </span>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+              POS and CRM Solutions for Belgian Businesses
+              <span class="text-blue-600">Since 2010</span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              FAST CAISSE provides complete POS and CRM systems for restaurants and retail
+              businesses in Belgium. We help over 1,000 clients improve sales, reduce costs, and
+              stay compliant.
+            </p>
+          </div>
+          <!-- Content Row -->
+          <div class="flex flex-col lg:flex-row items-start gap-10">
+            <!-- Image Column -->
+            <div class="w-full lg:w-1/2" data-aos="fade-right" data-aos-delay="200">
+              <div class="rounded-2xl overflow-hidden h-[520px]">
+                <img
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                  alt="FAST CAISSE POS and CRM team at Brussels office"
+                  class="w-full h-full object-cover"
+                  width="100%"
+                  height="520"
+                  loading="lazy"
+                  fetchpriority="low"
+                />
+              </div>
+              <!-- Stats Below Image -->
+              <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="flex items-center rounded-2xl p-6">
+                  <div
+                    class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-100 text-blue-600 mr-5"
+                  >
+                    <i class="fas fa-building text-2xl" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="text-3xl font-bold text-gray-900">1000+</p>
+                    <p class="text-sm text-gray-600 font-medium">Businesses Served</p>
+                  </div>
+                </div>
+                <div class="flex items-center rounded-2xl p-6">
+                  <div
+                    class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-100 text-blue-600 mr-5"
+                  >
+                    <i class="fas fa-medal text-2xl" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="text-3xl font-bold text-gray-900">12+ Years</p>
+                    <p class="text-sm text-gray-600 font-medium">Experience</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Text Column -->
+            <div
+              class="w-full lg:w-1/2 backdrop-blur-md rounded-2xl p-8"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              <h3 class="text-3xl font-bold text-gray-900 mb-6">
+                Built for Belgian Horca and Retail Shops
+              </h3>
+              <p class="text-gray-600 mb-8 leading-relaxed">
+                Based in Brussels, we deliver 360° point-of-sale solution that supports growth,
+                integrates compliance, and adapts to evolving business needs.
+              </p>
+              <div class="space-y-6 mb-8">
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 mt-1">
+                    <div
+                      class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-100 text-blue-600"
+                    >
+                      <i class="fas fa-cloud text-lg" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <p class="text-gray-800 font-semibold">Access from anywhere</p>
+                    <p class="text-gray-600 text-sm">
+                      Access your system from any device, anytime.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 mt-1">
+                    <div
+                      class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-100 text-blue-600"
+                    >
+                      <i class="fas fa-map-marker-alt text-lg" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <p class="text-gray-800 font-semibold">Local Compliance</p>
+                    <p class="text-gray-600 text-sm">
+                      We follow Belgian tax rules, language laws, and fiscal device regulations.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 mt-1">
+                    <div
+                      class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-100 text-blue-600"
+                    >
+                      <i class="fas fa-headset text-lg" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <p class="text-gray-800 font-semibold">Multilingual Support</p>
+                    <p class="text-gray-600 text-sm">
+                      Get help in French, Dutch, or English. Available 24/7 from our Brussels team.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#contact"
+                  class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+                  aria-label="Request a FAST CAISSE demo or consultation"
+                >
+                  Request a Demo
+                </a>
+                <a
+                  href="https://fastcaisse.be/FAST%20CAISSE/en/about/"
+                  class="hover:bg-gray-50 text-blue-600 font-semibold py-3 px-8 rounded-lg border border-gray-200 transition-all duration-300 flex items-center justify-center"
+                  aria-label="Read the full company story"
+                >
+                  Company History
+                  <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Solutions Section -->
+      <section
+        id="solutions"
+        class="py-20 md:py-24 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden"
         data-aos="fade-up"
       >
         <div
-          class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMDktMS43OTEtNC00LTRzLTQgMS43OTEtNCA0IDEuNzkxIDQgNCA0IDQtMS43OTEgNC00eiIvPjwvZz48L2c+PC9zdmc+')]"
+          class="absolute top-0 left-0 right-0 h-80 bg-gradient-to-r from-blue-100 to-blue-200 transform -skew-y-6 -translate-y-44"
         ></div>
-        <div class="container mx-auto px-4 sm:px-6">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-              <h2 class="text-lg font-semibold mb-4">
-                <i class="fas fa-info-circle mr-2"></i>
-                FAST CAISSE
-              </h2>
-              <p class="text-gray-400 leading-relaxed">
-                Premier POS, CRM, and smart reporting tools for Belgian restaurants and retail.
-              </p>
-            </div>
-            <div>
-              <h2 class="text-lg font-semibold mb-4">
-                <i class="fas fa-link mr-2"></i>
-                Quick Links
-              </h2>
-              <ul class="space-y-2">
-                <li>
-                  <a href="#home" class="text-gray-400 hover:text-blue-400 transition-colors">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="#solutions" class="text-gray-400 hover:text-blue-400 transition-colors">
-                    Solutions
-                  </a>
-                </li>
-                <li>
-                  <a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#clients" class="text-gray-400 hover:text-blue-400 transition-colors">
-                    Clients
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 class="text-lg font-semibold mb-4">
-                <i class="fas fa-users mr-2"></i>
-                Connect With Us
-              </h2>
-              <div class="flex space-x-6">
-                <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
-                  <i class="fab fa-facebook-f"></i>
+        <div class="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
+          <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="100">
+            <span
+              class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full text-sm font-semibold mb-6 shadow"
+            >
+              <i class="fas fa-star text-yellow-400 mr-2"></i>
+              Tailored SaaS Platforms
+            </span>
+            <h2
+              class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent"
+            >
+              The Core
+              <span class="text-blue-600">Systems</span>
+              You Need
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              All-in-one POS, CRM, and smart reporting tools for Belgium’s retail, food, and
+              commerce sectors.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            <!-- Resto -->
+            <div
+              class="group rounded-3xl shadow-2xl overflow-hidden border border-blue-200 transition-all duration-300 hover:-translate-y-2"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="h-52 bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-utensils text-8xl text-white opacity-90 group-hover:scale-110 transition duration-500"
+                ></i>
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">FastCaisse Resto</h3>
+                <p class="text-gray-600 mb-6 min-h-[60px]">
+                  Certified system (black box) with 360° features for restaurants and fast food
+                  restaurants, including: online ordering, self-ordering kiosk, integrations with
+                  Takaway, UberEats, and Deliveroo, kitchen screen, waiting screen, and more.
+                </p>
+                <div class="mb-6 bg-blue-600 text-white p-5 rounded-xl text-center">
+                  <div class="text-xs uppercase tracking-widest">Starts from</div>
+                  <div class="text-5xl font-extrabold mt-1">
+                    €69
+                    <span class="text-base font-normal">/mo</span>
+                  </div>
+                  <div class="text-sm mt-1">Annual plan: €828</div>
+                </div>
+                <ul class="space-y-4 mb-8 text-sm text-gray-800">
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                    Real-time kitchen display
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                    QR orders & delivery tools
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                    UberEats & Takeaway sync
+                  </li>
+                </ul>
+                <a
+                  href="#contact"
+                  class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-xl text-center transition duration-300"
+                >
+                  Request Demo
+                  <i class="fas fa-arrow-right ml-2"></i>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
-                  <i class="fab fa-twitter"></i>
+              </div>
+            </div>
+
+            <!-- Shop -->
+            <div
+              class="group rounded-3xl shadow-2xl overflow-hidden border border-blue-200 transition-all duration-300 hover:-translate-y-2"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                class="h-52 bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-store text-8xl text-white opacity-90 group-hover:scale-110 transition duration-500"
+                ></i>
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">FastCaisse Shop</h3>
+                <p class="text-gray-600 mb-6 min-h-[60px]">
+                  POS for retailers with barcode stock control, scale integration, and loyalty
+                  tools.
+                </p>
+                <div class="mb-6 bg-blue-600 text-white p-5 rounded-xl text-center">
+                  <div class="text-xs uppercase tracking-widest">Starts from</div>
+                  <div class="text-5xl font-extrabold mt-1">
+                    €59
+                    <span class="text-base font-normal">/mo</span>
+                  </div>
+                  <div class="text-sm mt-1">Annual plan: €708</div>
+                </div>
+                <ul class="space-y-4 mb-8 text-sm text-gray-800">
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                    Barcode & inventory tools
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                    Loyalty & rewards
+                  </li>
+                  <li class="flex items-start">
+                    <i class="icon text-green-500 mr-2 mt-1"></i>
+                    Multi-terminal ready
+                  </li>
+                </ul>
+                <a
+                  href="#contact"
+                  class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-xl text-center transition duration-300"
+                >
+                  Request Demo
+                  <i class="fas fa-arrow-right ml-2"></i>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
-                  <i class="fab fa-linkedin-in"></i>
+              </div>
+            </div>
+
+            <!-- CRM -->
+            <div
+              class="group rounded-3xl shadow-2xl overflow-hidden border border-blue-200 transition-all duration-300 hover:-translate-y-2"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div
+                class="h-52 bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-user-cog text-8xl text-white opacity-90 group-hover:scale-110 transition duration-500"
+                ></i>
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">FastCaisse CRM</h3>
+                <p class="text-gray-600 mb-6 min-h-[60px]">
+                  Designed for semi-wholesalers, FastCaisse Commerce offers customer management
+                  (CRM), inventory, sales operations, supplier orders, tasks, customers, etc.
+                </p>
+                <div class="mb-6 bg-blue-600 text-white p-5 rounded-xl text-center">
+                  <div class="text-xs uppercase tracking-widest">Starts from</div>
+                  <div class="text-5xl font-extrabold mt-1">
+                    €99
+                    <span class="text-base font-normal">/mo</span>
+                  </div>
+                  <div class="text-sm mt-1">Annual plan: €1,188</div>
+                </div>
+                <ul class="space-y-4 mb-8 text-sm text-gray-800">
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                    Unified dashboard
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                    Task tracking & expiry alerts
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                    Smart AI reporting
+                  </li>
+                </ul>
+                <a
+                  href="#contact"
+                  class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-xl text-center transition duration-300"
+                >
+                  Request Demo
+                  <i class="fas fa-arrow-right ml-2"></i>
                 </a>
               </div>
             </div>
           </div>
-          <p class="text-center text-gray-400 mt-12">
-            © 2025 FAST CAISSE SRL. All rights reserved. |
-            <a
-              href="https://FAST CAISSE.be/FAST CAISSE/en/general-conditions/"
-              class="hover:text-blue-400"
-            >
-              General Conditions
-            </a>
-            |
-            <a href="#" class="hover:text-blue-400">GDPR Terms</a>
-          </p>
         </div>
-      </footer>
-
-      <!-- Back to Top Button -->
-      <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-      </button>
-
-      <!-- Scripts -->
-      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-      <script>
-        new Swiper(".clients-swiper", {
-          loop: true,
-          centeredSlides: true,
-          autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
+      </section>
+      <!-- Clients Section as Slider -->
+      <section
+        id="clients"
+        class="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-white"
+        data-aos="fade-up"
+      >
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-900">
+            <i class="fas fa-users mr-2 text-blue-600"></i>
+            Trusted by Leaders
+          </h2>
+          <div class="relative">
+            <div class="swiper clients-swiper">
+              <div class="swiper-wrapper">
+                <!-- 20 client logos -->
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="Client logo"
+                    class="h-20 client-logo"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Navigation -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 z-10">
+              <button
+                class="swiper-button-prev w-9 h-9 flex items-center justify-center text-blue-600 transition duration-300"
+              >
+                <i class="fas fa-angle-left"></i>
+              </button>
+            </div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 z-10">
+              <button
+                class="swiper-button-next w-9 h-9 flex items-center justify-center text-blue-600 transition duration-300"
+              >
+                <i class="fas fa-angle-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section
+        id="contact"
+        class="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-white"
+        data-aos="fade-up"
+      >
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="text-4xl font-extrabold mb-4 text-gray-900">
+              Transform Your Business Today
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+              Contact our experts for a personalized demo and discover how FAST CAISSE can elevate
+              your business.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+            <!-- Send a Message -->
+            <div
+              class="rounded-2xl p-8 h-full flex flex-col justify-between"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <h3 class="text-2xl font-semibold mb-6 text-gray-900">Send a Message</h3>
+              <form id="contact-form" class="space-y-6 flex-1 flex flex-col justify-between">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">
+                      First Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="first-name"
+                      name="first-name"
+                      required
+                      class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+                      placeholder="First Name"
+                    />
+                  </div>
+                  <div>
+                    <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">
+                      Last Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="last-name"
+                      name="last-name"
+                      required
+                      class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div>
+                  <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
+                    Subject
+                  </label>
+                  <select
+                    id="subject"
+                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+                  >
+                    <option value="">Select a subject</option>
+                    <option value="demo">Request a Demo</option>
+                    <option value="sales">Sales Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="partnership">Partnership</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                    Your Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+                    placeholder="How can we help you?"
+                  ></textarea>
+                </div>
+                <div class="flex items-start">
+                  <input
+                    id="gdpr-consent"
+                    name="gdpr-consent"
+                    type="checkbox"
+                    class="h-5 w-5 text-blue-600 focus:ring-blue-600 border-gray-300 rounded mt-1"
+                    required
+                  />
+                  <label for="gdpr-consent" class="ml-3 text-sm text-gray-700">
+                    I agree to the
+                    <a href="#" class="text-blue-600 hover:underline">privacy policy</a>
+                    and
+                    <a href="#" class="text-blue-600 hover:underline">terms of service</a>
+                  </label>
+                </div>
+                <div
+                  class="g-recaptcha"
+                  data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                  data-callback="enableBtn"
+                  data-expired-callback="disableBtn"
+                ></div>
+                <p class="text-xs text-gray-500 mt-3">
+                  This site is protected by reCAPTCHA and the Google
+                  <a
+                    href="https://policies.google.com/privacy"
+                    class="text-blue-600 hover:underline"
+                  >
+                    Privacy Policy
+                  </a>
+                  and
+                  <a href="https://policies.google.com/terms" class="text-blue-600 hover:underline">
+                    Terms of Service
+                  </a>
+                  apply.
+                </p>
+                <button
+                  id="submit-btn"
+                  type="submit"
+                  class="w-full flex justify-center items-center px-6 py-3 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled
+                >
+                  <i class="fas fa-paper-plane mr-2"></i>
+                  Send Message
+                </button>
+              </form>
+            </div>
+            <!-- Contact Info -->
+            <div
+              class="rounded-2xl p-8 h-full flex flex-col justify-between"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              <h3 class="text-xl font-semibold mb-6 text-gray-900">Contact Us</h3>
+              <div class="space-y-6 flex-1">
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full text-blue-600">
+                    <i class="fas fa-map-marker-alt text-lg"></i>
+                  </div>
+                  <div class="ml-4">
+                    <h4 class="text-sm font-semibold text-gray-900">Our Office</h4>
+                    <p class="mt-1 text-sm text-gray-500">
+                      Chaussée de Haecht 1749, 1130 Brussels, Belgium
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full text-blue-600">
+                    <i class="fas fa-phone-alt text-lg"></i>
+                  </div>
+                  <div class="ml-4">
+                    <h4 class="text-sm font-semibold text-gray-900">Phone</h4>
+                    <p class="mt-1 text-sm text-gray-500">
+                      <a href="tel:+32485223448" class="hover:text-blue-600">
+                        +32 485 22 34 48 (FR)
+                      </a>
+                      <br />
+                      <a href="tel:+32485223449" class="hover:text-blue-600">
+                        +32 485 22 34 49 (NL)
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full text-blue-600">
+                    <i class="fas fa-envelope text-lg"></i>
+                  </div>
+                  <div class="ml-4">
+                    <h4 class="text-sm font-semibold text-gray-900">Email</h4>
+                    <p class="mt-1 text-sm text-gray-500">
+                      <a href="mailto:fc@fastcaisse.be" class="hover:text-blue-600">
+                        fc@fastcaisse.be
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 pt-6 border-t border-gray-200">
+                <h4 class="text-sm font-semibold text-gray-900 mb-4">Business Hours</h4>
+                <dl class="space-y-3 text-sm">
+                  <div class="flex justify-between">
+                    <dt class="text-gray-500">Monday - Friday</dt>
+                    <dd class="font-medium text-gray-900">9:00 AM - 6:00 PM</dd>
+                  </div>
+                  <div class="flex justify-between">
+                    <dt class="text-gray-500">Saturday</dt>
+                    <dd class="font-medium text-gray-900">10:00 AM - 4:00 PM</dd>
+                  </div>
+                  <div class="flex justify-between">
+                    <dt class="text-gray-500">Sunday</dt>
+                    <dd class="font-medium text-gray-900">Closed</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mt-16 rounded-2xl overflow-hidden shadow-xl"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.072581940715!2d4.416876315745913!3d50.84655697953217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3dc8f8a1c7a0f%3A0x1c1d1d1d1d1d1d1d!2sChauss%C3%A9e%20de%20Haecht%201749%2C%201130%20Bruxelles%2C%20Belgium!5e0!3m2!1sen!2sbe!4v1620000000000!5m2!1sen!2sbe"
+              width="100%"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-16 relative overflow-hidden"
+      data-aos="fade-up"
+    >
+      <div
+        class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMDktMS43OTEtNC00LTRzLTQgMS43OTEtNCA0IDEuNzkxIDQgNCA0IDQtMS43OTEgNC00eiIvPjwvZz48L2c+PC9zdmc+')]"
+      ></div>
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <h2 class="text-lg font-semibold mb-4">
+              <i class="fas fa-info-circle mr-2"></i>
+              FAST CAISSE
+            </h2>
+            <p class="text-gray-400 leading-relaxed">
+              Premier POS, CRM, and smart reporting tools for Belgian restaurants and retail.
+            </p>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold mb-4">
+              <i class="fas fa-link mr-2"></i>
+              Quick Links
+            </h2>
+            <ul class="space-y-2">
+              <li>
+                <a href="#home" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a>
+              </li>
+              <li>
+                <a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#solutions" class="text-gray-400 hover:text-blue-400 transition-colors">
+                  Solutions
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#clients" class="text-gray-400 hover:text-blue-400 transition-colors">
+                  Clients
+                </a>
+              </li>
+              <li>
+                <a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold mb-4">
+              <i class="fas fa-users mr-2"></i>
+              Connect With Us
+            </h2>
+            <div class="flex space-x-6">
+              <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-gray-400 mt-12">
+          © 2025 FAST CAISSE SRL. All rights reserved. |
+          <a
+            href="https://FAST CAISSE.be/FAST CAISSE/en/general-conditions/"
+            class="hover:text-blue-400"
+          >
+            General Conditions
+          </a>
+          |
+          <a href="#" class="hover:text-blue-400">GDPR Terms</a>
+        </p>
+      </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      new Swiper(".clients-swiper", {
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 1,
+        spaceBetween: 24,
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            centeredSlides: false,
           },
-          slidesPerView: 1,
-          spaceBetween: 24,
-          breakpoints: {
-            640: {
-              slidesPerView: 2,
-              centeredSlides: false,
-            },
-            768: {
-              slidesPerView: 3,
-              centeredSlides: false,
-            },
-            1024: {
-              slidesPerView: 5,
-              centeredSlides: false,
-            },
+          768: {
+            slidesPerView: 3,
+            centeredSlides: false,
           },
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+          1024: {
+            slidesPerView: 5,
+            centeredSlides: false,
           },
-        });
-      </script>
-      <script>
-        // Initialize AOS
-        AOS.init({
-          duration: 800,
-          easing: "ease-out-cubic",
-          once: true,
-          offset: 100,
-        });
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 100,
+      });
 
-        document.addEventListener("DOMContentLoaded", function () {
-          // Mobile menu toggle
-          const menuToggle = document.getElementById("menu-toggle");
-          const mobileMenu = document.getElementById("mobile-menu");
-          if (menuToggle && mobileMenu) {
-            menuToggle.addEventListener("click", function () {
-              const isExpanded = this.getAttribute("aria-expanded") === "true";
-              this.setAttribute("aria-expanded", !isExpanded);
-              mobileMenu.classList.toggle("hidden");
-              mobileMenu.classList.toggle("active");
-              const icon = this.querySelector("i");
-              icon.classList.toggle("fa-bars");
-              icon.classList.toggle("fa-times");
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (menuToggle && mobileMenu) {
+          menuToggle.addEventListener("click", function () {
+            const isExpanded = this.getAttribute("aria-expanded") === "true";
+            this.setAttribute("aria-expanded", !isExpanded);
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("active");
+            const icon = this.querySelector("i");
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-times");
+          });
+        }
+
+        // Smooth scrolling with better mobile support
+        document.addEventListener("click", function (e) {
+          // Check if the clicked element is an anchor with a hash href
+          if (e.target.closest('a[href^="#"]')) {
+            e.preventDefault();
+            const anchor = e.target.closest("a");
+            const targetId = anchor.getAttribute("href");
+
+            if (targetId === "#") return;
+
+            const target = document.querySelector(targetId);
+            if (!target) return;
+
+            // Calculate the target position
+            const headerOffset = document.querySelector("header")?.offsetHeight || 0;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20;
+
+            // Smooth scroll to target
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
             });
-          }
 
-          // Smooth scrolling with better mobile support
-          document.addEventListener("click", function (e) {
-            // Check if the clicked element is an anchor with a hash href
-            if (e.target.closest('a[href^="#"]')) {
-              e.preventDefault();
-              const anchor = e.target.closest("a");
-              const targetId = anchor.getAttribute("href");
+            // Update URL without jumping
+            history.pushState(null, null, targetId);
 
-              if (targetId === "#") return;
-
-              const target = document.querySelector(targetId);
-              if (!target) return;
-
-              // Calculate the target position
-              const headerOffset = document.querySelector("header")?.offsetHeight || 0;
-              const elementPosition = target.getBoundingClientRect().top;
-              const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20;
-
-              // Smooth scroll to target
-              window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth",
-              });
-
-              // Update URL without jumping
-              history.pushState(null, null, targetId);
-
-              // Close mobile menu if open
-              if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-                mobileMenu.classList.add("hidden");
-                mobileMenu.classList.remove("active");
-                if (menuToggle) {
-                  menuToggle.setAttribute("aria-expanded", "false");
-                  const icon = menuToggle.querySelector("i");
-                  if (icon) {
-                    icon.classList.add("fa-bars");
-                    icon.classList.remove("fa-times");
-                  }
+            // Close mobile menu if open
+            if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+              mobileMenu.classList.remove("active");
+              if (menuToggle) {
+                menuToggle.setAttribute("aria-expanded", "false");
+                const icon = menuToggle.querySelector("i");
+                if (icon) {
+                  icon.classList.add("fa-bars");
+                  icon.classList.remove("fa-times");
                 }
               }
             }
-          });
-
-          // Back to top button
-          const backToTop = document.getElementById("back-to-top");
-          function updateBackToTop() {
-            if (window.scrollY > 400) {
-              backToTop.classList.add("visible");
-            } else {
-              backToTop.classList.remove("visible");
-            }
           }
-          backToTop.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          });
-          window.addEventListener("scroll", updateBackToTop, { passive: true });
-          updateBackToTop();
+        });
 
-          // Form validation and submission
-          const contactForm = document.getElementById("contact-form");
-          if (contactForm) {
-            contactForm.addEventListener("submit", async function (e) {
-              e.preventDefault();
-              const formData = new FormData(this);
-              const data = Object.fromEntries(formData);
+        // Back to top button
+        const backToTop = document.getElementById("back-to-top");
+        function updateBackToTop() {
+          if (window.scrollY > 400) {
+            backToTop.classList.add("visible");
+          } else {
+            backToTop.classList.remove("visible");
+          }
+        }
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        window.addEventListener("scroll", updateBackToTop, { passive: true });
+        updateBackToTop();
 
-              // Basic client-side validation
-              if (!data["first-name"] || !data["last-name"] || !data.email || !data.message) {
-                Swal.fire({
-                  icon: "error",
-                  title: "Oops...",
-                  text: "Please fill out all required fields.",
-                  confirmButtonColor: "#2563eb",
-                });
-                return;
-              }
+        // Form validation and submission
+        const contactForm = document.getElementById("contact-form");
+        if (contactForm) {
+          contactForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
 
-              // Show loading
+            // Basic client-side validation
+            if (!data["first-name"] || !data["last-name"] || !data.email || !data.message) {
               Swal.fire({
-                title: "Sending...",
-                allowOutsideClick: false,
-                didOpen: () => Swal.showLoading(),
-              });
-
-              // Simulate API call
-              await new Promise((resolve) => setTimeout(resolve, 1500));
-
-              // Reset form and reCAPTCHA
-              this.reset();
-              if (typeof grecaptcha !== "undefined") {
-                grecaptcha.reset();
-              }
-              document.getElementById("submit-btn").disabled = true;
-
-              // Success message
-              Swal.fire({
-                icon: "success",
-                title: "Message Sent!",
-                text: "We’ll get back to you soon.",
+                icon: "error",
+                title: "Oops...",
+                text: "Please fill out all required fields.",
                 confirmButtonColor: "#2563eb",
               });
-            });
-          }
+              return;
+            }
 
-          // reCAPTCHA callbacks
-          window.enableBtn = function () {
-            document.getElementById("submit-btn").disabled = false;
-          };
-          window.disableBtn = function () {
+            // Show loading
+            Swal.fire({
+              title: "Sending...",
+              allowOutsideClick: false,
+              didOpen: () => Swal.showLoading(),
+            });
+
+            // Simulate API call
+            await new Promise((resolve) => setTimeout(resolve, 1500));
+
+            // Reset form and reCAPTCHA
+            this.reset();
+            if (typeof grecaptcha !== "undefined") {
+              grecaptcha.reset();
+            }
             document.getElementById("submit-btn").disabled = true;
-          };
-        });
-      </script>
-    </div>
+
+            // Success message
+            Swal.fire({
+              icon: "success",
+              title: "Message Sent!",
+              text: "We’ll get back to you soon.",
+              confirmButtonColor: "#2563eb",
+            });
+          });
+        }
+
+        // reCAPTCHA callbacks
+        window.enableBtn = function () {
+          document.getElementById("submit-btn").disabled = false;
+        };
+        window.disableBtn = function () {
+          document.getElementById("submit-btn").disabled = true;
+        };
+      });
+    </script>
   </body>
 </html>
