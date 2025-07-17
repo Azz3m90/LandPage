@@ -132,9 +132,12 @@
       }
       .flip-card {
         perspective: 1000px;
-        height: 320px;
+        height: 260px;
         outline: none;
         transition: transform 0.3s ease;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
       }
       .flip-card-inner {
         position: relative;
@@ -142,6 +145,9 @@
         height: 100%;
         transition: transform 0.6s;
         transform-style: preserve-3d;
+        background: transparent;
+        border-radius: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       }
       .flip-card:hover .flip-card-inner,
       .flip-card:focus .flip-card-inner {
@@ -157,17 +163,44 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 2rem;
+        padding: 1rem;
         border-radius: 1rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+        box-shadow: none;
       }
       .flip-card-front {
-        background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
+        background: #f9fafb;
         color: #1e293b;
       }
       .flip-card-back {
-        background: linear-gradient(135deg, #2563eb, #1e40af) !important;
+        background: linear-gradient(135deg, #2563eb, #1e40af);
         color: #ffffff;
+        transform: rotateY(180deg);
+      }
+      @media (max-width: 767px) {
+        #services .grid {
+          gap: 1rem;
+          justify-items: center;
+        }
+        #services .flip-card {
+          max-width: 280px;
+          height: 220px;
+        }
+        #services .flip-card-front,
+        #services .flip-card-back {
+          padding: 0.75rem;
+        }
+        #services .flip-card-front i,
+        #services .flip-card-back i {
+          font-size: 2rem;
+        }
+        #services .flip-card-front h3 {
+          font-size: 1rem;
+        }
+        #services .flip-card-front p,
+        #services .flip-card-back p {
+          font-size: 0.75rem;
+          line-height: 1.125rem;
+        }
       }
       .back-to-top {
         position: fixed;
@@ -241,6 +274,10 @@
       .nav-link:hover::after {
         width: 50%;
       }
+      .nav-link {
+        @apply text-gray-700 hover:text-blue-600 text-sm font-medium transition-colors duration-200;
+      }
+
       .logo-text {
         color: #1f2937;
         font-weight: 800;
@@ -818,20 +855,22 @@
       id="header"
     >
       <nav
-        class="container relative mx-auto px-6 py-4 flex justify-between items-center"
+        class="container relative mx-auto px-6 py-1 flex justify-between items-center"
         aria-label="Main navigation"
       >
-        <div class="flex items-center">
+        <!-- Logo and Brand -->
+        <div class="flex items-center gap-4">
           <img
             src="./images/fastcaisse-logo.png"
             alt="FAST CAISSE logo"
-            class="h-14 transition-transform duration-300 hover:scale-105"
-            width="auto"
-            height="auto"
+            class="object-contain transition-transform duration-300 hover:scale-105"
+            width="180px"
             loading="lazy"
           />
         </div>
-        <div class="hidden md:flex space-x-3">
+
+        <!-- Navigation Links (Desktop) -->
+        <div class="hidden md:flex space-x-4">
           <a href="#home" class="nav-link">
             <i class="fas fa-home mr-2"></i>
             Home
@@ -857,6 +896,8 @@
             Contact
           </a>
         </div>
+
+        <!-- Mobile Toggle Button -->
         <div class="md:hidden">
           <button
             id="menu-toggle"
@@ -864,10 +905,11 @@
             aria-label="Toggle menu"
             class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
           >
-            <i class="fas fa-bars text-2xl transition-transform duration-300"></i>
+            <i class="fas fa-bars text-2xl text-gray-700 transition-transform duration-300"></i>
           </button>
         </div>
       </nav>
+
       <div
         id="mobile-menu"
         class="hidden md:hidden shadow-lg transform transition-all duration-300"
@@ -1422,6 +1464,105 @@
           </div>
         </div>
       </section>
+      <!-- Services Section -->
+      <section id="services" class="py-12 sm:py-16 bg-white" data-aos="fade-up">
+        <div class="container mx-auto px-4 sm:px-6">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-10 sm:mb-12 text-gray-900">
+            <i class="fas fa-cogs mr-2 text-blue-600"></i>
+            Our Services
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <!-- Service Card -->
+            <div class="flip-card" tabindex="0" data-aos="flip-left" data-aos-delay="100">
+              <div class="flip-card-inner">
+                <div class="flip-card-front text-center p-4 sm:p-6 rounded-xl shadow-md bg-gray-50">
+                  <i class="fas fa-globe text-4xl sm:text-5xl text-blue-600 mb-3 sm:mb-4"></i>
+                  <h3 class="text-lg sm:text-xl font-semibold mb-2 text-gray-900">
+                    Website Creation
+                  </h3>
+                  <p class="text-gray-600 text-xs sm:text-sm">
+                    Custom websites to enhance your online presence.
+                  </p>
+                </div>
+                <div
+                  class="flip-card-back text-center p-4 sm:p-6 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md"
+                >
+                  <p class="text-xs sm:text-sm">
+                    Tailored e-commerce and websites for businesses in Brussels and beyond.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service Card -->
+            <div class="flip-card" tabindex="0" data-aos="flip-left" data-aos-delay="200">
+              <div class="flip-card-inner">
+                <div class="flip-card-front text-center p-4 sm:p-6 rounded-xl shadow-md bg-gray-50">
+                  <i class="fas fa-code text-4xl sm:text-5xl text-blue-600 mb-3 sm:mb-4"></i>
+                  <h3 class="text-lg sm:text-xl font-semibold mb-2 text-gray-900">
+                    Custom Development
+                  </h3>
+                  <p class="text-gray-600 text-xs sm:text-sm">
+                    Bespoke software for your unique needs.
+                  </p>
+                </div>
+                <div
+                  class="flip-card-back text-center p-4 sm:p-6 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md"
+                >
+                  <p class="text-xs sm:text-sm">
+                    Custom solutions to meet the specific demands of your business.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service Card -->
+            <div class="flip-card" tabindex="0" data-aos="flip-left" data-aos-delay="300">
+              <div class="flip-card-inner">
+                <div class="flip-card-front text-center p-4 sm:p-6 rounded-xl shadow-md bg-gray-50">
+                  <i class="fas fa-headset text-4xl sm:text-5xl text-blue-600 mb-3 sm:mb-4"></i>
+                  <h3 class="text-lg sm:text-xl font-semibold mb-2 text-gray-900">24/7 Support</h3>
+                  <p class="text-gray-600 text-xs sm:text-sm">
+                    Always-on assistance for your business.
+                  </p>
+                </div>
+                <div
+                  class="flip-card-back text-center p-4 sm:p-6 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md"
+                >
+                  <p class="text-xs sm:text-sm">
+                    Multilingual support to ensure seamless operations across Belgium.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service Card -->
+            <div class="flip-card" tabindex="0" data-aos="flip-left" data-aos-delay="400">
+              <div class="flip-card-inner">
+                <div class="flip-card-front text-center p-4 sm:p-6 rounded-xl shadow-md bg-gray-50">
+                  <i
+                    class="fas fa-network-wired text-4xl sm:text-5xl text-blue-600 mb-3 sm:mb-4"
+                  ></i>
+                  <h3 class="text-lg sm:text-xl font-semibold mb-2 text-gray-900">
+                    Network Solutions
+                  </h3>
+                  <p class="text-gray-600 text-xs sm:text-sm">
+                    Reliable connectivity for your business.
+                  </p>
+                </div>
+                <div
+                  class="flip-card-back text-center p-4 sm:p-6 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md"
+                >
+                  <p class="text-xs sm:text-sm">
+                    Robust network solutions for seamless operations.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
         id="clients"
         class="py-16 md:py-20 bg-white"
@@ -2361,22 +2502,30 @@
       <div class="container mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
           <!-- Company Info -->
-          <div>
-            <h2 class="text-lg font-semibold mb-4">
-              <i class="fas fa-info-circle mr-2 text-blue-600"></i>
-              FAST CAISSE
-            </h2>
-            <p class="text-gray-600 leading-relaxed text-sm">
-              Premier POS, CRM, and smart reporting tools for Belgian restaurants and retail.
-              Trusted by over 1,000 businesses since 2010.
+          <div class="space-y-5 max-w-sm">
+            <div class="flex items-center gap-4">
+              <img
+                src="./images/fastcaisse-logo.png"
+                alt="FAST CAISSE logo"
+                class="h-14 sm:h-16 md:h-20 w-auto max-w-[180px] object-contain transition-transform duration-300 hover:scale-105"
+                loading="lazy"
+              />
+              <div class="hidden sm:block">
+                <p class="text-sm text-gray-500 font-medium">Since 2010</p>
+              </div>
+            </div>
+
+            <p class="text-gray-600 text-sm leading-relaxed">
+              POS, CRM, and smart reporting tools for Belgian restaurants and retail. Trusted by
+              1,000+ businesses.
             </p>
-            <img
-              src="./images/fastcaisse-logo.png"
-              alt="FAST CAISSE logo"
-              class="h-10 mt-6"
-              loading="lazy"
-            />
+
+            <div class="flex items-center gap-2 text-sm text-gray-500">
+              <i class="fas fa-map-marker-alt text-blue-600"></i>
+              <span>Based in Belgium</span>
+            </div>
           </div>
+
           <!-- Quick Links -->
           <div>
             <h2 class="text-lg font-semibold mb-4">
