@@ -277,7 +277,14 @@
       .nav-link {
         @apply text-gray-700 hover:text-blue-600 text-sm font-medium transition-colors duration-200;
       }
-
+      .nav-link.active,
+      #mobile-menu a.active {
+        color: #2563eb;
+        background-color: rgba(37, 99, 235, 0.1);
+      }
+      .nav-link.active::after {
+        width: 50%;
+      }
       .logo-text {
         color: #1f2937;
         font-weight: 800;
@@ -2234,8 +2241,6 @@
             outline: none;
           }
         </style>
-
-        <script></script>
       </section>
 
       <section id="contact" class="py-12 md:py-20 bg-white" data-aos="fade-up">
@@ -2845,6 +2850,64 @@
         window.disableBtn = function () {
           document.getElementById("submit-btn").disabled = true;
         };
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select all navigation links
+        const navLinks = document.querySelectorAll(".nav-link");
+        const mobileNavLinks = document.querySelectorAll("#mobile-menu a");
+
+        // Combine both desktop and mobile nav links
+        const allNavLinks = [...navLinks, ...mobileNavLinks];
+
+        // Function to remove active class from all links
+        function removeActiveClasses() {
+          allNavLinks.forEach((link) => link.classList.remove("active"));
+        }
+
+        // Function to add active class to the current link
+        function setActiveLink(sectionId) {
+          removeActiveClasses();
+          allNavLinks.forEach((link) => {
+            if (link.getAttribute("href") === `#${sectionId}`) {
+              link.classList.add("active");
+            }
+          });
+        }
+
+        // IntersectionObserver to detect visible sections
+        const sections = document.querySelectorAll("section[id]");
+        const observerOptions = {
+          root: null,
+          rootMargin: "-100px 0px -50% 0px", // Adjust to trigger when section is in view
+          threshold: 0.1, // Trigger when 10% of the section is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const sectionId = entry.target.getAttribute("id");
+              setActiveLink(sectionId);
+            }
+          });
+        }, observerOptions);
+
+        // Observe each section
+        sections.forEach((section) => observer.observe(section));
+
+        // Handle initial page load with hash in URL
+        const hash = window.location.hash;
+        if (hash) {
+          const sectionId = hash.replace("#", "");
+          setActiveLink(sectionId);
+        }
+
+        // Update active link on click
+        allNavLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            const sectionId = link.getAttribute("href").replace("#", "");
+            setActiveLink(sectionId);
+          });
+        });
       });
     </script>
   </body>
