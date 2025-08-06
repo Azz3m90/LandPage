@@ -1,23 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
   const loader = document.getElementById('loader');
-  const header = document.querySelector('header');
-  const footer = document.querySelector('footer');
 
   window.showLoader = function () {
     loader.classList.remove('hidden');
-    document.body.classList.add('loader-active');
-    if (header) header.style.visibility = 'hidden';
-    if (footer) footer.style.visibility = 'hidden';
+    document.body.classList.add('loading');
   };
 
   window.hideLoader = function () {
     loader.classList.add('hidden');
-    document.body.classList.remove('loader-active');
-    if (header) header.style.visibility = 'visible';
-    if (footer) footer.style.visibility = 'visible';
+    document.body.classList.remove('loading');
   };
 
-  showLoader();
+  // Initial page load - loader is already visible, just hide it after 3 seconds
   setTimeout(hideLoader, 3000);
 
   const contactForm = document.getElementById('contact-form');

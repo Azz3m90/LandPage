@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#2563eb" />
+    <meta name="theme-color" content="./index-en.html#2563eb" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- Primary Meta Tags -->
-    <title>FastCaisse Retail POS - #1 Certified Cash Register System Belgium</title>
-    <meta
-      name="title"
-      content="FastCaisse Retail POS - #1 Certified Cash Register System Belgium"
-    />
+    <title>FC Shop - #1 Certified Cash Register System Belgium</title>
+    <meta name="title" content="FC Shop - #1 Certified Cash Register System Belgium" />
     <meta
       name="description"
       content="The #1 certified cash register system in Belgium. Manage inventory, sales, customers & suppliers with our powerful retail POS. Free demo available!"
@@ -20,7 +17,7 @@
     <meta name="author" content="FAST CAISSE SRL" />
     <meta
       name="keywords"
-      content="retail pos system belgium, certified cash register belgium, retail management software, fastcaisse retail pos, inventory management, barcode scanning, belgian retail software, point of sale system"
+      content="retail pos system belgium, certified cash register belgium, retail management software, fc shop, inventory management, barcode scanning, belgian retail software, point of sale system"
     />
     <meta name="robots" content="index, follow" />
 
@@ -29,7 +26,7 @@
     <meta property="og:url" content="https://fastcaisse.be/fastcaisse-retail-pos-en.html" />
     <meta
       property="og:title"
-      content="FastCaisse Retail POS - #1 Certified Cash Register System Belgium | FAST CAISSE"
+      content="FC Shop - #1 Certified Cash Register System Belgium | FAST CAISSE"
     />
     <meta
       property="og:description"
@@ -42,7 +39,7 @@
     <meta property="twitter:url" content="https://fastcaisse.be/fastcaisse-retail-pos-en.html" />
     <meta
       property="twitter:title"
-      content="FastCaisse Retail POS - #1 Certified Cash Register System Belgium | FAST CAISSE"
+      content="FC Shop - #1 Certified Cash Register System Belgium | FAST CAISSE"
     />
     <meta
       property="twitter:description"
@@ -84,7 +81,7 @@
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "FastCaisse Retail POS",
+        "name": "FC Shop",
         "url": "https://fastcaisse.be/fastcaisse-retail-pos-en.html",
         "description": "The #1 certified Retail POS System for Belgium. Streamline sales, inventory, customer management, and supplier orders.",
         "applicationCategory": "BusinessApplication",
@@ -93,7 +90,7 @@
           "@type": "Offer",
           "price": "59.00",
           "priceCurrency": "EUR",
-          "description": "Starting price per month for FastCaisse Retail POS"
+          "description": "Starting price per month for FC Shop"
         },
         "publisher": {
           "@type": "Organization",
@@ -140,7 +137,7 @@
         position: fixed;
         bottom: 2rem;
         right: 2rem;
-        z-index: 9999;
+        z-index: 40;
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease-in-out;
@@ -162,7 +159,7 @@
       #features,
       #pricing,
       #contact {
-        scroll-margin-top: 5rem; /* Adjust based on header height */
+        scroll-margin-top: 3rem; /* Adjusted for shorter header */
       }
       /* FAQ Styles */
       .faq-question {
@@ -188,12 +185,8 @@
         border-color: #93c5fd; /* blue-300 */
       }
       .faq-answer {
-        padding: 0 1.5rem;
-        max-height: 0;
-        overflow: hidden;
-        transition:
-          max-height 0.3s ease-out,
-          padding 0.3s ease-out;
+        display: none;
+        padding: 1rem 1.5rem;
         background-color: #f8fafc; /* slate-50 */
         border-left: 4px solid #3b82f6; /* blue-500 */
         border-right: 1px solid #e2e8f0; /* slate-200 */
@@ -201,8 +194,19 @@
         border-radius: 0 0 0.5rem 0.5rem;
       }
       .faq-answer.open {
-        padding: 1rem 1.5rem;
-        max-height: 500px; /* Adjust based on content */
+        display: block;
+        animation: fadeIn 0.3s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       .faq-toggle-icon {
         transition: transform 0.3s ease;
@@ -231,105 +235,228 @@
       .dashboard-card.featured:hover {
         transform: scale(1.02) translateY(-5px);
       }
+
+      /* Loading state - hide content until loader is dismissed */
+      body.loading header,
+      body.loading footer,
+      body.loading main,
+      body.loading .back-to-top {
+        visibility: hidden !important;
+        opacity: 0 !important;
+      }
+
+      /* Smooth transitions when loading state changes */
+      header, footer, main, .back-to-top {
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      /* Mobile menu base styles */
+      #mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background: white;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        border-top: 1px solid #e5e7eb;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Active state for mobile menu */
+      #mobile-menu.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        max-height: none; /* Remove height restriction */
+
+      }
+
+      /* Mobile menu hidden state */
+      #mobile-menu.hidden {
+        display: none;
+      }
+
+      /* Mobile menu visible state when not hidden */
+      #mobile-menu:not(.hidden) {
+        display: block;
+      }
+
+      /* Force display when active on mobile */
+      @media (max-width: 767px) {
+        #mobile-menu.active {
+          display: block !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          transform: translateY(0) !important;
+        }
+      }
+
+      /* Hide on desktop */
+      @media (min-width: 768px) {
+        #mobile-menu {
+          display: none !important;
+        }
+      }
+
+      /* Fix breadcrumb overlap on mobile */
+      @media (max-width: 640px) {
+        .hero-section,
+        section[class*="relative overflow-hidden"] {
+          padding-top: 3rem !important; /* Extra space for breadcrumb */
+        }
+      }
+
+
+      /* Style mobile menu links */
+      #mobile-menu a {
+        display: block !important;
+        color: #374151 !important;
+        text-decoration: none !important;
+        padding: 12px 24px !important;
+        border-bottom: 1px solid #f3f4f6 !important;
+        transition: all 0.2s ease !important;
+        background: white !important;
+      }
+
+      #mobile-menu a:hover {
+        background-color: #f0f9ff !important;
+        color: #2563eb !important;
+      }
+
+      #mobile-menu a i {
+        display: inline-block !important;
+        margin-right: 8px !important;
+        width: 16px !important;
+        color: inherit !important;
+      }
     </style>
   </head>
   <body class="font-sans text-gray-900 antialiased bg-white">
+    <!-- Spinner Loader -->
+    <div
+      id="loader"
+      class="fixed inset-0 bg-white/90 backdrop-blur-sm flex items-center justify-center z-[9999]"
+    >
+      <div class="spinner"></div>
+    </div>
+
     <!-- Back to Top Button -->
     <button
-      id="backToTopBtn"
+      id="back-to-top"
       class="back-to-top bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300"
       aria-label="Back to top"
     >
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Header -->
+
     <header
       class="fixed bg-white shadow-md text-gray-900 w-full z-50 transition-all duration-300 backdrop-blur-lg shadow-sm"
       id="header"
     >
       <nav
-        class="container relative mx-auto px-4 sm:px-6 py-2 flex justify-between items-center"
+        class="container relative mx-auto px-6 py-0.5 flex justify-between items-center"
         aria-label="Main navigation"
+        style="position: relative;"
       >
-        <div class="flex items-center gap-3 sm:gap-4">
-          <a href="./index-en.html" aria-label="Go to FAST CAISSE homepage">
+        <!-- Logo -->
+        <div class="flex items-center gap-4">
+          <a href="./index-en.html">
+            <!-- Added link back to home -->
             <img
               src="./images/fastcaisse-logo.png"
               alt="FAST CAISSE logo"
-              width="140"
-              height="40"
               class="object-contain transition-transform duration-300 hover:scale-105"
-              loading="eager"
+              width="140"
+              loading="lazy"
             />
           </a>
         </div>
-
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-3 sm:space-x-4 items-center">
-          <a href="./index-en.html#home" class="nav-link text-sm sm:text-base">
-            <i class="fas fa-home mr-1 text-xs"></i>
+        <div class="hidden md:flex space-x-4 items-center">
+          <a href="./index-en.html#home" class="nav-link">
+            <i class="fas fa-home mr-2"></i>
             Home
           </a>
-          <a href="./index-en.html#about" class="nav-link text-sm sm:text-base">
-            <i class="fas fa-info-circle mr-1 text-xs"></i>
+          <a href="./index-en.html#about" class="nav-link">
+            <i class="fas fa-info-circle mr-2"></i>
             About
           </a>
-          <a href="./index-en.html#solutions" class="nav-link text-sm sm:text-base">
-            <i class="fas fa-box mr-1 text-xs"></i>
-            Our products
+          <a href="./index-en.html#solutions" class="nav-link">
+            <i class="fas fa-tools mr-2"></i>
+            Solutions
           </a>
-          <a href="./index-en.html#services" class="nav-link text-sm sm:text-base">
-            <i class="fas fa-cogs mr-1 text-xs"></i>
+          <a href="./index-en.html#services" class="nav-link">
+            <i class="fas fa-cogs mr-2"></i>
             Services
           </a>
-          <a href="./index-en.html#contact" class="nav-link text-sm sm:text-base">
-            <i class="fas fa-envelope mr-1 text-xs"></i>
+          <a href="./index-en.html#clients" class="nav-link">
+            <i class="fas fa-users mr-2"></i>
+            Clients
+          </a>
+          <a href="#contact" class="nav-link">
+            <i class="fas fa-envelope mr-2"></i>
             Contact
           </a>
-          <!-- Language Switcher -->
-          <div class="relative ml-2">
-            <button
-              id="desktopLangToggle"
-              class="flex items-center rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-              aria-label="Select language"
-            >
-              <img
-                src="./images/flags/united-kingdom.png"
-                alt="English"
-                width="28"
-                height="28"
-                class="w-7 h-7 sm:w-8 sm:h-8"
-              />
+          <!-- Desktop Language Switcher -->
+          <div class="relative">
+            <button id="desktopLangToggle" class="flex items-center rounded focus:outline-none">
+              <img src="./images/flags/united-kingdom.png" alt="EN" class="w-9 h-9" />
             </button>
             <div
               id="desktopLangMenu"
               class="hidden absolute right-0 w-12 bg-white border border-gray-200 rounded shadow-lg z-50"
             >
-              <!-- Language options would go here -->
+              <a href="./index.html" class="block p-0 hover:bg-gray-100">
+                <img src="./images/flags/belgium.png" class="w-9 h-9" />
+              </a>
+              <a href="./index-nl.html" class="block p-0 hover:bg-gray-100">
+                <img src="./images/flags/netherlands.png" class="w-9 h-9" />
+              </a>
             </div>
           </div>
         </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
+        <!-- Mobile Buttons -->
+        <div class="md:hidden flex items-center gap-3">
+          <!-- Mobile Language Switcher -->
+          <div class="relative">
+            <button id="mobileLangToggle" class="flex items-center rounded p-1 focus:outline-none">
+              <img src="./images/flags/united-kingdom.png" class="w-8 h-8" />
+            </button>
+            <div
+              id="mobileLangMenu"
+              class="hidden absolute right-0 bg-white border border-gray-200 rounded shadow-lg z-50"
+            >
+              <a href="./index.html" class="block hover:bg-gray-100">
+                <img src="./images/flags/belgium.png" class="w-8 h-8" />
+              </a>
+              <a href="./index-nl.html" class="block hover:bg-gray-100">
+                <img src="./images/flags/netherlands.png" class="w-8 h-8" />
+              </a>
+            </div>
+          </div>
+          <!-- Mobile Menu Toggle -->
           <button
-            id="mobileMenuButton"
-            class="text-gray-700 hover:text-blue-600 focus:outline-none"
+            id="menu-toggle"
             aria-expanded="false"
-            aria-label="Toggle navigation menu"
+            aria-label="Toggle menu"
+            class="focus:outline-none rounded"
           >
-            <i class="fas fa-bars text-2xl"></i>
+            <i class="fas fa-bars text-2xl text-gray-700 transition-transform duration-300"></i>
           </button>
         </div>
-      </nav>
 
-      <!-- Mobile Menu (Hidden by default) -->
-      <div
-        id="mobileMenu"
-        class="hidden md:hidden bg-white shadow-lg absolute w-full left-0 top-full z-50"
-      >
-        <div class="px-2 pt-2 pb-4 space-y-1">
+        <!-- Mobile Menu Content -->
+        <div
+          id="mobile-menu"
+          class="md:hidden hidden"
+        >
           <a
             href="./index-en.html#home"
             class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
@@ -348,8 +475,8 @@
             href="./index-en.html#solutions"
             class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
           >
-            <i class="fas fa-box mr-2"></i>
-            Our products
+            <i class="fas fa-tools mr-2"></i>
+            Solutions
           </a>
           <a
             href="./index-en.html#services"
@@ -359,21 +486,24 @@
             Services
           </a>
           <a
-            href="./index-en.html#contact"
+            href="./index-en.html#clients"
+            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+          >
+            <i class="fas fa-users mr-2"></i>
+            Clients
+          </a>
+          <a
+            href="#contact"
             class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
           >
             <i class="fas fa-envelope mr-2"></i>
             Contact
           </a>
         </div>
-      </div>
-    </header>
-
-    <!-- Main Content -->
-    <main id="main-content" class="pt-16">
-      <!-- Enhanced Breadcrumb Navigation -->
+      </nav>
+       <!-- Enhanced Breadcrumb Navigation -->
       <nav
-        class="bg-gradient-to-r from-gray-50 to-blue-50 py-4 px-4 sm:px-6 text-sm border-b border-gray-200 shadow-sm"
+        class="bg-gradient-to-r from-gray-50 to-blue-50 py-1 sm:py-4 px-4 sm:px-6 text-sm border-b border-gray-200 shadow-sm"
         aria-label="Breadcrumb"
       >
         <ol class="list-none p-0 inline-flex items-center flex-wrap">
@@ -400,10 +530,15 @@
             class="flex items-center text-gray-600 font-medium truncate max-w-xs flex items-center"
           >
             <i class="fas fa-store mr-1.5 text-xs text-blue-500"></i>
-            <span class="truncate">FastCaisse Retail POS</span>
+            <span class="truncate">FC Shop</span>
           </li>
         </ol>
       </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="pt-16">
+
 
       <!-- Hero Section -->
       <section
@@ -423,7 +558,7 @@
                 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6"
               >
                 <span class="text-blue-600 relative">
-                  FastCaisse Retail POS
+                  FC Shop
                   <svg
                     class="absolute -bottom-2 left-0 w-full h-3"
                     viewBox="0 0 200 12"
@@ -432,7 +567,7 @@
                   >
                     <path
                       d="M2 10C20 3.5 40 1 60 2.5C80 4 100 8 120 6.5C140 5 160 1.5 180 3C190 3.5 198 5 198 5"
-                      stroke="#2563eb"
+                      stroke="./index-en.html#2563eb"
                       stroke-width="3"
                       stroke-linecap="round"
                     />
@@ -473,13 +608,13 @@
 
               <!-- CTA Buttons -->
               <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                <a
-                  href="#contact"
-                  class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center"
+                <button
+                  onclick="openVideoModal()"
+                  class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center cursor-pointer"
                 >
                   <i class="fas fa-play-circle mr-2"></i>
                   Watch Demo
-                </a>
+                </button>
                 <a
                   href="#pricing"
                   class="bg-transparent hover:bg-blue-50 text-blue-600 font-semibold py-4 px-8 rounded-full border-2 border-blue-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
@@ -505,52 +640,107 @@
               </div>
             </div>
 
-            <div class="lg:w-1/2" data-aos="fade-left" data-aos-delay="200">
-              <div class="relative">
+            <div
+              class="w-full lg:w-1/2 mt-6 sm:mt-8 lg:mt-0"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
+              <div
+                class="dashboard-mockup relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none mx-auto lg:mx-0"
+              >
+                <!-- Floating Elements with explicit positioning -->
                 <div
-                  class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
+                  style="position: absolute; top: -8px; right: -8px; z-index: 30;"
+                  class="bg-yellow-400 rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center shadow-lg animate-bounce"
                 >
-                  <div class="bg-white rounded-xl p-6 transform -rotate-3">
-                    <div class="flex items-center justify-between mb-4">
-                      <h3 class="font-bold text-lg">Retail POS Dashboard</h3>
-                      <div class="flex space-x-2">
-                        <div class="w-3 h-3 bg-red-400 rounded-full"></div>
-                        <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                        <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                  <i class="fas fa-star text-white text-sm sm:text-base md:text-lg"></i>
+                </div>
+                <div
+                  style="position: absolute; bottom: -8px; left: -8px; z-index: 30;"
+                  class="bg-green-400 rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center shadow-lg"
+                >
+                  <i class="fas fa-check-circle text-white text-sm sm:text-base md:text-lg"></i>
+                </div>
+
+                <div
+                  class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 shadow-2xl transform rotate-0 sm:rotate-1 md:rotate-3 hover:rotate-0 transition-transform duration-500 w-full flex items-center"
+                >
+                  <div
+                    class="bg-white rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8 transform rotate-0 sm:-rotate-1 md:-rotate-3 w-full"
+                  >
+                    <div class="flex items-center justify-between mb-4 sm:mb-5 md:mb-6 lg:mb-7">
+                      <h3
+                        class="font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-800"
+                      >
+                        FC Shop Dashboard
+                      </h3>
+                      <div class="flex space-x-1.5 sm:space-x-2 md:space-x-2.5">
+                        <div
+                          class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 bg-red-400 rounded-full"
+                        ></div>
+                        <div
+                          class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 bg-yellow-400 rounded-full"
+                        ></div>
+                        <div
+                          class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 bg-green-400 rounded-full"
+                        ></div>
                       </div>
                     </div>
-                    <div class="space-y-4">
-                      <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div class="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+                      <div
+                        class="flex items-center justify-between p-3 sm:p-4 md:p-5 bg-gray-50 rounded-lg"
+                      >
                         <div class="flex items-center">
-                          <i class="fas fa-barcode text-blue-500 mr-3"></i>
-                          <span>Product: Bread</span>
+                          <i
+                            class="fas fa-barcode text-blue-600 mr-3 sm:mr-4 text-base sm:text-lg md:text-xl"
+                          ></i>
+                          <span
+                            class="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-700"
+                          >
+                            Product: Bread
+                          </span>
                         </div>
-                        <span class="font-bold">€2.50</span>
+                        <span
+                          class="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900"
+                        >
+                          €2.50
+                        </span>
                       </div>
-                      <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div
+                        class="flex items-center justify-between p-3 sm:p-4 md:p-5 bg-gray-50 rounded-lg"
+                      >
                         <div class="flex items-center">
-                          <i class="fas fa-balance-scale text-green-500 mr-3"></i>
-                          <span>Cheese (500g)</span>
+                          <i
+                            class="fas fa-balance-scale text-green-500 mr-3 sm:mr-4 text-base sm:text-lg md:text-xl"
+                          ></i>
+                          <span
+                            class="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-700"
+                          >
+                            Cheese (500g)
+                          </span>
                         </div>
-                        <span class="font-bold">€12.00</span>
+                        <span
+                          class="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900"
+                        >
+                          €12.00
+                        </span>
                       </div>
-                      <div class="border-t pt-3">
-                        <div class="flex justify-between text-lg font-bold">
-                          <span>Total:</span>
-                          <span>€14.50</span>
+                      <div class="border-t border-gray-200 pt-3 sm:pt-4 md:pt-5">
+                        <div class="flex justify-between items-center">
+                          <span
+                            class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-800"
+                          >
+                            Total:
+                          </span>
+                          <span
+                            class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-blue-600"
+                          >
+                            €14.50
+                          </span>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <!-- Floating Elements -->
-                <div
-                  class="absolute -top-4 -right-4 bg-yellow-400 rounded-full p-4 shadow-lg animate-bounce"
-                >
-                  <i class="fas fa-star text-white text-xl"></i>
-                </div>
-                <div class="absolute -bottom-4 -left-4 bg-green-400 rounded-full p-4 shadow-lg">
-                  <i class="fas fa-check-circle text-white text-xl"></i>
                 </div>
               </div>
             </div>
@@ -571,8 +761,8 @@
               Everything You Need to Run Your Retail Business
             </h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-              FastCaisse Retail POS provides a complete suite of tools designed to help Belgian
-              retailers manage every aspect of their operations.
+              FC Shop provides a complete suite of tools designed to help Belgian retailers manage
+              every aspect of their operations.
             </p>
           </div>
 
@@ -603,7 +793,7 @@
               <div
                 class="w-14 h-14 rounded-xl bg-green-600 flex items-center justify-center mb-6 feature-icon"
               >
-                <i class="fas fa-boxes text-white text-2xl"></i>
+                <i class="fas fa-warehouse text-white text-2xl"></i>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Inventory Management</h3>
               <p class="text-gray-600">
@@ -630,14 +820,14 @@
 
             <!-- Feature 4 -->
             <div
-              class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
+              class="bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl p-8 border border-red-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
               data-aos="fade-up"
               data-aos-delay="400"
             >
               <div
-                class="w-14 h-14 rounded-xl bg-amber-600 flex items-center justify-center mb-6 feature-icon"
+                class="w-14 h-14 rounded-xl bg-red-600 flex items-center justify-center mb-6 feature-icon"
               >
-                <i class="fas fa-truck text-white text-2xl"></i>
+                <i class="fas fa-boxes text-white text-2xl"></i>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Supplier Management</h3>
               <p class="text-gray-600">
@@ -647,14 +837,14 @@
 
             <!-- Feature 5 -->
             <div
-              class="bg-gradient-to-br from-cyan-50 to-sky-50 rounded-2xl p-8 border border-cyan-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
+              class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 border border-yellow-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
               data-aos="fade-up"
               data-aos-delay="500"
             >
               <div
-                class="w-14 h-14 rounded-xl bg-cyan-600 flex items-center justify-center mb-6 feature-icon"
+                class="w-14 h-14 rounded-xl bg-yellow-600 flex items-center justify-center mb-6 feature-icon"
               >
-                <i class="fas fa-chart-line text-white text-2xl"></i>
+                <i class="fas fa-balance-scale text-white text-2xl"></i>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Sales Reporting</h3>
               <p class="text-gray-600">
@@ -664,96 +854,19 @@
 
             <!-- Feature 6 -->
             <div
-              class="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-8 border border-rose-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
+              class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-8 border border-indigo-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
               data-aos="fade-up"
               data-aos-delay="600"
             >
               <div
-                class="w-14 h-14 rounded-xl bg-rose-600 flex items-center justify-center mb-6 feature-icon"
+                class="w-14 h-14 rounded-xl bg-indigo-600 flex items-center justify-center mb-6 feature-icon"
               >
-                <i class="fas fa-sync-alt text-white text-2xl"></i>
+                <i class="fas fa-tools text-white text-2xl"></i>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Multi-Terminal Support</h3>
               <p class="text-gray-600">
                 Connect multiple terminals and devices for seamless operations across your store.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Success Stats Section -->
-      <section class="py-16 md:py-20 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
-        <div class="container mx-auto px-4 sm:px-6">
-          <div class="text-center mb-16" data-aos="fade-up">
-            <div
-              class="inline-flex items-center bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-6 shadow-lg"
-            >
-              <i class="fas fa-star text-yellow-400 mr-2"></i>
-              <span class="text-sm font-bold text-white">Success Stories</span>
-            </div>
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-6">
-              <span
-                class="bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
-              >
-                Real Results from Real Belgian Retailers
-              </span>
-            </h2>
-            <p class="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-              See how FastCaisse Retail POS transformed these Belgian retailers into operational
-              powerhouses
-            </p>
-          </div>
-
-          <div class="max-w-4xl mx-auto">
-            <div
-              class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg"
-              data-aos="fade-up"
-            >
-              <blockquote class="text-lg text-blue-100 mb-6 italic leading-relaxed">
-                "FastCaisse Retail POS increased our sales efficiency by
-                <strong class="text-green-400">35%</strong>
-                and reduced inventory errors to zero. The barcode scanning alone saves us
-                <strong class="text-yellow-400">10 hours/week</strong>
-                in manual data entry."
-              </blockquote>
-              <div class="flex items-center">
-                <div class="flex text-yellow-400">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <span class="text-blue-200 ml-2 text-sm">— Jean Dubois, Supermarket Owner</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
-            <div
-              class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200 shadow-lg"
-            >
-              <div class="text-3xl font-black text-green-600 mb-2">35%</div>
-              <div class="text-sm text-gray-700 font-medium">Sales Efficiency Increase</div>
-            </div>
-            <div
-              class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-200 shadow-lg"
-            >
-              <div class="text-3xl font-black text-blue-600 mb-2">10h</div>
-              <div class="text-sm text-gray-700 font-medium">Weekly Time Saved</div>
-            </div>
-            <div
-              class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-6 border border-purple-200 shadow-lg"
-            >
-              <div class="text-3xl font-black text-purple-600 mb-2">0%</div>
-              <div class="text-sm text-gray-700 font-medium">Inventory Errors</div>
-            </div>
-            <div
-              class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-200 shadow-lg"
-            >
-              <div class="text-3xl font-black text-amber-600 mb-2">500+</div>
-              <div class="text-sm text-gray-700 font-medium">Happy Retailers</div>
             </div>
           </div>
         </div>
@@ -772,8 +885,8 @@
               Registered POS System (GKS)
             </h2>
             <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-              FastCaisse Retail POS has a version of the Cash Register System developed and
-              certified according to the requirements of the FPS Finance.
+              FC Shop has a version of the Cash Register System developed and certified according to
+              the requirements of the FPS Finance.
             </p>
           </div>
 
@@ -826,219 +939,396 @@
       </section>
 
       <!-- Pricing Section -->
-      <section id="pricing" class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section
+        id="pricing"
+        class="py-16 md:py-20 bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100"
+      >
         <div class="container mx-auto px-4 sm:px-6">
           <div class="text-center mb-16" data-aos="fade-up">
             <span
-              class="inline-block px-4 py-2 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full mb-4"
+              class="inline-block px-6 py-3 text-sm font-semibold text-white bg-blue-600 rounded-full mb-6 shadow-lg"
+              style="background-color: #2563eb !important; color: white !important"
             >
-              PRICING
+              💰 BELGIAN PRICING
             </span>
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Flexible Plans for Your Retail Business
+              Flexible Plans for Your Belgian Store
             </h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-              Flexible plans to suit your retail business needs. All plans include core POS
-              features.
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Choose the perfect FC Shop plan for your retail business. All plans include Belgian
+              VAT compliance, multi-language support, and 24/7 customer support.
             </p>
           </div>
 
-          <!-- Grid container ensuring proper spacing and responsiveness -->
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto"
-          >
-            <!-- Starter Pack -->
+          <!-- Solutions Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <!-- FC Shop Basic -->
             <div
-              class="pricing-card bg-white rounded-xl p-6 shadow-lg border border-gray-200 flex flex-col h-full"
-              data-aos="fade-up"
-              data-aos-delay="0"
-            >
-              <div class="text-center mb-4">
-                <h3 class="text-xl font-bold text-gray-900">Retail Starter</h3>
-                <p class="text-gray-600 text-sm mb-4">Perfect for small retailers</p>
-              </div>
-              <div class="text-center mb-6">
-                <div class="text-3xl font-bold text-gray-900">€59</div>
-                <div class="text-gray-600 text-sm">per month</div>
-                <div class="text-purple-600 text-xs font-medium mt-1">€708 annually</div>
-              </div>
-              <ul class="feature-list text-gray-700 mb-6 space-y-2 text-sm flex-grow">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Basic POS</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Barcode Scanning</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Inventory Management</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Basic Reporting</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>1 Terminal</span>
-                </li>
-              </ul>
-              <a
-                href="#contact"
-                class="block w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 text-center text-sm"
-              >
-                Get Started
-              </a>
-            </div>
-
-            <!-- Premium Pack -->
-            <div
-              class="pricing-card bg-white rounded-xl shadow-lg border-2 border-blue-500 p-6 flex flex-col h-full transform scale-105 relative"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div
-                class="bg-blue-500 text-white text-center py-2 px-4 rounded-full text-xs font-bold mb-4 -mt-4 mx-auto"
-              >
-                MOST POPULAR
-              </div>
-              <div class="text-center mb-4">
-                <h3 class="text-xl font-bold text-gray-900">Retail Premium</h3>
-                <p class="text-gray-600 text-sm mb-4">For growing businesses</p>
-              </div>
-              <div class="text-center mb-6">
-                <div class="text-3xl font-bold text-gray-900">€99</div>
-                <div class="text-gray-600 text-sm">per month</div>
-                <div class="text-purple-600 text-xs font-medium mt-1">€1188 annually</div>
-              </div>
-              <ul class="feature-list text-gray-700 mb-6 space-y-2 text-sm flex-grow">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>All Starter Features</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Customer Management</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Supplier Management</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Advanced Reporting</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Up to 3 Terminals</span>
-                </li>
-              </ul>
-              <a
-                href="#contact"
-                class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 text-center text-sm"
-              >
-                Get Started
-              </a>
-            </div>
-
-            <!-- Enterprise Pack -->
-            <div
-              class="pricing-card bg-white rounded-xl p-6 shadow-lg border border-gray-200 flex flex-col h-full"
+              class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative overflow-visible"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <div class="text-center mb-4">
-                <h3 class="text-xl font-bold text-gray-900">Retail Enterprise</h3>
-                <p class="text-gray-600 text-sm mb-4">For large retailers</p>
+              <!-- Basic Ribbon -->
+              <div
+                class="absolute top-0 right-0 bg-gray-500 text-white px-3 py-1 rounded-bl-lg rounded-tr-2xl text-xs font-bold shadow-lg z-10 solutions-ribbon"
+                style="
+                  background-color: #6b7280 !important;
+                  color: white !important;
+                  margin-top: -2px;
+                  margin-right: -2px;
+                "
+              >
+                BASIC
               </div>
-              <div class="text-center mb-6">
-                <div class="text-3xl font-bold text-gray-900">€179</div>
-                <div class="text-gray-600 text-sm">per month</div>
-                <div class="text-purple-600 text-xs font-medium mt-1">€2148 annually</div>
+
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">FC Shop Basic</h3>
+                <div class="mb-4">
+                  <span class="text-5xl font-extrabold text-gray-900">€59</span>
+                  <span class="text-gray-500 ml-2">/month</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-2">Perfect for small retail stores</p>
+                <p class="text-gray-500 text-sm mb-6">Essential POS Features</p>
+                <a
+                  href="#contact"
+                  class="block w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 text-center"
+                  style="
+                    background-color: #6b7280 !important;
+                    color: white !important;
+                    text-decoration: none !important;
+                  "
+                >
+                  START FREE TRIAL
+                </a>
               </div>
-              <ul class="feature-list text-gray-700 mb-6 space-y-2 text-sm flex-grow">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>All Premium Features</span>
+
+              <ul class="space-y-4">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Basic POS System</span>
                 </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Multi-Store Management</span>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Barcode Scanning</span>
                 </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Advanced Analytics</span>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Basic Inventory Management</span>
                 </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Priority Support</span>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Belgian VAT Compliance</span>
                 </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Unlimited Terminals</span>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Single Terminal Support</span>
                 </li>
               </ul>
-              <a
-                href="#contact"
-                class="block w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 text-center text-sm"
-              >
-                Get Started
-              </a>
             </div>
 
-            <!-- Ultimate Pack -->
+            <!-- FC Shop Professional -->
             <div
-              class="pricing-card bg-white rounded-xl p-6 shadow-lg border border-gray-200 flex flex-col h-full"
+              class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 relative border-2 border-blue-500 overflow-visible"
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <div class="text-center mb-4">
-                <h3 class="text-xl font-bold text-gray-900">Retail Ultimate</h3>
-                <p class="text-gray-600 text-sm mb-4">Complete solution</p>
+              <!-- Professional Ribbon -->
+              <div
+                class="absolute top-0 right-0 bg-blue-500 text-white px-3 py-1 rounded-bl-lg rounded-tr-2xl text-xs font-bold shadow-lg z-10 solutions-ribbon"
+                style="
+                  background-color: #3b82f6 !important;
+                  color: white !important;
+                  margin-top: -2px;
+                  margin-right: -2px;
+                "
+              >
+                MOST POPULAR
               </div>
-              <div class="text-center mb-6">
-                <div class="text-3xl font-bold text-gray-900">Custom</div>
-                <div class="text-gray-600 text-sm">Tailored to your needs</div>
+
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">FC Shop Professional</h3>
+                <div class="mb-4">
+                  <span class="text-5xl font-extrabold text-gray-900">€89</span>
+                  <span class="text-gray-500 ml-2">/month</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-2">Ideal for growing retail businesses</p>
+                <p class="text-gray-500 text-sm mb-6">Advanced Retail Management</p>
+                <a
+                  href="#contact"
+                  class="block w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 text-center"
+                >
+                  START FREE TRIAL
+                </a>
               </div>
-              <ul class="feature-list text-gray-700 mb-6 space-y-2 text-sm flex-grow">
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>All Enterprise Features</span>
+
+              <ul class="space-y-4">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Everything in Basic</span>
                 </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Custom Integrations</span>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Customer Loyalty Programs</span>
                 </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Dedicated Account Manager</span>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Multi-Terminal Support (up to 5)</span>
                 </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>24/7 Premium Support</span>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Advanced Inventory Control</span>
                 </li>
-                <li class="flex items-start">
-                  <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                  <span>Custom Development</span>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Sales Analytics & Reporting</span>
                 </li>
               </ul>
-              <a
-                href="#contact"
-                class="block w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 text-center text-sm"
+            </div>
+
+            <!-- FC Shop Enterprise -->
+            <div
+              class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative "
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <!-- Enterprise Ribbon -->
+              <div
+                class="absolute top-0 right-0 bg-purple-500 text-white px-3 py-1 rounded-bl-lg rounded-tr-2xl text-xs font-bold shadow-lg z-10 solutions-ribbon"
+                style="
+                  background-color: #8b5cf6 !important;
+                  color: white !important;
+                  margin-top: -2px;
+                  margin-right: -2px;
+                "
               >
-                Contact Sales
-              </a>
+                ENTERPRISE
+              </div>
+
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">FC Shop Enterprise</h3>
+                <div class="mb-4">
+                  <span class="text-5xl font-extrabold text-gray-900">€129</span>
+                  <span class="text-gray-500 ml-2">/month</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-2">
+                  For large retail chains & franchises
+                </p>
+                <p class="text-gray-500 text-sm mb-6">Complete Retail Ecosystem</p>
+                <a
+                  href="#contact"
+                  class="block w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 text-center"
+                >
+                  CONTACT SALES
+                </a>
+              </div>
+
+              <ul class="space-y-4">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Everything in Professional</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Unlimited Terminals & Stores</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">AI-Powered Demand Forecasting</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">Belgian Supplier Integration</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span class="text-gray-700">24/7 Priority Support</span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <div class="mt-12 text-center" data-aos="fade-up">
-            <p class="text-gray-600 text-sm">
-              All plans include a 14-day free trial. No credit card required.
+          <!-- Bottom CTA Section -->
+          <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="500">
+            <div
+              class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 max-w-4xl mx-auto"
+            >
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Need Help Choosing the Right Plan?
+              </h3>
+              <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+                Our experts will help you find the perfect FC Shop plan for your Belgian retail business.
+                Get a free consultation and personalized recommendation.
+              </p>
+              <a
+                href="#contact"
+                class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+              >
+                <i class="fas fa-phone mr-2"></i>
+                Get Free Consultation
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Success Stats Section -->
+      <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-3 sm:px-4 lg:px-6">
+          <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+            <div
+              class="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-4 sm:mb-6 shadow-lg"
+            >
+              <i class="fas fa-star text-yellow-400 mr-1.5 sm:mr-2 text-sm sm:text-base"></i>
+              <span
+                class="text-xs sm:text-sm font-bold text-blue-600"
+                style="color: #2563eb !important"
+              >
+                Success Stories
+              </span>
+            </div>
+            <h2
+              class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-4 sm:mb-6 px-4"
+            >
+              <span
+                class="bg-gradient-to-r from-yellow-400 via-blue-400 to-red-400 bg-clip-text text-transparent"
+              >
+                Real Results from Belgian Retailers
+              </span>
+            </h2>
+            <p class="text-base sm:text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed px-4">
+              See how FC Shop transformed these Belgian retail stores into sales powerhouses
             </p>
-            <p class="text-gray-600 text-sm mt-2">
-              Generate documents in multiple languages for international business
-            </p>
+          </div>
+
+          <div class="max-w-4xl mx-auto">
+            <div
+              class="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-blue-600 shadow-xl"
+              data-aos="fade-up"
+            >
+              <blockquote
+                class="text-sm sm:text-base lg:text-lg text-gray-700 mb-4 sm:mb-6 italic leading-relaxed font-medium"
+                style="color: #374151 !important"
+              >
+                "FC Shop increased our sales efficiency by
+                <strong class="text-green-600" style="color: #059669 !important">45%</strong>
+                and reduced checkout times by half. The barcode scanning system alone improved our
+                inventory accuracy by
+                <strong class="text-blue-600" style="color: #2563eb !important">90%</strong>
+                while saving us 2 hours of daily manual work."
+              </blockquote>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0">
+                <div class="flex justify-center sm:justify-start text-yellow-500">
+                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important"></i>
+                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important"></i>
+                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important"></i>
+                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important"></i>
+                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important"></i>
+                </div>
+                <span
+                  class="text-gray-600 sm:ml-2 text-xs sm:text-sm font-semibold text-center sm:text-left"
+                  style="color: #4b5563 !important; font-weight: 600 !important"
+                >
+                  — Lisa Van Der Berg, Store Owner, Ghent
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto mt-8 sm:mt-12"
+          >
+            <div
+              class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-green-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="text-center">
+                <div
+                  class="text-3xl sm:text-4xl font-black text-green-600 mb-2"
+                  style="color: #059669 !important; font-weight: 900 !important"
+                >
+                  45%
+                </div>
+                <div
+                  class="text-xs sm:text-sm text-gray-800 font-semibold"
+                  style="color: #111827 !important; font-weight: 600 !important"
+                >
+                  Sales Efficiency
+                </div>
+                <div class="text-xs text-gray-600 mt-1" style="color: #4b5563 !important">
+                  Average improvement
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="text-center">
+                <div
+                  class="text-3xl sm:text-4xl font-black text-blue-600 mb-2"
+                  style="color: #2563eb !important; font-weight: 900 !important"
+                >
+                  50%
+                </div>
+                <div
+                  class="text-xs sm:text-sm text-gray-800 font-semibold"
+                  style="color: #111827 !important; font-weight: 600 !important"
+                >
+                  Faster Checkout
+                </div>
+                <div class="text-xs text-gray-600 mt-1" style="color: #4b5563 !important">
+                  Customer experience boost
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-purple-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="text-center">
+                <div
+                  class="text-3xl sm:text-4xl font-black text-purple-600 mb-2"
+                  style="color: #9333ea !important; font-weight: 900 !important"
+                >
+                  90%
+                </div>
+                <div
+                  class="text-xs sm:text-sm text-gray-800 font-semibold"
+                  style="color: #111827 !important; font-weight: 600 !important"
+                >
+                  Inventory Accuracy
+                </div>
+                <div class="text-xs text-gray-600 mt-1" style="color: #4b5563 !important">
+                  Barcode scanning power
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gradient-to-br from-amber-50 to-blue-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-amber-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="text-center">
+                <div
+                  class="text-3xl sm:text-4xl font-black text-blue-600 mb-2"
+                  style="color: #2563eb !important; font-weight: 900 !important"
+                >
+                  500+
+                </div>
+                <div
+                  class="text-xs sm:text-sm text-gray-900 font-semibold"
+                  style="color: #111827 !important; font-weight: 600 !important"
+                >
+                  Belgian Stores
+                </div>
+                <div class="text-xs text-gray-700 mt-1" style="color: #374151 !important">
+                  Trust FC Shop daily
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1056,20 +1346,20 @@
               Frequently Asked Questions
             </h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find answers to common questions about FastCaisse Retail POS
+              Find answers to common questions about FC Shop
             </p>
           </div>
 
           <div class="max-w-3xl mx-auto space-y-4" data-aos="fade-up">
             <!-- FAQ 1 -->
             <div class="faq-item">
-              <div class="faq-question">
-                What makes FastCaisse the #1 certified POS in Belgium?
+              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq1-answer" id="faq1-question">
+                What makes FC Shop the #1 certified POS in Belgium?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
-              </div>
-              <div class="faq-answer">
+              </button>
+              <div class="faq-answer" id="faq1-answer" aria-labelledby="faq1-question">
                 <p class="text-gray-700">
-                  FastCaisse is officially registered and certified by the Belgian Federal Public
+                  FC Shop is officially registered and certified by the Belgian Federal Public
                   Service Finance (FPS Finance). Our system meets all legal requirements for cash
                   registers in Belgium, including secure data storage and tamper-proof transaction
                   logging. This certification ensures complete compliance with Belgian fiscal
@@ -1080,28 +1370,28 @@
 
             <!-- FAQ 2 -->
             <div class="faq-item">
-              <div class="faq-question">
-                How does barcode scanning work with FastCaisse Retail POS?
+              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq2-answer" id="faq2-question">
+                How does barcode scanning work with FC Shop?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
-              </div>
-              <div class="faq-answer">
+              </button>
+              <div class="faq-answer" id="faq2-answer" aria-labelledby="faq2-question">
                 <p class="text-gray-700">
-                  FastCaisse Retail POS seamlessly integrates with standard barcode scanners. Simply
-                  connect your scanner via USB or Bluetooth, and you can instantly scan product
-                  barcodes during checkout. The system automatically retrieves product information,
-                  price, and inventory details, making transactions fast and accurate while reducing
-                  manual data entry errors.
+                  FC Shop seamlessly integrates with standard barcode scanners. Simply connect your
+                  scanner via USB or Bluetooth, and you can instantly scan product barcodes during
+                  checkout. The system automatically retrieves product information, price, and
+                  inventory details, making transactions fast and accurate while reducing manual
+                  data entry errors.
                 </p>
               </div>
             </div>
 
             <!-- FAQ 3 -->
             <div class="faq-item">
-              <div class="faq-question">
-                Can I manage multiple stores with FastCaisse Retail POS?
+              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq3-answer" id="faq3-question">
+                Can I manage multiple stores with FC Shop?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
-              </div>
-              <div class="faq-answer">
+              </button>
+              <div class="faq-answer" id="faq3-answer" aria-labelledby="faq3-question">
                 <p class="text-gray-700">
                   Yes, our Enterprise and Ultimate plans support multi-store management. You can
                   centrally manage inventory across all locations, track sales performance by store,
@@ -1113,11 +1403,11 @@
 
             <!-- FAQ 4 -->
             <div class="faq-item">
-              <div class="faq-question">
-                Is customer data secure with FastCaisse Retail POS?
+              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq4-answer" id="faq4-question">
+                Is customer data secure with FC Shop?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
-              </div>
-              <div class="faq-answer">
+              </button>
+              <div class="faq-answer" id="faq4-answer" aria-labelledby="faq4-question">
                 <p class="text-gray-700">
                   Absolutely. We prioritize data security and are fully compliant with GDPR
                   regulations. All customer data is encrypted both in transit and at rest. We
@@ -1130,16 +1420,16 @@
 
             <!-- FAQ 5 -->
             <div class="faq-item">
-              <div class="faq-question">
-                What hardware is compatible with FastCaisse Retail POS?
+              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq5-answer" id="faq5-question">
+                What hardware is compatible with FC Shop?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
-              </div>
-              <div class="faq-answer">
+              </button>
+              <div class="faq-answer" id="faq5-answer" aria-labelledby="faq5-question">
                 <p class="text-gray-700">
-                  FastCaisse Retail POS works with a wide range of standard retail hardware
-                  including barcode scanners, receipt printers, cash drawers, customer displays,
-                  scales, and payment terminals. We provide detailed compatibility lists and can
-                  help you select the right hardware for your specific needs.
+                  FC Shop works with a wide range of standard retail hardware including barcode
+                  scanners, receipt printers, cash drawers, customer displays, scales, and payment
+                  terminals. We provide detailed compatibility lists and can help you select the
+                  right hardware for your specific needs.
                 </p>
               </div>
             </div>
@@ -1147,31 +1437,347 @@
         </div>
       </section>
 
+      <!-- Enhanced Retail Business Types Section -->
+      <section class="py-20 bg-gradient-to-br from-orange-50 via-white to-red-50">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <span class="inline-block px-6 py-3 text-sm font-semibold  bg-gradient-to-r from-orange-600 to-red-600 rounded-full mb-6 shadow-lg">
+              🛍️ RETAIL EXPERTISE
+            </span>
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
+              Tailored for Every Belgian Retail Business
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              FC Shop adapts to your specific retail model with industry-focused features designed for Belgian commerce standards and regulations.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <!-- Fashion & Apparel -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+              <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center mb-6">
+                <i class="fas fa-tshirt text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Fashion & Apparel</h3>
+              <p class="text-gray-600 mb-6">Complete size/color matrix management, seasonal inventory control, and fashion-specific analytics for Belgian clothing stores.</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Size & color matrix tracking</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Seasonal collection management</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Style & trend analytics</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Return & exchange processing</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Electronics & Tech -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-orange-300 hover:border-orange-500 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+              <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                <i class="fas fa-laptop text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Electronics & Tech</h3>
+              <p class="text-gray-600 mb-6">Advanced serial number tracking, warranty management, and tech product specifications for Belgian electronics retailers.</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Serial number & IMEI tracking</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Warranty & service management</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Technical specifications database</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Repair & service scheduling</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Grocery & Food -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="300">
+              <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                <i class="fas fa-apple-alt text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Grocery & Food</h3>
+              <p class="text-gray-600 mb-6">Expiration date tracking, batch management, and Belgian food safety compliance for grocery stores and markets.</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Expiration date alerts</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Batch & lot number tracking</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>HACCP compliance tools</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Fresh produce weight management</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Beauty & Cosmetics -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="400">
+              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
+                <i class="fas fa-palette text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Beauty & Cosmetics</h3>
+              <p class="text-gray-600 mb-6">Shade matching, skincare consultation tracking, and beauty brand management for Belgian cosmetics retailers.</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Color & shade management</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Customer skin type profiles</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Brand loyalty programs</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Product recommendation engine</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Sports & Outdoor -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="500">
+              <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6">
+                <i class="fas fa-dumbbell text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Sports & Outdoor</h3>
+              <p class="text-gray-600 mb-6">Equipment rental tracking, seasonal inventory management, and sports event coordination for Belgian sports retailers.</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Equipment rental management</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Seasonal demand forecasting</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Team & club discounts</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Event & tournament coordination</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Specialty Retail -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="600">
+              <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                <i class="fas fa-gem text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Specialty Retail</h3>
+              <p class="text-gray-600 mb-6">Custom product cataloging, artisan inventory management, and specialty Belgian market features for unique retailers.</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Custom product attributes</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Artisan & handmade tracking</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Limited edition management</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-3"></i>
+                  <span>Collector item authentication</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Advanced Inventory Management -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <span class="inline-block px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-6 shadow-lg">
+              📦 SMART INVENTORY
+            </span>
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
+              Never Run Out of Stock Again
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              FC Shop's intelligent inventory management uses AI-powered forecasting and Belgian supplier integration to optimize your stock levels automatically.
+            </p>
+          </div>
+
+          <div class="max-w-7xl mx-auto">
+            <!-- Smart Inventory Dashboard -->
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8 mb-12 shadow-2xl" data-aos="fade-up">
+              <div class="text-center mb-8">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">FC Shop Smart Inventory Hub</h3>
+                <p class="text-lg text-gray-600">AI-powered inventory optimization for Belgian retailers</p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Predictive Analytics -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                  <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-4">
+                    <i class="fas fa-chart-line text-white text-2xl"></i>
+                  </div>
+                  <h4 class="text-xl font-bold text-gray-900 mb-3">Predictive Analytics</h4>
+                  <p class="text-gray-600 mb-4">AI analyzes sales patterns, seasonal trends, and Belgian market data to predict demand accurately.</p>
+                  <ul class="space-y-2 text-sm">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-green-500 mr-2"></i>
+                      <span>30-day demand forecasting</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-green-500 mr-2"></i>
+                      <span>Seasonal trend analysis</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-green-500 mr-2"></i>
+                      <span>Market trend integration</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Automated Reordering -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                  <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4">
+                    <i class="fas fa-sync-alt text-white text-2xl"></i>
+                  </div>
+                  <h4 class="text-xl font-bold text-gray-900 mb-3">Automated Reordering</h4>
+                  <p class="text-gray-600 mb-4">Set minimum stock levels and let FC Shop automatically generate purchase orders for your Belgian suppliers.</p>
+                  <ul class="space-y-2 text-sm">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-blue-500 mr-2"></i>
+                      <span>Smart reorder points</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-blue-500 mr-2"></i>
+                      <span>Supplier integration</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-blue-500 mr-2"></i>
+                      <span>Purchase order automation</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Real-time Tracking -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                  <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-4">
+                    <i class="fas fa-eye text-white text-2xl"></i>
+                  </div>
+                  <h4 class="text-xl font-bold text-gray-900 mb-3">Real-time Tracking</h4>
+                  <p class="text-gray-600 mb-4">Monitor stock levels across multiple locations with instant alerts for low stock and overstock situations.</p>
+                  <ul class="space-y-2 text-sm">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-purple-500 mr-2"></i>
+                      <span>Multi-location tracking</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-purple-500 mr-2"></i>
+                      <span>Low stock alerts</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-purple-500 mr-2"></i>
+                      <span>Overstock notifications</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Inventory Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- Barcode System -->
+              <div class="bg-gradient-to-br from-orange-50 to-red-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mb-4">
+                  <i class="fas fa-barcode text-white text-lg"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900 mb-3">Advanced Barcode System</h4>
+                <p class="text-gray-600 text-sm">Support for EAN-13, UPC, and custom barcodes with mobile scanning capabilities.</p>
+              </div>
+
+              <!-- Batch Tracking -->
+              <div class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
+                  <i class="fas fa-tags text-white text-lg"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900 mb-3">Batch & Serial Tracking</h4>
+                <p class="text-gray-600 text-sm">Complete traceability for products with batch numbers, serial numbers, and expiration dates.</p>
+              </div>
+
+              <!-- Multi-Location -->
+              <div class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
+                  <i class="fas fa-building text-white text-lg"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900 mb-3">Multi-Location Management</h4>
+                <p class="text-gray-600 text-sm">Manage inventory across multiple stores with automatic stock transfers and balancing.</p>
+              </div>
+
+              <!-- Supplier Portal -->
+              <div class="bg-gradient-to-br from-purple-50 to-indigo-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
+                  <i class="fas fa-handshake text-white text-lg"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900 mb-3">Belgian Supplier Portal</h4>
+                <p class="text-gray-600 text-sm">Direct integration with Belgian wholesalers and suppliers for automated ordering and invoicing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- CTA Section -->
-      <section
-        class="py-16 md:py-20 bg-gradient-to-br from-blue-600 to-indigo-700 text-white"
-        id="contact"
-      >
+      <section class="py-16 md:py-20 bg-white text-gray-900" id="contact">
         <div class="container mx-auto px-4 sm:px-6 text-center">
           <div data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">
               Ready to Transform Your Retail Operations?
             </h2>
-            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join hundreds of Belgian retailers who trust FastCaisse Retail POS to streamline their
-              operations and increase their profits.
+            <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+              Join hundreds of Belgian retailers who trust FC Shop to streamline their operations
+              and accelerate their business growth.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="#contactForm"
-                class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 text-center"
+                href="#contact-form"
+                class="bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 font-bold py-4 px-8 transform hover:scale-105 text-center"
+                style="background-color: #2563eb !important; color: white !important"
               >
                 Request a Demo
                 <i class="fas fa-arrow-right ml-2"></i>
               </a>
               <a
                 href="tel:+3221234567"
-                class="bg-transparent border-2 border-white hover:bg-white/10 font-bold py-4 px-8 rounded-lg transition-all duration-300 flex items-center justify-center text-center"
+                class="bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 font-bold py-4 px-8 flex items-center justify-center text-center"
               >
                 <i class="fas fa-phone-alt mr-2"></i>
                 Call Us: +32 2 123 45 67
@@ -1181,123 +1787,529 @@
         </div>
       </section>
 
-      <!-- Contact Form Section -->
-      <section class="py-16 md:py-20 bg-white" id="contact-section">
-        <div class="container mx-auto px-4 sm:px-6">
-          <div class="max-w-3xl mx-auto bg-gray-50 rounded-2xl shadow-lg p-8" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">Get Your Free Demo</h2>
-            <p class="text-center text-gray-600 mb-8">
-              See how FastCaisse Retail POS can transform your retail business. A specialist will
-              contact you within 24 hours.
+
+
+      <!-- Expert Support Section -->
+      <style>
+        /* Force white text in contact card */
+        .contact-card * {
+          color: white !important;
+        }
+        .contact-card h3,
+        .contact-card p,
+        .contact-card span,
+        .contact-card a,
+        .contact-card div {
+          color: white !important;
+        }
+        .contact-card .contact-label {
+          color: rgba(255, 255, 255, 0.8) !important;
+        }
+        .contact-card .contact-sub {
+          color: rgba(255, 255, 255, 0.7) !important;
+        }
+      </style>
+      <section id="contact-form" class="py-20 md:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden" itemscope itemtype="https://schema.org/ContactPage">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+          <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23f97316\' fill-opacity=\'0.1\'%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'2\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+          <!-- Section Header -->
+          <div class="text-center mb-16" data-aos="fade-up">
+            <div class="inline-flex items-center bg-blue-100 px-6 py-3 rounded-full mb-6 shadow-sm">
+              <i class="fas fa-cash-register text-blue-600 mr-2"></i>
+              <span class="text-sm font-bold text-blue-800" style="color: #1e40af !important;">Retail POS Experts</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900" style="color: #111827 !important;">
+              Get Your <span class="text-blue-600" style="color: #2563eb !important;">Free FC Shop Demo</span> Today
+            </h2>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed" style="color: #374151 !important;">
+              Join 500+ Belgian retailers already using FC Shop. Our certified POS specialists will show you exactly how our retail management system can streamline your store operations in just 30 minutes.
             </p>
-            <form id="contactForm" class="space-y-6">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-                  />
-                </div>
-                <div>
-                  <label for="company" class="block text-sm font-medium text-gray-700 mb-1">
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-                  />
+          </div>
+
+          <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+
+              <!-- Contact Information Card -->
+              <div class="lg:col-span-1" data-aos="fade-right">
+                <div class="contact-card rounded-3xl p-8 shadow-2xl relative overflow-hidden" style="background-color: #2563eb !important; color: white !important; border: 2px solid rgba(255, 255, 255, 0.1) !important;">
+                  <!-- Decorative Elements -->
+                  <div class="absolute top-0 right-0 w-32 h-32 rounded-full -translate-y-16 translate-x-16" style="background: rgba(255, 255, 255, 0.1) !important;"></div>
+                  <div class="absolute bottom-0 left-0 w-24 h-24 rounded-full translate-y-12 -translate-x-12" style="background: rgba(255, 255, 255, 0.1) !important;"></div>
+
+                  <div class="relative z-10">
+                    <h3 class="text-2xl font-bold mb-6" style="color: white !important; font-weight: 700 !important; font-size: 1.75rem !important;">Contact Our Belgian Retail POS Experts</h3>
+                    <p class="mb-8 text-lg" style="color: rgba(255, 255, 255, 0.95) !important; line-height: 1.6 !important; font-size: 1.125rem !important;">
+                      Ready to revolutionize your retail operations with FC Shop? Our certified Belgian POS specialists are here to help streamline your store management!
+                    </p>
+
+                    <!-- Contact Methods -->
+                    <div class="space-y-6">
+                      <!-- Phone -->
+                      <div class="flex items-center group" itemscope itemtype="https://schema.org/ContactPoint">
+                        <div class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300">
+                          <i class="fas fa-phone-alt text-xl" style="color: white !important;"></i>
+                        </div>
+                        <div>
+                          <p class="contact-label text-sm font-medium" style="color: rgba(255, 255, 255, 0.8) !important; font-size: 0.875rem !important;">Call us directly</p>
+                          <a href="tel:+3221234567"
+                             class="text-lg font-bold hover:text-blue-200 transition-colors duration-300 block"
+                             style="color: white !important; font-weight: 700 !important; font-size: 1.125rem !important; text-decoration: none !important;"
+                             itemprop="telephone">
+                            +32 2 123 45 67
+                          </a>
+                          <span class="contact-sub text-xs" style="color: #fecaca !important;">Available Mon-Fri 9AM-6PM</span>
+                        </div>
+                      </div>
+
+                      <!-- Email -->
+                      <div class="flex items-center group" itemscope itemtype="https://schema.org/ContactPoint">
+                        <div class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300">
+                          <i class="fas fa-envelope text-xl" style="color: white !important;"></i>
+                        </div>
+                        <div>
+                          <p class="text-sm font-medium" style="color: rgba(255, 255, 255, 0.8) !important; font-size: 0.875rem !important;">Email our team</p>
+                          <a href="mailto:info@fastcaisse.be?subject=FC%20Shop%20Demo%20Request%20-%20Belgian%20Retail%20POS%20System&body=Hello%20FC%20Shop%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20demo%20of%20your%20FC%20Shop%20retail%20POS%20system.%0D%0A%0D%0AStore%20Details:%0D%0A-%20Store%20Name:%20%0D%0A-%20Industry:%20%0D%0A-%20Location:%20%0D%0A-%20Current%20POS%20System:%20%0D%0A-%20Number%20of%20Terminals:%20%0D%0A%0D%0AContact%20Information:%0D%0A-%20Name:%20%0D%0A-%20Phone:%20%0D%0A-%20Best%20time%20to%20call:%20%0D%0A%0D%0ASpecific%20Retail%20Needs:%0D%0A-%20Inventory%20Management:%20%0D%0A-%20Customer%20Management:%20%0D%0A-%20Reporting%20Requirements:%20%0D%0A%0D%0AThank%20you!"
+                             class="text-white text-lg font-bold hover:text-blue-200 transition-colors duration-300 block"
+                             style="color: white !important;"
+                             itemprop="email">
+                            info@fastcaisse.be
+                          </a>
+                          <span class="text-blue-200 text-xs" style="color: #fecaca !important;">Response within 2 hours</span>
+                        </div>
+                      </div>
+
+                      <!-- Address -->
+                      <div class="flex items-center group" itemscope itemtype="https://schema.org/PostalAddress">
+                        <div class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300">
+                          <i class="fas fa-map-marker-alt text-xl" style="color: white !important;"></i>
+                        </div>
+                        <div>
+                          <p class="contact-label text-sm font-medium" style="color: rgba(255, 255, 255, 0.8) !important; font-size: 0.875rem !important;">Visit our office</p>
+                          <div class="text-lg font-bold" style="color: white !important; font-weight: 700 !important; font-size: 1.125rem !important;" itemprop="addressLocality">
+                            Brussels, Belgium
+                          </div>
+                          <span class="contact-sub text-xs" style="color: rgba(255, 255, 255, 0.7) !important;">Serving all Belgian provinces</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="mt-8 pt-6 border-t border-white border-opacity-20">
+                      <div class="grid grid-cols-2 gap-4 text-center">
+                        <div>
+                          <div class="text-2xl font-black" style="color: #fbbf24 !important;">500+</div>
+                          <div class="text-xs contact-sub">Belgian Retailers</div>
+                        </div>
+                        <div>
+                          <div class="text-2xl font-black" style="color: #fbbf24 !important;">24/7</div>
+                          <div class="text-xs contact-sub">POS Support</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="mt-6">
+                      <p class="text-blue-100 text-sm mb-4 font-medium" style="color: #fed7aa !important;">Follow us for FC Shop updates</p>
+                      <div class="flex space-x-3">
+                        <a href="./index-en.html#" class="bg-white bg-opacity-20 rounded-xl p-3 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110" aria-label="Facebook">
+                          <i class="fab fa-facebook-f text-lg" style="color: white !important;"></i>
+                        </a>
+                        <a href="./index-en.html#" class="bg-white bg-opacity-20 rounded-xl p-3 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110" aria-label="LinkedIn">
+                          <i class="fab fa-linkedin-in text-lg" style="color: white !important;"></i>
+                        </a>
+                        <a href="./index-en.html#" class="bg-white bg-opacity-20 rounded-xl p-3 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110" aria-label="Twitter">
+                          <i class="fab fa-twitter text-lg" style="color: white !important;"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-                  />
+
+              <!-- Demo Form -->
+              <div class="lg:col-span-2" data-aos="fade-left">
+                <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-10 border border-gray-100">
+                  <div class="text-center mb-10">
+                    <div class="inline-flex items-center bg-green-100 px-4 py-2 rounded-full mb-4">
+                      <i class="fas fa-gift text-green-600 mr-2"></i>
+                      <span class="text-sm font-bold text-green-800" style="color: #166534 !important;">100% Free Demo</span>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900" style="color: #111827 !important;">
+                      See FC Shop Retail POS in Action
+                    </h3>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto" style="color: #4b5563 !important;">
+                      Get a personalized 30-minute demo tailored to your retail store needs. No commitment required.
+                    </p>
+                  </div>
+
+                  <!-- Success/Error Messages -->
+                  <div id="success-message" class="hidden bg-green-50 border-l-4 border-green-400 p-6 mb-8 rounded-lg">
+                    <div class="flex items-center">
+                      <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                      <div>
+                        <h4 class="text-green-800 font-bold">Demo Request Submitted!</h4>
+                        <p class="text-green-700">Thank you! Our FC Shop specialist will contact you within 24 hours to schedule your free retail POS demo.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="error-message" class="hidden bg-red-50 border-l-4 border-red-400 p-6 mb-8 rounded-lg">
+                    <div class="flex items-center">
+                      <i class="fas fa-exclamation-triangle text-red-500 text-xl mr-3"></i>
+                      <div>
+                        <h4 class="text-red-800 font-bold">Please Check Your Information</h4>
+                        <p class="text-red-700">Please fill in all required fields correctly and try again.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Enhanced Form -->
+                  <form id="contact-form" class="space-y-8" novalidate itemscope itemtype="https://schema.org/ContactForm">
+                    <!-- Personal Information -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="form-group">
+                        <label for="name" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
+                          <i class="fas fa-user text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                          Your Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          placeholder="e.g., Jean Dupont"
+                          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
+                          itemprop="name"
+                        />
+                        <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please enter your full name</span>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="company" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
+                          <i class="fas fa-building text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                          Company Name *
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          required
+                          placeholder="e.g., ABC Trading Brussels"
+                          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
+                          itemprop="organizationName"
+                        />
+                        <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please enter your company name</span>
+                      </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="form-group">
+                        <label for="email" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
+                          <i class="fas fa-envelope text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          placeholder="your.email@company.be"
+                          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
+                          itemprop="email"
+                        />
+                        <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please enter a valid email address</span>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="phone" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
+                          <i class="fas fa-phone text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                          Phone Number *
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          required
+                          placeholder="+32 2 XXX XX XX"
+                          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
+                          itemprop="telephone"
+                        />
+                        <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please enter a valid Belgian phone number</span>
+                      </div>
+                    </div>
+
+                    <!-- Location & Business Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="form-group">
+                        <label for="city" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
+                          <i class="fas fa-map-marker-alt text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                          City/Location
+                        </label>
+                        <select
+                          id="city"
+                          name="city"
+                          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
+                          itemprop="addressLocality"
+                        >
+                          <option value="">Select your city</option>
+                          <option value="Brussels">Brussels (Bruxelles)</option>
+                          <option value="Antwerp">Antwerp (Antwerpen)</option>
+                          <option value="Ghent">Ghent (Gent)</option>
+                          <option value="Charleroi">Charleroi</option>
+                          <option value="Liège">Liège (Luik)</option>
+                          <option value="Bruges">Bruges (Brugge)</option>
+                          <option value="Namur">Namur (Namen)</option>
+                          <option value="Leuven">Leuven (Louvain)</option>
+                          <option value="Mons">Mons (Bergen)</option>
+                          <option value="Aalst">Aalst (Alost)</option>
+                          <option value="Other">Other Belgian City</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="industry" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
+                          <i class="fas fa-store text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                          Retail Business Type
+                        </label>
+                        <select
+                          id="industry"
+                          name="industry"
+                          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
+                        >
+                          <option value="">Select your retail type</option>
+                          <option value="Fashion & Clothing">Fashion & Clothing Store</option>
+                          <option value="Grocery & Food">Grocery & Food Store</option>
+                          <option value="Electronics">Electronics & Technology</option>
+                          <option value="Beauty & Cosmetics">Beauty & Cosmetics</option>
+                          <option value="Home & Garden">Home & Garden Store</option>
+                          <option value="Sports & Outdoor">Sports & Outdoor Equipment</option>
+                          <option value="Books & Stationery">Books & Stationery</option>
+                          <option value="Pharmacy">Pharmacy & Health</option>
+                          <option value="Jewelry & Accessories">Jewelry & Accessories</option>
+                          <option value="Toy Store">Toy & Games Store</option>
+                          <option value="Department Store">Department Store</option>
+                          <option value="Convenience Store">Convenience Store</option>
+                          <option value="Other Retail">Other Retail Business</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Store Size -->
+                    <div class="form-group">
+                      <label for="business-size" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
+                        <i class="fas fa-chart-bar text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                        Store Size & POS Terminals
+                      </label>
+                      <select
+                        id="business-size"
+                        name="business-size"
+                        class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
+                      >
+                        <option value="">Select your store size</option>
+                        <option value="Single Store (1 terminal)">Single Store (1 POS terminal)</option>
+                        <option value="Small Store (2-3 terminals)">Small Store (2-3 POS terminals)</option>
+                        <option value="Medium Store (4-10 terminals)">Medium Store (4-10 POS terminals)</option>
+                        <option value="Large Store (11+ terminals)">Large Store (11+ POS terminals)</option>
+                        <option value="Multiple Locations">Multiple Store Locations</option>
+                        <option value="Chain Store">Retail Chain</option>
+                      </select>
+                    </div>
+
+                    <!-- Current Challenges -->
+                    <div class="form-group">
+                      <label for="challenges" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
+                        <i class="fas fa-lightbulb text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                        What retail challenges are you facing? (Optional)
+                      </label>
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
+                          <input type="checkbox" name="challenges[]" value="Inventory management" class="mr-3 text-blue-600 focus:ring-blue-500">
+                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Inventory tracking & management</span>
+                        </label>
+                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
+                          <input type="checkbox" name="challenges[]" value="Sales reporting" class="mr-3 text-blue-600 focus:ring-blue-500">
+                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Sales reporting & analytics</span>
+                        </label>
+                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
+                          <input type="checkbox" name="challenges[]" value="Customer loyalty" class="mr-3 text-blue-600 focus:ring-blue-500">
+                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Customer loyalty & retention</span>
+                        </label>
+                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
+                          <input type="checkbox" name="challenges[]" value="Payment processing" class="mr-3 text-blue-600 focus:ring-blue-500">
+                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Payment processing & integration</span>
+                        </label>
+                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
+                          <input type="checkbox" name="challenges[]" value="Multi-location" class="mr-3 text-blue-600 focus:ring-blue-500">
+                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Multi-location management</span>
+                        </label>
+                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
+                          <input type="checkbox" name="challenges[]" value="Staff management" class="mr-3 text-blue-600 focus:ring-blue-500">
+                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Staff management & scheduling</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- Additional Message -->
+                    <div class="form-group">
+                      <label for="message" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
+                        <i class="fas fa-comment-dots text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                        Additional Information (Optional)
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        placeholder="Tell us about your current POS system, specific retail requirements, or any questions you have about FC Shop..."
+                        class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 resize-none text-gray-900 font-medium"
+                      ></textarea>
+                    </div>
+
+                    <!-- Privacy Consent -->
+                    <div class="form-group bg-gray-50 p-6 rounded-xl border-2 border-gray-200">
+                      <label class="flex items-start">
+                        <input
+                          type="checkbox"
+                          id="privacy-consent"
+                          name="privacy-consent"
+                          required
+                          class="mt-1 mr-4 h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                        />
+                        <span class="text-sm text-gray-700 leading-relaxed" style="color: #374151 !important;">
+                          I agree to the <a href="./index-en.html#" class="text-blue-600 hover:text-blue-700 underline font-medium" style="color: #2563eb !important;">Privacy Policy</a>
+                          and consent to being contacted by FC Shop about their Belgian retail POS system.
+                          I understand that I can unsubscribe at any time. *
+                        </span>
+                      </label>
+                      <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please accept our privacy policy to continue</span>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-4">
+                      <button
+                        type="submit"
+                        id="submit-btn"
+                        class="w-full bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 font-bold py-5 px-8 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+                        style="background-color: #2563eb !important; color: white !important;"
+                      >
+                        <span class="submit-text flex items-center justify-center" style="color: white !important;">
+                          <i class="fas fa-rocket mr-3 text-xl" style="color: white !important;"></i>
+                          Get My Free Demo Now
+                        </span>
+                        <span class="loading-text hidden flex items-center justify-center" style="color: white !important;">
+                          <i class="fas fa-spinner fa-spin mr-3 text-xl" style="color: white !important;"></i>
+                          Sending Your Request...
+                        </span>
+                      </button>
+
+                      <!-- Trust Indicators Below Button -->
+                      <div class="mt-6 text-center">
+                        <div class="flex items-center justify-center space-x-6 text-sm text-gray-600">
+                          <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-green-500 mr-2" style="color: #10b981 !important;"></i>
+                            <span class="font-medium" style="color: #4b5563 !important;">100% Secure</span>
+                          </div>
+                          <div class="flex items-center">
+                            <i class="fas fa-clock text-blue-500 mr-2" style="color: #3b82f6 !important;"></i>
+                            <span class="font-medium" style="color: #4b5563 !important;">30-min Demo</span>
+                          </div>
+                          <div class="flex items-center">
+                            <i class="fas fa-gift text-purple-500 mr-2" style="color: #8b5cf6 !important;"></i>
+                            <span class="font-medium" style="color: #4b5563 !important;">Completely Free</span>
+                          </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-3 max-w-md mx-auto" style="color: #6b7280 !important;">
+                          Your information is secure and will never be shared with third parties.
+                          Our Belgian specialists will contact you within 24 hours.
+                        </p>
+                      </div>
+                    </div>
+                  </form>
                 </div>
-                <div>
-                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-                  />
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Trust Section -->
+          <div class="mt-20 text-center" data-aos="fade-up">
+            <div class="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto border border-gray-100">
+              <h4 class="text-2xl font-bold text-gray-900 mb-6" style="color: #111827 !important;">Why Choose FC Commerce Management for Your Belgian Business?</h4>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                  <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-certificate text-blue-600 text-2xl" style="color: #2563eb !important;"></i>
+                  </div>
+                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Belgian Certified</h5>
+                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important;">Fully compliant with Belgian business regulations and GDPR requirements</p>
+                </div>
+                <div class="text-center">
+                  <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-building text-green-600 text-2xl" style="color: #059669 !important;"></i>
+                  </div>
+                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">500+ Companies</h5>
+                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important;">Trusted by businesses across Brussels, Antwerp, and Ghent</p>
+                </div>
+                <div class="text-center">
+                  <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-headset text-blue-600 text-2xl" style="color: #2563eb !important;"></i>
+                  </div>
+                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Local Support</h5>
+                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important;">Belgian-based support team available in French, Dutch, and English</p>
                 </div>
               </div>
-              <div>
-                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
-                  Tell us about your retail business
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-                ></textarea>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                >
-                  Request My Free Demo
-                </button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
-      </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white text-gray-900 py-16 relative overflow-hidden" data-aos="fade-up">
+    <footer
+      class="bg-white text-gray-900 py-12 sm:py-16 relative overflow-hidden"
+      data-aos="fade-up"
+    >
       <div
         class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMDktMS43OTEtNC00LTRzLTQgMS43OTEtNCA0IDEuNzkxIDQgNCA0IDQtMS43OTEgNC00eiIvPjwvZz48L2c+PC9zdmc+')]"
       ></div>
-      <div class="container mx-auto px-4 sm:px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="container mx-auto px-3 sm:px-4 lg:px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           <!-- Company Info -->
-          <div class="space-y-5 max-w-sm">
-            <div class="flex items-center gap-4">
+          <div
+            class="space-y-4 sm:space-y-5 max-w-sm mx-auto sm:mx-0 text-center sm:text-left lg:col-span-1"
+          >
+            <div class="flex items-center justify-center sm:justify-start gap-3 sm:gap-4">
               <img
                 src="./images/fastcaisse-logo.png"
                 alt="FAST CAISSE"
-                class="h-12 object-contain"
+                class="h-10 sm:h-12 object-contain"
                 loading="lazy"
               />
             </div>
-            <p class="text-gray-600 leading-relaxed">
+            <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
               Belgium's leading POS and CRM solutions provider, trusted by thousands of businesses
               across the country.
             </p>
-            <div class="flex space-x-4">
-              <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                <i class="fab fa-facebook-f text-xl"></i>
+            <div class="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
+              <a
+                href="./index-en.html#"
+                class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
+              >
+                <i class="fab fa-facebook-f text-lg sm:text-xl"></i>
               </a>
-              <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                <i class="fab fa-linkedin-in text-xl"></i>
+              <a
+                href="./index-en.html#"
+                class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
+              >
+                <i class="fab fa-linkedin-in text-lg sm:text-xl"></i>
               </a>
-              <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                <i class="fab fa-instagram text-xl"></i>
+              <a
+                href="./index-en.html#"
+                class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
+              >
+                <i class="fab fa-instagram text-lg sm:text-xl"></i>
               </a>
             </div>
           </div>
@@ -1309,28 +2321,28 @@
               <li>
                 <a
                   href="./fastcaisse-restaurant-pos-en.html"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
                 >
                   <i class="fas fa-utensils mr-2 text-sm"></i>
-                  Restaurant POS
+                  FC Resto
                 </a>
               </li>
               <li>
-                <a
-                  href="./fastcaisse-retail-pos-en.html"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
+                <span
+                  class="text-blue-600 font-semibold flex items-center p-2 rounded-lg bg-blue-50 border-l-4 border-blue-600"
                 >
                   <i class="fas fa-store mr-2 text-sm"></i>
-                  Retail POS
-                </a>
+                  FC Shop
+                  <i class="fas fa-arrow-left ml-2 text-xs"></i>
+                </span>
               </li>
               <li>
                 <a
                   href="./fastcaisse-crm-business-management-en.html"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
                 >
                   <i class="fas fa-chart-line mr-2 text-sm"></i>
-                  CRM & Business Management
+                  FC Commerce Management
                 </a>
               </li>
             </ul>
@@ -1360,7 +2372,7 @@
               </li>
               <li>
                 <a
-                  href="./index-en.html#contact"
+                  href="#contact"
                   class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
                 >
                   <i class="fas fa-envelope mr-2 text-sm"></i>
@@ -1380,11 +2392,21 @@
               </li>
               <li class="flex items-center">
                 <i class="fas fa-phone-alt mr-3 text-blue-500"></i>
-                <span>+32 2 123 45 67</span>
+                <a
+                  href="tel:+3221234567"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                >
+                  +32 2 123 45 67
+                </a>
               </li>
               <li class="flex items-center">
                 <i class="fas fa-envelope mr-3 text-blue-500"></i>
-                <span>info@fastcaisse.be</span>
+                <a
+                  href="mailto:info@fastcaisse.be?subject=FC%20Shop%20Inquiry&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20FC%20Shop%20for%20my%20retail%20business.%0D%0A%0D%0AThank%20you!"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                >
+                  info@fastcaisse.be
+                </a>
               </li>
             </ul>
           </div>
@@ -1395,9 +2417,11 @@
         <div class="mt-12 pt-8 border-t border-gray-200 text-center">
           <p class="text-sm text-gray-600">
             &copy; 2025 FAST CAISSE SRL. All rights reserved. |
-            <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>
+            <a href="./index-en.html#" class="text-blue-600 hover:underline">Privacy Policy</a>
             |
-            <a href="./general-conditions-en.html" class="text-blue-600 hover:underline"> General Conditions </a>
+            <a href="./general-conditions-en.html" class="text-blue-600 hover:underline">
+              General Conditions
+            </a>
           </p>
         </div>
       </div>
@@ -1414,7 +2438,7 @@
       });
 
       // Back to Top Button
-      const backToTopButton = document.getElementById("backToTopBtn");
+      const backToTopButton = document.getElementById("back-to-top");
 
       window.addEventListener("scroll", () => {
         if (window.pageYOffset > 300) {
@@ -1431,70 +2455,226 @@
         });
       });
 
-      // Mobile Menu Toggle
-      const mobileMenuButton = document.getElementById("mobileMenuButton");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      mobileMenuButton.addEventListener("click", () => {
-        const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
-        mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      // Close mobile menu when clicking outside
-      document.addEventListener("click", (event) => {
-        const isClickInsideNav = document.querySelector("nav").contains(event.target);
-        if (!isClickInsideNav && !mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.add("hidden");
-          mobileMenuButton.setAttribute("aria-expanded", "false");
-        }
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            window.scrollTo({
-              top: target.offsetTop - 80, // Adjust for fixed header
-              behavior: "smooth",
-            });
-            // Close mobile menu if open
-            if (!mobileMenu.classList.contains("hidden")) {
-              mobileMenu.classList.add("hidden");
-              mobileMenuButton.setAttribute("aria-expanded", "false");
-            }
-          }
-        });
-      });
 
       // FAQ Accordion
-      document.querySelectorAll(".faq-question").forEach((question) => {
-        question.addEventListener("click", () => {
-          const answer = question.nextElementSibling;
-          const isOpen = answer.classList.contains("open");
-          const icon = question.querySelector(".faq-toggle-icon");
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, initializing FAQ...');
+        const faqQuestions = document.querySelectorAll(".faq-question");
+        console.log('Found FAQ questions:', faqQuestions.length);
 
-          // Close all FAQs
-          document.querySelectorAll(".faq-answer").forEach((ans) => {
-            ans.classList.remove("open");
-          });
-          document.querySelectorAll(".faq-question").forEach((q) => {
-            q.classList.remove("active");
-            q.setAttribute("aria-expanded", "false");
-            q.querySelector(".faq-toggle-icon").style.transform = "rotate(0deg)";
+        faqQuestions.forEach((question) => {
+          question.addEventListener("click", (e) => {
+            e.preventDefault();
+            console.log('FAQ question clicked!');
+
+            const answer = question.nextElementSibling;
+            const isOpen = answer.classList.contains("open");
+            const icon = question.querySelector(".faq-toggle-icon");
+
+            console.log('Answer element:', answer);
+            console.log('Is open:', isOpen);
+
+            // Close all FAQs
+            document.querySelectorAll(".faq-answer").forEach((ans) => {
+              ans.classList.remove("open");
+            });
+            document.querySelectorAll(".faq-question").forEach((q) => {
+              q.classList.remove("active");
+              q.setAttribute("aria-expanded", "false");
+              const qIcon = q.querySelector(".faq-toggle-icon");
+              if (qIcon) {
+                qIcon.style.transform = "rotate(0deg)";
+              }
+            });
+
+            // Toggle current FAQ if it wasn't open
+            if (!isOpen) {
+              console.log('Opening FAQ...');
+              answer.classList.add("open");
+              question.classList.add("active");
+              question.setAttribute("aria-expanded", "true");
+              if (icon) {
+                icon.style.transform = "rotate(180deg)";
+              }
+              console.log('FAQ opened, classes added');
+            } else {
+              console.log('FAQ was already open, closing it');
+            }
           });
 
-          // Toggle current FAQ if it wasn't open
-          if (!isOpen) {
-            answer.classList.add("open");
-            question.classList.add("active");
-            question.setAttribute("aria-expanded", "true");
-            icon.style.transform = "rotate(180deg)";
-          }
+          // Add keyboard support
+          question.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              question.click();
+            }
+          });
         });
       });
+
+      // Hide loader after page loads
+      window.addEventListener('load', function() {
+        const loader = document.getElementById('loader');
+        if (loader) {
+          setTimeout(() => {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+              loader.style.display = 'none';
+            }, 300);
+          }, 500);
+        }
+      });
     </script>
+
+    <!-- Video Modal -->
+    <div
+      id="videoModal"
+      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden"
+      onclick="closeVideoModal()"
+    >
+      <div class="relative w-full max-w-4xl mx-4" onclick="event.stopPropagation()">
+        <!-- Close Button -->
+        <button
+          onclick="closeVideoModal()"
+          class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+          aria-label="Close video"
+        >
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+
+        <!-- Video Container -->
+        <div
+          class="relative bg-black rounded-lg overflow-hidden shadow-2xl"
+          style="aspect-ratio: 16/9"
+        >
+          <!-- YouTube Video (default) -->
+          <iframe
+            id="youtubeVideo"
+            class="w-full h-full"
+            src=""
+            title="FAST CAISSE Retail POS Demo Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+
+          <!-- Local Video (hidden by default) -->
+          <video id="localVideo" class="w-full h-full hidden" controls preload="metadata">
+            <source src="" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- Video Controls -->
+        <div class="mt-4 flex justify-center space-x-4">
+          <button
+            onclick="switchToYoutube()"
+            id="youtubeBtn"
+            class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+          >
+            <i class="fab fa-youtube mr-2"></i>
+            YouTube Demo
+          </button>
+          <button
+            onclick="switchToLocal()"
+            id="localBtn"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors opacity-50"
+          >
+            <i class="fas fa-play mr-2"></i>
+            Local Demo
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Modal JavaScript -->
+    <script>
+      // Video URLs - you can change these for Retail POS-specific videos
+      const YOUTUBE_VIDEO_ID = "dU1xS07N-FA"; // Retail POS demo
+      const LOCAL_VIDEO_URL = "./assets/videos/retail-demo.mp4"; // Retail-specific local video
+
+      let currentVideoType = "youtube";
+
+      function openVideoModal() {
+        const modal = document.getElementById("videoModal");
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+
+        // Load the appropriate video
+        if (currentVideoType === "youtube") {
+          loadYouTubeVideo();
+        } else {
+          loadLocalVideo();
+        }
+      }
+
+      function closeVideoModal() {
+        const modal = document.getElementById("videoModal");
+        const youtubeVideo = document.getElementById("youtubeVideo");
+        const localVideo = document.getElementById("localVideo");
+
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto"; // Restore scrolling
+
+        // Stop videos
+        youtubeVideo.src = "";
+        localVideo.pause();
+        localVideo.currentTime = 0;
+      }
+
+      function switchToYoutube() {
+        currentVideoType = "youtube";
+        loadYouTubeVideo();
+
+        // Update button states
+        document.getElementById("youtubeBtn").classList.remove("opacity-50");
+        document.getElementById("localBtn").classList.add("opacity-50");
+      }
+
+      function switchToLocal() {
+        currentVideoType = "local";
+        loadLocalVideo();
+
+        // Update button states
+        document.getElementById("localBtn").classList.remove("opacity-50");
+        document.getElementById("youtubeBtn").classList.add("opacity-50");
+      }
+
+      function loadYouTubeVideo() {
+        const youtubeVideo = document.getElementById("youtubeVideo");
+        const localVideo = document.getElementById("localVideo");
+
+        youtubeVideo.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`;
+        youtubeVideo.classList.remove("hidden");
+        localVideo.classList.add("hidden");
+        localVideo.pause();
+      }
+
+      function loadLocalVideo() {
+        const youtubeVideo = document.getElementById("youtubeVideo");
+        const localVideo = document.getElementById("localVideo");
+
+        localVideo.src = LOCAL_VIDEO_URL;
+        localVideo.classList.remove("hidden");
+        youtubeVideo.classList.add("hidden");
+        youtubeVideo.src = "";
+        localVideo.play();
+      }
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeVideoModal();
+        }
+      });
+    </script>
+
+    <!-- App JavaScript for Loader -->
+        <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>

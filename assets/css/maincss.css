@@ -9,18 +9,402 @@
     box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
   }
 }
+/* Universal Overflow Prevention - SELECTIVE */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden; /* Prevent horizontal page scroll */
+  overflow-y: auto; /* Allow vertical page scroll */
+  max-width: 100vw;
+}
+
 body {
-  overflow-x: hidden;
+  overflow: hidden; /* Prevent horizontal page scroll */
+
   font-family: "Inter", sans-serif;
   max-width: 100%;
   background-color: #ffffff;
   color: #1e293b;
+  margin: 0;
+  padding: 0;
 }
+/* Container Overflow Prevention - HORIZONTAL ONLY */
 .container {
   max-width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
   box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section Overflow Prevention - HORIZONTAL ONLY */
+section {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Main content wrapper - HORIZONTAL ONLY */
+main {
+  max-width: 100vw;
+}
+
+/* Header overflow prevention - HORIZONTAL ONLY */
+header {
+  max-width: 100vw;
+}
+
+/* Row and column overflow prevention - WIDTH ONLY */
+.flex,
+.grid,
+[class*="flex"],
+[class*="grid"] {
+  max-width: 100%;
+}
+
+/* Image overflow prevention */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Video overflow prevention */
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Text overflow prevention */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Prevent horizontal scrollbars on specific elements - WIDTH ONLY */
+.hero-section,
+.features-section,
+.pricing-section,
+.testimonials-section,
+.faq-section,
+.contact-section,
+.clients-section {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Card and component overflow prevention - WIDTH ONLY */
+[class*="card"],
+[class*="bg-"],
+[class*="rounded"] {
+  box-sizing: border-box;
+}
+
+/* Table and form overflow prevention */
+table {
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+form {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Navigation overflow prevention - WIDTH ONLY */
+nav,
+.navbar,
+[class*="nav"] {
+  max-width: 100vw;
+}
+
+/* Button group overflow prevention - BOX SIZING ONLY */
+.btn-group,
+[class*="button"],
+[class*="btn"] {
+  box-sizing: border-box;
+}
+
+/* Utility classes for overflow control */
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.max-w-full {
+  max-width: 100% !important;
+}
+
+.max-w-screen {
+  max-width: 100vw !important;
+}
+
+/* Additional responsive utility classes */
+.responsive-width {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.no-horizontal-overflow {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+.safe-margin {
+  margin-left: clamp(0.5rem, 2vw, 2rem) !important;
+  margin-right: clamp(0.5rem, 2vw, 2rem) !important;
+}
+
+/* Fix for common TailwindCSS problematic classes */
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: clamp(0.5rem, 1.5vw, 1.5rem) !important;
+}
+
+/* Responsive flex gap fixes */
+.gap-4 {
+  gap: clamp(0.5rem, 1vw, 1rem) !important;
+}
+
+.gap-8 {
+  gap: clamp(1rem, 2vw, 2rem) !important;
+}
+
+/* Fix for button groups on mobile */
+@media (max-width: 640px) {
+  .flex.flex-col.sm\\:flex-row.gap-4 {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .flex.flex-col.sm\\:flex-row.gap-4 > * {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex-shrink: 1 !important;
+  }
+}
+
+/* Mobile specific overflow prevention - SELECTIVE */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden !important; /* Only prevent horizontal scroll on page */
+    max-width: 100vw !important;
+  }
+
+  .container,
+  .mx-auto {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    max-width: 100% !important;
+  }
+
+  /* Prevent wide elements on mobile - WIDTH CONTROL ONLY */
+  .w-full,
+  [class*="w-"],
+  .max-w-none {
+    max-width: 100vw !important;
+  }
+
+  /* Force responsive behavior on mobile */
+  table {
+    font-size: 0.875rem;
+    overflow-x: scroll;
+    display: block;
+    width: 100%;
+  }
+
+  /* Prevent text overflow on mobile */
+  .whitespace-nowrap {
+    white-space: normal !important;
+  }
+
+  /* Additional mobile overflow fixes */
+  .flex-nowrap {
+    flex-wrap: wrap !important;
+  }
+
+  /* Prevent SVG overflow on mobile */
+  svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Fix for mobile button overflow */
+  .flex.flex-col.sm\\:flex-row {
+    gap: 0.5rem !important;
+  }
+
+  .flex.flex-col.sm\\:flex-row > * {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Mobile navigation fixes */
+  #mobile-menu {
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* Mobile hero section fixes */
+  #home .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  #home .text-4xl.md\\:text-6xl {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Additional overflow prevention - MINIMAL & SELECTIVE */
+/* Prevent absolute/fixed positioned elements from causing horizontal overflow */
+.absolute,
+.fixed,
+[class*="absolute"],
+[class*="fixed"] {
+  max-width: 100vw;
+}
+
+/* Fix for large decorative background elements that cause overflow */
+.w-120,
+.h-120,
+[class*="w-120"],
+[class*="h-120"] {
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  width: min(120rem, 90vw) !important;
+  height: min(120rem, 90vh) !important;
+}
+
+/* Fix for negatively positioned elements */
+.-left-8,
+[class*="-left-"] {
+  left: clamp(-2rem, -2vw, -8px) !important;
+}
+
+.-right-8,
+[class*="-right-"] {
+  right: clamp(-2rem, -2vw, -8px) !important;
+}
+
+/* Specific fixes for decorative elements in hero section */
+#home .absolute {
+  width: min(30rem, 80vw) !important;
+  height: min(30rem, 80vh) !important;
+  max-width: 80vw !important;
+  max-height: 80vh !important;
+}
+
+/* Ensure decorative circles don't cause overflow */
+#home .absolute.bg-blue-100,
+#home .absolute.bg-blue-200,
+#home .absolute.bg-blue-300 {
+  width: min(20rem, 60vw) !important;
+  height: min(20rem, 60vh) !important;
+}
+
+/* Specific positioning for left-positioned decorative elements */
+#home .absolute.-left-8 {
+  left: clamp(-1rem, -2vw, -2rem) !important;
+}
+
+/* Specific positioning for right-positioned decorative elements */
+#home .absolute.-right-8 {
+  right: clamp(-1rem, -2vw, -2rem) !important;
+}
+
+/* Additional mobile-specific fixes for decorative elements */
+@media (max-width: 768px) {
+  #home .absolute {
+    width: min(15rem, 70vw) !important;
+    height: min(15rem, 50vh) !important;
+    max-width: 70vw !important;
+    max-height: 50vh !important;
+  }
+
+  #home .absolute.bg-blue-100,
+  #home .absolute.bg-blue-200,
+  #home .absolute.bg-blue-300 {
+    width: min(12rem, 60vw) !important;
+    height: min(12rem, 40vh) !important;
+  }
+
+  #home .absolute.-left-8 {
+    left: clamp(-0.5rem, -1vw, -1rem) !important;
+  }
+
+  #home .absolute.-right-8 {
+    right: clamp(-0.5rem, -1vw, -1rem) !important;
+  }
+}
+
+/* Wide screen fixes for very large displays */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #home .absolute {
+    width: min(40rem, 30vw) !important;
+    height: min(40rem, 30vh) !important;
+  }
+
+  #home .absolute.bg-blue-100,
+  #home .absolute.bg-blue-200,
+  #home .absolute.bg-blue-300 {
+    width: min(25rem, 25vw) !important;
+    height: min(25rem, 25vh) !important;
+  }
+}
+
+/* Ultra-wide screen fixes (4K and beyond) */
+@media (min-width: 2560px) {
+  .container {
+    max-width: 1600px !important;
+  }
+
+  #home .absolute {
+    width: min(50rem, 25vw) !important;
+    height: min(50rem, 25vh) !important;
+  }
+
+  #home .absolute.bg-blue-100,
+  #home .absolute.bg-blue-200,
+  #home .absolute.bg-blue-300 {
+    width: min(30rem, 20vw) !important;
+    height: min(30rem, 20vh) !important;
+  }
+}
+
+/* Force all containers to be responsive - WIDTH CONTROL ONLY */
+[class*="container"],
+[class*="wrapper"],
+[class*="content"] {
+  max-width: 100vw !important;
+  box-sizing: border-box !important;
 }
 .hero-bg {
   background:
@@ -234,6 +618,26 @@ header {
 footer .absolute.inset-0 {
   pointer-events: none;
 }
+/* Solution cards with ribbons - ensure proper overflow handling */
+#solutions .relative {
+  overflow: visible;
+}
+
+/* Corner ribbon styles */
+.solutions-ribbon {
+  white-space: nowrap;
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.025em;
+}
+
+@media (min-width: 640px) {
+  .solutions-ribbon {
+    font-size: 0.875rem;
+    padding: 0.375rem 0.75rem !important;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-bg {
     background-position: top;

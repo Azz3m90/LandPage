@@ -76,5 +76,6 @@
     "**/.DS_Store",
     "**/node_modules/**",
     "**/bower_components/**"
-  ]
+  ],
+  "livePreview.defaultPreviewPath": "/fastcaisse-crm-business-management-en.html"
 }
