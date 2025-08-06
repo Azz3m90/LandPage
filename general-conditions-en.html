@@ -105,6 +105,12 @@
         opacity: 1;
         visibility: visible;
       }
+      /* Fix breadcrumb overlap on mobile */
+      @media (max-width: 640px) {
+        .hero-section {
+          padding-top: 5rem !important; /* Extra space for breadcrumb - increased for restaurant */
+        }
+      }
     </style>
   </head>
   <body class="font-sans text-gray-900 antialiased bg-white">
@@ -117,108 +123,186 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Header -->
+    <div
+      id="loader"
+      class="fixed inset-0 bg-white/90 backdrop-blur-sm flex items-center justify-center z-50"
+    >
+      <div class="spinner"></div>
+    </div>
     <header
       class="fixed bg-white shadow-md text-gray-900 w-full z-50 transition-all duration-300 backdrop-blur-lg shadow-sm"
       id="header"
     >
       <nav
-        class="container relative mx-auto px-4 sm:px-6 py-2 flex justify-between items-center"
-        aria-label="Navigation principale"
+        class="container relative mx-auto px-6 py-0.5 flex justify-between items-center"
+        aria-label="Main navigation"
       >
-        <div class="flex items-center gap-3 sm:gap-4">
-          <a href="./index-fr.html" aria-label="Aller à la page d'accueil de FAST CAISSE">
+        <!-- Logo -->
+        <div class="flex items-center gap-4">
+          <a href="./index-en.html">
+            <!-- Added link back to home -->
             <img
               src="./images/fastcaisse-logo.png"
-              alt="Logo FAST CAISSE"
-              width="140"
-              height="40"
+              alt="FAST CAISSE logo"
               class="object-contain transition-transform duration-300 hover:scale-105"
-              loading="eager"
+              width="140"
+              loading="lazy"
             />
           </a>
         </div>
-
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-3 sm:space-x-4 items-center">
-          <a href="./index-fr.html#home" class="nav-link text-sm sm:text-base">
-            <i class="fas fa-home mr-1 text-xs"></i>
-            Accueil
-          </a>
-          <a href="./index-fr.html#about" class="nav-link text-sm sm:text-base">
-            <i class="fas fa-info-circle mr-1 text-xs"></i>
-            À propos
-          </a>
-          <a href="./index-fr.html#solutions" class="nav-link text-sm sm:text-base">
-            <i class="fas fa-box mr-1 text-xs"></i>
-            Nos produits
-          </a>
-          <a href="./index-fr.html#services" class="nav-link text-sm sm:text-base">
-            <i class="fas fa-cogs mr-1 text-xs"></i>
-            Services
-          </a>
-          <a href="./index-fr.html#contact" class="nav-link text-sm sm:text-base">
-            <i class="fas fa-envelope mr-1 text-xs"></i>
-            Contact
-          </a>
-          <!-- Language Switcher could go here if needed -->
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button
-            id="mobileMenuButton"
-            class="text-gray-700 hover:text-blue-600 focus:outline-none"
-            aria-expanded="false"
-            aria-label="Ouvrir le menu de navigation"
-          >
-            <i class="fas fa-bars text-2xl"></i>
-          </button>
-        </div>
-      </nav>
-
-      <!-- Mobile Menu (Hidden by default) -->
-      <div
-        id="mobileMenu"
-        class="hidden md:hidden bg-white shadow-lg absolute w-full left-0 top-full z-50"
-      >
-        <div class="px-2 pt-2 pb-4 space-y-1">
-          <a
-            href="./index-fr.html#home"
-            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          >
+        <div class="hidden md:flex space-x-4 items-center">
+          <a href="./index-en.html#home" class="nav-link">
             <i class="fas fa-home mr-2"></i>
-            Accueil
+            Home
           </a>
-          <a
-            href="./index-fr.html#about"
-            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          >
+          <a href="./index-en.html#about" class="nav-link">
             <i class="fas fa-info-circle mr-2"></i>
-            À propos
+            About
           </a>
-          <a
-            href="./index-fr.html#solutions"
-            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          >
-            <i class="fas fa-box mr-2"></i>
-            Nos produits
+          <a href="./index-en.html#solutions" class="nav-link">
+            <i class="fas fa-tools mr-2"></i>
+            Solutions
           </a>
-          <a
-            href="./index-fr.html#services"
-            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          >
+          <a href="./index-en.html#services" class="nav-link">
             <i class="fas fa-cogs mr-2"></i>
             Services
           </a>
-          <a
-            href="./index-fr.html#contact"
-            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          >
+          <a href="./index-en.html#clients" class="nav-link">
+            <i class="fas fa-users mr-2"></i>
+            Clients
+          </a>
+          <a href="#contact" class="nav-link">
             <i class="fas fa-envelope mr-2"></i>
             Contact
           </a>
+          <!-- Desktop Language Switcher -->
+          <div class="relative">
+            <button id="desktopLangToggle" class="flex items-center rounded focus:outline-none">
+              <img src="./images/flags/united-kingdom.png" alt="EN" class="w-9 h-9" />
+            </button>
+            <div
+              id="desktopLangMenu"
+              class="hidden absolute right-0 w-12 bg-white border border-gray-200 rounded shadow-lg z-50"
+            >
+              <a href="./index.html" class="block p-0 hover:bg-gray-100">
+                <img src="./images/flags/belgium.png" class="w-9 h-9" />
+              </a>
+              <a href="./index-nl.html" class="block p-0 hover:bg-gray-100">
+                <img src="./images/flags/netherlands.png" class="w-9 h-9" />
+              </a>
+            </div>
+          </div>
         </div>
+        <!-- Mobile Buttons -->
+        <div class="md:hidden flex items-center gap-3">
+          <!-- Mobile Language Switcher -->
+          <div class="relative">
+            <button id="mobileLangToggle" class="flex items-center rounded p-1 focus:outline-none">
+              <img src="./images/flags/united-kingdom.png" class="w-8 h-8" />
+            </button>
+            <div
+              id="mobileLangMenu"
+              class="hidden absolute right-0 bg-white border border-gray-200 rounded shadow-lg z-50"
+            >
+              <a href="./index.html" class="block hover:bg-gray-100">
+                <img src="./images/flags/belgium.png" class="w-8 h-8" />
+              </a>
+              <a href="./index-nl.html" class="block hover:bg-gray-100">
+                <img src="./images/flags/netherlands.png" class="w-8 h-8" />
+              </a>
+            </div>
+          </div>
+          <!-- Mobile Menu Toggle -->
+          <button
+            id="menu-toggle"
+            aria-expanded="false"
+            aria-label="Toggle menu"
+            class="focus:outline-none rounded"
+          >
+            <i
+              class="fas fa-bars text-2xl text-gray-700 transition-all duration-300 ease-in-out"
+            ></i>
+          </button>
+        </div>
+      </nav>
+      <!-- Enhanced Breadcrumb Navigation -->
+      <nav
+        class="bg-gradient-to-r from-gray-50 to-blue-50 py-1 sm:py-4 px-3 sm:px-4 lg:px-6 text-sm border-b border-gray-200 shadow-sm"
+        aria-label="Breadcrumb"
+      >
+        <div class="container mx-auto">
+          <ol class="list-none p-0 inline-flex items-center flex-wrap">
+            <li class="flex items-center mr-2 sm:mr-3">
+              <a
+                href="./index-en.html"
+                class="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 ease-in-out flex items-center focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm p-1 -m-1"
+              >
+                <i class="fas fa-home mr-1.5 text-xs"></i>
+                <span>Home</span>
+              </a>
+              <svg
+                class="fill-current w-3 h-3 sm:w-3.5 sm:h-3.5 mx-1.5 sm:mx-2 lg:mx-3 text-gray-400 flex-shrink-0"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+                aria-hidden="true"
+              >
+                <path
+                  d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                />
+              </svg>
+            </li>
+            <li class="flex items-center text-gray-600 font-medium truncate max-w-xs">
+              <span class="truncate">Conditions Générales</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Content - Positioned below breadcrumb -->
+      <div id="mobile-menu" class="md:hidden hidden">
+        <a
+          href="./index-en.html#home"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
+        >
+          <i class="fas fa-home mr-2"></i>
+          Home
+        </a>
+        <a
+          href="./index-en.html#about"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
+        >
+          <i class="fas fa-info-circle mr-2"></i>
+          About
+        </a>
+        <a
+          href="./index-en.html#solutions"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
+        >
+          <i class="fas fa-tools mr-2"></i>
+          Solutions
+        </a>
+        <a
+          href="./index-en.html#services"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
+        >
+          <i class="fas fa-cogs mr-2"></i>
+          Services
+        </a>
+        <a
+          href="./index-en.html#clients"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
+        >
+          <i class="fas fa-users mr-2"></i>
+          Clients
+        </a>
+        <a
+          href="#contact"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+        >
+          <i class="fas fa-envelope mr-2"></i>
+          Contact
+        </a>
       </div>
     </header>
 
@@ -479,8 +563,10 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <footer class="bg-white text-gray-900 py-16 relative overflow-hidden" data-aos="fade-up">
+      <div
+        class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMDktMS43OTEtNC00LTRzLTQgMS43OTEtNCA0IDEuNzkxIDQgNCA0IDQtMS43OTEgNC00eiIvPjwvZz48L2c+PC9zdmc+')]"
+      ></div>
       <div class="container mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
           <!-- Company Info -->
@@ -488,131 +574,164 @@
             <div class="flex items-center gap-4">
               <img
                 src="./images/fastcaisse-logo.png"
-                alt="FAST CAISSE"
-                class="h-12 object-contain"
+                alt="FAST CAISSE logo"
+                class="h-14 sm:h-16 md:h-20 w-auto max-w-[180px] object-contain transition-transform duration-300 hover:scale-105"
                 loading="lazy"
               />
+              <div class="hidden sm:block">
+                <p class="text-sm text-gray-500 font-medium">Since 2010</p>
+              </div>
             </div>
-            <p class="text-gray-400 leading-relaxed">
-              Le principal fournisseur de solutions POS et CRM en Belgique, approuvé par des
-              milliers d'entreprises à travers le pays.
+            <p class="text-gray-600 text-sm leading-relaxed">
+              POS, CRM, and smart reporting tools for Belgian restaurants and retail. Trusted by
+              1,000+ businesses.
             </p>
-            <div class="flex space-x-4">
-              <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
-                <i class="fab fa-facebook-f text-xl"></i>
-              </a>
-              <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
-                <i class="fab fa-linkedin-in text-xl"></i>
-              </a>
-              <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
-                <i class="fab fa-instagram text-xl"></i>
-              </a>
+            <div class="flex items-center gap-2 text-sm text-gray-500">
+              <i class="fas fa-map-marker-alt text-blue-600"></i>
+              <span>Based in Belgium</span>
             </div>
           </div>
-
-          <!-- Solutions -->
+          <!-- Quick Links -->
           <div>
-            <h3 class="font-bold text-lg mb-6 text-white">Solutions</h3>
-            <ul class="space-y-3">
+            <h2 class="text-lg font-semibold mb-4">
+              <i class="fas fa-link mr-2 text-blue-600"></i>
+              Quick Links
+            </h2>
+            <ul class="space-y-2 text-sm">
               <li>
-                <a
-                  href="./fastcaisse-restaurant-pos-fr.html"
-                  class="text-gray-400 hover:text-blue-600 transition-colors duration-300 flex items-center"
-                >
-                  <i class="fas fa-utensils mr-2 text-sm"></i>
-                  POS Restaurant
+                <a href="#home" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+              </li>
+              <li>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">
+                  About
                 </a>
               </li>
               <li>
-                <a
-                  href="./fastcaisse-retail-pos-fr.html"
-                  class="text-gray-400 hover:text-blue-600 transition-colors duration-300 flex items-center"
-                >
-                  <i class="fas fa-store mr-2 text-sm"></i>
-                  POS Détaillant
+                <a href="#solutions" class="text-gray-600 hover:text-blue-600 transition-colors">
+                  Solutions
                 </a>
               </li>
               <li>
-                <a
-                  href="./fastcaisse-crm-business-management-fr.html"
-                  class="text-gray-400 hover:text-blue-600 transition-colors duration-300 flex items-center"
-                >
-                  <i class="fas fa-chart-line mr-2 text-sm"></i>
-                  CRM & Gestion d'Entreprise
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Company -->
-          <div>
-            <h3 class="font-bold text-lg mb-6 text-white">Société</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="./index-fr.html#about"
-                  class="text-gray-400 hover:text-blue-600 transition-colors duration-300 flex items-center"
-                >
-                  <i class="fas fa-info-circle mr-2 text-sm"></i>
-                  À propos de nous
+                <a href="#services" class="text-gray-600 hover:text-blue-600 transition-colors">
+                  Services
                 </a>
               </li>
               <li>
-                <a
-                  href="./index-fr.html#clients"
-                  class="text-gray-400 hover:text-blue-600 transition-colors duration-300 flex items-center"
-                >
-                  <i class="fas fa-users mr-2 text-sm"></i>
-                  Nos clients
+                <a href="#clients" class="text-gray-600 hover:text-blue-600 transition-colors">
+                  Clients
                 </a>
               </li>
               <li>
-                <a
-                  href="./index-fr.html#contact"
-                  class="text-gray-400 hover:text-blue-600 transition-colors duration-300 flex items-center"
-                >
-                  <i class="fas fa-envelope mr-2 text-sm"></i>
+                <a href="#pricing" class="text-gray-600 hover:text-blue-600 transition-colors">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">
                   Contact
                 </a>
               </li>
             </ul>
           </div>
-
           <!-- Contact Info -->
           <div>
-            <h3 class="font-bold text-lg mb-6 text-white">Contactez-nous</h3>
-            <ul class="space-y-4 text-gray-400">
+            <h2 class="text-lg font-semibold mb-4">
+              <i class="fas fa-envelope mr-2 text-blue-600"></i>
+              Contact Us
+            </h2>
+            <ul class="space-y-3 text-sm">
               <li class="flex items-start">
-                <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-500"></i>
-                <span>Chaussée de Haecht 1749, 1130 Bruxelles, Belgique</span>
+                <i class="fas fa-map-marker-alt text-blue-600 mr-3 mt-1"></i>
+                <span class="text-gray-600">Chaussée de Haecht 1749, 1130 Brussels, Belgium</span>
               </li>
-              <li class="flex items-center">
-                <i class="fas fa-phone-alt mr-3 text-blue-500"></i>
-                <span>+32 2 123 45 67</span>
+              <li class="flex items-start">
+                <i class="fas fa-phone-alt text-blue-600 mr-3 mt-1"></i>
+                <span class="text-gray-600">
+                  <a href="tel:+32485223448" class="hover:text-blue-600">+32 485 22 34 48 (FR)</a>
+                  <br />
+                  <a href="tel:+32485223449" class="hover:text-blue-600">+32 485 22 34 49 (NL)</a>
+                </span>
               </li>
-              <li class="flex items-center">
-                <i class="fas fa-envelope mr-3 text-blue-500"></i>
-                <span>info@fastcaisse.be</span>
+              <li class="flex items-start">
+                <i class="fas fa-envelope text-blue-600 mr-3 mt-1"></i>
+                <a href="mailto:fc@fastcaisse.be" class="text-gray-600 hover:text-blue-600">
+                  fc@fastcaisse.be
+                </a>
               </li>
             </ul>
           </div>
+          <!-- Social Media & Newsletter -->
+          <div>
+            <h2 class="text-lg font-semibold mb-4">
+              <i class="fas fa-share-alt mr-2 text-blue-600"></i>
+              Stay Connected
+            </h2>
+            <p class="text-gray-600 text-sm mb-4">
+              Subscribe to our newsletter for updates and tips.
+            </p>
+            <form class="flex flex-col md:flex-row gap-3 mb-6">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="form-input flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-gray-900 bg-white md:min-w-0"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg transition-all duration-300 md:px-4"
+              >
+                Subscribe
+              </button>
+            </form>
+            <div class="flex space-x-4">
+              <a
+                href="https://facebook.com"
+                class="text-gray-600 hover:text-blue-600 transition-colors"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+              <a
+                href="https://twitter.com"
+                class="text-gray-600 hover:text-blue-600 transition-colors"
+                aria-label="Twitter"
+              >
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a
+                href="https://linkedin.com"
+                class="text-gray-600 hover:text-blue-600 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin-in text-xl"></i>
+              </a>
+              <a
+                href="https://instagram.com"
+                class="text-gray-600 hover:text-blue-600 transition-colors"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+            </div>
+          </div>
         </div>
-
-        <hr class="border-gray-800 my-10" />
-
-        <div class="text-center text-gray-500 text-sm">
-          <p>
-            &copy; 2024 FAST CAISSE SRL. Tous droits réservés. |
-            <a href="./general-conditions-fr.html" class="text-blue-400 hover:underline">
-              Conditions Générales
+        <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+          <p class="text-sm text-gray-600">
+            &copy; 2025 FAST CAISSE SRL. All rights reserved. |
+            <a href="./general-conditions-en.html" class="text-blue-600 hover:underline">
+              General Conditions
             </a>
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- JavaScript Libraries -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./assets/js/app.js"></script>
     <script>
       // Initialize AOS
       AOS.init({
@@ -679,4 +798,3 @@
     </script>
   </body>
 </html>
-```
