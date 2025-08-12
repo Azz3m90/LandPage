@@ -49,6 +49,18 @@ section {
 /* Main content wrapper - HORIZONTAL ONLY */
 main {
   max-width: 100vw;
+  /* Ensure main content starts below fixed header */
+  padding-top: 0;
+}
+
+/* Smooth scroll padding for anchor links */
+html {
+  scroll-padding-top: 5rem; /* Default scroll offset for anchor links */
+}
+
+/* Section scroll padding for anchor navigation */
+section[id] {
+  scroll-margin-top: 5rem; /* Offset for anchor links to account for fixed header */
 }
 
 /* Header overflow prevention - HORIZONTAL ONLY */
@@ -211,6 +223,236 @@ nav,
     max-width: 100vw !important;
   }
 
+  /* Fix header overlap on mobile */
+  #home {
+    padding-top: calc(4rem + 2.5rem) !important; /* Header height + extra spacing */
+    margin-top: 0 !important;
+  }
+
+  /* Fix header overlap for about section on mobile */
+  #about {
+    padding-top: calc(4rem + 2rem) !important; /* Header height + section spacing */
+    padding-bottom: 2rem !important;
+  }
+
+  /* Fix statistics cards on mobile */
+  .flex.flex-col.sm\\:flex-row.justify-between.items-center {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    padding: 0 0.5rem !important;
+  }
+
+  .flex.items-center.rounded-2xl.p-3.bg-white.shadow-sm {
+    width: 100% !important;
+    padding: 1rem !important;
+    margin-bottom: 0.75rem !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Improve stat card icon sizing */
+  .flex.items-center.justify-center.w-8.h-8 {
+    width: 3rem !important;
+    height: 3rem !important;
+    margin-right: 1rem !important;
+  }
+
+  /* Improve stat card text sizing */
+  .flex.items-center.rounded-2xl.p-3.bg-white.shadow-sm .text-lg {
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+  }
+
+  .flex.items-center.rounded-2xl.p-3.bg-white.shadow-sm .text-xs {
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    color: #4b5563 !important;
+    margin-top: 0.25rem !important;
+  }
+
+  /* Icon sizing within stat cards */
+  .fas.fa-building,
+  .fas.fa-medal {
+    font-size: 1.25rem !important;
+  }
+
+  /* Contact form fixes for mobile */
+  #contact {
+    padding-top: calc(4rem + 2rem) !important; /* Header clearance + section padding */
+    padding-bottom: 2rem !important;
+  }
+
+  /* Contact section layout */
+  #contact .grid.grid-cols-1.lg\\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Form container height fixes */
+  #contact .rounded-2xl.p-6.sm\\:p-8.h-full {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Contact form specific fixes */
+  #contact-form {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  #contact-form.space-y-4.flex-1.flex.flex-col.justify-between {
+    flex: none !important;
+    justify-content: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  /* Form field fixes */
+  #contact .form-input {
+    padding: 0.75rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    min-height: 2.75rem !important;
+  }
+
+  /* Textarea specific fixes */
+  #contact textarea.form-input {
+    min-height: 4rem !important;
+    max-height: 6rem !important;
+    resize: vertical !important;
+  }
+
+  /* Labels */
+  #contact label {
+    font-size: 0.8125rem !important;
+    margin-bottom: 0.375rem !important;
+    font-weight: 600 !important;
+  }
+
+  /* Select dropdown */
+  #contact select.form-input {
+    background-size: 16px !important;
+    padding-right: 2.5rem !important;
+  }
+
+  /* Checkbox container */
+  #contact .flex.items-start {
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* GDPR text */
+  #contact .text-xs.text-gray-700,
+  #contact .text-xs.text-gray-500 {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* reCAPTCHA container */
+  #contact .g-recaptcha {
+    margin: 0.75rem 0 !important;
+    transform: scale(0.85) !important;
+    transform-origin: 0 0 !important;
+  }
+
+  /* Submit button */
+  #contact button[type="submit"] {
+    margin-top: 1rem !important;
+    padding: 0.875rem 1.5rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+  }
+
+  /* Contact info panel */
+  #contact .space-y-4.flex-1 {
+    flex: none !important;
+    gap: 0.875rem !important;
+  }
+
+  #contact .space-y-4.flex-1 > * + * {
+    margin-top: 0.875rem !important;
+  }
+
+  /* Contact info items */
+  #contact .flex.items-start {
+    align-items: flex-start !important;
+  }
+
+  #contact .flex-shrink-0.bg-blue-50 {
+    padding: 0.5rem !important;
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  #contact .text-sm.font-semibold {
+    font-size: 0.8125rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  #contact .text-xs.text-gray-500 {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Business hours section */
+  #contact .border-t.border-gray-200 {
+    margin-top: 1rem !important;
+    padding-top: 0.75rem !important;
+  }
+
+  #contact .space-y-2 {
+    gap: 0.375rem !important;
+  }
+
+  #contact .space-y-2 > * + * {
+    margin-top: 0.375rem !important;
+  }
+
+  /* Clients section "Trusted by Leaders" fix for mobile */
+  #clients .text-4xl.font-extrabold {
+    font-size: 1.75rem !important; /* 28px - fits on one line */
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Solutions section mobile typography fixes */
+  #solutions .inline-flex.items-center.bg-gradient-to-r {
+    font-size: 0.75rem !important; /* 12px - compact badge */
+    padding: 0.5rem 1rem !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+
+  #solutions .text-2xl.sm\\:text-3xl.md\\:text-5xl.lg\\:text-6xl {
+    font-size: 1.75rem !important; /* 28px */
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #solutions .text-2xl.sm\\:text-3xl.md\\:text-5xl.lg\\:text-6xl .block {
+    font-size: 1.5rem !important; /* 24px for "Made for Belgium" */
+    margin-top: 0.5rem !important;
+  }
+
+  /* Ensure header has consistent height */
+  header {
+    min-height: 4rem !important;
+  }
+
+  header nav {
+    min-height: 4rem !important;
+    align-items: center !important;
+  }
+
+  header img {
+    max-height: 2.5rem !important;
+    width: auto !important;
+  }
+
   .container,
   .mx-auto {
     padding-left: 0.75rem !important;
@@ -357,6 +599,1134 @@ nav,
   #home .absolute.-right-8 {
     right: clamp(-0.5rem, -1vw, -1rem) !important;
   }
+
+  /* Mobile fixes for green badge and hero section overlaps */
+  .hero-section .inline-flex.bg-green-100 {
+    margin-bottom: 1.5rem !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  /* Fix for CRM page hero section spacing */
+  .hero-section .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Fix for benefit cards grid on mobile */
+  .hero-section .grid.grid-cols-1.sm\\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Fix for pricing highlight card on mobile */
+  .pricing-highlight {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Fix for dashboard mockup on mobile */
+  .dashboard-mockup {
+    margin-top: 2rem !important;
+    transform: none !important;
+  }
+
+  /* Fix for any absolutely positioned green elements */
+  .bg-green-400.rounded-full {
+    position: relative !important;
+    margin: 0.5rem auto !important;
+  }
+
+  /* Ensure proper spacing between sections on mobile */
+  .hero-section + section,
+  section + section {
+    padding-top: 2rem !important;
+  }
+
+  /* Fix for feature cards grid responsive issues */
+  .grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Fix for benefit cards padding and spacing */
+  .benefit-card {
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Fix for text wrapping and overflow on mobile */
+  .whitespace-nowrap {
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+
+  /* Fix for button groups on mobile */
+  .flex.flex-col.sm\\:flex-row.gap-3,
+  .flex.flex-col.sm\\:flex-row.gap-4 {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Fix for CTA buttons on mobile */
+  .flex.flex-col.sm\\:flex-row.gap-3 > a,
+  .flex.flex-col.sm\\:flex-row.gap-4 > a {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* Fix for hero titles font size on mobile */
+  .text-xl.sm\\:text-2xl.md\\:text-4xl.lg\\:text-5xl.xl\\:text-6xl {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Fix for dashboard mockup rotation on mobile */
+  .dashboard-mockup .transform.rotate-0.sm\\:rotate-1.md\\:rotate-3 {
+    transform: none !important;
+  }
+
+  /* Adjust scroll padding for mobile */
+  html {
+    scroll-padding-top: 4.5rem !important;
+  }
+
+  section[id] {
+    scroll-margin-top: 4.5rem !important;
+  }
+}
+
+/* Additional safety for very small mobile screens */
+@media (max-width: 480px) {
+  #home {
+    padding-top: calc(4.5rem + 2rem) !important; /* Slightly more header height for small screens */
+  }
+
+  #about {
+    padding-top: calc(4.5rem + 1.5rem) !important; /* Header height + section spacing */
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* Enhanced statistics cards for very small mobile */
+  .flex.items-center.rounded-2xl.p-3.bg-white.shadow-sm {
+    padding: 0.875rem !important;
+    border-radius: 0.875rem !important;
+  }
+
+  .flex.items-center.justify-center.w-8.h-8 {
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+    margin-right: 0.875rem !important;
+  }
+
+  .flex.items-center.rounded-2xl.p-3.bg-white.shadow-sm .text-lg {
+    font-size: 1.375rem !important;
+  }
+
+  .flex.items-center.rounded-2xl.p-3.bg-white.shadow-sm .text-xs {
+    font-size: 0.8125rem !important;
+  }
+
+  /* About section typography for very small mobile */
+
+  /* Adjust main heading for very small screens */
+  #about .text-2xl.sm\\:text-3xl.md\\:text-5xl.font-extrabold {
+    font-size: 1.625rem !important; /* 26px */
+    line-height: 1.2 !important;
+    padding: 0 0.25rem !important;
+  }
+
+  /* Subtitle paragraph */
+  #about .text-base.sm\\:text-lg.text-gray-600 {
+    font-size: 0.875rem !important; /* 14px */
+    padding: 0 0.75rem !important;
+  }
+
+  /* Right panel content */
+  #about .text-2xl.sm\\:text-3xl.font-bold {
+    font-size: 1.375rem !important; /* 22px */
+  }
+
+  #about .backdrop-blur-md {
+    padding: 1rem !important;
+  }
+
+  /* Contact form fixes for very small mobile */
+  #contact {
+    padding-top: calc(4.5rem + 1.5rem) !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* Ultra-compact form layout */
+  #contact .rounded-2xl.p-6.sm\\:p-8.h-full {
+    padding: 0.75rem !important;
+  }
+
+  /* Tighter form spacing */
+  #contact-form.space-y-4.flex-1.flex.flex-col.justify-between {
+    gap: 0.75rem !important;
+  }
+
+  /* Smaller form fields */
+  #contact .form-input {
+    padding: 0.625rem !important;
+    font-size: 0.8125rem !important;
+    min-height: 2.5rem !important;
+  }
+
+  /* Compact textarea */
+  #contact textarea.form-input {
+    min-height: 3.5rem !important;
+    max-height: 5rem !important;
+  }
+
+  /* Smaller labels */
+  #contact label {
+    font-size: 0.75rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Compact reCAPTCHA */
+  #contact .g-recaptcha {
+    transform: scale(0.75) !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  /* Smaller submit button */
+  #contact button[type="submit"] {
+    padding: 0.75rem 1.25rem !important;
+    font-size: 0.8125rem !important;
+  }
+
+  /* Contact info adjustments */
+  #contact .flex-shrink-0.bg-blue-50 {
+    padding: 0.375rem !important;
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+  }
+
+  #contact .text-sm.font-semibold {
+    font-size: 0.75rem !important;
+  }
+
+  #contact .text-xs.text-gray-500 {
+    font-size: 0.6875rem !important;
+  }
+
+  /* Clients section for very small mobile */
+  #clients .text-4xl.font-extrabold {
+    font-size: 1.5rem !important; /* 24px - even more compact */
+    line-height: 1.15 !important;
+  }
+
+  /* Solutions section for very small mobile */
+  #solutions .inline-flex.items-center.bg-gradient-to-r {
+    font-size: 0.6875rem !important; /* 11px - ultra compact */
+    padding: 0.375rem 0.75rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  #solutions .text-2xl.sm\\:text-3xl.md\\:text-5xl.lg\\:text-6xl {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 1.15 !important;
+  }
+
+  #solutions .text-2xl.sm\\:text-3xl.md\\:text-5xl.lg\\:text-6xl .block {
+    font-size: 1.25rem !important; /* 20px */
+    margin-top: 0.25rem !important;
+  }
+
+  header {
+    min-height: 4.5rem !important;
+  }
+
+  header nav {
+    min-height: 4.5rem !important;
+  }
+
+  header img {
+    max-height: 2.25rem !important;
+    width: auto !important;
+  }
+
+  /* Adjust scroll padding for very small mobile */
+  html {
+    scroll-padding-top: 5rem !important;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem !important;
+  }
+}
+
+/* Tablet specific improvements - 768px to 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Fix header overlap and hero section improvements for tablets */
+  #home {
+    padding-top: calc(5rem + 4rem) !important; /* Header height + section padding */
+    padding-bottom: 6rem !important;
+  }
+
+  /* Fix header overlap for about section on tablets */
+  #about {
+    padding-top: calc(5rem + 3rem) !important; /* Header height + section spacing */
+    padding-bottom: 3rem !important;
+  }
+
+  /* Optimize statistics cards for tablets */
+  .flex.flex-col.sm\\:flex-row.justify-between.items-center {
+    flex-direction: row !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+
+  .flex.items-center.rounded-2xl.p-3.bg-white.shadow-sm {
+    width: auto !important;
+    flex: 1 !important;
+    padding: 1.25rem !important;
+    margin-bottom: 0 !important;
+    border-radius: 1.25rem !important;
+  }
+
+  .flex.items-center.justify-center.w-8.h-8 {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+    margin-right: 1.25rem !important;
+  }
+
+  .flex.items-center.rounded-2xl.p-3.bg-white.shadow-sm .text-lg {
+    font-size: 1.75rem !important;
+    font-weight: 800 !important;
+  }
+
+  .flex.items-center.rounded-2xl.p-3.bg-white.shadow-sm .text-xs {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    margin-top: 0.375rem !important;
+  }
+
+  .fas.fa-building,
+  .fas.fa-medal {
+    font-size: 1.5rem !important;
+  }
+
+  /* About section typography for tablets */
+
+  /* Section badge */
+  #about .inline-block.px-6.py-2.text-sm.font-semibold {
+    font-size: 0.9375rem !important; /* 15px */
+    padding: 0.625rem 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Main heading */
+  #about .text-2xl.sm\\:text-3xl.md\\:text-5xl.font-extrabold {
+    font-size: 2.5rem !important; /* 40px */
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Subtitle paragraph */
+  #about .text-base.sm\\:text-lg.text-gray-600 {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.6 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Right panel heading */
+  #about .text-2xl.sm\\:text-3xl.font-bold {
+    font-size: 2rem !important; /* 32px */
+    line-height: 1.3 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Right panel description */
+  #about .text-sm.sm\\:text-base.text-gray-600 {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.6 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Feature list items */
+  #about .text-gray-800.font-semibold.text-sm.sm\\:text-base {
+    font-size: 1.0625rem !important; /* 17px */
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  #about .text-gray-600.text-xs.sm\\:text-sm {
+    font-size: 0.9375rem !important; /* 15px */
+    line-height: 1.5 !important;
+  }
+
+  /* Feature list spacing */
+  #about .space-y-4 > * + * {
+    margin-top: 1.75rem !important;
+  }
+
+  /* Feature icons */
+  #about .fas.fa-cloud,
+  #about .fas.fa-map-marker-alt,
+  #about .fas.fa-headset {
+    font-size: 1.125rem !important;
+  }
+
+  /* CTA buttons */
+  #about .bg-blue-600,
+  #about .hover\\:bg-blue-50 {
+    font-size: 1rem !important; /* 16px */
+    padding: 1rem 1.75rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Layout adjustments */
+  #about .container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  #about .flex.flex-col.lg\\:flex-row {
+    gap: 3rem !important;
+  }
+
+  #about .backdrop-blur-md {
+    padding: 2rem !important;
+    margin-top: 0 !important;
+  }
+
+  /* Contact form fixes for tablets */
+  #contact {
+    padding-top: calc(5rem + 3rem) !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Tablet layout adjustments */
+  #contact .grid.grid-cols-1.lg\\:grid-cols-2 {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+    align-items: stretch !important;
+  }
+
+  /* Form container */
+  #contact .rounded-2xl.p-6.sm\\:p-8.h-full {
+    padding: 1.5rem !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Form spacing */
+  #contact-form.space-y-4.flex-1.flex.flex-col.justify-between {
+    gap: 1.25rem !important;
+    flex: 1 !important;
+    justify-content: space-between !important;
+  }
+
+  /* Form fields */
+  #contact .form-input {
+    padding: 0.875rem !important;
+    font-size: 0.9375rem !important;
+    min-height: 3rem !important;
+  }
+
+  /* Textarea */
+  #contact textarea.form-input {
+    rows: 4 !important;
+    min-height: 5rem !important;
+    max-height: 8rem !important;
+  }
+
+  /* Labels */
+  #contact label {
+    font-size: 0.875rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* reCAPTCHA */
+  #contact .g-recaptcha {
+    transform: scale(0.95) !important;
+    margin: 1rem 0 !important;
+  }
+
+  /* Submit button */
+  #contact button[type="submit"] {
+    padding: 1rem 2rem !important;
+    font-size: 0.9375rem !important;
+    margin-top: 1.25rem !important;
+  }
+
+  /* Contact info panel */
+  #contact .space-y-4.flex-1 {
+    gap: 1.125rem !important;
+  }
+
+  #contact .space-y-4.flex-1 > * + * {
+    margin-top: 1.125rem !important;
+  }
+
+  /* Contact info items */
+  #contact .flex-shrink-0.bg-blue-50 {
+    padding: 0.625rem !important;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+
+  #contact .text-sm.font-semibold {
+    font-size: 0.9375rem !important;
+    margin-bottom: 0.375rem !important;
+  }
+
+  #contact .text-xs.text-gray-500 {
+    font-size: 0.8125rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Business hours */
+  #contact .border-t.border-gray-200 {
+    margin-top: 1.5rem !important;
+    padding-top: 1rem !important;
+  }
+
+  /* Home section typography for tablets */
+  #home .inline-block.px-3.py-2.sm\\:px-4.sm\\:py-2.text-xs.sm\\:text-sm {
+    font-size: 0.9375rem !important; /* 15px */
+    padding: 0.625rem 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  #home .text-2xl.sm\\:text-3xl.md\\:text-4xl.lg\\:text-5xl.xl\\:text-6xl {
+    font-size: 3rem !important; /* 48px */
+    line-height: 1.15 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  #home .text-sm.sm\\:text-base.md\\:text-lg.lg\\:text-xl {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.6 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  #home .bg-blue-600,
+  #home .bg-transparent {
+    font-size: 1rem !important; /* 16px */
+    padding: 1rem 2rem !important;
+  }
+
+  /* Solutions section typography for tablets */
+  #solutions .text-sm.font-semibold {
+    font-size: 0.9375rem !important; /* 15px */
+    padding: 0.75rem 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  #solutions .text-2xl.sm\\:text-3xl.md\\:text-5xl.lg\\:text-6xl {
+    font-size: 3.5rem !important; /* 56px */
+    line-height: 1.1 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  #solutions .text-base.sm\\:text-lg.md\\:text-xl {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.6 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Solution cards typography */
+  #solutions .text-xl.sm\\:text-2xl.font-bold {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #solutions .text-sm.sm\\:text-base {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  #solutions .text-blue-600 {
+    font-size: 0.9375rem !important; /* 15px */
+    font-weight: 600 !important;
+  }
+
+  /* Services section typography for tablets */
+  #services .text-3xl.sm\\:text-4xl {
+    font-size: 2.5rem !important; /* 40px */
+    line-height: 1.2 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  #services .text-base.sm\\:text-lg {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.6 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Service cards */
+  #services .text-xl.sm\\:text-2xl {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #services .text-sm {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.5 !important;
+  }
+
+  /* Clients section typography for tablets */
+  #clients .text-4xl {
+    font-size: 2.5rem !important; /* 40px */
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #clients .text-center.max-w-xl.mx-auto {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.6 !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  /* Footer typography for tablets */
+  footer .text-sm.leading-relaxed {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.6 !important;
+  }
+
+  footer .text-sm.text-gray-500 {
+    font-size: 0.9375rem !important; /* 15px */
+  }
+
+  footer .text-base.font-semibold {
+    font-size: 1.125rem !important; /* 18px */
+    margin-bottom: 1rem !important;
+  }
+
+  footer .text-sm.text-gray-600 {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.5 !important;
+  }
+
+  /* Navigation typography for tablets */
+  header .nav-link {
+    font-size: 1rem !important; /* 16px */
+    font-weight: 600 !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  /* Mobile menu typography */
+  #mobile-menu a {
+    font-size: 1.125rem !important; /* 18px */
+    padding: 1rem 1.5rem !important;
+  }
+
+  /* General container adjustments for tablets */
+  .container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  /* Button improvements for tablets */
+  .btn,
+  button {
+    font-size: 1rem !important;
+    padding: 0.875rem 1.75rem !important;
+  }
+
+  /* Additional typography improvements for tablets */
+
+  /* Card components */
+  .card .text-lg {
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.4 !important;
+  }
+
+  .card .text-base {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.5 !important;
+  }
+
+  .card .text-sm {
+    font-size: 0.9375rem !important; /* 15px */
+    line-height: 1.4 !important;
+  }
+
+  /* Feature lists */
+  .feature-list .text-base {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.5 !important;
+  }
+
+  .feature-list .text-sm {
+    font-size: 0.9375rem !important; /* 15px */
+    line-height: 1.4 !important;
+  }
+
+  /* Icons within text */
+  .fas,
+  .far,
+  .fab {
+    font-size: 1.125rem !important;
+  }
+
+  /* Large icons */
+  .text-2xl .fas,
+  .text-3xl .fas,
+  .text-4xl .fas {
+    font-size: 1.5rem !important;
+  }
+
+  /* Badge elements */
+  .badge,
+  .pill {
+    font-size: 0.875rem !important; /* 14px */
+    padding: 0.5rem 1rem !important;
+  }
+
+  /* Quote/testimonial text */
+  blockquote {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.6 !important;
+  }
+
+  /* Link typography */
+  a {
+    font-size: inherit !important;
+  }
+
+  /* CTA links */
+  .cta-link {
+    font-size: 1rem !important; /* 16px */
+    font-weight: 600 !important;
+  }
+
+  /* Table typography */
+  table {
+    font-size: 0.9375rem !important; /* 15px */
+  }
+
+  table th {
+    font-size: 1rem !important; /* 16px */
+    font-weight: 600 !important;
+  }
+
+  table td {
+    font-size: 0.9375rem !important; /* 15px */
+    line-height: 1.4 !important;
+  }
+
+  /* Form elements */
+  input,
+  textarea,
+  select {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.4 !important;
+  }
+
+  label {
+    font-size: 0.9375rem !important; /* 15px */
+    font-weight: 600 !important;
+  }
+
+  /* Helper text */
+  .help-text,
+  .form-help {
+    font-size: 0.875rem !important; /* 14px */
+    line-height: 1.3 !important;
+  }
+
+  /* Error messages */
+  .error-text {
+    font-size: 0.875rem !important; /* 14px */
+  }
+
+  /* Success messages */
+  .success-text {
+    font-size: 0.9375rem !important; /* 15px */
+  }
+
+  /* Modal/popup typography */
+  .modal .text-xl {
+    font-size: 1.375rem !important; /* 22px */
+  }
+
+  .modal .text-base {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.5 !important;
+  }
+
+  /* Tooltip typography */
+  .tooltip {
+    font-size: 0.875rem !important; /* 14px */
+    line-height: 1.3 !important;
+  }
+
+  /* Section spacing improvements for tablets */
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  /* Heading spacing */
+  h1 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  h2 {
+    margin-bottom: 1.25rem !important;
+  }
+
+  h3 {
+    margin-bottom: 1rem !important;
+  }
+
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Paragraph spacing */
+  p {
+    margin-bottom: 1rem !important;
+  }
+
+  /* List spacing */
+  ul,
+  ol {
+    margin-bottom: 1.25rem !important;
+  }
+
+  li {
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Ensure header has consistent height */
+  header {
+    min-height: 5rem !important;
+  }
+
+  header nav {
+    min-height: 5rem !important;
+    align-items: center !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  header img {
+    max-height: 3rem !important;
+    width: auto !important;
+  }
+
+  /* Adjust scroll padding for tablets */
+  html {
+    scroll-padding-top: 5.5rem !important;
+  }
+
+  section[id] {
+    scroll-margin-top: 5.5rem !important;
+  }
+
+  #home .container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  /* Better text sizing for tablets */
+  #home h1 {
+    font-size: 3.5rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  #home p {
+    font-size: 1.125rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  /* Button improvements for tablets */
+  #home .flex.flex-col.sm\\:flex-row {
+    gap: 1.5rem !important;
+    max-width: 28rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #home .flex.flex-col.sm\\:flex-row button,
+  #home .flex.flex-col.sm\\:flex-row a {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* Customer testimonials improvements for tablets */
+  #home .flex.flex-col.sm\\:flex-row.items-center.sm\\:items-center {
+    gap: 1.5rem !important;
+    justify-content: center !important;
+  }
+
+  #home .flex.-space-x-2.sm\\:-space-x-3 img {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+
+  /* Badge system improvements for tablets */
+  .badges-wrapper {
+    height: auto !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+    padding: 0 1rem !important;
+  }
+
+  .badge {
+    position: static !important;
+    width: 100% !important;
+    height: 90px !important;
+    padding: 1rem !important;
+    animation: none !important;
+    margin: 0 !important;
+  }
+
+  .badge i {
+    font-size: 1.75rem !important;
+  }
+
+  .badge p:first-child {
+    font-size: 0.8rem !important;
+  }
+
+  .badge p:last-child {
+    font-size: 1.25rem !important;
+  }
+
+  #badge-sales,
+  #badge-checkout,
+  #badge-satisfaction,
+  #badge-uptime {
+    top: auto !important;
+    left: auto !important;
+    position: static !important;
+    animation: none !important;
+  }
+
+  /* Belgium map sizing for tablets */
+  #home img[alt="Belgium map"] {
+    max-width: 24rem !important;
+  }
+
+  /* Background decorative elements for tablets */
+  #home .absolute {
+    width: min(25rem, 70vw) !important;
+    height: min(25rem, 70vh) !important;
+  }
+
+  #home .absolute.bg-blue-100,
+  #home .absolute.bg-blue-200,
+  #home .absolute.bg-blue-300 {
+    width: min(18rem, 50vw) !important;
+    height: min(18rem, 50vh) !important;
+  }
+}
+
+/* Large tablets and small desktops - 1024px to 1279px */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* Fix header overlap and fine-tuning for large tablets */
+  #home {
+    padding-top: calc(5.5rem + 5rem) !important; /* Header height + section padding */
+    padding-bottom: 7rem !important;
+  }
+
+  /* Fix header overlap for about section on large tablets */
+  #about {
+    padding-top: calc(5.5rem + 4rem) !important; /* Header height + section spacing */
+    padding-bottom: 4rem !important;
+  }
+
+  /* Enhanced statistics cards for large tablets */
+  .flex.flex-col.sm\\:flex-row.justify-between.items-center {
+    gap: 2rem !important;
+    padding: 0 1.5rem !important;
+  }
+
+  .flex.items-center.rounded-2xl.p-3.bg-white.shadow-sm {
+    padding: 1.5rem !important;
+    border-radius: 1.5rem !important;
+  }
+
+  .flex.items-center.justify-center.w-8.h-8 {
+    width: 4rem !important;
+    height: 4rem !important;
+    margin-right: 1.5rem !important;
+  }
+
+  .flex.items-center.rounded-2xl.p-3.bg-white.shadow-sm .text-lg {
+    font-size: 2rem !important;
+    font-weight: 900 !important;
+  }
+
+  .flex.items-center.rounded-2xl.p-3.bg-white.shadow-sm .text-xs {
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .fas.fa-building,
+  .fas.fa-medal {
+    font-size: 1.75rem !important;
+  }
+
+  /* Ensure header has consistent height */
+  header {
+    min-height: 5.5rem !important;
+  }
+
+  header nav {
+    min-height: 5.5rem !important;
+    align-items: center !important;
+  }
+
+  header img {
+    max-height: 3.5rem !important;
+    width: auto !important;
+  }
+
+  /* Adjust scroll padding for large tablets */
+  html {
+    scroll-padding-top: 6rem !important;
+  }
+
+  section[id] {
+    scroll-margin-top: 6rem !important;
+  }
+
+  #home .flex.flex-col.lg\\:flex-row {
+    gap: 3rem !important;
+  }
+
+  #home h1 {
+    font-size: 4rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  #home p {
+    font-size: 1.25rem !important;
+  }
+
+  .badges-wrapper {
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+    max-width: 700px !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+  }
+
+  .badge {
+    position: static !important;
+    width: 100% !important;
+    height: 100px !important;
+    animation: none !important;
+    margin: 0 !important;
+  }
+
+  #badge-sales,
+  #badge-checkout,
+  #badge-satisfaction,
+  #badge-uptime {
+    top: auto !important;
+    left: auto !important;
+    position: static !important;
+    animation: none !important;
+  }
+
+  /* Contact form fixes for large tablets */
+  #contact {
+    padding-top: calc(5.5rem + 4rem) !important;
+    padding-bottom: 4rem !important;
+  }
+
+  /* Large tablet layout */
+  #contact .grid.grid-cols-1.lg\\:grid-cols-2 {
+    gap: 2.5rem !important;
+    max-height: none !important;
+  }
+
+  /* Form container */
+  #contact .rounded-2xl.p-6.sm\\:p-8.h-full {
+    padding: 2rem !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Form spacing */
+  #contact-form.space-y-4.flex-1.flex.flex-col.justify-between {
+    gap: 1.5rem !important;
+  }
+
+  /* Form fields */
+  #contact .form-input {
+    padding: 1rem !important;
+    font-size: 1rem !important;
+    min-height: 3.25rem !important;
+  }
+
+  /* Textarea */
+  #contact textarea.form-input {
+    min-height: 6rem !important;
+    max-height: 10rem !important;
+  }
+
+  /* Labels */
+  #contact label {
+    font-size: 0.9375rem !important;
+    margin-bottom: 0.625rem !important;
+  }
+
+  /* reCAPTCHA */
+  #contact .g-recaptcha {
+    transform: scale(1) !important;
+    margin: 1.25rem 0 !important;
+  }
+
+  /* Submit button */
+  #contact button[type="submit"] {
+    padding: 1.125rem 2.25rem !important;
+    font-size: 1rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  /* Contact info */
+  #contact .space-y-4.flex-1 {
+    gap: 1.5rem !important;
+  }
+
+  #contact .space-y-4.flex-1 > * + * {
+    margin-top: 1.5rem !important;
+  }
+
+  #contact .flex-shrink-0.bg-blue-50 {
+    padding: 0.75rem !important;
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+  }
+
+  #contact .text-sm.font-semibold {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  #contact .text-xs.text-gray-500 {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+  }
 }
 
 /* Wide screen fixes for very large displays */
@@ -396,6 +1766,152 @@ nav,
   #home .absolute.bg-blue-300 {
     width: min(30rem, 20vw) !important;
     height: min(30rem, 20vh) !important;
+  }
+}
+
+/* Extra small mobile fixes */
+@media (max-width: 480px) {
+  /* Force single column layout on very small screens */
+  .grid.grid-cols-1.sm\\:grid-cols-2,
+  .grid.grid-cols-2,
+  .grid[class*="grid-cols-"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Reduce padding on very small screens */
+  .container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  /* Fix hero title size for very small screens */
+  .text-xl.sm\\:text-2xl.md\\:text-4xl.lg\\:text-5xl.xl\\:text-6xl {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Fix pricing cards on very small screens */
+  .pricing-highlight {
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+  }
+
+  /* Fix button text size on very small screens */
+  .py-4.px-8 {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* Fix feature cards on very small screens */
+  .benefit-card {
+    padding: 0.75rem !important;
+  }
+
+  /* Ensure green badges don't overflow on very small screens */
+  .bg-green-100.rounded-full {
+    max-width: 90vw !important;
+    text-align: center !important;
+  }
+
+  /* Fix dashboard mockup on very small screens */
+  .dashboard-mockup {
+    max-width: 90vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Fix card text overflow on very small screens */
+  .solutions-card li span,
+  .feature-card li span,
+  .benefit-card li span {
+    word-break: break-word !important;
+    hyphens: auto !important;
+    overflow-wrap: break-word !important;
+  }
+}
+
+/* Global card overflow fixes */
+.solutions-card,
+[class*="solution-card"],
+[class*="feature-card"],
+[class*="benefit-card"] {
+  overflow: hidden !important;
+  word-wrap: break-word !important;
+}
+
+/* Global list item text fixes */
+.solutions-card li,
+.feature-card li,
+.benefit-card li,
+ul li {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Fix for feature lists specifically */
+.solutions-card ul li span,
+.feature-card ul li span,
+.benefit-card ul li span {
+  word-break: break-word !important;
+  hyphens: auto !important;
+  line-height: 1.4 !important;
+}
+
+/* Ensure icons don't shrink in flex containers */
+.solutions-card li i,
+.feature-card li i,
+.benefit-card li i,
+ul li i.fas {
+  flex-shrink: 0 !important;
+}
+
+/* Aggressive text overflow prevention for solution cards */
+.bg-white.rounded-2xl ul li span,
+div[class*="rounded-2xl"] ul li span {
+  max-width: 100% !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+  white-space: normal !important;
+  line-height: 1.4 !important;
+}
+
+/* Force text to fit within card boundaries */
+.bg-white.rounded-2xl ul,
+div[class*="rounded-2xl"] ul {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.bg-white.rounded-2xl ul li,
+div[class*="rounded-2xl"] ul li {
+  max-width: 100% !important;
+  overflow: hidden !important;
+  word-wrap: break-word !important;
+}
+
+/* Mobile specific aggressive text wrapping */
+@media (max-width: 768px) {
+  .bg-white.rounded-2xl ul li span,
+  div[class*="rounded-2xl"] ul li span {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+    max-width: calc(100% - 2rem) !important;
+    display: block !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+
+/* Extra aggressive mobile text fixes for very small screens */
+@media (max-width: 480px) {
+  .bg-white.rounded-2xl ul li span,
+  div[class*="rounded-2xl"] ul li span {
+    font-size: 0.7rem !important;
+    line-height: 1.2 !important;
+    max-width: calc(100% - 1.5rem) !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
   }
 }
 
@@ -893,22 +2409,22 @@ body.loader-active {
   }
   .badges-wrapper {
     height: auto;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
     pointer-events: auto;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     box-sizing: border-box;
   }
   .badge {
     position: static !important;
     max-width: 100%;
-    width: calc(100% - 2rem);
+    width: 100%;
     height: 60px;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     animation: none !important;
     cursor: default;
-    margin: 0 auto;
+    margin: 0;
     border-width: 1px;
   }
   #badge-sales,
