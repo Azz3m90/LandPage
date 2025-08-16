@@ -96,6 +96,90 @@
     <link rel="stylesheet" href="./assets/css/maincss.css" />
     <link rel="icon" type="image/webp" href="./images/fastcaisse-logo.png" />
     <!-- Swiper CSS and JS -->
+    <style>
+      /* Mobile responsiveness tweaks for About and Solutions on EN page */
+      @media (max-width: 640px) {
+        /* Solutions section */
+        #solutions {
+          padding-top: 2rem !important;
+          padding-bottom: 2rem !important;
+        }
+        #solutions .grid {
+          gap: 1rem !important;
+        }
+        #solutions .p-8 {
+          padding: 1rem !important;
+        }
+        /* Override inline nowrap to prevent horizontal overflow */
+        #solutions li,
+        #solutions li span {
+          white-space: normal !important;
+          word-break: break-word;
+        }
+        /* Keep ribbons visible but prevent overflow issues */
+        #solutions .solutions-ribbon {
+          top: 0.25rem !important;
+          right: 0.25rem !important;
+          transform: scale(0.9);
+        }
+        /* Tame large price text on very small screens */
+        #solutions .text-5xl {
+          font-size: 2rem !important;
+          line-height: 2.25rem !important;
+        }
+        /* Hero heading scale down on mobile */
+        #solutions #solutions-heading {
+          font-size: 1.5rem !important;
+          line-height: 1.2 !important;
+        }
+        #solutions #solutions-heading span {
+          font-size: 1.125rem !important;
+          line-height: 1.35 !important;
+        }
+        /* Badge at top of Solutions section */
+        #solutions header .inline-flex {
+          white-space: nowrap !important;
+          padding: 0.25rem 0.5rem !important;
+          font-size: 0.6875rem !important; /* ~11px */
+          line-height: 1rem !important;
+          flex-wrap: nowrap !important; /* keep icon and text on same line */
+          max-width: calc(100% - 1rem) !important;
+          margin: 0 auto !important;
+          justify-content: center !important;
+          text-align: center !important;
+          border-radius: 0.75rem !important;
+          gap: 0.25rem !important;
+        }
+        #solutions header .inline-flex svg {
+          width: 12px !important;
+          height: 12px !important;
+          margin-right: 0.25rem !important;
+          flex: 0 0 auto !important;
+        }
+        #solutions header .inline-flex span {
+          display: inline !important;
+          flex: 0 1 auto !important;
+          white-space: nowrap !important;
+          overflow: hidden !important;
+          text-overflow: ellipsis !important;
+        }
+
+        /* About section minor safeguards */
+        #about .rounded-2xl.overflow-hidden {
+          height: auto !important;
+        }
+        #about .flex-col.sm\:flex-row > * {
+          width: 100% !important;
+        }
+        /* Hide About feature descriptions on mobile */
+        #about .flex.items-start .ml-4 > p.text-gray-600.text-sm {
+          display: none !important;
+        }
+        #about .flex.items-start .ml-4 > p.text-gray-800.font-semibold {
+          margin-bottom: 0 !important;
+        }
+      }
+    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <!-- Enhanced Structured Data -->
     <script type="application/ld+json">
@@ -152,7 +236,7 @@
           },
           {
             "@type": "ContactPoint",
-            "telephone": "+32 470 12 34 56",
+            "telephone": "+32485223448",
             "contactType": "sales",
             "areaServed": "BE",
             "availableLanguage": ["French", "Dutch", "English"]
@@ -387,7 +471,7 @@
                 height="24"
                 loading="lazy"
               />
-              <span class="text-sm font-medium text-gray-700">Belgium</span>
+              <span class="text-sm font-medium text-gray-700">EN</span>
               <i class="fas fa-chevron-down ml-1 text-xs text-gray-500"></i>
             </button>
             <div
@@ -412,8 +496,7 @@
                   loading="lazy"
                 />
                 <div>
-                  <div class="text-sm font-medium text-gray-900">Français</div>
-                  <div class="text-xs text-gray-500">Belgium</div>
+                  <div class="text-sm font-medium text-gray-900">FR</div>
                 </div>
               </a>
               <a
@@ -432,8 +515,7 @@
                   loading="lazy"
                 />
                 <div>
-                  <div class="text-sm font-medium text-gray-900">English</div>
-                  <div class="text-xs text-gray-500">Belgium</div>
+                  <div class="text-sm font-medium text-gray-900">EN</div>
                 </div>
               </a>
               <a
@@ -452,8 +534,7 @@
                   loading="lazy"
                 />
                 <div>
-                  <div class="text-sm font-medium text-gray-900">Nederlands</div>
-                  <div class="text-xs text-gray-500">Belgium</div>
+                  <div class="text-sm font-medium text-gray-900">NL</div>
                 </div>
               </a>
             </div>
@@ -504,8 +585,7 @@
                     loading="lazy"
                   />
                   <div class="flex-1 min-w-0">
-                    <div class="text-sm font-medium text-gray-900">Français</div>
-                    <div class="text-xs text-gray-500">Belgium</div>
+                    <div class="text-sm font-medium text-gray-900">FR</div>
                   </div>
                 </a>
                 <a
@@ -524,8 +604,8 @@
                     loading="lazy"
                   />
                   <div class="flex-1 min-w-0">
-                    <div class="text-sm font-medium text-gray-900">English</div>
-                    <div class="text-xs text-blue-600">Belgium • Current</div>
+                    <div class="text-sm font-medium text-gray-900">EN</div>
+                    <div class="text-xs text-blue-600">Current</div>
                   </div>
                   <i class="fas fa-check text-blue-600 text-sm ml-2"></i>
                 </a>
@@ -545,8 +625,7 @@
                     loading="lazy"
                   />
                   <div class="flex-1 min-w-0">
-                    <div class="text-sm font-medium text-gray-900">Nederlands</div>
-                    <div class="text-xs text-gray-500">Belgium</div>
+                    <div class="text-sm font-medium text-gray-900">NL</div>
                   </div>
                 </a>
               </div>
@@ -848,13 +927,12 @@
             <h2
               class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 mb-4 sm:mb-6 leading-[1.1] tracking-tight"
             >
-              POS and CRM Solutions for Belgian Businesses
+              POS Solutions for Belgian Businesses
               <span class="text-blue-600 block sm:inline">Since 2010</span>
             </h2>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              FAST CAISSE provides complete POS and CRM systems for restaurants and retail
-              businesses in Belgium. We help over 1,000 clients improve sales, reduce costs, and
-              stay compliant.
+              FAST CAISSE provides complete POS systems for restaurants and retail businesses in
+              Belgium. We help over 1,000 clients improve sales, reduce costs, and stay compliant.
             </p>
           </div>
           <div class="flex flex-col lg:flex-row items-start gap-6 sm:gap-8 lg:gap-10">
@@ -925,7 +1003,7 @@
               <h3
                 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight"
               >
-                Built for Belgian Horca and Retail Shops
+                Built for Belgian Horeca and Retail Shops
               </h3>
               <p class="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                 Based in Brussels, we deliver 360° point-of-sale solution that supports growth,
@@ -1047,8 +1125,8 @@
             <p
               class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4 sm:px-0"
             >
-              Certified POS systems, advanced CRM, and smart inventory management designed
-              specifically for Belgian restaurants, retail stores, and wholesalers.
+              Certified POS systems designed specifically for Belgian restaurants, advanced CRM and
+              smart inventory management for wholesalers and retail stores.
             </p>
 
             <!-- Trust Indicators -->
@@ -1151,7 +1229,9 @@
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Belgian-Certified Cash Register</span>
+                  <span class="text-gray-700 font-bold">
+                    Belgian-Certified (V1 & V2) Cash Register
+                  </span>
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -1319,7 +1399,7 @@
                   <span>Get Free Consultation</span>
                 </a>
                 <a
-                  href="tel:+32470123456"
+                  href="tel:+32485223448"
                   class="w-full sm:w-auto inline-flex items-center justify-center bg-white hover:bg-gray-50 text-blue-600 font-semibold py-3 sm:py-4 px-6 sm:px-8 text-sm sm:text-base rounded-lg border border-blue-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500/30"
                 >
                   <svg
@@ -1331,7 +1411,7 @@
                       d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
                     ></path>
                   </svg>
-                  <span class="whitespace-nowrap">Call Now: +32 470 12 34 56</span>
+                  <span class="whitespace-nowrap">Call Now: +32485223448</span>
                 </a>
               </div>
             </div>

@@ -2697,11 +2697,12 @@ header {
 }
 @media (max-width: 640px) {
   #about {
-    flex-wrap: nowrap; /* keep both items on the same line */
+    flex-wrap: wrap !important; /* stack items on small screens */
   }
   #about > div {
     padding: 0.5rem;
-    min-width: 45%;
+    min-width: 100% !important;
+    width: 100% !important;
   }
   #about .w-10 {
     width: 2.5rem;

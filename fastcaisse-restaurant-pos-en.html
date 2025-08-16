@@ -435,6 +435,16 @@
           0 10px 10px -5px rgba(0, 0, 0, 0.04);
       }
 
+      /* Enhanced Mobile & Tablet Responsive Styles */
+
+      /* Fix breadcrumb overlap on mobile */
+      @media (max-width: 640px) {
+        .hero-section {
+          padding-top: 8rem !important; /* Extra space for breadcrumb - increased for mobile */
+          margin-top: auto;
+        }
+      }
+
       /* Mobile menu hidden state */
       #mobile-menu.hidden {
         display: none;
@@ -672,14 +682,7 @@
         }
       }
 
-      /* Enhanced Mobile & Tablet Responsive Styles */
 
-      /* Fix breadcrumb overlap on mobile */
-      @media (max-width: 640px) {
-        .hero-section {
-          padding-top: 5rem !important; /* Extra space for breadcrumb - increased for restaurant */
-        }
-      }
 
 
 
@@ -903,6 +906,28 @@
         padding-right: 2.5rem;
         appearance: none;
       }
+
+      /* Green circle mobile positioning fix */
+      @media (max-width: 640px) {
+        /* Keep green circle positioned like yellow star - relative to container edge */
+        .hero-section .dashboard-mockup div.mobile-green-circle.mobile-green-circle.bg-green-400.bg-green-400 {
+          bottom: -8px !important;
+          left: -8px !important;
+          transform: none !important;
+          position: absolute !important;
+        }
+
+        /* Ensure parent container maintains positioning context */
+        .hero-section .dashboard-mockup {
+          position: relative !important;
+        }
+
+        /* Alternative approach - force positioning */
+        div.mobile-green-circle[style*="position:absolute"] {
+          bottom: -8px !important;
+          left: -8px !important;
+        }
+      }
     </style>
   </head>
   <body class="font-sans text-gray-900 antialiased bg-white">
@@ -1107,7 +1132,7 @@
     </header>
 
     <!-- Main Content -->
-    <main id="main-content" class="pt-16">
+    <main id="main-content" class="pt-28 sm:pt-16">
 
 
       <!-- Hero Section -->
@@ -1263,8 +1288,8 @@
                   <i class="fas fa-star text-white text-sm sm:text-base md:text-lg"></i>
                 </div>
                 <div
-                  style="position: absolute; bottom: -8px; left: -8px; z-index: 30;"
-                  class="bg-green-400 rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center shadow-lg"
+                  style="position:absolute; bottom:-8px !important; left:-8px !important; z-index:30;"
+                  class="bg-green-400 rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center shadow-lg mobile-green-circle"
                 >
                   <i class="fas fa-check-circle text-white text-sm sm:text-base md:text-lg"></i>
                 </div>

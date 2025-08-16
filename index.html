@@ -97,6 +97,86 @@
     <link rel="icon" type="image/webp" href="./images/fastcaisse-logo.png" />
     <!-- Swiper CSS and JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+      /* Mobile tweaks to mirror EN page for About and Solutions */
+      @media (max-width: 640px) {
+        /* Solutions */
+        #solutions {
+          padding-top: 2rem !important;
+          padding-bottom: 2rem !important;
+        }
+        #solutions .grid {
+          gap: 1rem !important;
+        }
+        #solutions .p-8 {
+          padding: 1rem !important;
+        }
+        #solutions li,
+        #solutions li span {
+          white-space: normal !important;
+          word-break: break-word;
+        }
+        #solutions .solutions-ribbon {
+          top: 0.25rem !important;
+          right: 0.25rem !important;
+          transform: scale(0.9);
+        }
+        #solutions .text-5xl {
+          font-size: 2rem !important;
+          line-height: 2.25rem !important;
+        }
+        /* Hero heading scale down on mobile */
+        #solutions #solutions-heading {
+          font-size: 1.5rem !important;
+          line-height: 1.2 !important;
+        }
+        #solutions #solutions-heading span {
+          font-size: 1.125rem !important;
+          line-height: 1.35 !important;
+        }
+        /* Badge at top of Solutions section */
+        #solutions header .inline-flex {
+          white-space: nowrap !important;
+          padding: 0.25rem 0.5rem !important;
+          font-size: 0.6875rem !important;
+          line-height: 1rem !important;
+          flex-wrap: nowrap !important;
+          max-width: calc(100% - 1rem) !important;
+          margin: 0 auto !important;
+          justify-content: center !important;
+          text-align: center !important;
+          border-radius: 0.75rem !important;
+          gap: 0.25rem !important;
+        }
+        #solutions header .inline-flex svg {
+          width: 12px !important;
+          height: 12px !important;
+          margin-right: 0.25rem !important;
+          flex: 0 0 auto !important;
+        }
+        #solutions header .inline-flex span {
+          display: inline !important;
+          flex: 0 1 auto !important;
+          white-space: nowrap !important;
+          overflow: hidden !important;
+          text-overflow: ellipsis !important;
+        }
+        /* About */
+        #about .rounded-2xl.overflow-hidden {
+          height: auto !important;
+        }
+        #about .flex-col.sm\:flex-row > * {
+          width: 100% !important;
+        }
+        /* Hide About feature descriptions on mobile */
+        #about .flex.items-start .ml-4 > p.text-gray-600.text-sm {
+          display: none !important;
+        }
+        #about .flex.items-start .ml-4 > p.text-gray-800.font-semibold {
+          margin-bottom: 0 !important;
+        }
+      }
+    </style>
     <!-- Enhanced Structured Data -->
     <script type="application/ld+json">
       {
@@ -152,7 +232,7 @@
           },
           {
             "@type": "ContactPoint",
-            "telephone": "+32 470 12 34 56",
+            "telephone": "+32485223448",
             "contactType": "sales",
             "areaServed": "BE",
             "availableLanguage": ["Français", "Néerlandais", "Anglais"]
@@ -387,7 +467,7 @@
                 height="24"
                 loading="lazy"
               />
-              <span class="text-sm font-medium text-gray-700">Belgique</span>
+              <span class="text-sm font-medium text-gray-700">FR</span>
               <i class="fas fa-chevron-down ml-1 text-xs text-gray-500"></i>
             </button>
             <div
@@ -412,8 +492,7 @@
                   loading="lazy"
                 />
                 <div>
-                  <div class="text-sm font-medium text-gray-900">Français</div>
-                  <div class="text-xs text-gray-500">Belgique</div>
+                  <div class="text-sm font-medium text-gray-900">FR</div>
                 </div>
               </a>
               <a
@@ -432,8 +511,7 @@
                   loading="lazy"
                 />
                 <div>
-                  <div class="text-sm font-medium text-gray-900">English</div>
-                  <div class="text-xs text-gray-500">Belgium</div>
+                  <div class="text-sm font-medium text-gray-900">EN</div>
                 </div>
               </a>
               <a
@@ -452,8 +530,7 @@
                   loading="lazy"
                 />
                 <div>
-                  <div class="text-sm font-medium text-gray-900">Nederlands</div>
-                  <div class="text-xs text-gray-500">België</div>
+                  <div class="text-sm font-medium text-gray-900">NL</div>
                 </div>
               </a>
             </div>
@@ -478,7 +555,7 @@
                 height="24"
                 loading="lazy"
               />
-              <span class="text-xs font-medium text-gray-700 mr-1">BE</span>
+              <span class="text-xs font-medium text-gray-700 mr-1">FR</span>
               <i class="fas fa-chevron-down text-xs text-gray-500"></i>
             </button>
             <div
@@ -504,8 +581,8 @@
                     loading="lazy"
                   />
                   <div class="flex-1 min-w-0">
-                    <div class="text-sm font-medium text-gray-900">Français</div>
-                    <div class="text-xs text-blue-600">Belgique • Actuel</div>
+                    <div class="text-sm font-medium text-gray-900">FR</div>
+                    <div class="text-xs text-blue-600">Actuel</div>
                   </div>
                   <i class="fas fa-check text-blue-600 text-sm ml-2"></i>
                 </a>
@@ -525,8 +602,7 @@
                     loading="lazy"
                   />
                   <div class="flex-1 min-w-0">
-                    <div class="text-sm font-medium text-gray-900">English</div>
-                    <div class="text-xs text-gray-500">Belgium</div>
+                    <div class="text-sm font-medium text-gray-900">EN</div>
                   </div>
                 </a>
                 <a
@@ -545,8 +621,7 @@
                     loading="lazy"
                   />
                   <div class="flex-1 min-w-0">
-                    <div class="text-sm font-medium text-gray-900">Nederlands</div>
-                    <div class="text-xs text-gray-500">België</div>
+                    <div class="text-sm font-medium text-gray-900">NL</div>
                   </div>
                 </a>
               </div>
@@ -847,18 +922,18 @@
               class="inline-block px-6 py-2 text-sm font-semibold text-blue-600 bg-blue-50 rounded-full mb-6"
             >
               <i class="fas fa-star text-blue-600 mr-2" aria-hidden="true"></i>
-              Aperçu de l'Entreprise
+              Aperçu de l'entreprise
             </span>
             <h2
               class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 mb-4 sm:mb-6 leading-[1.1] tracking-tight"
             >
-              Solutions POS et CRM pour les Entreprises Belges
+              Solutions de caisse pour les entreprises belges
               <span class="text-blue-600 block sm:inline">Depuis 2010</span>
             </h2>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              FAST CAISSE fournit des systèmes POS et CRM complets pour les restaurants et commerces
-              de détail en Belgique. Nous aidons plus de 1 000 clients à améliorer leurs ventes,
-              réduire les coûts et rester conformes.
+              FAST CAISSE propose des systèmes complets de caisse pour les restaurants et les
+              commerces de détail en Belgique. Nous aidons plus de 1 000 clients à augmenter leurs
+              ventes, réduire leurs coûts et rester conformes à la réglementation.
             </p>
           </div>
           <div class="flex flex-col lg:flex-row items-start gap-6 sm:gap-8 lg:gap-10">
@@ -868,7 +943,7 @@
               >
                 <img
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                  alt="FAST CAISSE POS and CRM solutions team working at modern office in Brussels, Belgium - Belgian business software company since 2010"
+                  alt="Équipe FAST CAISSE travaillant sur les solutions de caisse et CRM dans un bureau moderne à Bruxelles, Belgique - entreprise belge de logiciels depuis 2010"
                   class="w-full h-full object-cover"
                   width="800"
                   height="520"
@@ -895,7 +970,7 @@
                       1000+
                     </p>
                     <p class="text-xs sm:text-sm text-gray-600 font-semibold mt-1 leading-tight">
-                      Entreprises Servies
+                      Entreprises accompagnées
                     </p>
                   </div>
                 </div>
@@ -915,7 +990,7 @@
                       12+
                     </p>
                     <p class="text-xs sm:text-sm text-gray-600 font-semibold mt-1 leading-tight">
-                      Années d'Expérience
+                      Années d'expérience
                     </p>
                   </div>
                 </div>
@@ -929,11 +1004,12 @@
               <h3
                 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight"
               >
-                Conçu pour l'Horeca et les Commerces Belges
+                Conçu pour les Horeca et commerces belges
               </h3>
               <p class="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                Basés à Bruxelles, nous offrons une solution point-de-vente 360° qui favorise la
-                croissance, intègre la conformité, et s'adapte aux besoins commerciaux évolutifs.
+                Basé à Bruxelles, nous offrons une solution complète de point de vente qui favorise
+                la croissance, assure la conformité et s'adapte aux besoins évolutifs de votre
+                entreprise.
               </p>
               <div class="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
                 <div class="flex items-start">
@@ -945,7 +1021,7 @@
                     </div>
                   </div>
                   <div class="ml-4">
-                    <p class="text-gray-800 font-semibold">Accès depuis Partout</p>
+                    <p class="text-gray-800 font-semibold">Accès depuis n'importe où</p>
                     <p class="text-gray-600 text-sm">
                       Accédez à votre système depuis n'importe quel appareil, à tout moment.
                     </p>
@@ -960,9 +1036,10 @@
                     </div>
                   </div>
                   <div class="ml-4">
-                    <p class="text-gray-800 font-semibold">Local Compliance</p>
+                    <p class="text-gray-800 font-semibold">Conformité locale</p>
                     <p class="text-gray-600 text-sm">
-                      We follow Belgian tax rules, language laws, and fiscal device regulations.
+                      Nous respectons les règles fiscales belges, les lois linguistiques et la
+                      réglementation sur les dispositifs fiscaux.
                     </p>
                   </div>
                 </div>
@@ -975,10 +1052,10 @@
                     </div>
                   </div>
                   <div class="ml-4">
-                    <p class="text-gray-800 font-semibold">Support Multilingue</p>
+                    <p class="text-gray-800 font-semibold">Support multilingue</p>
                     <p class="text-gray-600 text-sm">
-                      Obtenez de l'aide en français, néerlandais ou anglais. Disponible 24/7 de
-                      notre équipe bruxelloise.
+                      Obtenez de l'aide en français, néerlandais ou anglais. Disponible 24h/24 et
+                      7j/7 par notre équipe basée à Bruxelles.
                     </p>
                   </div>
                 </div>
@@ -987,16 +1064,16 @@
                 <a
                   href="#contact"
                   class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
-                  aria-label="Demander une démo FAST CAISSE ou une consultation"
+                  aria-label="Demander une démo ou consultation FAST CAISSE"
                 >
-                  Demander une Démo
+                  Demander une démo
                 </a>
                 <a
                   href="#services"
                   class="hover:bg-blue-50 text-blue-600 font-semibold py-3 px-8 rounded-lg border border-gray-200 transition-all duration-300 flex items-center justify-center"
-                  aria-label="Explorez nos services POS et CRM pour entreprises belges"
+                  aria-label="Découvrir nos services de caisse et CRM pour les entreprises belges"
                 >
-                  Nos Services
+                  Nos services
                   <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i>
                 </a>
               </div>
@@ -1004,14 +1081,15 @@
           </div>
         </div>
       </section>
-      <!-- POS and CRM Solutions Section -->
+
+      <!-- Solutions de caisse et CRM -->
       <section
         id="solutions"
         class="py-16 md:py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden"
         data-aos="fade-up"
         aria-labelledby="solutions-heading"
       >
-        <!-- Background Elements -->
+        <!-- Éléments d'arrière-plan -->
         <div class="absolute inset-0 bg-white/70"></div>
         <div
           class="absolute top-0 left-0 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"
@@ -1024,7 +1102,7 @@
         ></div>
 
         <div class="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
-          <!-- Section Header -->
+          <!-- En-tête de section -->
           <header class="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
             <div
               class="inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold mb-6 sm:mb-8 shadow-lg"
@@ -1034,14 +1112,14 @@
                   d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                 ></path>
               </svg>
-              <span class="text-center">Solutions POS & CRM Certifiées #1 en Belgique</span>
+              <span class="text-center">#1 Solutions certifiées de caisse et CRM en Belgique</span>
             </div>
 
             <h3
               id="solutions-heading"
               class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-4 sm:mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent tracking-tight"
             >
-              Solutions d'Entreprise Complètes
+              Solutions commerciales complètes
               <span
                 class="block text-blue-600 mt-2 sm:mt-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
               >
@@ -1052,11 +1130,12 @@
             <p
               class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4 sm:px-0"
             >
-              Systèmes POS certifiés, CRM avancé et gestion intelligente des stocks conçus
-              spécifiquement pour les restaurants, magasins et grossistes belges.
+              Systèmes de caisse certifiés spécialement conçus pour les restaurants belges, CRM
+              avancé et gestion intelligente des stocks pour les grossistes et les magasins de
+              détail.
             </p>
 
-            <!-- Trust Indicators -->
+            <!-- Indicateurs de confiance -->
             <div
               class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 px-4 sm:px-0"
             >
@@ -1072,7 +1151,7 @@
                     clip-rule="evenodd"
                   ></path>
                 </svg>
-                <span class="font-medium">Certifié Belgique</span>
+                <span class="font-medium">Certifié en Belgique</span>
               </div>
               <div class="flex items-center bg-blue-50 px-3 sm:px-4 py-2 rounded-full">
                 <svg
@@ -1082,7 +1161,7 @@
                 >
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span class="font-medium">Plus de 500 Clients Satisfaits</span>
+                <span class="font-medium">500+ Clients satisfaits</span>
               </div>
               <div class="flex items-center bg-purple-50 px-3 sm:px-4 py-2 rounded-full">
                 <svg
@@ -1099,15 +1178,15 @@
             </div>
           </header>
 
-          <!-- Solutions Cards -->
+          <!-- Cartes de solutions -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            <!-- FC Resto - Restaurant POS -->
+            <!-- FC Resto - Caisse pour restaurants -->
             <div
               class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative overflow-visible"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <!-- Restaurant Focused Ribbon -->
+              <!-- Badge Restaurant -->
               <div
                 class="absolute top-0 right-0 bg-orange-500 text-white px-3 py-1 rounded-bl-lg rounded-tr-2xl text-xs font-bold shadow-lg z-10 solutions-ribbon"
                 style="
@@ -1123,15 +1202,15 @@
               <div class="text-center mb-8">
                 <h3 class="text-2xl font-bold text-gray-900 mb-2">FC Resto</h3>
                 <div class="mb-4">
-                  <span class="text-5xl font-extrabold text-gray-900">€69</span>
+                  <span class="text-5xl font-extrabold text-gray-900">69 €</span>
                   <span class="text-gray-500 ml-2">/mois</span>
                 </div>
                 <p class="text-gray-500 text-sm mb-2">
                   Prix de départ • Plans personnalisés disponibles
                 </p>
-                <p class="text-gray-500 text-sm mb-6">Gestion Complète de Restaurant</p>
+                <p class="text-gray-500 text-sm mb-6">Gestion complète de restaurant</p>
                 <a
-                  href="./fastcaisse-restaurant-pos-en.html"
+                  href="./fastcaisse-restaurant-pos-fr.html"
                   class="block w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 text-center"
                   style="
                     background-color: #f97316 !important;
@@ -1147,7 +1226,7 @@
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
                   <span class="text-gray-700">
-                    Système d'Affichage Cuisine & Gestion des Commandes
+                    Système d'affichage cuisine et gestion des commandes
                   </span>
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
@@ -1156,26 +1235,28 @@
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Kiosques Libre-Service & Commande QR</span>
+                  <span class="text-gray-700">Kiosques self-service et commande par QR code</span>
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Caisse Enregistreuse Certifiée Belge</span>
+                  <span class="text-gray-700 font-bold">
+                    Caisse enregistreuse certifiée (V1 & V2) pour la Belgique
+                  </span>
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Support Multi-Langues (FR/NL/EN)</span>
+                  <span class="text-gray-700">Support multilingue (FR/NL/EN)</span>
                 </li>
               </ul>
             </div>
 
-            <!-- FC Shop - Retail POS -->
+            <!-- FC Shop - Caisse pour commerce -->
             <div
               class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 relative border-2 border-blue-500 overflow-visible"
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <!-- Retail Focused Ribbon -->
+              <!-- Badge Commerce -->
               <div
                 class="absolute top-0 right-0 bg-blue-500 text-white px-3 py-1 rounded-bl-lg rounded-tr-2xl text-xs font-bold shadow-lg z-10 solutions-ribbon"
                 style="
@@ -1185,21 +1266,21 @@
                   margin-right: -2px;
                 "
               >
-                COMMERCE DE DÉTAIL
+                COMMERCE
               </div>
 
               <div class="text-center mb-8">
                 <h3 class="text-2xl font-bold text-gray-900 mb-2">FC Shop</h3>
                 <div class="mb-4">
-                  <span class="text-5xl font-extrabold text-gray-900">€59</span>
+                  <span class="text-5xl font-extrabold text-gray-900">59 €</span>
                   <span class="text-gray-500 ml-2">/mois</span>
                 </div>
                 <p class="text-gray-500 text-sm mb-2">
                   Prix de départ • Plans évolutifs disponibles
                 </p>
-                <p class="text-gray-500 text-sm mb-6">Système POS Avancé pour Commerce</p>
+                <p class="text-gray-500 text-sm mb-6">Système de caisse avancé pour commerce</p>
                 <a
-                  href="./fastcaisse-retail-pos-en.html"
+                  href="./fastcaisse-retail-pos-fr.html"
                   class="block w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 text-center"
                 >
                   DÉCOUVRIR FC SHOP
@@ -1209,34 +1290,34 @@
               <ul class="space-y-4">
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Gestion Avancée Code-Barres & Stock</span>
+                  <span class="text-gray-700">Gestion avancée des codes-barres et des stocks</span>
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Système Fidélité Client & Récompenses</span>
+                  <span class="text-gray-700">Programme de fidélité et récompenses clients</span>
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Multi-Terminal & Capacité Hors Ligne</span>
+                  <span class="text-gray-700">Multi-terminaux et fonctionnement hors ligne</span>
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Prévision de Demande Basée sur l'IA</span>
+                  <span class="text-gray-700">Prévision de la demande basée sur l'IA</span>
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Intégration Fournisseurs Belges</span>
+                  <span class="text-gray-700">Intégration avec les fournisseurs belges</span>
                 </li>
               </ul>
             </div>
 
-            <!-- FC Commerce - CRM & Business Management -->
+            <!-- FC Commerce - CRM et gestion d'entreprise -->
             <div
               class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative overflow-visible"
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              <!-- Business CRM Ribbon -->
+              <!-- Badge CRM -->
               <div
                 class="absolute top-0 right-0 bg-purple-500 text-white px-3 py-1 rounded-bl-lg rounded-tr-2xl text-xs font-bold shadow-lg z-10 solutions-ribbon"
                 style="
@@ -1252,15 +1333,15 @@
               <div class="text-center mb-8">
                 <h3 class="text-2xl font-bold text-gray-900 mb-2">FC Commerce</h3>
                 <div class="mb-4">
-                  <span class="text-5xl font-extrabold text-gray-900">€99</span>
+                  <span class="text-5xl font-extrabold text-gray-900">99 €</span>
                   <span class="text-gray-500 ml-2">/mois</span>
                 </div>
                 <p class="text-gray-500 text-sm mb-2">
                   Prix de départ • Solutions entreprise disponibles
                 </p>
-                <p class="text-gray-500 text-sm mb-6">Plateforme CRM Complète</p>
+                <p class="text-gray-500 text-sm mb-6">Plateforme CRM complète</p>
                 <a
-                  href="./fastcaisse-crm-business-management-en.html"
+                  href="./fastcaisse-crm-business-management-fr.html"
                   class="block w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 text-center"
                 >
                   DÉCOUVRIR FC COMMERCE
@@ -1270,29 +1351,29 @@
               <ul class="space-y-4">
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Gestion Client & Fournisseur 360°</span>
+                  <span class="text-gray-700">Gestion 360° clients et fournisseurs</span>
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Pipeline Vente & Analytics IA</span>
+                  <span class="text-gray-700">Pipeline des ventes et analyses pilotées par IA</span>
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Marketing Automatisé & Scoring Prospects</span>
+                  <span class="text-gray-700">Marketing automatisé et scoring des leads</span>
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Intelligence d'Affaires Belge</span>
+                  <span class="text-gray-700">Business Intelligence belge</span>
                 </li>
                 <li class="flex items-center" style="white-space: nowrap">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Workflows Multi-Industries</span>
+                  <span class="text-gray-700">Workflows multi-secteurs</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          <!-- Bottom CTA Section -->
+          <!-- Section CTA finale -->
           <div
             class="mt-12 sm:mt-16 md:mt-20 text-center px-4 sm:px-0"
             data-aos="fade-up"
@@ -1304,13 +1385,13 @@
               <h3
                 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight tracking-tight"
               >
-                Besoin d'Aide pour Choisir la Bonne Solution ?
+                Besoin d'aide pour choisir la bonne solution ?
               </h3>
               <p
                 class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed"
               >
-                Nos experts vous aideront à trouver la solution POS ou CRM parfaite pour votre
-                entreprise belge. Obtenez une consultation gratuite et une recommandation
+                Nos experts vous aideront à trouver la solution de caisse ou CRM idéale pour votre
+                entreprise en Belgique. Obtenez une consultation gratuite et une recommandation
                 personnalisée.
               </p>
               <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
@@ -1328,10 +1409,10 @@
                     ></path>
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                   </svg>
-                  <span>Consultation Gratuite</span>
+                  <span>Obtenir une consultation gratuite</span>
                 </a>
                 <a
-                  href="tel:+32470123456"
+                  href="tel:+32485223448"
                   class="w-full sm:w-auto inline-flex items-center justify-center bg-white hover:bg-gray-50 text-blue-600 font-semibold py-3 sm:py-4 px-6 sm:px-8 text-sm sm:text-base rounded-lg border border-blue-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500/30"
                 >
                   <svg
@@ -1343,20 +1424,20 @@
                       d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
                     ></path>
                   </svg>
-                  <span class="whitespace-nowrap">Appelez Maintenant : +32 470 12 34 56</span>
+                  <span class="whitespace-nowrap">Appelez-nous : +32 485 22 34 48</span>
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Schema.org Structured Data -->
+        <!-- Données structurées Schema.org -->
         <script type="application/ld+json">
           {
             "@context": "https://schema.org",
             "@type": "ProductCategory",
-            "name": "Solutions POS et CRM pour Entreprises Belges",
-            "description": "Solutions complètes de gestion d'entreprise incluant systèmes POS pour restaurants et commerces, plus CRM avancé pour grossistes en Belgique",
+            "name": "Solutions de caisse et CRM pour les entreprises belges",
+            "description": "Solutions complètes de gestion commerciale incluant des systèmes de caisse pour restaurants et commerce, ainsi qu'un CRM avancé pour les grossistes en Belgique",
             "url": "https://fastcaisse.be/#solutions",
             "provider": {
               "@type": "Organization",
@@ -1366,17 +1447,17 @@
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "BE",
-                "addressLocality": "Brussels"
+                "addressLocality": "Bruxelles"
               }
             },
             "hasProduct": [
               {
                 "@type": "SoftwareApplication",
                 "name": "FC Resto",
-                "description": "Système POS restaurant avec affichage cuisine, commandes en ligne et intégration livraison",
+                "description": "Système de caisse pour restaurants avec affichage cuisine, commande en ligne et intégration livraison",
                 "applicationCategory": "BusinessApplication",
                 "operatingSystem": "Web, Windows, Android, iOS",
-                "url": "https://fastcaisse.be/fastcaisse-restaurant-pos-en.html",
+                "url": "https://fastcaisse.be/fastcaisse-restaurant-pos-fr.html",
                 "offers": {
                   "@type": "Offer",
                   "price": "69",
@@ -1387,10 +1468,10 @@
               {
                 "@type": "SoftwareApplication",
                 "name": "FC Shop",
-                "description": "Retail POS system with barcode scanning, inventory management, and loyalty programs",
+                "description": "Système de caisse pour commerce avec lecture de codes-barres, gestion des stocks et programmes de fidélité",
                 "applicationCategory": "BusinessApplication",
                 "operatingSystem": "Web, Windows, Android, iOS",
-                "url": "https://fastcaisse.be/fastcaisse-retail-pos-en.html",
+                "url": "https://fastcaisse.be/fastcaisse-retail-pos-fr.html",
                 "offers": {
                   "@type": "Offer",
                   "price": "59",
@@ -1401,10 +1482,10 @@
               {
                 "@type": "SoftwareApplication",
                 "name": "FC Commerce",
-                "description": "Business CRM platform with customer management, analytics, and workflow automation",
+                "description": "Plateforme CRM d'entreprise avec gestion clients, analyses et automatisation des workflows",
                 "applicationCategory": "BusinessApplication",
                 "operatingSystem": "Web, Windows, Android, iOS",
-                "url": "https://fastcaisse.be/fastcaisse-crm-business-management-en.html",
+                "url": "https://fastcaisse.be/fastcaisse-crm-business-management-fr.html",
                 "offers": {
                   "@type": "Offer",
                   "price": "99",

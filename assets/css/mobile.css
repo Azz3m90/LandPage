@@ -1,0 +1,345 @@
+/* Mobile-only enhancements for beautiful, readable, and touch-friendly UI
+   This file is loaded only on small screens via <link media="(max-width: 768px)"> */
+
+:root {
+  --mobile-max-width: 680px;
+  --mobile-gutter: 16px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --text: #0f172a; /* slate-900 */
+  --muted: #475569; /* slate-600 */
+  --bg: #ffffff;
+  --primary: #2563eb; /* blue-600 */
+}
+
+html,
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%; /* Prevent font auto-zoom */
+  text-rendering: optimizeLegibility;
+}
+
+/* Typography - fluid and readable */
+h1 {
+  font-size: clamp(1.75rem, 6.5vw, 2.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+h2 {
+  font-size: clamp(1.5rem, 5.5vw, 2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+h3 {
+  font-size: clamp(1.25rem, 4.5vw, 1.5rem);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+h4,
+h5,
+h6 {
+  font-size: clamp(1.125rem, 4vw, 1.25rem);
+  line-height: 1.35;
+}
+
+p,
+li,
+dd,
+dt {
+  font-size: 1rem;
+  color: var(--muted);
+}
+small {
+  font-size: 0.925rem;
+  color: var(--muted);
+}
+
+/* Content containers */
+.container,
+section,
+main > section,
+.section {
+  width: 100%;
+  max-width: var(--mobile-max-width);
+  margin-inline: auto;
+  padding-inline: var(--mobile-gutter);
+}
+
+/* Trim excessive horizontal padding commonly used on desktop */
+header,
+footer,
+main,
+nav {
+  padding-inline: var(--mobile-gutter);
+}
+
+/* Layout overrides for narrow screens */
+.grid {
+  gap: 18px !important;
+  grid-template-columns: 1fr !important;
+}
+[class*="grid-cols-"] {
+  grid-template-columns: 1fr !important;
+}
+
+.flex {
+  gap: 16px !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+}
+[class*="flex-row"] {
+  flex-direction: column !important;
+}
+
+/* Ensure columns stack nicely */
+[class*="col-span-"] {
+  grid-column: auto / span 12 !important;
+}
+
+/* Cards - make them soft, elevated, and touch-friendly */
+[class*="card"],
+.card,
+.feature,
+.feature-card,
+.pricing-card,
+.testimonial-card,
+.article,
+.box {
+  background: #fff;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-soft) !important;
+  padding: 16px !important;
+}
+
+/* Images & media - full width, rounded, and clean */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+.hero img,
+.banner img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+/* Iframes (maps, videos) */
+iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+  aspect-ratio: 16 / 9;
+  height: auto !important;
+  border-radius: var(--radius-md);
+}
+
+/* Buttons - large tap targets */
+button,
+[role="button"],
+.btn,
+[class*="btn"] {
+  font-weight: 600;
+  padding: 12px 16px !important;
+  font-size: 1rem !important;
+  border-radius: 12px !important;
+  min-height: 44px; /* recommended tap target */
+  min-width: 44px;
+}
+
+/* Links - better readability and spacing */
+a {
+  word-break: break-word;
+}
+a.button,
+a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Forms - full width, comfortable */
+input,
+select,
+textarea {
+  width: 100%;
+  font-size: 16px; /* prevent iOS zoom */
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+/* Tables - make horizontally scrollable */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  border-spacing: 0;
+}
+th,
+td {
+  padding: 10px 12px;
+}
+
+/* Lists and spacing */
+ul,
+ol {
+  padding-left: 1.1rem;
+}
+li {
+  margin: 6px 0;
+}
+
+/* Hero/CTA vertical stacking */
+[class*="hero"] .buttons,
+.cta-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Navigation - stack items and improve touchability without JS */
+nav ul,
+[class*="menu"] {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+nav a {
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+/* Section spacing - compact but airy */
+section {
+  padding-block: 24px;
+}
+section > * + * {
+  margin-top: 14px;
+}
+
+/* Utilities for common marketing blocks */
+.stats,
+.features,
+.benefits,
+.testimonials,
+.pricing {
+  gap: 16px;
+}
+
+/* Make large images not overflow their cards */
+[class*="card"] img,
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Headings alignment for narrow screens */
+section h1,
+section h2,
+section h3 {
+  text-align: center;
+}
+
+/* Footers - centered and tidy */
+footer {
+  text-align: center;
+}
+footer .social {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Prevent long words/URLs from breaking layout */
+* {
+  word-wrap: break-word;
+  overscroll-behavior-y: contain;
+}
+
+/* Hero Section - CRM Features Grid for Mobile */
+.mobile-crm-grid {
+  display: none; /* Hidden by default */
+}
+
+.desktop-badge {
+  display: flex; /* Show desktop badges by default */
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop badges on mobile */
+  .desktop-badge {
+    display: none !important;
+  }
+
+  /* Show and style mobile CRM grid */
+  .mobile-crm-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    grid-template-rows: 1fr 1fr; /* 2 rows */
+    gap: 12px;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .crm-feature-badge {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    border-radius: 16px;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .crm-feature-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  .crm-feature-badge .text-blue-600 {
+    margin-bottom: 4px;
+  }
+
+  .crm-feature-badge p {
+    color: #1e293b !important; /* slate-800 */
+    font-size: 0.75rem !important; /* 12px */
+    line-height: 1.1 !important;
+    font-weight: 600 !important;
+    margin: 0;
+  }
+}
