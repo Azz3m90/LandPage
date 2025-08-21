@@ -26,7 +26,7 @@
     <link rel="alternate" hreflang="en" href="https://fastcaisse.be/index-en.html" />
     <link rel="alternate" hreflang="fr" href="https://fastcaisse.be/index.html" />
     <link rel="alternate" hreflang="nl" href="https://fastcaisse.be/index-nl.html" />
-    <link rel="alternate" hreflang="x-default" href="https://fastcaisse.be/index-en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://fastcaisse.be/index.html" />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta
@@ -414,15 +414,30 @@
             <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
             Over Ons
           </a>
-          <a
-            href="#solutions"
-            class="nav-link"
-            title="POS & CRM Oplossingen - Restaurant, Retail, Commerce"
-            role="menuitem"
-          >
-            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
-            Oplossingen
-          </a>
+          <div class="nav-dropdown" role="menuitem">
+            <a href="#solutions" class="nav-link" title="POS & CRM Oplossingen - Restaurant, Retail, Commerce">
+              <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+              Oplossingen
+              <i class="fas fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown-content" role="menu">
+              <a href="#fc-resto" class="nav-dropdown-item" role="menuitem" title="FC Resto - Restaurant Kassasysteem">
+                <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+                <span>FC Resto - Restaurant Kassa</span>
+                <span class="nav-dropdown-price">€69/mnd</span>
+              </a>
+              <a href="#fc-shop" class="nav-dropdown-item" role="menuitem" title="FC Shop - Winkel Kassasysteem">
+                <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+                <span>FC Shop - Winkel Kassa</span>
+                <span class="nav-dropdown-price">€59/mnd</span>
+              </a>
+              <a href="#fc-commerce" class="nav-dropdown-item" role="menuitem" title="FC Commerce - CRM Platform">
+                <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+                <span>FC Commerce - CRM</span>
+                <span class="nav-dropdown-price">€99/mnd</span>
+              </a>
+            </div>
+          </div>
           <a
             href="#services"
             class="nav-link"
@@ -667,15 +682,34 @@
           <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
           Over Ons
         </a>
-        <a
-          href="#solutions"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          title="POS & CRM Oplossingen - Restaurant, Retail, Commerce"
-          role="menuitem"
-        >
-          <i class="fas fa-tools mr-2" aria-hidden="true"></i>
-          Oplossingen
-        </a>
+        <div class="nav-dropdown">
+          <a
+            href="#solutions"
+            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            title="POS & CRM Oplossingen - Restaurant, Retail, Commerce"
+            role="menuitem"
+          >
+            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+            Oplossingen
+          </a>
+          <div class="nav-dropdown-content">
+            <a href="#fc-resto" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+              <span>FC Resto - Restaurant Kassa</span>
+              <span class="nav-dropdown-price">€69/mnd</span>
+            </a>
+            <a href="#fc-shop" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+              <span>FC Shop - Winkel Kassa</span>
+              <span class="nav-dropdown-price">€59/mnd</span>
+            </a>
+            <a href="#fc-commerce" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+              <span>FC Commerce - CRM</span>
+              <span class="nav-dropdown-price">€99/mnd</span>
+            </a>
+          </div>
+        </div>
         <a
           href="#services"
           class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
@@ -1108,6 +1142,22 @@
               <span class="text-center">#1 Gecertificeerde Kassa & CRM-oplossingen in België</span>
             </div>
 
+            <!-- Product navigatie -->
+            <div class="flex flex-wrap justify-center gap-4 mt-4 mb-6 text-sm sm:text-base">
+              <a href="#fc-resto" class="inline-flex items-center text-orange-600 hover:text-orange-800 font-medium transition-colors duration-300 bg-orange-50 hover:bg-orange-100 px-3 py-2 rounded-full">
+                <i class="fas fa-utensils mr-2"></i>
+                FC Resto Kassa
+              </a>
+              <a href="#fc-shop" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300 bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-full">
+                <i class="fas fa-store mr-2"></i>
+                FC Shop Retail
+              </a>
+              <a href="#fc-commerce" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium transition-colors duration-300 bg-purple-50 hover:bg-purple-100 px-3 py-2 rounded-full">
+                <i class="fas fa-chart-line mr-2"></i>
+                FC Commerce CRM
+              </a>
+            </div>
+
             <h3
               id="solutions-heading"
               class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-4 sm:mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent tracking-tight"
@@ -1174,6 +1224,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <!-- FC Resto - Restaurantkassa -->
             <div
+              id="fc-resto"
               class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative overflow-visible"
               data-aos="fade-up"
               data-aos-delay="200"
@@ -1244,6 +1295,7 @@
 
             <!-- FC Shop - Winkelsysteem -->
             <div
+              id="fc-shop"
               class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 relative border-2 border-blue-500 overflow-visible"
               data-aos="fade-up"
               data-aos-delay="300"
@@ -1305,6 +1357,7 @@
 
             <!-- FC Commerce - CRM & bedrijfsbeheer -->
             <div
+              id="fc-commerce"
               class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative overflow-visible"
               data-aos="fade-up"
               data-aos-delay="400"
@@ -2209,7 +2262,7 @@
       <section id="contact" class="py-5 md:py-5 bg-white" data-aos="fade-up">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="text-center mb-12" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-gray-900">
+            <h2 class="text-2xl md:text-4xl  font-extrabold mb-4 text-gray-900">
               Transformeer Uw Bedrijf Vandaag
             </h2>
             <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">

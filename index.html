@@ -26,7 +26,7 @@
     <link rel="alternate" hreflang="en" href="https://fastcaisse.be/index-en.html" />
     <link rel="alternate" hreflang="fr" href="https://fastcaisse.be/index.html" />
     <link rel="alternate" hreflang="nl" href="https://fastcaisse.be/index-nl.html" />
-    <link rel="alternate" hreflang="x-default" href="https://fastcaisse.be/index-en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://fastcaisse.be/index.html" />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta
@@ -414,15 +414,30 @@
             <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
             À propos
           </a>
-          <a
-            href="#solutions"
-            class="nav-link"
-            title="Solutions POS & CRM - Restaurant, Commerce, Détail"
-            role="menuitem"
-          >
-            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
-            Solutions
-          </a>
+          <div class="nav-dropdown" role="menuitem">
+            <a href="#solutions" class="nav-link" title="Solutions POS & CRM - Restaurant, Commerce, Détail">
+              <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+              Solutions
+              <i class="fas fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown-content" role="menu">
+              <a href="#fc-resto" class="nav-dropdown-item" role="menuitem" title="FC Resto - Système de Caisse Restaurant">
+                <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+                <span>FC Resto - Caisse Restaurant</span>
+                <span class="nav-dropdown-price">69€/mois</span>
+              </a>
+              <a href="#fc-shop" class="nav-dropdown-item" role="menuitem" title="FC Shop - Système de Caisse Commerce">
+                <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+                <span>FC Shop - Caisse Commerce</span>
+                <span class="nav-dropdown-price">59€/mois</span>
+              </a>
+              <a href="#fc-commerce" class="nav-dropdown-item" role="menuitem" title="FC Commerce - Plateforme CRM">
+                <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+                <span>FC Commerce - CRM</span>
+                <span class="nav-dropdown-price">99€/mois</span>
+              </a>
+            </div>
+          </div>
           <a
             href="#services"
             class="nav-link"
@@ -667,15 +682,34 @@
           <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
           À propos
         </a>
-        <a
-          href="#solutions"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          title="Solutions POS & CRM - Restaurant, Commerce, Détail"
-          role="menuitem"
-        >
-          <i class="fas fa-tools mr-2" aria-hidden="true"></i>
-          Solutions
-        </a>
+        <div class="nav-dropdown">
+          <a
+            href="#solutions"
+            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            title="Solutions POS & CRM - Restaurant, Commerce, Détail"
+            role="menuitem"
+          >
+            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+            Solutions
+          </a>
+          <div class="nav-dropdown-content">
+            <a href="#fc-resto" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+              <span>FC Resto - Caisse Restaurant</span>
+              <span class="nav-dropdown-price">69€/mois</span>
+            </a>
+            <a href="#fc-shop" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+              <span>FC Shop - Caisse Commerce</span>
+              <span class="nav-dropdown-price">59€/mois</span>
+            </a>
+            <a href="#fc-commerce" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+              <span>FC Commerce - CRM</span>
+              <span class="nav-dropdown-price">99€/mois</span>
+            </a>
+          </div>
+        </div>
         <a
           href="#services"
           class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
@@ -1182,6 +1216,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <!-- FC Resto - Caisse pour restaurants -->
             <div
+              id="fc-resto"
               class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative overflow-visible"
               data-aos="fade-up"
               data-aos-delay="200"
@@ -1252,6 +1287,7 @@
 
             <!-- FC Shop - Caisse pour commerce -->
             <div
+              id="fc-shop"
               class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 relative border-2 border-blue-500 overflow-visible"
               data-aos="fade-up"
               data-aos-delay="300"
@@ -1313,6 +1349,7 @@
 
             <!-- FC Commerce - CRM et gestion d'entreprise -->
             <div
+              id="fc-commerce"
               class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative overflow-visible"
               data-aos="fade-up"
               data-aos-delay="400"
@@ -1604,7 +1641,7 @@
         aria-label="Trusted clients logos carousel"
       >
         <div class="container mx-auto px-6">
-          <h2 class="text-4xl font-extrabold text-center mb-4 text-gray-900">
+          <h2 class="md:text-4xl text-xl font-extrabold text-center mb-4 text-gray-900">
             <i class="fas fa-users mr-2 text-blue-600" aria-hidden="true"></i>
             Approuvés par les Leaders
           </h2>
@@ -2216,7 +2253,7 @@
       <section id="contact" class="py-5 md:py-5 bg-white" data-aos="fade-up">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="text-center mb-12" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-gray-900">
+            <h2 class="md:text-4xl text-xl font-extrabold mb-4 text-gray-900">
               Transformez Votre Entreprise Aujourd'hui
             </h2>
             <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">

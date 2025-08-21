@@ -47,7 +47,7 @@
     }
   },
   "workbench.colorCustomizations": {},
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "vs-seti",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "terminal.integrated.defaultProfile.windows": "PowerShell",

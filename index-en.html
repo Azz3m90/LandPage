@@ -26,7 +26,7 @@
     <link rel="alternate" hreflang="en" href="https://fastcaisse.be/index-en.html" />
     <link rel="alternate" hreflang="fr" href="https://fastcaisse.be/index.html" />
     <link rel="alternate" hreflang="nl" href="https://fastcaisse.be/index-nl.html" />
-    <link rel="alternate" hreflang="x-default" href="https://fastcaisse.be/index-en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://fastcaisse.be/index.html" />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta
@@ -418,15 +418,30 @@
             <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
             About
           </a>
-          <a
-            href="#solutions"
-            class="nav-link"
-            title="POS & CRM Solutions - Restaurant, Retail, Commerce"
-            role="menuitem"
-          >
-            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
-            Solutions
-          </a>
+          <div class="nav-dropdown" role="menuitem">
+            <a href="#solutions" class="nav-link" title="POS & CRM Solutions - Restaurant, Retail, Commerce">
+              <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+              Solutions
+              <i class="fas fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown-content" role="menu">
+              <a href="#fc-resto" class="nav-dropdown-item" role="menuitem" title="FC Resto - Restaurant POS System">
+                <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+                <span>FC Resto - Restaurant POS</span>
+                <span class="nav-dropdown-price">€69/mo</span>
+              </a>
+              <a href="#fc-shop" class="nav-dropdown-item" role="menuitem" title="FC Shop - Retail POS System">
+                <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+                <span>FC Shop - Retail POS</span>
+                <span class="nav-dropdown-price">€59/mo</span>
+              </a>
+              <a href="#fc-commerce" class="nav-dropdown-item" role="menuitem" title="FC Commerce - CRM Platform">
+                <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+                <span>FC Commerce - CRM</span>
+                <span class="nav-dropdown-price">€99/mo</span>
+              </a>
+            </div>
+          </div>
           <a
             href="#services"
             class="nav-link"
@@ -671,15 +686,34 @@
           <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
           About
         </a>
-        <a
-          href="#solutions"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          title="POS & CRM Solutions - Restaurant, Retail, Commerce"
-          role="menuitem"
-        >
-          <i class="fas fa-tools mr-2" aria-hidden="true"></i>
-          Solutions
-        </a>
+        <div class="nav-dropdown">
+          <a
+            href="#solutions"
+            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            title="POS & CRM Solutions - Restaurant, Retail, Commerce"
+            role="menuitem"
+          >
+            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+            Solutions
+          </a>
+          <div class="nav-dropdown-content">
+            <a href="#fc-resto" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+              <span>FC Resto - Restaurant POS</span>
+              <span class="nav-dropdown-price">€69/mo</span>
+            </a>
+            <a href="#fc-shop" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+              <span>FC Shop - Retail POS</span>
+              <span class="nav-dropdown-price">€59/mo</span>
+            </a>
+            <a href="#fc-commerce" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+              <span>FC Commerce - CRM</span>
+              <span class="nav-dropdown-price">€99/mo</span>
+            </a>
+          </div>
+        </div>
         <a
           href="#services"
           class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
@@ -1176,6 +1210,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <!-- FC Resto - Restaurant POS -->
             <div
+              id="fc-resto"
               class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative overflow-visible"
               data-aos="fade-up"
               data-aos-delay="200"
@@ -1242,6 +1277,7 @@
 
             <!-- FC Shop - Retail POS -->
             <div
+              id="fc-shop"
               class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 relative border-2 border-blue-500 overflow-visible"
               data-aos="fade-up"
               data-aos-delay="300"
@@ -1301,6 +1337,7 @@
 
             <!-- FC Commerce - CRM & Business Management -->
             <div
+              id="fc-commerce"
               class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative overflow-visible"
               data-aos="fade-up"
               data-aos-delay="400"
@@ -2202,7 +2239,7 @@
       <section id="contact" class="py-5 md:py-5 bg-white" data-aos="fade-up">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="text-center mb-12" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-gray-900">
+            <h2 class="text-2xl md:text-4xl font-extrabold mb-4 text-gray-900">
               Transform Your Business Today
             </h2>
             <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">

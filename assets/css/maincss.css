@@ -2107,6 +2107,117 @@ header {
 .nav-link.active::after {
   width: 50%;
 }
+
+/* Dropdown Menu Styles */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 280px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 0.75rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+
+.nav-dropdown:hover .nav-dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  color: #374151;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-weight: 500;
+}
+
+.nav-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.nav-dropdown-item:hover {
+  background-color: rgba(37, 99, 235, 0.05);
+  color: #2563eb;
+  transform: translateX(4px);
+}
+
+.nav-dropdown-item i {
+  margin-right: 0.75rem;
+  width: 16px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.nav-dropdown-item:hover i {
+  opacity: 1;
+}
+
+.nav-dropdown-arrow {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+  font-size: 0.75rem;
+}
+
+.nav-dropdown:hover .nav-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-price {
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-left: auto;
+  padding: 0.25rem 0.5rem;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 0.375rem;
+  color: #2563eb;
+}
+
+.nav-dropdown-item:hover .nav-dropdown-price {
+  background: #2563eb;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-dropdown-content {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    margin-top: 0;
+    padding: 0;
+    min-width: auto;
+    background: transparent;
+  }
+
+  .nav-dropdown-item {
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+    border-bottom: none;
+  }
+}
+
 .logo-text {
   color: #1f2937;
   font-weight: 800;
