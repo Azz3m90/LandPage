@@ -1036,15 +1036,30 @@
             <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
             About
           </a>
-          <a
-            href="./index-en.html#solutions"
-            class="nav-link"
-            title="POS & CRM Solutions - Restaurant, Retail, Commerce"
-            role="menuitem"
-          >
-            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
-            Solutions
-          </a>
+          <div class="nav-dropdown" role="menuitem">
+            <a href="./index-en.html#solutions" class="nav-link" title="POS & CRM Solutions - Restaurant, Retail, Commerce">
+              <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+              Solutions
+              <i class="fas fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown-content" role="menu">
+              <a href="./fastcaisse-restaurant-pos-en.html" class="nav-dropdown-item" role="menuitem" title="FC Resto - Restaurant POS System">
+                <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+                <span>FC Resto - Restaurant POS</span>
+                <span class="nav-dropdown-price">€69/mo</span>
+              </a>
+              <a href="./fastcaisse-retail-pos-en.html" class="nav-dropdown-item" role="menuitem" title="FC Shop - Retail POS System">
+                <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+                <span>FC Shop - Retail POS</span>
+                <span class="nav-dropdown-price">€59/mo</span>
+              </a>
+              <a href="./fastcaisse-crm-business-management-en.html" class="nav-dropdown-item" role="menuitem" title="FC Commerce - CRM Platform">
+                <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+                <span>FC Commerce - CRM</span>
+                <span class="nav-dropdown-price">€99/mo</span>
+              </a>
+            </div>
+          </div>
           <a
             href="./index-en.html#services"
             class="nav-link"
@@ -1064,7 +1079,7 @@
             Clients
           </a>
           <a
-            href="./index-en.html#contact"
+            href="#contact-form"
             class="nav-link"
             title="Contact FAST CAISSE - Get Free Consultation"
             role="menuitem"
@@ -1289,15 +1304,34 @@
           <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
           About
         </a>
-        <a
-          href="./index-en.html#solutions"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          title="POS & CRM Solutions - Restaurant, Retail, Commerce"
-          role="menuitem"
-        >
-          <i class="fas fa-tools mr-2" aria-hidden="true"></i>
-          Solutions
-        </a>
+        <div class="nav-dropdown">
+          <a
+            href="./index-en.html#solutions"
+            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            title="POS & CRM Solutions - Restaurant, Retail, Commerce"
+            role="menuitem"
+          >
+            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+            Solutions
+          </a>
+          <div class="nav-dropdown-content">
+            <a href="./fastcaisse-restaurant-pos-en.html" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+              <span>FC Resto - Restaurant POS</span>
+              <span class="nav-dropdown-price">€69/mo</span>
+            </a>
+            <a href="./fastcaisse-retail-pos-en.html" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+              <span>FC Shop - Retail POS</span>
+              <span class="nav-dropdown-price">€59/mo</span>
+            </a>
+            <a href="./fastcaisse-crm-business-management-en.html" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+              <span>FC Commerce - CRM</span>
+              <span class="nav-dropdown-price">€99/mo</span>
+            </a>
+          </div>
+        </div>
         <a
           href="./index-en.html#services"
           class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
@@ -1317,7 +1351,7 @@
           Clients
         </a>
         <a
-          href="./index-en.html#contact"
+          href="#contact-form"
           class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
           title="Contact FAST CAISSE - Get Free Consultation"
           role="menuitem"
@@ -2966,328 +3000,111 @@
                       </div>
                     </div>
 
-                    <!-- Location & Business Details -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div class="form-group">
-                        <label for="city" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                          <i class="fas fa-map-marker-alt text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                          City/Location
-                        </label>
-                        <select
-                          id="city"
-                          name="city"
-                          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
-                          itemprop="addressLocality"
-                        >
-                          <option value="">Select your city</option>
-                          <option value="Brussels">Brussels (Bruxelles)</option>
-                          <option value="Antwerp">Antwerp (Antwerpen)</option>
-                          <option value="Ghent">Ghent (Gent)</option>
-                          <option value="Charleroi">Charleroi</option>
-                          <option value="Liège">Liège (Luik)</option>
-                          <option value="Bruges">Bruges (Brugge)</option>
-                          <option value="Namur">Namur (Namen)</option>
-                          <option value="Leuven">Leuven (Louvain)</option>
-                          <option value="Mons">Mons (Bergen)</option>
-                          <option value="Aalst">Aalst (Alost)</option>
-                          <option value="Other">Other Belgian City</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="industry" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                          <i class="fas fa-industry text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                          Industry Type
-                        </label>
-                        <select
-                          id="industry"
-                          name="industry"
-                          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
-                        >
-                          <option value="">Select your industry</option>
-                          <option value="Wholesale/Distribution">Wholesale & Distribution</option>
-                          <option value="Retail">Retail Business</option>
-                          <option value="Manufacturing">Manufacturing</option>
-                          <option value="Services">Professional Services</option>
-                          <option value="IT/Technology">IT & Technology</option>
-                          <option value="Healthcare">Healthcare</option>
-                          <option value="Real Estate">Real Estate</option>
-                          <option value="Consulting">Business Consulting</option>
-                          <option value="Finance">Financial Services</option>
-                          <option value="Education">Education & Training</option>
-                          <option value="Other">Other</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <!-- Business Size -->
+                    <!-- Business Information -->
                     <div class="form-group">
-                      <label for="business-size" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                        <i class="fas fa-chart-bar text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                        Company Size
+                      <label for="industry" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
+                        <i class="fas fa-industry text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                        Industry Type
                       </label>
                       <select
-                        id="business-size"
-                        name="business-size"
+                        id="industry"
+                        name="industry"
                         class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
                       >
-                        <option value="">Select your company size</option>
-                        <option value="Small (1-10 employees)">Small Business (1-10 employees)</option>
-                        <option value="Medium (11-50 employees)">Medium Business (11-50 employees)</option>
-                        <option value="Large (51-200 employees)">Large Business (51-200 employees)</option>
-                        <option value="Enterprise (200+ employees)">Enterprise (200+ employees)</option>
-                        <option value="Startup">Startup Company</option>
+                        <option value="">Select your industry</option>
+                        <option value="retail">Retail & Commerce</option>
+                        <option value="restaurant">Restaurant & Food Service</option>
+                        <option value="services">Professional Services</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="other">Other</option>
                       </select>
                     </div>
 
-                    <!-- Current Challenges -->
-                    <div class="form-group">
-                      <label for="challenges" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                        <i class="fas fa-lightbulb text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                        What business challenges are you facing? (Optional)
-                      </label>
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                          <input type="checkbox" name="challenges[]" value="Customer management" class="mr-3 text-blue-600 focus:ring-blue-500">
-                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Customer relationship management</span>
-                        </label>
-                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                          <input type="checkbox" name="challenges[]" value="Sales tracking" class="mr-3 text-blue-600 focus:ring-blue-500">
-                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Sales tracking & forecasting</span>
-                        </label>
-                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                          <input type="checkbox" name="challenges[]" value="Lead management" class="mr-3 text-blue-600 focus:ring-blue-500">
-                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Lead generation & management</span>
-                        </label>
-                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                          <input type="checkbox" name="challenges[]" value="Marketing automation" class="mr-3 text-blue-600 focus:ring-blue-500">
-                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Marketing campaign automation</span>
-                        </label>
-                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                          <input type="checkbox" name="challenges[]" value="Data integration" class="mr-3 text-blue-600 focus:ring-blue-500">
-                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Data integration & reporting</span>
-                        </label>
-                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                          <input type="checkbox" name="challenges[]" value="Team collaboration" class="mr-3 text-blue-600 focus:ring-blue-500">
-                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Team collaboration & productivity</span>
-                        </label>
-                      </div>
-                    </div>
-
-                    <!-- Additional Message -->
+                    <!-- Message -->
                     <div class="form-group">
                       <label for="message" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                        <i class="fas fa-comment-dots text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                        Additional Information (Optional)
+                        <i class="fas fa-comment text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                        Tell us about your business needs *
                       </label>
                       <textarea
                         id="message"
                         name="message"
-                        rows="4"
-                        placeholder="Tell us about your current business management system, specific requirements, or any questions you have about FC Commerce Management..."
-                        class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 resize-none text-gray-900 font-medium"
+                        required
+                        rows="5"
+                        placeholder="Please describe your current business management challenges and what you hope to achieve with FC Commerce..."
+                        class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium resize-none"
+                        style="min-height: 120px;"
                       ></textarea>
-                    </div>
-
-                    <!-- Privacy Consent -->
-                    <div class="form-group bg-gray-50 p-6 rounded-xl border-2 border-gray-200">
-                      <label class="flex items-start">
-                        <input
-                          type="checkbox"
-                          id="privacy-consent"
-                          name="privacy-consent"
-                          required
-                          class="mt-1 mr-4 h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                        />
-                        <span class="text-sm text-gray-700 leading-relaxed" style="color: #374151 !important;">
-                          I agree to the <a href="./index-en.html#" class="text-blue-600 hover:text-blue-700 underline font-medium" style="color: #2563eb !important;">Privacy Policy</a>
-                          and consent to being contacted by FC Commerce Management about their Belgian business management system.
-                          I understand that I can unsubscribe at any time. *
-                        </span>
-                      </label>
-                      <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please accept our privacy policy to continue</span>
+                      <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please tell us about your business needs</span>
                     </div>
 
                     <!-- Submit Button -->
-                    <div class="pt-4">
+                    <div class="text-center pt-4">
                       <button
                         type="submit"
                         id="submit-btn"
-                        class="w-full bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 font-bold py-5 px-8 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
-                        style="background-color: #2563eb !important; color: white !important;"
+                        disabled
+                        class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed shadow-xl"
+                        style="background: linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%) !important;"
                       >
-                        <span class="submit-text flex items-center justify-center" style="color: white !important;">
-                          <i class="fas fa-rocket mr-3 text-xl" style="color: white !important;"></i>
-                          Get My Free Demo Now
-                        </span>
-                        <span class="loading-text hidden flex items-center justify-center" style="color: white !important;">
-                          <i class="fas fa-spinner fa-spin mr-3 text-xl" style="color: white !important;"></i>
-                          Sending Your Request...
-                        </span>
+                        <i class="fas fa-paper-plane mr-3" style="color: white !important;"></i>
+                        Request Free FC Commerce Demo
                       </button>
-
-                      <!-- Trust Indicators Below Button -->
-                      <div class="mt-6 text-center">
-                        <div class="flex items-center justify-center space-x-6 text-sm text-gray-600">
-                          <div class="flex items-center">
-                            <i class="fas fa-shield-alt text-green-500 mr-2" style="color: #10b981 !important;"></i>
-                            <span class="font-medium" style="color: #4b5563 !important;">100% Secure</span>
-                          </div>
-                          <div class="flex items-center">
-                            <i class="fas fa-clock text-blue-500 mr-2" style="color: #3b82f6 !important;"></i>
-                            <span class="font-medium" style="color: #4b5563 !important;">30-min Demo</span>
-                          </div>
-                          <div class="flex items-center">
-                            <i class="fas fa-gift text-purple-500 mr-2" style="color: #8b5cf6 !important;"></i>
-                            <span class="font-medium" style="color: #4b5563 !important;">Completely Free</span>
-                          </div>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-3 max-w-md mx-auto" style="color: #6b7280 !important;">
-                          Your information is secure and will never be shared with third parties.
-                          Our Belgian specialists will contact you within 24 hours.
-                        </p>
-                      </div>
+                      <p class="text-xs text-gray-500 mt-3" style="color: #6b7280 !important;">
+                        Protected by reCAPTCHA. Your information is secure and will only be used to contact you about FC Commerce.
+                      </p>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- Additional Trust Section -->
-          <div class="mt-20 text-center" data-aos="fade-up">
-            <div class="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto border border-gray-100">
-              <h4 class="text-2xl font-bold text-gray-900 mb-6" style="color: #111827 !important;">Why Choose FC Commerce Management for Your Belgian Business?</h4>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center">
-                  <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-certificate text-blue-600 text-2xl" style="color: #2563eb !important;"></i>
-                  </div>
-                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Belgian Compliant</h5>
-                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important;">Fully compliant with Belgian business regulations and GDPR requirements</p>
-                </div>
-                <div class="text-center">
-                  <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-building text-green-600 text-2xl" style="color: #059669 !important;"></i>
-                  </div>
-                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">500+ Companies</h5>
-                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important;">Trusted by businesses across Brussels, Antwerp, and Ghent</p>
-                </div>
-                <div class="text-center">
-                  <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-headset text-blue-600 text-2xl" style="color: #2563eb !important;"></i>
-                  </div>
-                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Local Support</h5>
-                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important;">Belgian-based support team available in French, Dutch, and English</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
-
     </main>
+
     <!-- Footer -->
-    <footer class="bg-white text-gray-900 py-16 relative overflow-hidden" data-aos="fade-up">
-      <div
-        class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMDktMS43OTEtNC00LTRzLTQgMS43OTEtNCA0IDEuNzkxIDQgNCA0IDQtMS43OTEgNC00eiIvPjwvZz48L2c+PC9zdmc+')]"
-      ></div>
-      <div class="container mx-auto px-4 sm:px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer class="bg-white border-t border-gray-200 py-16">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <!-- Company Info -->
-          <div class="space-y-5 max-w-sm">
-            <div class="flex items-center gap-4">
-              <img
-                src="./images/fastcaisse-logo.png"
-                alt="FAST CAISSE logo"
-                class="h-14 sm:h-16 md:h-20 w-auto max-w-[180px] object-contain transition-transform duration-300 hover:scale-105"
-                loading="lazy"
-              />
-              <div class="hidden sm:block">
-                <p class="text-sm text-gray-500 font-medium">Since 2010</p>
-              </div>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              POS, CRM, and smart reporting tools for Belgian restaurants and retail. Trusted by
-              1,000+ businesses.
+          <div class="md:col-span-2">
+            <img
+              src="./images/fastcaisse-logo.png"
+              alt="FAST CAISSE Logo"
+              class="h-12 mb-6"
+              loading="lazy"
+            />
+            <p class="text-gray-600 mb-6 max-w-md">
+              Leading provider of POS and CRM solutions for Belgian businesses since 2010.
+              Trusted by over 1,000 establishments across Belgium.
             </p>
-            <div class="flex items-center gap-2 text-sm text-gray-500">
-              <i class="fas fa-map-marker-alt text-blue-600"></i>
-              <span>Based in Belgium</span>
-            </div>
-            <div class="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
-              <a href="./index-en.html#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100">
-                <i class="fab fa-facebook-f text-lg sm:text-xl"></i>
-              </a>
-              <a href="./index-en.html#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100">
-                <i class="fab fa-linkedin-in text-lg sm:text-xl"></i>
-              </a>
-              <a href="./index-en.html#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100">
-                <i class="fab fa-instagram text-lg sm:text-xl"></i>
-              </a>
-            </div>
           </div>
 
-          <!-- Solutions -->
+          <!-- Quick Links -->
           <div>
-            <h3 class="font-bold text-lg mb-6 text-gray-900">Solutions</h3>
+            <h3 class="font-bold text-lg mb-6 text-gray-900">Quick Links</h3>
             <ul class="space-y-3">
               <li>
-                <a
-                  href="./fastcaisse-restaurant-pos-en.html"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
-                >
-                  <i class="fas fa-utensils mr-2 text-sm"></i>
-                  FC Resto
+                <a href="./index-en.html" class="text-gray-600 hover:text-purple-600 transition-colors duration-300">
+                  <i class="fas fa-home mr-2 text-sm"></i>
+                  Home
                 </a>
               </li>
               <li>
-                <a
-                  href="./fastcaisse-retail-pos-en.html"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
-                >
-                  <i class="fas fa-store mr-2 text-sm"></i>
-                  FC Shop
-                </a>
-              </li>
-              <li>
-                <span class="text-blue-600 font-semibold flex items-center p-2 rounded-lg bg-blue-50 border-l-4 border-blue-600">
-                  <i class="fas fa-chart-line mr-2 text-sm"></i>
-                  FC Commerce Management
-                  <i class="fas fa-arrow-left ml-2 text-xs"></i>
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Company -->
-          <div>
-            <h3 class="font-bold text-lg mb-6 text-gray-900">Company</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="./index-en.html#about"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
-                >
+                <a href="./index-en.html#about" class="text-gray-600 hover:text-purple-600 transition-colors duration-300">
                   <i class="fas fa-info-circle mr-2 text-sm"></i>
                   About Us
                 </a>
               </li>
               <li>
-                <a
-                  href="./index-en.html#clients"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
-                  style="font-size: inherit !important; color: #6b7280 !important; font-weight: normal !important;"
-                >
+                <a href="./index-en.html#clients" class="text-gray-600 hover:text-purple-600 transition-colors duration-300">
                   <i class="fas fa-users mr-2 text-sm"></i>
                   Our Clients
                 </a>
               </li>
               <li>
-                <a
-                  href="#contact"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
-                >
+                <a href="#contact-form" class="text-gray-600 hover:text-purple-600 transition-colors duration-300">
                   <i class="fas fa-envelope mr-2 text-sm"></i>
                   Contact
                 </a>
@@ -3295,25 +3112,23 @@
             </ul>
           </div>
 
-
           <!-- Contact Info -->
           <div>
             <h3 class="font-bold text-lg mb-6 text-gray-900">Contact Us</h3>
             <ul class="space-y-4 text-gray-600">
               <li class="flex items-start">
-                <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-500"></i>
+                <i class="fas fa-map-marker-alt mt-1 mr-3 text-purple-500"></i>
                 <span>Chaussée de Haecht 1749, 1130 Brussels, Belgium</span>
               </li>
               <li class="flex items-center">
-                <i class="fas fa-phone-alt mr-3 text-blue-500"></i>
-                <a href="tel:+3221234567" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">
+                <i class="fas fa-phone-alt mr-3 text-purple-500"></i>
+                <a href="tel:+3221234567" class="text-gray-600 hover:text-purple-600 transition-colors duration-300">
                   +32 2 123 45 67
                 </a>
               </li>
               <li class="flex items-center">
-                <i class="fas fa-envelope mr-3 text-blue-500"></i>
-                <a href="mailto:info@fastcaisse.be?subject=FC%20Commerce%20Management%20Inquiry&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20FC%20Commerce%20Management%20for%20my%20business.%0D%0A%0D%0AThank%20you!"
-                   class="text-gray-600 hover:text-blue-600 transition-colors duration-300">
+                <i class="fas fa-envelope mr-3 text-purple-500"></i>
+                <a href="mailto:info@fastcaisse.be" class="text-gray-600 hover:text-purple-600 transition-colors duration-300">
                   info@fastcaisse.be
                 </a>
               </li>
@@ -3323,470 +3138,36 @@
 
         <hr class="border-gray-200 my-10" />
 
-        <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+        <div class="text-center">
           <p class="text-sm text-gray-600">
             &copy; 2025 FAST CAISSE SRL. All rights reserved.
             |
-            <a href="./general-conditions-fr.html" class="text-blue-600 hover:underline">
-              General Conditions
-            </a>
+            <a href="./general-conditions-en.html" class="hover:text-purple-600 transition-colors duration-300">General Conditions</a>
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- JavaScript Libraries -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/app.js"></script>
+
+    <!-- Loader Management -->
     <script>
-      // Initialize AOS
-      AOS.init({
-        duration: 800,
-        once: true,
-        easing: "ease-out-cubic",
-      });
-
-      // Back to Top Button
-      const backToTopButton = document.getElementById("back-to-top");
-
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 300) {
-          backToTopButton.classList.add("show");
-        } else {
-          backToTopButton.classList.remove("show");
-        }
-      });
-
-      backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-
-      // FAQ Accordion
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM loaded, initializing FAQ...');
-        const faqQuestions = document.querySelectorAll(".faq-question");
-        console.log('Found FAQ questions:', faqQuestions.length);
-
-        faqQuestions.forEach((question) => {
-          question.addEventListener("click", (e) => {
-            e.preventDefault();
-            console.log('FAQ question clicked!');
-
-            const answer = question.nextElementSibling;
-            const isOpen = answer.classList.contains("open");
-            const icon = question.querySelector(".faq-toggle-icon");
-
-            console.log('Answer element:', answer);
-            console.log('Is open:', isOpen);
-
-            // Close all FAQs
-            document.querySelectorAll(".faq-answer").forEach((ans) => {
-              ans.classList.remove("open");
-            });
-            document.querySelectorAll(".faq-question").forEach((q) => {
-              q.classList.remove("active");
-              q.setAttribute("aria-expanded", "false");
-              const qIcon = q.querySelector(".faq-toggle-icon");
-              if (qIcon) {
-                qIcon.style.transform = "rotate(0deg)";
-              }
-            });
-
-            // Toggle current FAQ if it wasn't open
-            if (!isOpen) {
-              console.log('Opening FAQ...');
-              answer.classList.add("open");
-              question.classList.add("active");
-              question.setAttribute("aria-expanded", "true");
-              if (icon) {
-                icon.style.transform = "rotate(180deg)";
-              }
-              console.log('FAQ opened, classes added');
-            } else {
-              console.log('FAQ was already open, closing it');
-            }
-          });
-
-          // Add keyboard support
-          question.addEventListener("keydown", (e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              question.click();
-            }
-          });
-        });
-      });
-
       // Hide loader after page loads
-      window.addEventListener('load', function() {
-        const loader = document.getElementById('loader');
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
         if (loader) {
           setTimeout(() => {
-            loader.style.opacity = '0';
+            loader.style.opacity = "0";
             setTimeout(() => {
-              loader.style.display = 'none';
+              loader.style.display = "none";
             }, 300);
           }, 500);
         }
       });
-
-      // Enhanced Contact Form Functionality
-      const contactForm = document.getElementById("contact-form");
-      const submitBtn = document.getElementById("submit-btn");
-      const successMessage = document.getElementById("success-message");
-      const errorMessage = document.getElementById("error-message");
-
-      // Form validation functions
-      function validateEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-      }
-
-      function validatePhone(phone) {
-        // Belgian phone number validation (flexible format)
-        const phoneRegex = /^(\+32|0032|0)[1-9]\d{7,8}$/;
-        const cleanPhone = phone.replace(/[\s\-\(\)]/g, "");
-        return phoneRegex.test(cleanPhone) || cleanPhone.length >= 9;
-      }
-
-      function validateField(field) {
-        const value = field.value.trim();
-        const fieldName = field.name;
-        const errorSpan = field.parentElement.querySelector(".error-message");
-        let isValid = true;
-
-        // Reset field styling
-        field.classList.remove("border-red-500", "border-green-500");
-        errorSpan.classList.add("hidden");
-
-        // Required field validation
-        if (field.hasAttribute("required") && !value) {
-          isValid = false;
-          errorSpan.textContent = `Please enter your ${fieldName.replace("-", " ")}`;
-        }
-        // Email validation
-        else if (fieldName === "email" && value && !validateEmail(value)) {
-          isValid = false;
-          errorSpan.textContent = "Please enter a valid email address";
-        }
-        // Phone validation
-        else if (fieldName === "phone" && value && !validatePhone(value)) {
-          isValid = false;
-          errorSpan.textContent = "Please enter a valid Belgian phone number";
-        }
-        // Name validation (minimum 2 characters)
-        else if (fieldName === "name" && value && value.length < 2) {
-          isValid = false;
-          errorSpan.textContent = "Name must be at least 2 characters long";
-        }
-
-        // Show validation result
-        if (!isValid) {
-          field.classList.add("border-red-500");
-          errorSpan.classList.remove("hidden");
-        } else if (value) {
-          field.classList.add("border-green-500");
-        }
-
-        return isValid;
-      }
-
-      // Real-time validation
-      contactForm.querySelectorAll("input[required], textarea[required]").forEach((field) => {
-        field.addEventListener("blur", () => validateField(field));
-        field.addEventListener("input", () => {
-          if (field.classList.contains("border-red-500")) {
-            validateField(field);
-          }
-        });
-      });
-
-      // Privacy consent validation
-      const privacyConsent = document.getElementById("privacy-consent");
-      privacyConsent.addEventListener("change", function () {
-        const errorSpan = this.parentElement.parentElement.querySelector(".error-message");
-        if (this.checked) {
-          errorSpan.classList.add("hidden");
-        } else {
-          errorSpan.classList.remove("hidden");
-        }
-      });
-
-      // Form submission
-      contactForm.addEventListener("submit", async function (e) {
-        e.preventDefault();
-
-        // Hide previous messages
-        successMessage.classList.add("hidden");
-        errorMessage.classList.add("hidden");
-
-        // Validate all required fields
-        let isFormValid = true;
-        const requiredFields = contactForm.querySelectorAll("input[required], textarea[required]");
-
-        requiredFields.forEach((field) => {
-          if (!validateField(field)) {
-            isFormValid = false;
-          }
-        });
-
-        // Check privacy consent
-        if (!privacyConsent.checked) {
-          const errorSpan =
-            privacyConsent.parentElement.parentElement.querySelector(".error-message");
-          errorSpan.classList.remove("hidden");
-          isFormValid = false;
-        }
-
-        if (!isFormValid) {
-          errorMessage.classList.remove("hidden");
-          errorMessage.scrollIntoView({ behavior: "smooth", block: "center" });
-          return;
-        }
-
-        // Show loading state
-        const submitText = submitBtn.querySelector(".submit-text");
-        const loadingText = submitBtn.querySelector(".loading-text");
-
-        submitBtn.disabled = true;
-        submitText.classList.add("hidden");
-        loadingText.classList.remove("hidden");
-
-        try {
-          // Simulate form submission (replace with actual endpoint)
-          await new Promise((resolve) => setTimeout(resolve, 2000));
-
-          // Show success message
-          successMessage.classList.remove("hidden");
-          successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
-
-          // Reset form
-          contactForm.reset();
-          contactForm.querySelectorAll("input, textarea, select").forEach((field) => {
-            field.classList.remove("border-red-500", "border-green-500");
-          });
-
-          // Optional: Send data to your backend
-          // const formData = new FormData(contactForm);
-          // const response = await fetch('/submit-contact-form', {
-          //   method: 'POST',
-          //   body: formData
-          // });
-        } catch (error) {
-          console.error("Form submission error:", error);
-          errorMessage.querySelector("span").textContent =
-            "Something went wrong. Please try again or contact us directly.";
-          errorMessage.classList.remove("hidden");
-        } finally {
-          // Reset button state
-          submitBtn.disabled = false;
-          submitText.classList.remove("hidden");
-          loadingText.classList.add("hidden");
-        }
-      });
-
-      // Phone number formatting for Belgian numbers
-      const phoneInput = document.getElementById("phone");
-      phoneInput.addEventListener("input", function (e) {
-        let value = e.target.value.replace(/\D/g, "");
-
-        // Add Belgian country code if not present
-        if (value.length > 0 && !value.startsWith("32") && !value.startsWith("0")) {
-          value = "32" + value;
-        }
-
-        // Format the number
-        if (value.startsWith("32")) {
-          value = "+32 " + value.substring(2);
-          if (value.length > 7) {
-            value = value.substring(0, 7) + " " + value.substring(7);
-          }
-          if (value.length > 11) {
-            value = value.substring(0, 11) + " " + value.substring(11);
-          }
-        } else if (value.startsWith("0")) {
-          if (value.length > 4) {
-            value = value.substring(0, 4) + " " + value.substring(4);
-          }
-          if (value.length > 8) {
-            value = value.substring(0, 8) + " " + value.substring(8);
-          }
-        }
-
-        e.target.value = value;
-      });
-
-      // Auto-focus next field on Enter (except textarea and submit button)
-      contactForm.querySelectorAll("input, select").forEach((field, index, fields) => {
-        field.addEventListener("keydown", function (e) {
-          if (e.key === "Enter" && field.type !== "submit") {
-            e.preventDefault();
-            const nextField = fields[index + 1];
-            if (nextField) {
-              nextField.focus();
-            } else {
-              // Focus on textarea if it exists
-              const textarea = contactForm.querySelector("textarea");
-              if (textarea) {
-                textarea.focus();
-              }
-            }
-          }
-        });
-      });
     </script>
-
-    <!-- Video Modal -->
-    <div
-      id="videoModal"
-      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden"
-      onclick="closeVideoModal()"
-    >
-      <div class="relative w-full max-w-4xl mx-4" onclick="event.stopPropagation()">
-        <!-- Close Button -->
-        <button
-          onclick="closeVideoModal()"
-          class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
-          aria-label="Close video"
-        >
-          <i class="fas fa-times text-2xl"></i>
-        </button>
-
-        <!-- Video Container -->
-        <div
-          class="relative bg-black rounded-lg overflow-hidden shadow-2xl"
-          style="aspect-ratio: 16/9"
-        >
-          <!-- YouTube Video (default) -->
-          <iframe
-            id="youtubeVideo"
-            class="w-full h-full"
-            src=""
-            title="FAST CAISSE CRM Demo Video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-
-          <!-- Local Video (hidden by default) -->
-          <video id="localVideo" class="w-full h-full hidden" controls preload="metadata">
-            <source src="" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-
-        <!-- Video Controls -->
-        <div class="mt-4 flex justify-center space-x-4">
-          <button
-            onclick="switchToYoutube()"
-            id="youtubeBtn"
-            class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
-          >
-            <i class="fab fa-youtube mr-2"></i>
-            YouTube Demo
-          </button>
-          <button
-            onclick="switchToLocal()"
-            id="localBtn"
-            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors opacity-50"
-          >
-            <i class="fas fa-play mr-2"></i>
-            Local Demo
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Video Modal JavaScript -->
-    <script>
-      // Video URLs - you can change these for CRM-specific videos
-      const YOUTUBE_VIDEO_ID = "dU1xS07N-FA"; // CRM/Business management demo
-      const LOCAL_VIDEO_URL = "./assets/videos/crm-demo.mp4"; // CRM-specific local video
-
-      let currentVideoType = "youtube";
-
-      function openVideoModal() {
-        const modal = document.getElementById("videoModal");
-        modal.classList.remove("hidden");
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
-
-        // Load the appropriate video
-        if (currentVideoType === "youtube") {
-          loadYouTubeVideo();
-        } else {
-          loadLocalVideo();
-        }
-      }
-
-      function closeVideoModal() {
-        const modal = document.getElementById("videoModal");
-        const youtubeVideo = document.getElementById("youtubeVideo");
-        const localVideo = document.getElementById("localVideo");
-
-        modal.classList.add("hidden");
-        document.body.style.overflow = "auto"; // Restore scrolling
-
-        // Stop videos
-        youtubeVideo.src = "";
-        localVideo.pause();
-        localVideo.currentTime = 0;
-      }
-
-      function switchToYoutube() {
-        currentVideoType = "youtube";
-        loadYouTubeVideo();
-
-        // Update button states
-        document.getElementById("youtubeBtn").classList.remove("opacity-50");
-        document.getElementById("localBtn").classList.add("opacity-50");
-      }
-
-      function switchToLocal() {
-        currentVideoType = "local";
-        loadLocalVideo();
-
-        // Update button states
-        document.getElementById("localBtn").classList.remove("opacity-50");
-        document.getElementById("youtubeBtn").classList.add("opacity-50");
-      }
-
-      function loadYouTubeVideo() {
-        const youtubeVideo = document.getElementById("youtubeVideo");
-        const localVideo = document.getElementById("localVideo");
-
-        youtubeVideo.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`;
-        youtubeVideo.classList.remove("hidden");
-        localVideo.classList.add("hidden");
-        localVideo.pause();
-      }
-
-      function loadLocalVideo() {
-        const youtubeVideo = document.getElementById("youtubeVideo");
-        const localVideo = document.getElementById("localVideo");
-
-        localVideo.src = LOCAL_VIDEO_URL;
-        localVideo.classList.remove("hidden");
-        youtubeVideo.classList.add("hidden");
-        youtubeVideo.src = "";
-        localVideo.play();
-      }
-
-      // Close modal with Escape key
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          closeVideoModal();
-        }
-      });
-    </script>
-
-    <!-- App JavaScript for Loader -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="./assets/js/app.js"></script>
   </body>
 </html>

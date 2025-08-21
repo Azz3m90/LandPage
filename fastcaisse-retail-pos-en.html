@@ -422,15 +422,30 @@
             <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
             About
           </a>
-          <a
-            href="./index-en.html#solutions"
-            class="nav-link"
-            title="POS & CRM Solutions - Restaurant, Retail, Commerce"
-            role="menuitem"
-          >
-            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
-            Solutions
-          </a>
+          <div class="nav-dropdown" role="menuitem">
+            <a href="./index-en.html#solutions" class="nav-link" title="POS & CRM Solutions - Restaurant, Retail, Commerce">
+              <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+              Solutions
+              <i class="fas fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown-content" role="menu">
+              <a href="./fastcaisse-restaurant-pos-en.html" class="nav-dropdown-item" role="menuitem" title="FC Resto - Restaurant POS System">
+                <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+                <span>FC Resto - Restaurant POS</span>
+                <span class="nav-dropdown-price">€69/mo</span>
+              </a>
+              <a href="./fastcaisse-retail-pos-en.html" class="nav-dropdown-item" role="menuitem" title="FC Shop - Retail POS System">
+                <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+                <span>FC Shop - Retail POS</span>
+                <span class="nav-dropdown-price">€59/mo</span>
+              </a>
+              <a href="./fastcaisse-crm-business-management-en.html" class="nav-dropdown-item" role="menuitem" title="FC Commerce - CRM Platform">
+                <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+                <span>FC Commerce - CRM</span>
+                <span class="nav-dropdown-price">€99/mo</span>
+              </a>
+            </div>
+          </div>
           <a
             href="./index-en.html#services"
             class="nav-link"
@@ -450,7 +465,7 @@
             Clients
           </a>
           <a
-            href="./index-en.html#contact"
+            href="#contact"
             class="nav-link"
             title="Contact FAST CAISSE - Get Free Consultation"
             role="menuitem"
@@ -675,15 +690,34 @@
           <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
           About
         </a>
-        <a
-          href="./index-en.html#solutions"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-          title="POS & CRM Solutions - Restaurant, Retail, Commerce"
-          role="menuitem"
-        >
-          <i class="fas fa-tools mr-2" aria-hidden="true"></i>
-          Solutions
-        </a>
+        <div class="nav-dropdown">
+          <a
+            href="./index-en.html#solutions"
+            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            title="POS & CRM Solutions - Restaurant, Retail, Commerce"
+            role="menuitem"
+          >
+            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+            Solutions
+          </a>
+          <div class="nav-dropdown-content">
+            <a href="./fastcaisse-restaurant-pos-en.html" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+              <span>FC Resto - Restaurant POS</span>
+              <span class="nav-dropdown-price">€69/mo</span>
+            </a>
+            <a href="./fastcaisse-retail-pos-en.html" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+              <span>FC Shop - Retail POS</span>
+              <span class="nav-dropdown-price">€59/mo</span>
+            </a>
+            <a href="./fastcaisse-crm-business-management-en.html" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+              <span>FC Commerce - CRM</span>
+              <span class="nav-dropdown-price">€99/mo</span>
+            </a>
+          </div>
+        </div>
         <a
           href="./index-en.html#services"
           class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
@@ -703,7 +737,7 @@
           Clients
         </a>
         <a
-          href="./index-en.html#contact"
+          href="#contact-form"
           class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
           title="Contact FAST CAISSE - Get Free Consultation"
           role="menuitem"
@@ -2627,262 +2661,32 @@
           <p class="text-sm text-gray-600">
             &copy; 2025 FAST CAISSE SRL. All rights reserved.
             |
-            <a href="./general-conditions-fr.html" class="text-blue-600 hover:underline">
-              General Conditions
-            </a>
+            <a href="./general-conditions-en.html" class="hover:text-blue-600 transition-colors duration-300">General Conditions</a>
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- JavaScript Libraries -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/app.js"></script>
+
+    <!-- Loader Management -->
     <script>
-      // Initialize AOS
-      AOS.init({
-        duration: 800,
-        once: true,
-        easing: "ease-out-cubic",
-      });
-
-      // Back to Top Button
-      const backToTopButton = document.getElementById("back-to-top");
-
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 300) {
-          backToTopButton.classList.add("show");
-        } else {
-          backToTopButton.classList.remove("show");
-        }
-      });
-
-      backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-
-      // FAQ Accordion
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM loaded, initializing FAQ...');
-        const faqQuestions = document.querySelectorAll(".faq-question");
-        console.log('Found FAQ questions:', faqQuestions.length);
-
-        faqQuestions.forEach((question) => {
-          question.addEventListener("click", (e) => {
-            e.preventDefault();
-            console.log('FAQ question clicked!');
-
-            const answer = question.nextElementSibling;
-            const isOpen = answer.classList.contains("open");
-            const icon = question.querySelector(".faq-toggle-icon");
-
-            console.log('Answer element:', answer);
-            console.log('Is open:', isOpen);
-
-            // Close all FAQs
-            document.querySelectorAll(".faq-answer").forEach((ans) => {
-              ans.classList.remove("open");
-            });
-            document.querySelectorAll(".faq-question").forEach((q) => {
-              q.classList.remove("active");
-              q.setAttribute("aria-expanded", "false");
-              const qIcon = q.querySelector(".faq-toggle-icon");
-              if (qIcon) {
-                qIcon.style.transform = "rotate(0deg)";
-              }
-            });
-
-            // Toggle current FAQ if it wasn't open
-            if (!isOpen) {
-              console.log('Opening FAQ...');
-              answer.classList.add("open");
-              question.classList.add("active");
-              question.setAttribute("aria-expanded", "true");
-              if (icon) {
-                icon.style.transform = "rotate(180deg)";
-              }
-              console.log('FAQ opened, classes added');
-            } else {
-              console.log('FAQ was already open, closing it');
-            }
-          });
-
-          // Add keyboard support
-          question.addEventListener("keydown", (e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              question.click();
-            }
-          });
-        });
-      });
-
       // Hide loader after page loads
-      window.addEventListener('load', function() {
-        const loader = document.getElementById('loader');
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
         if (loader) {
           setTimeout(() => {
-            loader.style.opacity = '0';
+            loader.style.opacity = "0";
             setTimeout(() => {
-              loader.style.display = 'none';
+              loader.style.display = "none";
             }, 300);
           }, 500);
         }
       });
     </script>
-
-    <!-- Video Modal -->
-    <div
-      id="videoModal"
-      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden"
-      onclick="closeVideoModal()"
-    >
-      <div class="relative w-full max-w-4xl mx-4" onclick="event.stopPropagation()">
-        <!-- Close Button -->
-        <button
-          onclick="closeVideoModal()"
-          class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
-          aria-label="Close video"
-        >
-          <i class="fas fa-times text-2xl"></i>
-        </button>
-
-        <!-- Video Container -->
-        <div
-          class="relative bg-black rounded-lg overflow-hidden shadow-2xl"
-          style="aspect-ratio: 16/9"
-        >
-          <!-- YouTube Video (default) -->
-          <iframe
-            id="youtubeVideo"
-            class="w-full h-full"
-            src=""
-            title="FAST CAISSE Retail POS Demo Video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-
-          <!-- Local Video (hidden by default) -->
-          <video id="localVideo" class="w-full h-full hidden" controls preload="metadata">
-            <source src="" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-
-        <!-- Video Controls -->
-        <div class="mt-4 flex justify-center space-x-4">
-          <button
-            onclick="switchToYoutube()"
-            id="youtubeBtn"
-            class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
-          >
-            <i class="fab fa-youtube mr-2"></i>
-            YouTube Demo
-          </button>
-          <button
-            onclick="switchToLocal()"
-            id="localBtn"
-            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors opacity-50"
-          >
-            <i class="fas fa-play mr-2"></i>
-            Local Demo
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Video Modal JavaScript -->
-    <script>
-      // Video URLs - you can change these for Retail POS-specific videos
-      const YOUTUBE_VIDEO_ID = "dU1xS07N-FA"; // Retail POS demo
-      const LOCAL_VIDEO_URL = "./assets/videos/retail-demo.mp4"; // Retail-specific local video
-
-      let currentVideoType = "youtube";
-
-      function openVideoModal() {
-        const modal = document.getElementById("videoModal");
-        modal.classList.remove("hidden");
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
-
-        // Load the appropriate video
-        if (currentVideoType === "youtube") {
-          loadYouTubeVideo();
-        } else {
-          loadLocalVideo();
-        }
-      }
-
-      function closeVideoModal() {
-        const modal = document.getElementById("videoModal");
-        const youtubeVideo = document.getElementById("youtubeVideo");
-        const localVideo = document.getElementById("localVideo");
-
-        modal.classList.add("hidden");
-        document.body.style.overflow = "auto"; // Restore scrolling
-
-        // Stop videos
-        youtubeVideo.src = "";
-        localVideo.pause();
-        localVideo.currentTime = 0;
-      }
-
-      function switchToYoutube() {
-        currentVideoType = "youtube";
-        loadYouTubeVideo();
-
-        // Update button states
-        document.getElementById("youtubeBtn").classList.remove("opacity-50");
-        document.getElementById("localBtn").classList.add("opacity-50");
-      }
-
-      function switchToLocal() {
-        currentVideoType = "local";
-        loadLocalVideo();
-
-        // Update button states
-        document.getElementById("localBtn").classList.remove("opacity-50");
-        document.getElementById("youtubeBtn").classList.add("opacity-50");
-      }
-
-      function loadYouTubeVideo() {
-        const youtubeVideo = document.getElementById("youtubeVideo");
-        const localVideo = document.getElementById("localVideo");
-
-        youtubeVideo.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`;
-        youtubeVideo.classList.remove("hidden");
-        localVideo.classList.add("hidden");
-        localVideo.pause();
-      }
-
-      function loadLocalVideo() {
-        const youtubeVideo = document.getElementById("youtubeVideo");
-        const localVideo = document.getElementById("localVideo");
-
-        localVideo.src = LOCAL_VIDEO_URL;
-        localVideo.classList.remove("hidden");
-        youtubeVideo.classList.add("hidden");
-        youtubeVideo.src = "";
-        localVideo.play();
-      }
-
-      // Close modal with Escape key
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          closeVideoModal();
-        }
-      });
-    </script>
-
-    <!-- App JavaScript for Loader -->
-        <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="./assets/js/app.js"></script>
   </body>
 </html>

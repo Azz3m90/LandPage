@@ -954,62 +954,179 @@
       id="header"
     >
       <nav
-        class="container relative mx-auto px-6 py-0.5 flex justify-between items-center"
+        class="container relative mx-auto px-6 py-1 flex justify-between items-center"
         aria-label="Main navigation"
       >
         <!-- Logo -->
         <div class="flex items-center gap-4">
-          <a href="./index-en.html">
-            <!-- Added link back to home -->
+          <a
+            href="./index-en.html"
+            title="FAST CAISSE - Homepage"
+            aria-label="Go to FAST CAISSE homepage"
+          >
             <img
               src="./images/fastcaisse-logo.png"
-              alt="FAST CAISSE logo"
+              alt="FAST CAISSE - Leading POS and CRM Solutions for Belgian Businesses Logo"
               class="object-contain transition-transform duration-300 hover:scale-105"
-              width="140"
+              width="180"
+              height="60"
               loading="lazy"
             />
           </a>
         </div>
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-4 items-center">
-          <a href="./index-en.html#home" class="nav-link">
-            <i class="fas fa-home mr-2"></i>
+        <div class="hidden md:flex space-x-4 items-center" role="menubar">
+          <a
+            href="./index-en.html#home"
+            class="nav-link"
+            title="FAST CAISSE Homepage - POS & CRM Solutions"
+            role="menuitem"
+          >
+            <i class="fas fa-home mr-2" aria-hidden="true"></i>
             Home
           </a>
-          <a href="./index-en.html#about" class="nav-link">
-            <i class="fas fa-info-circle mr-2"></i>
+          <a
+            href="./index-en.html#about"
+            class="nav-link"
+            title="About FAST CAISSE - Belgian POS & CRM Company Since 2010"
+            role="menuitem"
+          >
+            <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
             About
           </a>
-          <a href="./index-en.html#solutions" class="nav-link">
-            <i class="fas fa-tools mr-2"></i>
-            Solutions
-          </a>
-          <a href="./index-en.html#services" class="nav-link">
-            <i class="fas fa-cogs mr-2"></i>
+          <div class="nav-dropdown" role="menuitem">
+            <a href="./index-en.html#solutions" class="nav-link" title="POS & CRM Solutions - Restaurant, Retail, Commerce">
+              <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+              Solutions
+              <i class="fas fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown-content" role="menu">
+              <a href="./fastcaisse-restaurant-pos-en.html" class="nav-dropdown-item" role="menuitem" title="FC Resto - Restaurant POS System">
+                <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+                <span>FC Resto - Restaurant POS</span>
+                <span class="nav-dropdown-price">€69/mo</span>
+              </a>
+              <a href="./fastcaisse-retail-pos-en.html" class="nav-dropdown-item" role="menuitem" title="FC Shop - Retail POS System">
+                <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+                <span>FC Shop - Retail POS</span>
+                <span class="nav-dropdown-price">€59/mo</span>
+              </a>
+              <a href="./fastcaisse-crm-business-management-en.html" class="nav-dropdown-item" role="menuitem" title="FC Commerce - CRM Platform">
+                <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+                <span>FC Commerce - CRM</span>
+                <span class="nav-dropdown-price">€99/mo</span>
+              </a>
+            </div>
+          </div>
+          <a
+            href="./index-en.html#services"
+            class="nav-link"
+            title="Our Services - Website Creation, Custom Development"
+            role="menuitem"
+          >
+            <i class="fas fa-cogs mr-2" aria-hidden="true"></i>
             Services
           </a>
-          <a href="./index-en.html#clients" class="nav-link">
-            <i class="fas fa-users mr-2"></i>
+          <a
+            href="./index-en.html#clients"
+            class="nav-link"
+            title="Our Clients - 1000+ Belgian Businesses Trust FAST CAISSE"
+            role="menuitem"
+          >
+            <i class="fas fa-users mr-2" aria-hidden="true"></i>
             Clients
           </a>
-          <a href="#contact" class="nav-link">
-            <i class="fas fa-envelope mr-2"></i>
+          <a
+            href="#contact"
+            class="nav-link"
+            title="Contact FAST CAISSE - Get Free Consultation"
+            role="menuitem"
+          >
+            <i class="fas fa-envelope mr-2" aria-hidden="true"></i>
             Contact
           </a>
           <!-- Desktop Language Switcher -->
-          <div class="relative">
-            <button id="desktopLangToggle" class="flex items-center rounded focus:outline-none">
-              <img src="./images/flags/united-kingdom.png" alt="EN" class="w-9 h-9" />
+          <div class="relative" role="group" aria-label="Language selection">
+            <button
+              id="desktopLangToggle"
+              class="flex items-center rounded focus:outline-none hover:bg-gray-50 px-2 py-1"
+              aria-label="Select language"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img
+                src="./images/flags/united-kingdom.png"
+                alt="English"
+                class="w-6 h-6 mr-2"
+                width="24"
+                height="24"
+                loading="lazy"
+              />
+              <span class="text-sm font-medium text-gray-700">EN</span>
+              <i class="fas fa-chevron-down ml-1 text-xs text-gray-500"></i>
             </button>
             <div
               id="desktopLangMenu"
-              class="hidden absolute right-0 w-12 bg-white border border-gray-200 rounded shadow-lg z-50"
+              class="hidden absolute right-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50"
+              role="menu"
+              aria-label="Language options"
             >
-              <a href="./index.html" class="block p-0 hover:bg-gray-100">
-                <img src="./images/flags/belgium.png" class="w-9 h-9" />
+              <a
+                href="./index.html"
+                class="flex items-center px-4 py-3 hover:bg-gray-50 border-b border-gray-100"
+                title="French version - FAST CAISSE Solutions POS & CRM Belgique"
+                hreflang="fr"
+                role="menuitem"
+              >
+                <img
+                  src="./images/flags/belgium.png"
+                  alt="Belgium - French"
+                  class="w-6 h-6 mr-3"
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                />
+                <div>
+                  <div class="text-sm font-medium text-gray-900">FR</div>
+                </div>
               </a>
-              <a href="./index-nl.html" class="block p-0 hover:bg-gray-100">
-                <img src="./images/flags/netherlands.png" class="w-9 h-9" />
+              <a
+                href="./fastcaisse-restaurant-pos-en.html"
+                class="flex items-center px-4 py-3 hover:bg-gray-50 border-b border-gray-100"
+                title="English version - FAST CAISSE POS & CRM Solutions Belgium"
+                hreflang="en"
+                role="menuitem"
+              >
+                <img
+                  src="./images/flags/united-kingdom.png"
+                  alt="English"
+                  class="w-6 h-6 mr-3"
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                />
+                <div>
+                  <div class="text-sm font-medium text-gray-900">EN</div>
+                </div>
+              </a>
+              <a
+                href="./index-nl.html"
+                class="flex items-center px-4 py-3 hover:bg-gray-50"
+                title="Dutch version - FAST CAISSE POS & CRM Oplossingen België"
+                hreflang="nl"
+                role="menuitem"
+              >
+                <img
+                  src="./images/flags/netherlands.png"
+                  alt="Dutch"
+                  class="w-6 h-6 mr-3"
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                />
+                <div>
+                  <div class="text-sm font-medium text-gray-900">NL</div>
+                </div>
               </a>
             </div>
           </div>
@@ -1017,33 +1134,108 @@
         <!-- Mobile Buttons -->
         <div class="md:hidden flex items-center gap-3">
           <!-- Mobile Language Switcher -->
-          <div class="relative">
-            <button id="mobileLangToggle" class="flex items-center rounded p-1 focus:outline-none">
-              <img src="./images/flags/united-kingdom.png" class="w-8 h-8" />
+          <div class="relative" role="group" aria-label="Mobile language selection">
+            <button
+              id="mobileLangToggle"
+              class="flex items-center rounded-lg p-2 focus:outline-none hover:bg-gray-50 active:bg-gray-100 transition-colors"
+              aria-label="Select language"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img
+                src="./images/flags/united-kingdom.png"
+                alt="English"
+                class="w-6 h-6 mr-1.5"
+                width="24"
+                height="24"
+                loading="lazy"
+              />
+              <span class="text-xs font-medium text-gray-700 mr-1">EN</span>
+              <i class="fas fa-chevron-down text-xs text-gray-500"></i>
             </button>
             <div
               id="mobileLangMenu"
-              class="hidden absolute right-0 bg-white border border-gray-200 rounded shadow-lg z-50"
+              class="hidden absolute right-0 top-full mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-xl z-50 overflow-hidden"
+              role="menu"
+              aria-label="Mobile language options"
             >
-              <a href="./index.html" class="block hover:bg-gray-100">
-                <img src="./images/flags/belgium.png" class="w-8 h-8" />
-              </a>
-              <a href="./index-nl.html" class="block hover:bg-gray-100">
-                <img src="./images/flags/netherlands.png" class="w-8 h-8" />
-              </a>
+              <div class="py-1">
+                <a
+                  href="./index.html"
+                  class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100"
+                  title="French version - Belgium"
+                  hreflang="fr"
+                  role="menuitem"
+                >
+                  <img
+                    src="./images/flags/belgium.png"
+                    alt="Belgium - French"
+                    class="w-6 h-6 mr-3 flex-shrink-0"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <div class="text-sm font-medium text-gray-900">FR</div>
+                  </div>
+                </a>
+                <a
+                  href="./fastcaisse-restaurant-pos-en.html"
+                  class="flex items-center px-4 py-3 hover:bg-blue-50 transition-colors border-b border-gray-100"
+                  title="English version - Belgium"
+                  hreflang="en"
+                  role="menuitem"
+                >
+                  <img
+                    src="./images/flags/united-kingdom.png"
+                    alt="English"
+                    class="w-6 h-6 mr-3 flex-shrink-0"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <div class="text-sm font-medium text-gray-900">EN</div>
+                    <div class="text-xs text-blue-600">Current</div>
+                  </div>
+                  <i class="fas fa-check text-blue-600 text-sm ml-2"></i>
+                </a>
+                <a
+                  href="./index-nl.html"
+                  class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors"
+                  title="Dutch version - Belgium"
+                  hreflang="nl"
+                  role="menuitem"
+                >
+                  <img
+                    src="./images/flags/netherlands.png"
+                    alt="Dutch"
+                    class="w-6 h-6 mr-3 flex-shrink-0"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <div class="text-sm font-medium text-gray-900">NL</div>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
           <!-- Mobile Menu Toggle -->
           <button
             id="menu-toggle"
             aria-expanded="false"
-            aria-label="Toggle menu"
+            aria-label="Toggle main navigation menu"
+            aria-controls="mobile-menu"
             class="focus:outline-none rounded"
           >
-            <i class="fas fa-bars text-2xl text-gray-700 transition-all duration-300 ease-in-out"></i>
+            <i
+              class="fas fa-bars text-2xl text-gray-700 transition-transform duration-300"
+              aria-hidden="true"
+            ></i>
           </button>
         </div>
-
       </nav>
       <!-- Enhanced Breadcrumb Navigation -->
       <nav
@@ -2668,19 +2860,19 @@
                   <i class="fas fa-shield-alt text-white text-2xl" style="color: white;"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Belgian Compliance</h3>
-                <p class="text-gray-600 mb-6">All integrations maintain Belgian regulatory compliance, ensuring your restaurant meets FPS Finance requirements.</p>
-                <ul class="space-y-2 text-sm">
+                <p class="text-gray-600 mb-6">FC Resto ensures full compliance with Belgian restaurant regulations and VAT requirements, giving you peace of mind.</p>
+                <ul class="space-y-3">
                   <li class="flex items-center">
-                    <i class="fas fa-check text-purple-500 mr-2"></i>
-                    <span>FPS Finance certified</span>
+                    <i class="fas fa-check text-green-500 mr-2"></i>
+                    <span>Belgian VAT compliance</span>
                   </li>
                   <li class="flex items-center">
-                    <i class="fas fa-check text-purple-500 mr-2"></i>
-                    <span>GDPR compliant</span>
+                    <i class="fas fa-check text-green-500 mr-2"></i>
+                    <span>Legal receipt printing</span>
                   </li>
                   <li class="flex items-center">
-                    <i class="fas fa-check text-purple-500 mr-2"></i>
-                    <span>Automatic tax reporting</span>
+                    <i class="fas fa-check text-green-500 mr-2"></i>
+                    <span>HORECA regulations</span>
                   </li>
                 </ul>
               </div>
@@ -2689,525 +2881,61 @@
         </div>
       </section>
 
-      <!-- CTA Section -->
-      <section class="py-16 md:py-20 bg-white text-gray-900" id="contact">
-        <div class="container mx-auto px-4 sm:px-6 text-center">
-          <div data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Revolutionize Your Restaurant?
-            </h2>
-            <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-              Join hundreds of Belgian restaurants who trust FC Resto to streamline
-              their operations and increase their profits.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#contact-form"
-                class="bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 font-bold py-4 px-8 transform hover:scale-105 text-center"
-                style="background-color: #2563eb !important; color: white !important;"
-              >
-                Request a Demo
-                <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-              <a
-                href="tel:+3221234567"
-                class="bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 font-bold py-4 px-8 flex items-center justify-center text-center"
-              >
-                <i class="fas fa-phone-alt mr-2"></i>
-                Call Us: +32 2 123 45 67
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Form Section - Enhanced for SEO & UX -->
-      <style>
-        /* Force white text in contact card */
-        .contact-card * {
-          color: white !important;
-        }
-        .contact-card h3,
-        .contact-card p,
-        .contact-card span,
-        .contact-card a,
-        .contact-card div {
-          color: white !important;
-        }
-        .contact-card .contact-label {
-          color: rgba(255, 255, 255, 0.8) !important;
-        }
-        .contact-card .contact-sub {
-          color: rgba(255, 255, 255, 0.7) !important;
-        }
-      </style>
-      <section id="contact-form" class="py-20 md:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden" itemscope itemtype="https://schema.org/ContactPage">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-5">
-          <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23f97316\' fill-opacity=\'0.1\'%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'2\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-        </div>
-
-        <div class="container mx-auto px-4 sm:px-6 relative z-10">
-          <!-- Section Header -->
+      <!-- Contact Section -->
+      <section class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+        <div class="container mx-auto px-6">
           <div class="text-center mb-16" data-aos="fade-up">
-            <div class="inline-flex items-center bg-blue-100 px-6 py-3 rounded-full mb-6 shadow-sm">
-              <i class="fas fa-headset text-blue-600 mr-2"></i>
-              <span class="text-sm font-bold text-blue-800" style="color: #1e40af !important;">Expert Support</span>
-            </div>
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900" style="color: #111827 !important;">
-              Get Your <span class="text-blue-600" style="color: #2563eb !important;">Free Demo</span> Today
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
+              Get Your <span class="text-orange-600">Free Demo</span> Today
             </h2>
-            <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed" style="color: #374151 !important;">
-              Join 500+ Belgian restaurants already using FC Resto. Our specialists will show you exactly how our POS system can transform your business in just 30 minutes.
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Join 500+ Belgian restaurants already using FC Resto. Our specialists will show you how our POS system can transform your business.
             </p>
           </div>
 
-          <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-
-              <!-- Contact Information Card -->
-              <div class="lg:col-span-1" data-aos="fade-right">
-                <div class="contact-card rounded-3xl p-8 shadow-2xl relative overflow-hidden" style="background-color: #2563eb !important; color: white !important; border: 2px solid rgba(255, 255, 255, 0.1) !important;">
-                  <!-- Decorative Elements -->
-                  <div class="absolute top-0 right-0 w-32 h-32 rounded-full -translate-y-16 translate-x-16" style="background: rgba(255, 255, 255, 0.1) !important;"></div>
-                  <div class="absolute bottom-0 left-0 w-24 h-24 rounded-full translate-y-12 -translate-x-12" style="background: rgba(255, 255, 255, 0.1) !important;"></div>
-
-                  <div class="relative z-10">
-                    <h3 class="text-2xl font-bold mb-6" style="color: white !important; font-weight: 700 !important; font-size: 1.75rem !important;">Contact Our Experts</h3>
-                    <p class="mb-8 text-lg" style="color: rgba(255, 255, 255, 0.95) !important; line-height: 1.6 !important; font-size: 1.125rem !important;">
-                      Ready to revolutionize your restaurant operations? Our certified Belgian specialists are here to help!
-                    </p>
-
-                    <!-- Contact Methods -->
-                    <div class="space-y-6">
-                      <!-- Phone -->
-                      <div class="flex items-center group" itemscope itemtype="https://schema.org/ContactPoint">
-                        <div class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300">
-                          <i class="fas fa-phone-alt text-xl" style="color: white !important;"></i>
-                        </div>
-                        <div>
-                          <p class="contact-label text-sm font-medium" style="color: rgba(255, 255, 255, 0.8) !important; font-size: 0.875rem !important;">Call us directly</p>
-                          <a href="tel:+3221234567"
-                             class="text-lg font-bold hover:text-blue-200 transition-colors duration-300 block"
-                             style="color: white !important; font-weight: 700 !important; font-size: 1.125rem !important; text-decoration: none !important;"
-                             itemprop="telephone">
-                            +32 2 123 45 67
-                          </a>
-                          <span class="contact-sub text-xs" style="color: rgba(255, 255, 255, 0.7) !important; font-size: 0.75rem !important;">Available Mon-Fri 9:00-18:00</span>
-                        </div>
+          <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Contact Info -->
+                <div>
+                  <h3 class="text-2xl font-bold mb-6 text-gray-900">Contact Our Experts</h3>
+                  <div class="space-y-6">
+                    <div class="flex items-center">
+                      <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-phone-alt text-white"></i>
                       </div>
-
-                      <!-- Email -->
-                      <div class="flex items-center group" itemscope itemtype="https://schema.org/ContactPoint">
-                        <div class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300">
-                          <i class="fas fa-envelope text-xl" style="color: white !important;"></i>
-                        </div>
-                        <div>
-                          <p class="text-sm font-medium" style="color: rgba(255, 255, 255, 0.8) !important; font-size: 0.875rem !important;">Email our team</p>
-                          <a href="mailto:info@fastcaisse.be?subject=FC%20Resto%20Demo%20Request%20-%20Belgian%20Restaurant%20POS&body=Hello%20FC%20Resto%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20demo%20of%20your%20Belgian%20restaurant%20POS%20system.%0D%0A%0D%0ARestaurant%20Details:%0D%0A-%20Name:%20%0D%0A-%20Location:%20%0D%0A-%20Type:%20%0D%0A-%20Current%20Setup:%20%0D%0A%0D%0AContact%20Information:%0D%0A-%20Name:%20%0D%0A-%20Phone:%20%0D%0A-%20Best%20time%20to%20call:%20%0D%0A%0D%0ASpecific%20Requirements:%0D%0A%0D%0A%0D%0AThank%20you!"
-                             class="text-white text-lg font-bold hover:text-blue-200 transition-colors duration-300 block"
-                             style="color: white !important;"
-                             itemprop="email">
-                            info@fastcaisse.be
-                          </a>
-                          <span class="text-blue-200 text-xs" style="color: #fecaca !important;">Response within 2 hours</span>
-                        </div>
-                      </div>
-
-                      <!-- Address -->
-                      <div class="flex items-center group" itemscope itemtype="https://schema.org/PostalAddress">
-                        <div class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300">
-                          <i class="fas fa-map-marker-alt text-xl" style="color: white !important;"></i>
-                        </div>
-                        <div>
-                          <p class="text-blue-100 text-sm font-medium" style="color: #fed7aa !important;">Visit our Brussels office</p>
-                          <address class="text-white text-lg font-bold not-italic" style="color: white !important;">
-                            <span itemprop="streetAddress">Chaussée de Haecht 1749</span><br>
-                            <span itemprop="postalCode">1130</span> <span itemprop="addressLocality">Brussels</span>, <span itemprop="addressCountry">Belgium</span>
-                          </address>
-                        </div>
-                      </div>
-
-                      <!-- Business Hours -->
-                      <div class="flex items-center group">
-                        <div class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300">
-                          <i class="fas fa-clock text-xl" style="color: white !important;"></i>
-                        </div>
-                        <div>
-                          <p class="text-blue-100 text-sm font-medium" style="color: #fed7aa !important;">Business hours</p>
-                          <div class="text-white text-lg font-bold" style="color: white !important;">
-                            <div>Mon-Fri: 9:00 - 18:00</div>
-                            <div>Sat: 10:00 - 16:00</div>
-                          </div>
-                        </div>
+                      <div>
+                        <p class="text-sm text-gray-600">Call us directly</p>
+                        <a href="tel:+3221234567" class="text-lg font-bold text-gray-900 hover:text-orange-600 transition-colors">
+                          +32 2 123 45 67
+                        </a>
                       </div>
                     </div>
-
-                    <!-- Trust Indicators -->
-                    <div class="mt-8 pt-8 border-t border-blue-600">
-                      <div class="grid grid-cols-2 gap-4 text-center">
-                        <div>
-                          <div class="text-2xl font-bold text-white" style="color: white !important;">500+</div>
-                          <div class="text-blue-200 text-sm" style="color: #fecaca !important;">Happy Restaurants</div>
-                        </div>
-                        <div>
-                          <div class="text-2xl font-bold text-white" style="color: white !important;">24h</div>
-                          <div class="text-blue-200 text-sm" style="color: #fecaca !important;">Response Time</div>
-                        </div>
+                    <div class="flex items-center">
+                      <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-envelope text-white"></i>
                       </div>
-                    </div>
-
-                    <!-- Social Media -->
-                    <div class="mt-6">
-                      <p class="text-blue-100 text-sm mb-4 font-medium" style="color: #fed7aa !important;">Follow us for updates</p>
-                      <div class="flex space-x-3">
-                        <a href="./index-en.html#" class="bg-white bg-opacity-20 rounded-xl p-3 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110" aria-label="Facebook">
-                          <i class="fab fa-facebook-f text-lg" style="color: white !important;"></i>
-                        </a>
-                        <a href="./index-en.html#" class="bg-white bg-opacity-20 rounded-xl p-3 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110" aria-label="LinkedIn">
-                          <i class="fab fa-linkedin-in text-lg" style="color: white !important;"></i>
-                        </a>
-                        <a href="./index-en.html#" class="bg-white bg-opacity-20 rounded-xl p-3 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110" aria-label="Twitter">
-                          <i class="fab fa-twitter text-lg" style="color: white !important;"></i>
+                      <div>
+                        <p class="text-sm text-gray-600">Email our team</p>
+                        <a href="mailto:info@fastcaisse.be" class="text-lg font-bold text-gray-900 hover:text-orange-600 transition-colors">
+                          info@fastcaisse.be
                         </a>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Enhanced Contact Form -->
-              <div class="lg:col-span-2" data-aos="fade-left">
-                <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100 relative overflow-hidden">
-                  <!-- Decorative gradient -->
-                  <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-100 to-transparent rounded-full -translate-y-32 translate-x-32"></div>
-
-                  <div class="relative z-10">
-                    <!-- Form Header -->
-                    <div class="text-center mb-10">
-                      <div class="inline-flex items-center bg-green-100 px-4 py-2 rounded-full mb-4">
-                        <i class="fas fa-gift text-green-600 mr-2"></i>
-                        <span class="text-sm font-bold text-green-800" style="color: #166534 !important;">100% Free Demo</span>
-                      </div>
-                      <h3 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900" style="color: #111827 !important;">
-                        See FC Resto in Action
-                      </h3>
-                      <p class="text-gray-600 text-lg max-w-2xl mx-auto" style="color: #4b5563 !important;">
-                        Get a personalized 30-minute demo tailored to your restaurant's needs. No commitment required.
-                      </p>
-                    </div>
-
-                    <!-- Success/Error Messages -->
-                    <div id="success-message" class="hidden bg-green-50 border-l-4 border-green-400 p-6 mb-8 rounded-lg">
-                      <div class="flex items-center">
-                        <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
-                        <div>
-                          <h4 class="text-green-800 font-bold">Demo Request Submitted!</h4>
-                          <p class="text-green-700">Thank you! Our Belgian POS specialist will contact you within 24 hours to schedule your free demo.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div id="error-message" class="hidden bg-red-50 border-l-4 border-red-400 p-6 mb-8 rounded-lg">
-                      <div class="flex items-center">
-                        <i class="fas fa-exclamation-triangle text-red-500 text-xl mr-3"></i>
-                        <div>
-                          <h4 class="text-red-800 font-bold">Please Check Your Information</h4>
-                          <p class="text-red-700">Please fill in all required fields correctly and try again.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Enhanced Form -->
-                    <form id="contact-form" class="space-y-8" novalidate itemscope itemtype="https://schema.org/ContactForm">
-                      <!-- Personal Information -->
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="form-group">
-                          <label for="name" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                            <i class="fas fa-user text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                            Your Full Name *
-                          </label>
-                          <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                            placeholder="e.g., Jean Dupont"
-                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
-                            itemprop="name"
-                          />
-                          <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please enter your full name</span>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="restaurant" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                            <i class="fas fa-utensils text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                            Restaurant Name *
-                          </label>
-                          <input
-                            type="text"
-                            id="restaurant"
-                            name="restaurant"
-                            required
-                            placeholder="e.g., Chez Marie Brussels"
-                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
-                            itemprop="organizationName"
-                          />
-                          <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please enter your restaurant name</span>
-                        </div>
-                      </div>
-
-                      <!-- Contact Information -->
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="form-group">
-                          <label for="email" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                            <i class="fas fa-envelope text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                            Email Address *
-                          </label>
-                          <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            placeholder="your.email@restaurant.be"
-                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
-                            itemprop="email"
-                          />
-                          <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please enter a valid email address</span>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="phone" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                            <i class="fas fa-phone text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                            Phone Number *
-                          </label>
-                          <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            required
-                            placeholder="+32 2 XXX XX XX"
-                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
-                            itemprop="telephone"
-                          />
-                          <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please enter a valid Belgian phone number</span>
-                        </div>
-                      </div>
-
-                      <!-- Location & Business Details -->
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="form-group">
-                          <label for="city" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                            <i class="fas fa-map-marker-alt text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                            City/Location
-                          </label>
-                          <select
-                            id="city"
-                            name="city"
-                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
-                            itemprop="addressLocality"
-                          >
-                            <option value="">Select your city</option>
-                            <option value="Brussels">Brussels (Bruxelles)</option>
-                            <option value="Antwerp">Antwerp (Antwerpen)</option>
-                            <option value="Ghent">Ghent (Gent)</option>
-                            <option value="Charleroi">Charleroi</option>
-                            <option value="Liège">Liège (Luik)</option>
-                            <option value="Bruges">Bruges (Brugge)</option>
-                            <option value="Namur">Namur (Namen)</option>
-                            <option value="Leuven">Leuven (Louvain)</option>
-                            <option value="Mons">Mons (Bergen)</option>
-                            <option value="Aalst">Aalst (Alost)</option>
-                            <option value="Other">Other Belgian City</option>
-                          </select>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="restaurant-type" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                            <i class="fas fa-store text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                            Restaurant Type
-                          </label>
-                          <select
-                            id="restaurant-type"
-                            name="restaurant-type"
-                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
-                          >
-                            <option value="">Select restaurant type</option>
-                            <option value="Fine Dining">Fine Dining Restaurant</option>
-                            <option value="Casual Dining">Casual Dining</option>
-                            <option value="Fast Food">Fast Food / Quick Service</option>
-                            <option value="Café/Bistro">Café / Bistro</option>
-                            <option value="Pizzeria">Pizzeria</option>
-                            <option value="Bakery">Bakery / Patisserie</option>
-                            <option value="Bar/Pub">Bar / Pub</option>
-                            <option value="Brasserie">Belgian Brasserie</option>
-                            <option value="Food Truck">Food Truck / Mobile</option>
-                            <option value="Takeaway">Takeaway Only</option>
-                            <option value="Other">Other</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <!-- Business Size -->
-                      <div class="form-group">
-                        <label for="business-size" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                          <i class="fas fa-chart-bar text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                          Restaurant Size
-                        </label>
-                        <select
-                          id="business-size"
-                          name="business-size"
-                          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
-                        >
-                          <option value="">Select your restaurant size</option>
-                          <option value="Small (1-20 tables)">Small Restaurant (1-20 tables)</option>
-                          <option value="Medium (21-50 tables)">Medium Restaurant (21-50 tables)</option>
-                          <option value="Large (51+ tables)">Large Restaurant (51+ tables)</option>
-                          <option value="Chain (Multiple locations)">Restaurant Chain (Multiple locations)</option>
-                          <option value="New Opening">New Restaurant Opening</option>
-                        </select>
-                      </div>
-
-                      <!-- Current Challenges -->
-                      <div class="form-group">
-                        <label for="challenges" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                          <i class="fas fa-lightbulb text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                          What challenges are you facing? (Optional)
-                        </label>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                            <input type="checkbox" name="challenges[]" value="Slow service" class="mr-3 text-blue-600 focus:ring-blue-500">
-                            <span class="text-gray-700 font-medium" style="color: #374151 !important;">Slow service during peak hours</span>
-                          </label>
-                          <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                            <input type="checkbox" name="challenges[]" value="Order errors" class="mr-3 text-blue-600 focus:ring-blue-500">
-                            <span class="text-gray-700 font-medium" style="color: #374151 !important;">Order errors & miscommunication</span>
-                          </label>
-                          <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                            <input type="checkbox" name="challenges[]" value="Inventory management" class="mr-3 text-blue-600 focus:ring-blue-500">
-                            <span class="text-gray-700 font-medium" style="color: #374151 !important;">Inventory management</span>
-                          </label>
-                          <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                            <input type="checkbox" name="challenges[]" value="Staff management" class="mr-3 text-blue-600 focus:ring-blue-500">
-                            <span class="text-gray-700 font-medium" style="color: #374151 !important;">Staff scheduling & management</span>
-                          </label>
-                          <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                            <input type="checkbox" name="challenges[]" value="Delivery integration" class="mr-3 text-blue-600 focus:ring-blue-500">
-                            <span class="text-gray-700 font-medium" style="color: #374151 !important;">Takeaway.com / UberEats integration</span>
-                          </label>
-                          <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                            <input type="checkbox" name="challenges[]" value="Reporting" class="mr-3 text-blue-600 focus:ring-blue-500">
-                            <span class="text-gray-700 font-medium" style="color: #374151 !important;">Financial reporting & analytics</span>
-                          </label>
-                        </div>
-                      </div>
-
-                      <!-- Additional Message -->
-                      <div class="form-group">
-                        <label for="message" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                          <i class="fas fa-comment-dots text-blue-600 mr-2" style="color: #2563eb !important;"></i>
-                          Additional Information (Optional)
-                        </label>
-                        <textarea
-                          id="message"
-                          name="message"
-                          rows="4"
-                          placeholder="Tell us about your current POS system, specific requirements, or any questions you have about FC Resto..."
-                          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 resize-none text-gray-900 font-medium"
-                        ></textarea>
-                      </div>
-
-                      <!-- Privacy Consent -->
-                      <div class="form-group bg-gray-50 p-6 rounded-xl border-2 border-gray-200">
-                        <label class="flex items-start">
-                          <input
-                            type="checkbox"
-                            id="privacy-consent"
-                            name="privacy-consent"
-                            required
-                            class="mt-1 mr-4 h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                          />
-                          <span class="text-sm text-gray-700 leading-relaxed" style="color: #374151 !important;">
-                            I agree to the <a href="./index-en.html#" class="text-blue-600 hover:text-blue-700 underline font-medium" style="color: #2563eb !important;">Privacy Policy</a>
-                            and consent to being contacted by FC Resto about their Belgian restaurant POS system.
-                            I understand that I can unsubscribe at any time. *
-                          </span>
-                        </label>
-                        <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please accept our privacy policy to continue</span>
-                      </div>
-
-                      <!-- Submit Button -->
-                      <div class="pt-4">
-                        <button
-                          type="submit"
-                          id="submit-btn"
-                          class="w-full bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 font-bold py-5 px-8 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
-                          style="background-color: #2563eb !important; color: white !important;"
-                        >
-                          <span class="submit-text flex items-center justify-center" style="color: white !important;">
-                            <i class="fas fa-rocket mr-3 text-xl" style="color: white !important;"></i>
-                            Get My Free Demo Now
-                          </span>
-                          <span class="loading-text hidden flex items-center justify-center" style="color: white !important;">
-                            <i class="fas fa-spinner fa-spin mr-3 text-xl" style="color: white !important;"></i>
-                            Sending Your Request...
-                          </span>
-                        </button>
-
-                        <!-- Trust Indicators Below Button -->
-                        <div class="mt-6 text-center">
-                          <div class="flex items-center justify-center space-x-6 text-sm text-gray-600">
-                            <div class="flex items-center">
-                              <i class="fas fa-shield-alt text-green-500 mr-2" style="color: #10b981 !important;"></i>
-                              <span class="font-medium" style="color: #4b5563 !important;">100% Secure</span>
-                            </div>
-                            <div class="flex items-center">
-                              <i class="fas fa-clock text-blue-500 mr-2" style="color: #3b82f6 !important;"></i>
-                              <span class="font-medium" style="color: #4b5563 !important;">30-min Demo</span>
-                            </div>
-                            <div class="flex items-center">
-                              <i class="fas fa-gift text-purple-500 mr-2" style="color: #8b5cf6 !important;"></i>
-                              <span class="font-medium" style="color: #4b5563 !important;">Completely Free</span>
-                            </div>
-                          </div>
-                          <p class="text-xs text-gray-500 mt-3 max-w-md mx-auto" style="color: #6b7280 !important;">
-                            Your information is secure and will never be shared with third parties.
-                            Our Belgian specialists will contact you within 24 hours.
-                          </p>
-                        </div>
-                      </div>
-                    </form>
+                <!-- CTA Form -->
+                <div>
+                  <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-6 text-white text-center">
+                    <h4 class="text-xl font-bold mb-4">Ready to Get Started?</h4>
+                    <p class="mb-6">Request your free demo today and see FC Resto in action!</p>
+                    <a href="mailto:info@fastcaisse.be?subject=FC%20Resto%20Demo%20Request&body=Hello%20FC%20Resto%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20demo%20of%20FC%20Resto.%0D%0A%0D%0AThank%20you!"
+                       class="inline-flex items-center bg-white text-orange-600 px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors">
+                      <i class="fas fa-calendar-plus mr-2"></i>
+                      Schedule Demo
+                    </a>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Additional Trust Section -->
-          <div class="mt-20 text-center" data-aos="fade-up">
-            <div class="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto border border-gray-100">
-              <h4 class="text-2xl font-bold text-gray-900 mb-6" style="color: #111827 !important;">Why Choose FC Resto for Your Belgian Restaurant?</h4>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center">
-                  <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-certificate text-blue-600 text-2xl" style="color: #2563eb !important;"></i>
-                  </div>
-                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Belgian Certified</h5>
-                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important;">Fully compliant with Belgian fiscal regulations and VAT requirements</p>
-                </div>
-                <div class="text-center">
-                  <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-users text-green-600 text-2xl" style="color: #059669 !important;"></i>
-                  </div>
-                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">500+ Restaurants</h5>
-                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important;">Trusted by restaurants across Brussels, Antwerp, and Ghent</p>
-                </div>
-                <div class="text-center">
-                  <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-headset text-blue-600 text-2xl" style="color: #2563eb !important;"></i>
-                  </div>
-                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Local Support</h5>
-                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important;">Belgian-based support team available in French, Dutch, and English</p>
                 </div>
               </div>
             </div>
@@ -3217,105 +2945,47 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white text-gray-900 py-16 relative overflow-hidden" data-aos="fade-up">
-      <div
-        class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMDktMS43OTEtNC00LTRzLTQgMS43OTEtNCA0IDEuNzkxIDQgNCA0IDQtMS43OTEgNC00eiIvPjwvZz48L2c+PC9zdmc+')]"
-      ></div>
-      <div class="container mx-auto px-4 sm:px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer class="bg-white border-t border-gray-200 py-16">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <!-- Company Info -->
-          <div class="space-y-5 max-w-sm">
-            <div class="flex items-center gap-4">
-              <img
-                src="./images/fastcaisse-logo.png"
-                alt="FAST CAISSE logo"
-                class="h-14 sm:h-16 md:h-20 w-auto max-w-[180px] object-contain transition-transform duration-300 hover:scale-105"
-                loading="lazy"
-              />
-              <div class="hidden sm:block">
-                <p class="text-sm text-gray-500 font-medium">Since 2010</p>
-              </div>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              POS, CRM, and smart reporting tools for Belgian restaurants and retail. Trusted by
-              1,000+ businesses.
+          <div class="md:col-span-2">
+            <img
+              src="./images/fastcaisse-logo.png"
+              alt="FAST CAISSE Logo"
+              class="h-12 mb-6"
+              loading="lazy"
+            />
+            <p class="text-gray-600 mb-6 max-w-md">
+              Leading provider of POS and CRM solutions for Belgian businesses since 2010.
+              Trusted by over 1,000 establishments across Belgium.
             </p>
-            <div class="flex items-center gap-2 text-sm text-gray-500">
-              <i class="fas fa-map-marker-alt text-blue-600"></i>
-              <span>Based in Belgium</span>
-            </div>
-            <div class="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
-              <a href="./index-en.html#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100">
-                <i class="fab fa-facebook-f text-lg sm:text-xl"></i>
-              </a>
-              <a href="./index-en.html#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100">
-                <i class="fab fa-linkedin-in text-lg sm:text-xl"></i>
-              </a>
-              <a href="./index-en.html#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100">
-                <i class="fab fa-instagram text-lg sm:text-xl"></i>
-              </a>
-            </div>
           </div>
 
-          <!-- Solutions -->
+          <!-- Quick Links -->
           <div>
-            <h3 class="font-bold text-lg mb-6 text-gray-900">Solutions</h3>
+            <h3 class="font-bold text-lg mb-6 text-gray-900">Quick Links</h3>
             <ul class="space-y-3">
               <li>
-                <span class="text-blue-600 font-semibold flex items-center p-2 rounded-lg bg-blue-50 border-l-4 border-blue-600">
-                  <i class="fas fa-utensils mr-2 text-sm"></i>
-                  FC Resto
-                  <i class="fas fa-arrow-left ml-2 text-xs"></i>
-                </span>
-              </li>
-              <li>
-                <a
-                  href="./fastcaisse-retail-pos-en.html"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
-                >
-                  <i class="fas fa-store mr-2 text-sm"></i>
-                  FC Shop
+                <a href="./index-en.html" class="text-gray-600 hover:text-orange-600 transition-colors duration-300">
+                  <i class="fas fa-home mr-2 text-sm"></i>
+                  Home
                 </a>
               </li>
               <li>
-                <a
-                  href="./fastcaisse-crm-business-management-en.html"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
-                >
-                  <i class="fas fa-chart-line mr-2 text-sm"></i>
-                  FC Commerce Management
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Company -->
-          <div>
-            <h3 class="font-bold text-lg mb-6 text-gray-900">Company</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="./index-en.html#about"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
-                >
+                <a href="./index-en.html#about" class="text-gray-600 hover:text-orange-600 transition-colors duration-300">
                   <i class="fas fa-info-circle mr-2 text-sm"></i>
                   About Us
                 </a>
               </li>
               <li>
-                <a
-                  href="./index-en.html#clients"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
-                >
+                <a href="./index-en.html#clients" class="text-gray-600 hover:text-orange-600 transition-colors duration-300">
                   <i class="fas fa-users mr-2 text-sm"></i>
                   Our Clients
                 </a>
               </li>
               <li>
-                <a
-                  href="#contact"
-                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
-                >
+                <a href="#contact" class="text-gray-600 hover:text-orange-600 transition-colors duration-300">
                   <i class="fas fa-envelope mr-2 text-sm"></i>
                   Contact
                 </a>
@@ -3328,19 +2998,18 @@
             <h3 class="font-bold text-lg mb-6 text-gray-900">Contact Us</h3>
             <ul class="space-y-4 text-gray-600">
               <li class="flex items-start">
-                <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-500"></i>
+                <i class="fas fa-map-marker-alt mt-1 mr-3 text-orange-500"></i>
                 <span>Chaussée de Haecht 1749, 1130 Brussels, Belgium</span>
               </li>
               <li class="flex items-center">
-                <i class="fas fa-phone-alt mr-3 text-blue-500"></i>
-                <a href="tel:+3221234567" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">
+                <i class="fas fa-phone-alt mr-3 text-orange-500"></i>
+                <a href="tel:+3221234567" class="text-gray-600 hover:text-orange-600 transition-colors duration-300">
                   +32 2 123 45 67
                 </a>
               </li>
               <li class="flex items-center">
-                <i class="fas fa-envelope mr-3 text-blue-500"></i>
-                <a href="mailto:info@fastcaisse.be?subject=FC%20Resto%20Inquiry&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20FC%20Resto%20for%20my%20restaurant.%0D%0A%0D%0AThank%20you!"
-                   class="text-gray-600 hover:text-blue-600 transition-colors duration-300">
+                <i class="fas fa-envelope mr-3 text-orange-500"></i>
+                <a href="mailto:info@fastcaisse.be" class="text-gray-600 hover:text-orange-600 transition-colors duration-300">
                   info@fastcaisse.be
                 </a>
               </li>
@@ -3350,498 +3019,36 @@
 
         <hr class="border-gray-200 my-10" />
 
-        <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+        <div class="text-center">
           <p class="text-sm text-gray-600">
             &copy; 2025 FAST CAISSE SRL. All rights reserved.
             |
-            <a href="./general-conditions-fr.html" class="text-blue-600 hover:underline">
-              General Conditions
-            </a>
+            <a href="./general-conditions-en.html" class="hover:text-orange-600 transition-colors duration-300">General Conditions</a>
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- JavaScript Libraries -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/app.js"></script>
+
+    <!-- Loader Management -->
     <script>
-      // Initialize AOS
-      AOS.init({
-        duration: 800,
-        once: true,
-        easing: "ease-out-cubic",
-      });
-
-      // Back to Top Button
-      const backToTopButton = document.getElementById("back-to-top");
-
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 300) {
-          backToTopButton.classList.add("show");
-        } else {
-          backToTopButton.classList.remove("show");
-        }
-      });
-
-      backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-
-      // Language switcher functionality (from index-en.html)
-      const desktopBtn = document.getElementById('desktopLangToggle');
-      const desktopMenu = document.getElementById('desktopLangMenu');
-      const mobileBtn = document.getElementById('mobileLangToggle');
-      const mobileLangMenu = document.getElementById('mobileLangMenu');
-
-      desktopBtn?.addEventListener('click', function (e) {
-        e.stopPropagation();
-        desktopMenu.classList.toggle('hidden');
-        mobileLangMenu.classList.add('hidden');
-      });
-
-      mobileBtn?.addEventListener('click', function (e) {
-        e.stopPropagation();
-        mobileLangMenu.classList.toggle('hidden');
-        desktopMenu.classList.add('hidden');
-      });
-
-      document.addEventListener('click', function (e) {
-        if (desktopBtn && desktopMenu && !desktopBtn.contains(e.target) && !desktopMenu.contains(e.target)) {
-          desktopMenu.classList.add('hidden');
-        }
-
-        if (mobileBtn && mobileLangMenu && !mobileBtn.contains(e.target) && !mobileLangMenu.contains(e.target)) {
-          mobileLangMenu.classList.add('hidden');
-        }
-      });
-
-      // FAQ Accordion
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM loaded, initializing FAQ...');
-        const faqQuestions = document.querySelectorAll(".faq-question");
-        console.log('Found FAQ questions:', faqQuestions.length);
-
-        faqQuestions.forEach((question) => {
-          question.addEventListener("click", (e) => {
-            e.preventDefault();
-            console.log('FAQ question clicked!');
-
-            const answer = question.nextElementSibling;
-            const isOpen = answer.classList.contains("open");
-            const icon = question.querySelector(".faq-toggle-icon");
-
-            console.log('Answer element:', answer);
-            console.log('Is open:', isOpen);
-
-            // Close all FAQs
-            document.querySelectorAll(".faq-answer").forEach((ans) => {
-              ans.classList.remove("open");
-            });
-            document.querySelectorAll(".faq-question").forEach((q) => {
-              q.classList.remove("active");
-              q.setAttribute("aria-expanded", "false");
-              const qIcon = q.querySelector(".faq-toggle-icon");
-              if (qIcon) {
-                qIcon.style.transform = "rotate(0deg)";
-              }
-            });
-
-            // Toggle current FAQ if it wasn't open
-            if (!isOpen) {
-              console.log('Opening FAQ...');
-              answer.classList.add("open");
-              question.classList.add("active");
-              question.setAttribute("aria-expanded", "true");
-              if (icon) {
-                icon.style.transform = "rotate(180deg)";
-              }
-              console.log('FAQ opened, classes added');
-            } else {
-              console.log('FAQ was already open, closing it');
-            }
-          });
-
-          // Add keyboard support
-          question.addEventListener("keydown", (e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              question.click();
-            }
-          });
-        });
-      });
-
       // Hide loader after page loads
-      window.addEventListener('load', function() {
-        const loader = document.getElementById('loader');
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
         if (loader) {
           setTimeout(() => {
-            loader.style.opacity = '0';
+            loader.style.opacity = "0";
             setTimeout(() => {
-              loader.style.display = 'none';
+              loader.style.display = "none";
             }, 300);
           }, 500);
         }
       });
-
-      // Enhanced Contact Form Functionality
-      const contactForm = document.getElementById('contact-form');
-      const submitBtn = document.getElementById('submit-btn');
-      const successMessage = document.getElementById('success-message');
-      const errorMessage = document.getElementById('error-message');
-
-      // Form validation functions
-      function validateEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-      }
-
-      function validatePhone(phone) {
-        // Belgian phone number validation (flexible format)
-        const phoneRegex = /^(\+32|0032|0)[1-9]\d{7,8}$/;
-        const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
-        return phoneRegex.test(cleanPhone) || cleanPhone.length >= 9;
-      }
-
-      function validateField(field) {
-        const value = field.value.trim();
-        const fieldName = field.name;
-        const errorSpan = field.parentElement.querySelector('.error-message');
-        let isValid = true;
-
-        // Reset field styling
-        field.classList.remove('border-red-500', 'border-green-500');
-        errorSpan.classList.add('hidden');
-
-        // Required field validation
-        if (field.hasAttribute('required') && !value) {
-          isValid = false;
-          errorSpan.textContent = `Please enter your ${fieldName.replace('-', ' ')}`;
-        }
-        // Email validation
-        else if (fieldName === 'email' && value && !validateEmail(value)) {
-          isValid = false;
-          errorSpan.textContent = 'Please enter a valid email address';
-        }
-        // Phone validation
-        else if (fieldName === 'phone' && value && !validatePhone(value)) {
-          isValid = false;
-          errorSpan.textContent = 'Please enter a valid Belgian phone number';
-        }
-        // Name validation (minimum 2 characters)
-        else if (fieldName === 'name' && value && value.length < 2) {
-          isValid = false;
-          errorSpan.textContent = 'Name must be at least 2 characters long';
-        }
-
-        // Show validation result
-        if (!isValid) {
-          field.classList.add('border-red-500');
-          errorSpan.classList.remove('hidden');
-        } else if (value) {
-          field.classList.add('border-green-500');
-        }
-
-        return isValid;
-      }
-
-      // Real-time validation
-      contactForm.querySelectorAll('input[required], textarea[required]').forEach(field => {
-        field.addEventListener('blur', () => validateField(field));
-        field.addEventListener('input', () => {
-          if (field.classList.contains('border-red-500')) {
-            validateField(field);
-          }
-        });
-      });
-
-      // Privacy consent validation
-      const privacyConsent = document.getElementById('privacy-consent');
-      privacyConsent.addEventListener('change', function() {
-        const errorSpan = this.parentElement.parentElement.querySelector('.error-message');
-        if (this.checked) {
-          errorSpan.classList.add('hidden');
-        } else {
-          errorSpan.classList.remove('hidden');
-        }
-      });
-
-      // Form submission
-      contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        // Hide previous messages
-        successMessage.classList.add('hidden');
-        errorMessage.classList.add('hidden');
-
-        // Validate all required fields
-        let isFormValid = true;
-        const requiredFields = contactForm.querySelectorAll('input[required], textarea[required]');
-
-        requiredFields.forEach(field => {
-          if (!validateField(field)) {
-            isFormValid = false;
-          }
-        });
-
-        // Check privacy consent
-        if (!privacyConsent.checked) {
-          const errorSpan = privacyConsent.parentElement.parentElement.querySelector('.error-message');
-          errorSpan.classList.remove('hidden');
-          isFormValid = false;
-        }
-
-        if (!isFormValid) {
-          errorMessage.classList.remove('hidden');
-          errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          return;
-        }
-
-        // Show loading state
-        const submitText = submitBtn.querySelector('.submit-text');
-        const loadingText = submitBtn.querySelector('.loading-text');
-
-        submitBtn.disabled = true;
-        submitText.classList.add('hidden');
-        loadingText.classList.remove('hidden');
-
-        try {
-          // Simulate form submission (replace with actual endpoint)
-          await new Promise(resolve => setTimeout(resolve, 2000));
-
-          // Show success message
-          successMessage.classList.remove('hidden');
-          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-          // Reset form
-          contactForm.reset();
-          contactForm.querySelectorAll('input, textarea, select').forEach(field => {
-            field.classList.remove('border-red-500', 'border-green-500');
-          });
-
-          // Optional: Send data to your backend
-          // const formData = new FormData(contactForm);
-          // const response = await fetch('/submit-contact-form', {
-          //   method: 'POST',
-          //   body: formData
-          // });
-
-        } catch (error) {
-          console.error('Form submission error:', error);
-          errorMessage.querySelector('span').textContent = 'Something went wrong. Please try again or contact us directly.';
-          errorMessage.classList.remove('hidden');
-        } finally {
-          // Reset button state
-          submitBtn.disabled = false;
-          submitText.classList.remove('hidden');
-          loadingText.classList.add('hidden');
-        }
-      });
-
-      // Phone number formatting for Belgian numbers
-      const phoneInput = document.getElementById('phone');
-      phoneInput.addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');
-
-        // Add Belgian country code if not present
-        if (value.length > 0 && !value.startsWith('32') && !value.startsWith('0')) {
-          value = '32' + value;
-        }
-
-        // Format the number
-        if (value.startsWith('32')) {
-          value = '+32 ' + value.substring(2);
-          if (value.length > 7) {
-            value = value.substring(0, 7) + ' ' + value.substring(7);
-          }
-          if (value.length > 11) {
-            value = value.substring(0, 11) + ' ' + value.substring(11);
-          }
-        } else if (value.startsWith('0')) {
-          if (value.length > 4) {
-            value = value.substring(0, 4) + ' ' + value.substring(4);
-          }
-          if (value.length > 8) {
-            value = value.substring(0, 8) + ' ' + value.substring(8);
-          }
-        }
-
-        e.target.value = value;
-      });
-
-      // Auto-focus next field on Enter (except textarea and submit button)
-      contactForm.querySelectorAll('input, select').forEach((field, index, fields) => {
-        field.addEventListener('keydown', function(e) {
-          if (e.key === 'Enter' && field.type !== 'submit') {
-            e.preventDefault();
-            const nextField = fields[index + 1];
-            if (nextField) {
-              nextField.focus();
-            } else {
-              // Focus on textarea if it exists
-              const textarea = contactForm.querySelector('textarea');
-              if (textarea) {
-                textarea.focus();
-              }
-            }
-          }
-        });
-      });
     </script>
-
-    <!-- Video Modal -->
-    <div
-      id="videoModal"
-      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden"
-      onclick="closeVideoModal()"
-    >
-      <div class="relative w-full max-w-4xl mx-4" onclick="event.stopPropagation()">
-        <!-- Close Button -->
-        <button
-          onclick="closeVideoModal()"
-          class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
-          aria-label="Close video"
-        >
-          <i class="fas fa-times text-2xl"></i>
-        </button>
-
-        <!-- Video Container -->
-        <div
-          class="relative bg-black rounded-lg overflow-hidden shadow-2xl"
-          style="aspect-ratio: 16/9"
-        >
-          <!-- YouTube Video (default) -->
-          <iframe
-            id="youtubeVideo"
-            class="w-full h-full"
-            src=""
-            title="FAST CAISSE Restaurant POS Demo Video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-
-          <!-- Local Video (hidden by default) -->
-          <video id="localVideo" class="w-full h-full hidden" controls preload="metadata">
-            <source src="" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-
-        <!-- Video Controls -->
-        <div class="mt-4 flex justify-center space-x-4">
-          <button
-            onclick="switchToYoutube()"
-            id="youtubeBtn"
-            class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
-          >
-            <i class="fab fa-youtube mr-2"></i>
-            YouTube Demo
-          </button>
-          <button
-            onclick="switchToLocal()"
-            id="localBtn"
-            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors opacity-50"
-          >
-            <i class="fas fa-play mr-2"></i>
-            Local Demo
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Video Modal JavaScript -->
-    <script>
-      // Video URLs - you can change these for Restaurant POS-specific videos
-      const YOUTUBE_VIDEO_ID = "dU1xS07N-FA"; // Restaurant POS demo
-      const LOCAL_VIDEO_URL = "./assets/videos/restaurant-demo.mp4"; // Restaurant-specific local video
-
-      let currentVideoType = "youtube";
-
-      function openVideoModal() {
-        const modal = document.getElementById("videoModal");
-        modal.classList.remove("hidden");
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
-
-        // Load the appropriate video
-        if (currentVideoType === "youtube") {
-          loadYouTubeVideo();
-        } else {
-          loadLocalVideo();
-        }
-      }
-
-      function closeVideoModal() {
-        const modal = document.getElementById("videoModal");
-        const youtubeVideo = document.getElementById("youtubeVideo");
-        const localVideo = document.getElementById("localVideo");
-
-        modal.classList.add("hidden");
-        document.body.style.overflow = "auto"; // Restore scrolling
-
-        // Stop videos
-        youtubeVideo.src = "";
-        localVideo.pause();
-        localVideo.currentTime = 0;
-      }
-
-      function switchToYoutube() {
-        currentVideoType = "youtube";
-        loadYouTubeVideo();
-
-        // Update button states
-        document.getElementById("youtubeBtn").classList.remove("opacity-50");
-        document.getElementById("localBtn").classList.add("opacity-50");
-      }
-
-      function switchToLocal() {
-        currentVideoType = "local";
-        loadLocalVideo();
-
-        // Update button states
-        document.getElementById("localBtn").classList.remove("opacity-50");
-        document.getElementById("youtubeBtn").classList.add("opacity-50");
-      }
-
-      function loadYouTubeVideo() {
-        const youtubeVideo = document.getElementById("youtubeVideo");
-        const localVideo = document.getElementById("localVideo");
-
-        youtubeVideo.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`;
-        youtubeVideo.classList.remove("hidden");
-        localVideo.classList.add("hidden");
-        localVideo.pause();
-      }
-
-      function loadLocalVideo() {
-        const youtubeVideo = document.getElementById("youtubeVideo");
-        const localVideo = document.getElementById("localVideo");
-
-        localVideo.src = LOCAL_VIDEO_URL;
-        localVideo.classList.remove("hidden");
-        youtubeVideo.classList.add("hidden");
-        youtubeVideo.src = "";
-        localVideo.play();
-      }
-
-      // Close modal with Escape key
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          closeVideoModal();
-        }
-      });
-    </script>
-
-    <!-- App JavaScript for Loader -->
-         <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="./assets/js/app.js"></script>
   </body>
 </html>
