@@ -246,8 +246,13 @@
       }
 
       /* Smooth transitions when loading state changes */
-      header, footer, main, .back-to-top {
-        transition: opacity 0.3s ease, visibility 0.3s ease;
+      header,
+      footer,
+      main,
+      .back-to-top {
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
       }
 
       /* Mobile menu base styles */
@@ -274,7 +279,6 @@
         transform: translateY(0);
         pointer-events: auto;
         max-height: none; /* Remove height restriction */
-
       }
 
       /* Mobile menu hidden state */
@@ -314,7 +318,9 @@
         }
 
         /* Keep green circle positioned like yellow star - relative to container edge */
-        .hero-section .dashboard-mockup div.mobile-green-circle.mobile-green-circle.bg-green-400.bg-green-400 {
+        .hero-section
+          .dashboard-mockup
+          div.mobile-green-circle.mobile-green-circle.bg-green-400.bg-green-400 {
           bottom: -8px !important;
           left: -8px !important;
           transform: none !important;
@@ -332,7 +338,6 @@
           left: -8px !important;
         }
       }
-
 
       /* Style mobile menu links */
       #mobile-menu a {
@@ -356,6 +361,23 @@
         width: 16px !important;
         color: inherit !important;
       }
+      /* Force white text in contact card */
+      .contact-card * {
+        color: white !important;
+      }
+      .contact-card h3,
+      .contact-card p,
+      .contact-card span,
+      .contact-card a,
+      .contact-card div {
+        color: white !important;
+      }
+      .contact-card .contact-label {
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
+      .contact-card .contact-sub {
+        color: rgba(255, 255, 255, 0.7) !important;
+      }
     </style>
   </head>
   <body class="font-sans text-gray-900 antialiased bg-white">
@@ -376,12 +398,11 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
-
     <header
       class="fixed bg-white shadow-md text-gray-900 w-full z-50 transition-all duration-300 backdrop-blur-lg shadow-sm"
       id="header"
     >
-           <nav
+      <nav
         class="container relative mx-auto px-6 py-1 flex justify-between items-center"
         aria-label="Main navigation"
       >
@@ -423,24 +444,43 @@
             About
           </a>
           <div class="nav-dropdown" role="menuitem">
-            <a href="./index-en.html#solutions" class="nav-link" title="POS & CRM Solutions - Restaurant, Retail, Commerce">
+            <a
+              href="./index-en.html#solutions"
+              class="nav-link"
+              title="POS & CRM Solutions - Restaurant, Retail, Commerce"
+            >
               <i class="fas fa-tools mr-2" aria-hidden="true"></i>
               Solutions
               <i class="fas fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
             </a>
             <div class="nav-dropdown-content" role="menu">
-              <a href="./fastcaisse-restaurant-pos-en.html" class="nav-dropdown-item" role="menuitem" title="FC Resto - Restaurant POS System">
-                <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+              <a
+                href="./fastcaisse-restaurant-pos-en.html"
+                class="nav-dropdown-item"
+                role="menuitem"
+                title="FC Resto - Restaurant POS System"
+              >
+                <i class="fas fa-utensils" style="color: #f97316" aria-hidden="true"></i>
                 <span>FC Resto - Restaurant POS</span>
                 <span class="nav-dropdown-price">€69/mo</span>
               </a>
-              <a href="./fastcaisse-retail-pos-en.html" class="nav-dropdown-item" role="menuitem" title="FC Shop - Retail POS System">
-                <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+              <a
+                href="./fastcaisse-retail-pos-en.html"
+                class="nav-dropdown-item"
+                role="menuitem"
+                title="FC Shop - Retail POS System"
+              >
+                <i class="fas fa-store" style="color: #3b82f6" aria-hidden="true"></i>
                 <span>FC Shop - Retail POS</span>
                 <span class="nav-dropdown-price">€59/mo</span>
               </a>
-              <a href="./fastcaisse-crm-business-management-en.html" class="nav-dropdown-item" role="menuitem" title="FC Commerce - CRM Platform">
-                <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+              <a
+                href="./fastcaisse-crm-business-management-en.html"
+                class="nav-dropdown-item"
+                role="menuitem"
+                title="FC Commerce - CRM Platform"
+              >
+                <i class="fas fa-chart-line" style="color: #8b5cf6" aria-hidden="true"></i>
                 <span>FC Commerce - CRM</span>
                 <span class="nav-dropdown-price">€99/mo</span>
               </a>
@@ -702,17 +742,21 @@
           </a>
           <div class="nav-dropdown-content">
             <a href="./fastcaisse-restaurant-pos-en.html" class="nav-dropdown-item" role="menuitem">
-              <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+              <i class="fas fa-utensils" style="color: #f97316" aria-hidden="true"></i>
               <span>FC Resto - Restaurant POS</span>
               <span class="nav-dropdown-price">€69/mo</span>
             </a>
             <a href="./fastcaisse-retail-pos-en.html" class="nav-dropdown-item" role="menuitem">
-              <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+              <i class="fas fa-store" style="color: #3b82f6" aria-hidden="true"></i>
               <span>FC Shop - Retail POS</span>
               <span class="nav-dropdown-price">€59/mo</span>
             </a>
-            <a href="./fastcaisse-crm-business-management-en.html" class="nav-dropdown-item" role="menuitem">
-              <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+            <a
+              href="./fastcaisse-crm-business-management-en.html"
+              class="nav-dropdown-item"
+              role="menuitem"
+            >
+              <i class="fas fa-chart-line" style="color: #8b5cf6" aria-hidden="true"></i>
               <span>FC Commerce - CRM</span>
               <span class="nav-dropdown-price">€99/mo</span>
             </a>
@@ -783,8 +827,6 @@
 
     <!-- Main Content -->
     <main id="main-content" class="pt-28 sm:pt-16">
-
-
       <!-- Hero Section -->
       <section
         class="hero-section relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 hero-pattern py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24"
@@ -976,13 +1018,23 @@
                 </div>
                 <!-- Floating Elements with explicit positioning -->
                 <div
-                  style="position:absolute; top:-8px !important; right:-8px !important; z-index:30;"
+                  style="
+                    position: absolute;
+                    top: -8px !important;
+                    right: -8px !important;
+                    z-index: 30;
+                  "
                   class="bg-yellow-400 rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center shadow-lg animate-bounce"
                 >
                   <i class="fas fa-star text-white text-sm sm:text-base md:text-lg"></i>
                 </div>
                 <div
-                  style="position:absolute; bottom:-8px !important; left:-8px !important; z-index:30;"
+                  style="
+                    position: absolute;
+                    bottom: -8px !important;
+                    left: -8px !important;
+                    z-index: 30;
+                  "
                   class="bg-green-400 rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center shadow-lg mobile-green-circle"
                 >
                   <i class="fas fa-check-circle text-white text-sm sm:text-base md:text-lg"></i>
@@ -1332,7 +1384,7 @@
 
             <!-- FC Shop Enterprise -->
             <div
-              class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative "
+              class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative"
               data-aos="fade-up"
               data-aos-delay="400"
             >
@@ -1355,9 +1407,7 @@
                   <span class="text-5xl font-extrabold text-gray-900">€129</span>
                   <span class="text-gray-500 ml-2">/month</span>
                 </div>
-                <p class="text-gray-500 text-sm mb-2">
-                  For large retail chains & franchises
-                </p>
+                <p class="text-gray-500 text-sm mb-2">For large retail chains & franchises</p>
                 <p class="text-gray-500 text-sm mb-6">Complete Retail Ecosystem</p>
                 <a
                   href="#contact"
@@ -1401,8 +1451,8 @@
                 Need Help Choosing the Right Plan?
               </h3>
               <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-                Our experts will help you find the perfect FC Shop plan for your Belgian retail business.
-                Get a free consultation and personalized recommendation.
+                Our experts will help you find the perfect FC Shop plan for your Belgian retail
+                business. Get a free consultation and personalized recommendation.
               </p>
               <a
                 href="#contact"
@@ -1598,7 +1648,13 @@
           <div class="max-w-3xl mx-auto space-y-4" data-aos="fade-up">
             <!-- FAQ 1 -->
             <div class="faq-item">
-              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq1-answer" id="faq1-question">
+              <button
+                class="faq-question"
+                role="button"
+                aria-expanded="false"
+                aria-controls="faq1-answer"
+                id="faq1-question"
+              >
                 What makes FC Shop the #1 certified POS in Belgium?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
@@ -1615,7 +1671,13 @@
 
             <!-- FAQ 2 -->
             <div class="faq-item">
-              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq2-answer" id="faq2-question">
+              <button
+                class="faq-question"
+                role="button"
+                aria-expanded="false"
+                aria-controls="faq2-answer"
+                id="faq2-question"
+              >
                 How does barcode scanning work with FC Shop?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
@@ -1632,7 +1694,13 @@
 
             <!-- FAQ 3 -->
             <div class="faq-item">
-              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq3-answer" id="faq3-question">
+              <button
+                class="faq-question"
+                role="button"
+                aria-expanded="false"
+                aria-controls="faq3-answer"
+                id="faq3-question"
+              >
                 Can I manage multiple stores with FC Shop?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
@@ -1648,7 +1716,13 @@
 
             <!-- FAQ 4 -->
             <div class="faq-item">
-              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq4-answer" id="faq4-question">
+              <button
+                class="faq-question"
+                role="button"
+                aria-expanded="false"
+                aria-controls="faq4-answer"
+                id="faq4-question"
+              >
                 Is customer data secure with FC Shop?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
@@ -1661,7 +1735,13 @@
 
             <!-- FAQ 5 -->
             <div class="faq-item">
-              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq5-answer" id="faq5-question">
+              <button
+                class="faq-question"
+                role="button"
+                aria-expanded="false"
+                aria-controls="faq5-answer"
+                id="faq5-question"
+              >
                 What hardware is compatible with FC Shop?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
@@ -1682,25 +1762,37 @@
       <section class="py-20 bg-gradient-to-br from-orange-50 via-white to-red-50">
         <div class="container mx-auto px-6">
           <div class="text-center mb-16" data-aos="fade-up">
-            <span class="inline-block px-6 py-3 text-sm font-semibold  bg-gradient-to-r from-orange-600 to-red-600 rounded-full mb-6 shadow-lg">
+            <span
+              class="inline-block px-6 py-3 text-sm font-semibold bg-gradient-to-r from-orange-600 to-red-600 rounded-full mb-6 shadow-lg"
+            >
               🛍️ RETAIL EXPERTISE
             </span>
             <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
               Tailored for Every Belgian Retail Business
             </h2>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              FC Shop adapts to your specific retail model with industry-focused features designed for Belgian commerce standards and regulations.
+              FC Shop adapts to your specific retail model with industry-focused features designed
+              for Belgian commerce standards and regulations.
             </p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <!-- Fashion & Apparel (REMOVED) -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-              <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center mb-6">
+            <div
+              class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center mb-6"
+              >
                 <i class="fas fa-tshirt text-white text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Fashion & Apparel</h3>
-              <p class="text-gray-600 mb-6">Complete size/color matrix management, seasonal inventory control, and fashion-specific analytics for Belgian clothing stores.</p>
+              <p class="text-gray-600 mb-6">
+                Complete size/color matrix management, seasonal inventory control, and
+                fashion-specific analytics for Belgian clothing stores.
+              </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -1722,12 +1814,21 @@
             </div>
 
             <!-- Electronics & Tech (REMOVED) -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-orange-300 hover:border-orange-500 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-              <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+            <div
+              class="bg-white rounded-2xl shadow-xl p-8 border-2 border-orange-300 hover:border-orange-500 transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6"
+              >
                 <i class="fas fa-laptop text-white text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Electronics & Tech</h3>
-              <p class="text-gray-600 mb-6">Advanced serial number tracking, warranty management, and tech product specifications for Belgian electronics retailers.</p>
+              <p class="text-gray-600 mb-6">
+                Advanced serial number tracking, warranty management, and tech product
+                specifications for Belgian electronics retailers.
+              </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -1749,12 +1850,21 @@
             </div>
 
             <!-- Grocery & Food -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="300">
-              <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+            <div
+              class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6"
+              >
                 <i class="fas fa-apple-alt text-white text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Grocery & Food</h3>
-              <p class="text-gray-600 mb-6">Expiration date tracking, batch management, and Belgian food safety compliance for grocery stores and markets.</p>
+              <p class="text-gray-600 mb-6">
+                Expiration date tracking, batch management, and Belgian food safety compliance for
+                grocery stores and markets.
+              </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -1776,12 +1886,21 @@
             </div>
 
             <!-- Beauty & Cosmetics -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="400">
-              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
+            <div
+              class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6"
+              >
                 <i class="fas fa-palette text-white text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Beauty & Cosmetics</h3>
-              <p class="text-gray-600 mb-6">Shade matching, skincare consultation tracking, and beauty brand management for Belgian cosmetics retailers.</p>
+              <p class="text-gray-600 mb-6">
+                Shade matching, skincare consultation tracking, and beauty brand management for
+                Belgian cosmetics retailers.
+              </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -1803,12 +1922,21 @@
             </div>
 
             <!-- Sports & Outdoor -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="300">
-              <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6">
-               <i class="fas fa-dumbbell text-white text-2xl"></i>
+            <div
+              class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6"
+              >
+                <i class="fas fa-dumbbell text-white text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Sports & Outdoor</h3>
-              <p class="text-gray-600 mb-6">Equipment rental tracking, seasonal inventory management, and sports event coordination for Belgian sports retailers.</p>
+              <p class="text-gray-600 mb-6">
+                Equipment rental tracking, seasonal inventory management, and sports event
+                coordination for Belgian sports retailers.
+              </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -1830,12 +1958,21 @@
             </div>
 
             <!-- Specialty Retail -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="600">
-              <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+            <div
+              class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6"
+              >
                 <i class="fas fa-gem text-white text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Specialty Retail</h3>
-              <p class="text-gray-600 mb-6">Custom product cataloging, artisan inventory management, and specialty Belgian market features for unique retailers.</p>
+              <p class="text-gray-600 mb-6">
+                Custom product cataloging, artisan inventory management, and specialty Belgian
+                market features for unique retailers.
+              </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -1863,33 +2000,46 @@
       <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
           <div class="text-center mb-16" data-aos="fade-up">
-            <span class="inline-block px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-6 shadow-lg">
+            <span
+              class="inline-block px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-6 shadow-lg"
+            >
               📦 SMART INVENTORY
             </span>
             <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
               Never Run Out of Stock Again
             </h2>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              FC Shop's intelligent inventory management uses AI-powered forecasting and Belgian supplier integration to optimize your stock levels automatically.
+              FC Shop's intelligent inventory management uses AI-powered forecasting and Belgian
+              supplier integration to optimize your stock levels automatically.
             </p>
           </div>
 
           <div class="max-w-7xl mx-auto">
             <!-- Smart Inventory Dashboard (REMOVED - FOR FC COMMERCE ONLY) -->
-            <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8 mb-12 shadow-2xl" data-aos="fade-up">
+            <div
+              class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8 mb-12 shadow-2xl"
+              data-aos="fade-up"
+            >
               <div class="text-center mb-8">
                 <h3 class="text-3xl font-bold text-gray-900 mb-4">FC Shop Smart Inventory Hub</h3>
-                <p class="text-lg text-gray-600">AI-powered inventory optimization for Belgian retailers</p>
+                <p class="text-lg text-gray-600">
+                  AI-powered inventory optimization for Belgian retailers
+                </p>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Predictive Analytics -->
                 <div class="bg-white rounded-2xl p-6 shadow-lg">
-                  <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-4">
+                  <div
+                    class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-4"
+                  >
                     <i class="fas fa-chart-line text-white text-2xl"></i>
                   </div>
                   <h4 class="text-xl font-bold text-gray-900 mb-3">Predictive Analytics</h4>
-                  <p class="text-gray-600 mb-4">AI analyzes sales patterns, seasonal trends, and Belgian market data to predict demand accurately.</p>
+                  <p class="text-gray-600 mb-4">
+                    AI analyzes sales patterns, seasonal trends, and Belgian market data to predict
+                    demand accurately.
+                  </p>
                   <ul class="space-y-2 text-sm">
                     <li class="flex items-center">
                       <i class="fas fa-check text-green-500 mr-2"></i>
@@ -1908,11 +2058,16 @@
 
                 <!-- Automated Reordering -->
                 <div class="bg-white rounded-2xl p-6 shadow-lg">
-                  <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4">
+                  <div
+                    class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4"
+                  >
                     <i class="fas fa-sync-alt text-white text-2xl"></i>
                   </div>
                   <h4 class="text-xl font-bold text-gray-900 mb-3">Automated Reordering</h4>
-                  <p class="text-gray-600 mb-4">Set minimum stock levels and let FC Shop automatically generate purchase orders for your Belgian suppliers.</p>
+                  <p class="text-gray-600 mb-4">
+                    Set minimum stock levels and let FC Shop automatically generate purchase orders
+                    for your Belgian suppliers.
+                  </p>
                   <ul class="space-y-2 text-sm">
                     <li class="flex items-center">
                       <i class="fas fa-check text-blue-500 mr-2"></i>
@@ -1931,11 +2086,16 @@
 
                 <!-- Real-time Tracking -->
                 <div class="bg-white rounded-2xl p-6 shadow-lg">
-                  <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-4">
+                  <div
+                    class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-4"
+                  >
                     <i class="fas fa-eye text-white text-2xl"></i>
                   </div>
                   <h4 class="text-xl font-bold text-gray-900 mb-3">Real-time Tracking</h4>
-                  <p class="text-gray-600 mb-4">Monitor stock levels across multiple locations with instant alerts for low stock and overstock situations.</p>
+                  <p class="text-gray-600 mb-4">
+                    Monitor stock levels across multiple locations with instant alerts for low stock
+                    and overstock situations.
+                  </p>
                   <ul class="space-y-2 text-sm">
                     <li class="flex items-center">
                       <i class="fas fa-check text-purple-500 mr-2"></i>
@@ -1957,39 +2117,70 @@
             <!-- Inventory Features Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <!-- Barcode System -->
-              <div class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+              <div
+                class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
                   <i class="fas fa-barcode text-white text-lg"></i>
                 </div>
                 <h4 class="text-lg font-bold text-gray-900 mb-3">Advanced Barcode System</h4>
-                <p class="text-gray-600 text-sm">Support for EAN-13, UPC, and custom barcodes with mobile scanning capabilities.</p>
+                <p class="text-gray-600 text-sm">
+                  Support for EAN-13, UPC, and custom barcodes with mobile scanning capabilities.
+                </p>
               </div>
 
               <!-- Batch Tracking -->
-              <div class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
+              <div
+                class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div
+                  class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4"
+                >
                   <i class="fas fa-tags text-white text-lg"></i>
                 </div>
                 <h4 class="text-lg font-bold text-gray-900 mb-3">Batch & Serial Tracking</h4>
-                <p class="text-gray-600 text-sm">Complete traceability for products with batch numbers, serial numbers, and expiration dates.</p>
+                <p class="text-gray-600 text-sm">
+                  Complete traceability for products with batch numbers, serial numbers, and
+                  expiration dates.
+                </p>
               </div>
 
               <!-- Multi-Location -->
-              <div class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+              <div
+                class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
                   <i class="fas fa-building text-white text-lg"></i>
                 </div>
                 <h4 class="text-lg font-bold text-gray-900 mb-3">Multi-Location Management</h4>
-                <p class="text-gray-600 text-sm">Manage inventory across multiple stores with automatic stock transfers and balancing.</p>
+                <p class="text-gray-600 text-sm">
+                  Manage inventory across multiple stores with automatic stock transfers and
+                  balancing.
+                </p>
               </div>
 
               <!-- Supplier Portal -->
-              <div class="bg-gradient-to-br from-purple-50 to-indigo-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
-                <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
+              <div
+                class="bg-gradient-to-br from-purple-50 to-indigo-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <div
+                  class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4"
+                >
                   <i class="fas fa-handshake text-white text-lg"></i>
                 </div>
                 <h4 class="text-lg font-bold text-gray-900 mb-3">Belgian Supplier Portal</h4>
-                <p class="text-gray-600 text-sm">Direct integration with Belgian wholesalers and suppliers for automated ordering and invoicing.</p>
+                <p class="text-gray-600 text-sm">
+                  Direct integration with Belgian wholesalers and suppliers for automated ordering
+                  and invoicing.
+                </p>
               </div>
             </div>
           </div>
@@ -2028,32 +2219,20 @@
         </div>
       </section>
 
-
-
-      <!-- Expert Support Section -->
-      <style>
-        /* Force white text in contact card */
-        .contact-card * {
-          color: white !important;
-        }
-        .contact-card h3,
-        .contact-card p,
-        .contact-card span,
-        .contact-card a,
-        .contact-card div {
-          color: white !important;
-        }
-        .contact-card .contact-label {
-          color: rgba(255, 255, 255, 0.8) !important;
-        }
-        .contact-card .contact-sub {
-          color: rgba(255, 255, 255, 0.7) !important;
-        }
-      </style>
-      <section id="contact-form" class="py-20 md:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden" itemscope itemtype="https://schema.org/ContactPage">
+      <section
+        id="contact-form"
+        class="py-20 md:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden"
+        itemscope
+        itemtype="https://schema.org/ContactPage"
+      >
         <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-5">
-          <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23f97316\' fill-opacity=\'0.1\'%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'2\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+          <div
+            class="absolute inset-0"
+            style="
+              background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);
+            "
+          ></div>
         </div>
 
         <div class="container mx-auto px-4 sm:px-6 relative z-10">
@@ -2061,79 +2240,191 @@
           <div class="text-center mb-16" data-aos="fade-up">
             <div class="inline-flex items-center bg-blue-100 px-6 py-3 rounded-full mb-6 shadow-sm">
               <i class="fas fa-cash-register text-blue-600 mr-2"></i>
-              <span class="text-sm font-bold text-blue-800" style="color: #1e40af !important;">Retail POS Experts</span>
+              <span class="text-sm font-bold text-blue-800" style="color: #1e40af !important">
+                Retail POS Experts
+              </span>
             </div>
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900" style="color: #111827 !important;">
-              Get Your <span class="text-blue-600" style="color: #2563eb !important;">Free FC Shop Demo</span> Today
+            <h2
+              class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900"
+              style="color: #111827 !important"
+            >
+              Get Your
+              <span class="text-blue-600" style="color: #2563eb !important">Free FC Shop Demo</span>
+              Today
             </h2>
-            <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed" style="color: #374151 !important;">
-              Join 500+ Belgian retailers already using FC Shop. Our certified POS specialists will show you exactly how our retail management system can streamline your store operations in just 30 minutes.
+            <p
+              class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed"
+              style="color: #374151 !important"
+            >
+              Join 500+ Belgian retailers already using FC Shop. Our certified POS specialists will
+              show you exactly how our retail management system can streamline your store operations
+              in just 30 minutes.
             </p>
           </div>
 
           <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-
               <!-- Contact Information Card -->
               <div class="lg:col-span-1" data-aos="fade-right">
-                <div class="contact-card rounded-3xl p-8 shadow-2xl relative overflow-hidden" style="background-color: #2563eb !important; color: white !important; border: 2px solid rgba(255, 255, 255, 0.1) !important;">
+                <div
+                  class="contact-card rounded-3xl p-8 shadow-2xl relative overflow-hidden"
+                  style="
+                    background-color: #2563eb !important;
+                    color: white !important;
+                    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+                  "
+                >
                   <!-- Decorative Elements -->
-                  <div class="absolute top-0 right-0 w-32 h-32 rounded-full -translate-y-16 translate-x-16" style="background: rgba(255, 255, 255, 0.1) !important;"></div>
-                  <div class="absolute bottom-0 left-0 w-24 h-24 rounded-full translate-y-12 -translate-x-12" style="background: rgba(255, 255, 255, 0.1) !important;"></div>
+                  <div
+                    class="absolute top-0 right-0 w-32 h-32 rounded-full -translate-y-16 translate-x-16"
+                    style="background: rgba(255, 255, 255, 0.1) !important"
+                  ></div>
+                  <div
+                    class="absolute bottom-0 left-0 w-24 h-24 rounded-full translate-y-12 -translate-x-12"
+                    style="background: rgba(255, 255, 255, 0.1) !important"
+                  ></div>
 
                   <div class="relative z-10">
-                    <h3 class="text-2xl font-bold mb-6" style="color: white !important; font-weight: 700 !important; font-size: 1.75rem !important;">Contact Our Belgian Retail POS Experts</h3>
-                    <p class="mb-8 text-lg" style="color: rgba(255, 255, 255, 0.95) !important; line-height: 1.6 !important; font-size: 1.125rem !important;">
-                      Ready to revolutionize your retail operations with FC Shop? Our certified Belgian POS specialists are here to help streamline your store management!
+                    <h3
+                      class="text-2xl font-bold mb-6"
+                      style="
+                        color: white !important;
+                        font-weight: 700 !important;
+                        font-size: 1.75rem !important;
+                      "
+                    >
+                      Contact Our Belgian Retail POS Experts
+                    </h3>
+                    <p
+                      class="mb-8 text-lg"
+                      style="
+                        color: rgba(255, 255, 255, 0.95) !important;
+                        line-height: 1.6 !important;
+                        font-size: 1.125rem !important;
+                      "
+                    >
+                      Ready to revolutionize your retail operations with FC Shop? Our certified
+                      Belgian POS specialists are here to help streamline your store management!
                     </p>
 
                     <!-- Contact Methods -->
                     <div class="space-y-6">
                       <!-- Phone -->
-                      <div class="flex items-center group" itemscope itemtype="https://schema.org/ContactPoint">
-                        <div class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300">
-                          <i class="fas fa-phone-alt text-xl" style="color: white !important;"></i>
+                      <div
+                        class="flex items-center group"
+                        itemscope
+                        itemtype="https://schema.org/ContactPoint"
+                      >
+                        <div
+                          class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300"
+                        >
+                          <i class="fas fa-phone-alt text-xl" style="color: white !important"></i>
                         </div>
                         <div>
-                          <p class="contact-label text-sm font-medium" style="color: rgba(255, 255, 255, 0.8) !important; font-size: 0.875rem !important;">Call us directly</p>
-                          <a href="tel:+3221234567"
-                             class="text-lg font-bold hover:text-blue-200 transition-colors duration-300 block"
-                             style="color: white !important; font-weight: 700 !important; font-size: 1.125rem !important; text-decoration: none !important;"
-                             itemprop="telephone">
+                          <p
+                            class="contact-label text-sm font-medium"
+                            style="
+                              color: rgba(255, 255, 255, 0.8) !important;
+                              font-size: 0.875rem !important;
+                            "
+                          >
+                            Call us directly
+                          </p>
+                          <a
+                            href="tel:+3221234567"
+                            class="text-lg font-bold hover:text-blue-200 transition-colors duration-300 block"
+                            style="
+                              color: white !important;
+                              font-weight: 700 !important;
+                              font-size: 1.125rem !important;
+                              text-decoration: none !important;
+                            "
+                            itemprop="telephone"
+                          >
                             +32 2 123 45 67
                           </a>
-                          <span class="contact-sub text-xs" style="color: #fecaca !important;">Available Mon-Fri 9AM-6PM</span>
+                          <span class="contact-sub text-xs" style="color: #fecaca !important">
+                            Available Mon-Fri 9AM-6PM
+                          </span>
                         </div>
                       </div>
 
                       <!-- Email -->
-                      <div class="flex items-center group" itemscope itemtype="https://schema.org/ContactPoint">
-                        <div class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300">
-                          <i class="fas fa-envelope text-xl" style="color: white !important;"></i>
+                      <div
+                        class="flex items-center group"
+                        itemscope
+                        itemtype="https://schema.org/ContactPoint"
+                      >
+                        <div
+                          class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300"
+                        >
+                          <i class="fas fa-envelope text-xl" style="color: white !important"></i>
                         </div>
                         <div>
-                          <p class="text-sm font-medium" style="color: rgba(255, 255, 255, 0.8) !important; font-size: 0.875rem !important;">Email our team</p>
-                          <a href="mailto:info@fastcaisse.be?subject=FC%20Shop%20Demo%20Request%20-%20Belgian%20Retail%20POS%20System&body=Hello%20FC%20Shop%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20demo%20of%20your%20FC%20Shop%20retail%20POS%20system.%0D%0A%0D%0AStore%20Details:%0D%0A-%20Store%20Name:%20%0D%0A-%20Industry:%20%0D%0A-%20Location:%20%0D%0A-%20Current%20POS%20System:%20%0D%0A-%20Number%20of%20Terminals:%20%0D%0A%0D%0AContact%20Information:%0D%0A-%20Name:%20%0D%0A-%20Phone:%20%0D%0A-%20Best%20time%20to%20call:%20%0D%0A%0D%0ASpecific%20Retail%20Needs:%0D%0A-%20Inventory%20Management:%20%0D%0A-%20Customer%20Management:%20%0D%0A-%20Reporting%20Requirements:%20%0D%0A%0D%0AThank%20you!"
-                             class="text-white text-lg font-bold hover:text-blue-200 transition-colors duration-300 block"
-                             style="color: white !important;"
-                             itemprop="email">
+                          <p
+                            class="text-sm font-medium"
+                            style="
+                              color: rgba(255, 255, 255, 0.8) !important;
+                              font-size: 0.875rem !important;
+                            "
+                          >
+                            Email our team
+                          </p>
+                          <a
+                            href="mailto:info@fastcaisse.be?subject=FC%20Shop%20Demo%20Request%20-%20Belgian%20Retail%20POS%20System&body=Hello%20FC%20Shop%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20demo%20of%20your%20FC%20Shop%20retail%20POS%20system.%0D%0A%0D%0AStore%20Details:%0D%0A-%20Store%20Name:%20%0D%0A-%20Industry:%20%0D%0A-%20Location:%20%0D%0A-%20Current%20POS%20System:%20%0D%0A-%20Number%20of%20Terminals:%20%0D%0A%0D%0AContact%20Information:%0D%0A-%20Name:%20%0D%0A-%20Phone:%20%0D%0A-%20Best%20time%20to%20call:%20%0D%0A%0D%0ASpecific%20Retail%20Needs:%0D%0A-%20Inventory%20Management:%20%0D%0A-%20Customer%20Management:%20%0D%0A-%20Reporting%20Requirements:%20%0D%0A%0D%0AThank%20you!"
+                            class="text-white text-lg font-bold hover:text-blue-200 transition-colors duration-300 block"
+                            style="color: white !important"
+                            itemprop="email"
+                          >
                             info@fastcaisse.be
                           </a>
-                          <span class="text-blue-200 text-xs" style="color: #fecaca !important;">Response within 2 hours</span>
+                          <span class="text-blue-200 text-xs" style="color: #fecaca !important">
+                            Response within 2 hours
+                          </span>
                         </div>
                       </div>
 
                       <!-- Address -->
-                      <div class="flex items-center group" itemscope itemtype="https://schema.org/PostalAddress">
-                        <div class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300">
-                          <i class="fas fa-map-marker-alt text-xl" style="color: white !important;"></i>
+                      <div
+                        class="flex items-center group"
+                        itemscope
+                        itemtype="https://schema.org/PostalAddress"
+                      >
+                        <div
+                          class="bg-white bg-opacity-20 rounded-xl p-4 mr-4 group-hover:bg-opacity-30 transition-all duration-300"
+                        >
+                          <i
+                            class="fas fa-map-marker-alt text-xl"
+                            style="color: white !important"
+                          ></i>
                         </div>
                         <div>
-                          <p class="contact-label text-sm font-medium" style="color: rgba(255, 255, 255, 0.8) !important; font-size: 0.875rem !important;">Visit our office</p>
-                          <div class="text-lg font-bold" style="color: white !important; font-weight: 700 !important; font-size: 1.125rem !important;" itemprop="addressLocality">
+                          <p
+                            class="contact-label text-sm font-medium"
+                            style="
+                              color: rgba(255, 255, 255, 0.8) !important;
+                              font-size: 0.875rem !important;
+                            "
+                          >
+                            Visit our office
+                          </p>
+                          <div
+                            class="text-lg font-bold"
+                            style="
+                              color: white !important;
+                              font-weight: 700 !important;
+                              font-size: 1.125rem !important;
+                            "
+                            itemprop="addressLocality"
+                          >
                             Brussels, Belgium
                           </div>
-                          <span class="contact-sub text-xs" style="color: rgba(255, 255, 255, 0.7) !important;">Serving all Belgian provinces</span>
+                          <span
+                            class="contact-sub text-xs"
+                            style="color: rgba(255, 255, 255, 0.7) !important"
+                          >
+                            Serving all Belgian provinces
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -2142,11 +2433,15 @@
                     <div class="mt-8 pt-6 border-t border-white border-opacity-20">
                       <div class="grid grid-cols-2 gap-4 text-center">
                         <div>
-                          <div class="text-2xl font-black" style="color: #fbbf24 !important;">500+</div>
+                          <div class="text-2xl font-black" style="color: #fbbf24 !important">
+                            500+
+                          </div>
                           <div class="text-xs contact-sub">Belgian Retailers</div>
                         </div>
                         <div>
-                          <div class="text-2xl font-black" style="color: #fbbf24 !important;">24/7</div>
+                          <div class="text-2xl font-black" style="color: #fbbf24 !important">
+                            24/7
+                          </div>
                           <div class="text-xs contact-sub">POS Support</div>
                         </div>
                       </div>
@@ -2154,16 +2449,33 @@
 
                     <!-- Social Media -->
                     <div class="mt-6">
-                      <p class="text-blue-100 text-sm mb-4 font-medium" style="color: #fed7aa !important;">Follow us for FC Shop updates</p>
+                      <p
+                        class="text-blue-100 text-sm mb-4 font-medium"
+                        style="color: #fed7aa !important"
+                      >
+                        Follow us for FC Shop updates
+                      </p>
                       <div class="flex space-x-3">
-                        <a href="./index-en.html#" class="bg-white bg-opacity-20 rounded-xl p-3 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110" aria-label="Facebook">
-                          <i class="fab fa-facebook-f text-lg" style="color: white !important;"></i>
+                        <a
+                          href="./index-en.html#"
+                          class="bg-white bg-opacity-20 rounded-xl p-3 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110"
+                          aria-label="Facebook"
+                        >
+                          <i class="fab fa-facebook-f text-lg" style="color: white !important"></i>
                         </a>
-                        <a href="./index-en.html#" class="bg-white bg-opacity-20 rounded-xl p-3 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110" aria-label="LinkedIn">
-                          <i class="fab fa-linkedin-in text-lg" style="color: white !important;"></i>
+                        <a
+                          href="./index-en.html#"
+                          class="bg-white bg-opacity-20 rounded-xl p-3 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110"
+                          aria-label="LinkedIn"
+                        >
+                          <i class="fab fa-linkedin-in text-lg" style="color: white !important"></i>
                         </a>
-                        <a href="./index-en.html#" class="bg-white bg-opacity-20 rounded-xl p-3 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110" aria-label="Twitter">
-                          <i class="fab fa-twitter text-lg" style="color: white !important;"></i>
+                        <a
+                          href="./index-en.html#"
+                          class="bg-white bg-opacity-20 rounded-xl p-3 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110"
+                          aria-label="Twitter"
+                        >
+                          <i class="fab fa-twitter text-lg" style="color: white !important"></i>
                         </a>
                       </div>
                     </div>
@@ -2177,44 +2489,80 @@
                   <div class="text-center mb-10">
                     <div class="inline-flex items-center bg-green-100 px-4 py-2 rounded-full mb-4">
                       <i class="fas fa-gift text-green-600 mr-2"></i>
-                      <span class="text-sm font-bold text-green-800" style="color: #166534 !important;">100% Free Demo</span>
+                      <span
+                        class="text-sm font-bold text-green-800"
+                        style="color: #166534 !important"
+                      >
+                        100% Free Demo
+                      </span>
                     </div>
-                    <h3 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900" style="color: #111827 !important;">
+                    <h3
+                      class="text-3xl md:text-4xl font-bold mb-4 text-gray-900"
+                      style="color: #111827 !important"
+                    >
                       See FC Shop Retail POS in Action
                     </h3>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto" style="color: #4b5563 !important;">
-                      Get a personalized 30-minute demo tailored to your retail store needs. No commitment required.
+                    <p
+                      class="text-gray-600 text-lg max-w-2xl mx-auto"
+                      style="color: #4b5563 !important"
+                    >
+                      Get a personalized 30-minute demo tailored to your retail store needs. No
+                      commitment required.
                     </p>
                   </div>
 
                   <!-- Success/Error Messages -->
-                  <div id="success-message" class="hidden bg-green-50 border-l-4 border-green-400 p-6 mb-8 rounded-lg">
+                  <div
+                    id="success-message"
+                    class="hidden bg-green-50 border-l-4 border-green-400 p-6 mb-8 rounded-lg"
+                  >
                     <div class="flex items-center">
                       <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
                       <div>
                         <h4 class="text-green-800 font-bold">Demo Request Submitted!</h4>
-                        <p class="text-green-700">Thank you! Our FC Shop specialist will contact you within 24 hours to schedule your free retail POS demo.</p>
+                        <p class="text-green-700">
+                          Thank you! Our FC Shop specialist will contact you within 24 hours to
+                          schedule your free retail POS demo.
+                        </p>
                       </div>
                     </div>
                   </div>
 
-                  <div id="error-message" class="hidden bg-red-50 border-l-4 border-red-400 p-6 mb-8 rounded-lg">
+                  <div
+                    id="error-message"
+                    class="hidden bg-red-50 border-l-4 border-red-400 p-6 mb-8 rounded-lg"
+                  >
                     <div class="flex items-center">
                       <i class="fas fa-exclamation-triangle text-red-500 text-xl mr-3"></i>
                       <div>
                         <h4 class="text-red-800 font-bold">Please Check Your Information</h4>
-                        <p class="text-red-700">Please fill in all required fields correctly and try again.</p>
+                        <p class="text-red-700">
+                          Please fill in all required fields correctly and try again.
+                        </p>
                       </div>
                     </div>
                   </div>
 
                   <!-- Enhanced Form -->
-                  <form id="contact-form" class="space-y-8" novalidate itemscope itemtype="https://schema.org/ContactForm">
+                  <form
+                    id="contact-form"
+                    class="space-y-8"
+                    novalidate
+                    itemscope
+                    itemtype="https://schema.org/ContactForm"
+                  >
                     <!-- Personal Information -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div class="form-group">
-                        <label for="name" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                          <i class="fas fa-user text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                        <label
+                          for="name"
+                          class="block text-sm font-bold text-gray-800 mb-3"
+                          style="color: #1f2937 !important"
+                        >
+                          <i
+                            class="fas fa-user text-blue-600 mr-2"
+                            style="color: #2563eb !important"
+                          ></i>
                           Your Full Name *
                         </label>
                         <input
@@ -2226,12 +2574,23 @@
                           class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
                           itemprop="name"
                         />
-                        <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please enter your full name</span>
+                        <span
+                          class="error-message text-red-500 text-sm font-medium hidden mt-2 block"
+                        >
+                          Please enter your full name
+                        </span>
                       </div>
 
                       <div class="form-group">
-                        <label for="company" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                          <i class="fas fa-building text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                        <label
+                          for="company"
+                          class="block text-sm font-bold text-gray-800 mb-3"
+                          style="color: #1f2937 !important"
+                        >
+                          <i
+                            class="fas fa-building text-blue-600 mr-2"
+                            style="color: #2563eb !important"
+                          ></i>
                           Company Name *
                         </label>
                         <input
@@ -2243,15 +2602,26 @@
                           class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
                           itemprop="organizationName"
                         />
-                        <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please enter your company name</span>
+                        <span
+                          class="error-message text-red-500 text-sm font-medium hidden mt-2 block"
+                        >
+                          Please enter your company name
+                        </span>
                       </div>
                     </div>
 
                     <!-- Contact Information -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div class="form-group">
-                        <label for="email" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                          <i class="fas fa-envelope text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                        <label
+                          for="email"
+                          class="block text-sm font-bold text-gray-800 mb-3"
+                          style="color: #1f2937 !important"
+                        >
+                          <i
+                            class="fas fa-envelope text-blue-600 mr-2"
+                            style="color: #2563eb !important"
+                          ></i>
                           Email Address *
                         </label>
                         <input
@@ -2263,12 +2633,23 @@
                           class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
                           itemprop="email"
                         />
-                        <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please enter a valid email address</span>
+                        <span
+                          class="error-message text-red-500 text-sm font-medium hidden mt-2 block"
+                        >
+                          Please enter a valid email address
+                        </span>
                       </div>
 
                       <div class="form-group">
-                        <label for="phone" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                          <i class="fas fa-phone text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                        <label
+                          for="phone"
+                          class="block text-sm font-bold text-gray-800 mb-3"
+                          style="color: #1f2937 !important"
+                        >
+                          <i
+                            class="fas fa-phone text-blue-600 mr-2"
+                            style="color: #2563eb !important"
+                          ></i>
                           Phone Number *
                         </label>
                         <input
@@ -2280,15 +2661,26 @@
                           class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
                           itemprop="telephone"
                         />
-                        <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please enter a valid Belgian phone number</span>
+                        <span
+                          class="error-message text-red-500 text-sm font-medium hidden mt-2 block"
+                        >
+                          Please enter a valid Belgian phone number
+                        </span>
                       </div>
                     </div>
 
                     <!-- Location & Business Details -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div class="form-group">
-                        <label for="city" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                          <i class="fas fa-map-marker-alt text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                        <label
+                          for="city"
+                          class="block text-sm font-bold text-gray-800 mb-3"
+                          style="color: #1f2937 !important"
+                        >
+                          <i
+                            class="fas fa-map-marker-alt text-blue-600 mr-2"
+                            style="color: #2563eb !important"
+                          ></i>
                           City/Location
                         </label>
                         <select
@@ -2313,8 +2705,15 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="industry" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                          <i class="fas fa-store text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                        <label
+                          for="industry"
+                          class="block text-sm font-bold text-gray-800 mb-3"
+                          style="color: #1f2937 !important"
+                        >
+                          <i
+                            class="fas fa-store text-blue-600 mr-2"
+                            style="color: #2563eb !important"
+                          ></i>
                           Retail Business Type
                         </label>
                         <select
@@ -2342,8 +2741,15 @@
 
                     <!-- Store Size -->
                     <div class="form-group">
-                      <label for="business-size" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                        <i class="fas fa-chart-bar text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                      <label
+                        for="business-size"
+                        class="block text-sm font-bold text-gray-800 mb-3"
+                        style="color: #1f2937 !important"
+                      >
+                        <i
+                          class="fas fa-chart-bar text-blue-600 mr-2"
+                          style="color: #2563eb !important"
+                        ></i>
                         Store Size & POS Terminals
                       </label>
                       <select
@@ -2352,10 +2758,18 @@
                         class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 text-gray-900 font-medium"
                       >
                         <option value="">Select your store size</option>
-                        <option value="Single Store (1 terminal)">Single Store (1 POS terminal)</option>
-                        <option value="Small Store (2-3 terminals)">Small Store (2-3 POS terminals)</option>
-                        <option value="Medium Store (4-10 terminals)">Medium Store (4-10 POS terminals)</option>
-                        <option value="Large Store (11+ terminals)">Large Store (11+ POS terminals)</option>
+                        <option value="Single Store (1 terminal)">
+                          Single Store (1 POS terminal)
+                        </option>
+                        <option value="Small Store (2-3 terminals)">
+                          Small Store (2-3 POS terminals)
+                        </option>
+                        <option value="Medium Store (4-10 terminals)">
+                          Medium Store (4-10 POS terminals)
+                        </option>
+                        <option value="Large Store (11+ terminals)">
+                          Large Store (11+ POS terminals)
+                        </option>
                         <option value="Multiple Locations">Multiple Store Locations</option>
                         <option value="Chain Store">Retail Chain</option>
                       </select>
@@ -2363,42 +2777,110 @@
 
                     <!-- Current Challenges -->
                     <div class="form-group">
-                      <label for="challenges" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                        <i class="fas fa-lightbulb text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                      <label
+                        for="challenges"
+                        class="block text-sm font-bold text-gray-800 mb-3"
+                        style="color: #1f2937 !important"
+                      >
+                        <i
+                          class="fas fa-lightbulb text-blue-600 mr-2"
+                          style="color: #2563eb !important"
+                        ></i>
                         What retail challenges are you facing? (Optional)
                       </label>
                       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                          <input type="checkbox" name="challenges[]" value="Inventory management" class="mr-3 text-blue-600 focus:ring-blue-500">
-                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Inventory tracking & management</span>
+                        <label
+                          class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer"
+                        >
+                          <input
+                            type="checkbox"
+                            name="challenges[]"
+                            value="Inventory management"
+                            class="mr-3 text-blue-600 focus:ring-blue-500"
+                          />
+                          <span class="text-gray-700 font-medium" style="color: #374151 !important">
+                            Inventory tracking & management
+                          </span>
                         </label>
-                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                          <input type="checkbox" name="challenges[]" value="Sales reporting" class="mr-3 text-blue-600 focus:ring-blue-500">
-                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Sales reporting & analytics</span>
+                        <label
+                          class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer"
+                        >
+                          <input
+                            type="checkbox"
+                            name="challenges[]"
+                            value="Sales reporting"
+                            class="mr-3 text-blue-600 focus:ring-blue-500"
+                          />
+                          <span class="text-gray-700 font-medium" style="color: #374151 !important">
+                            Sales reporting & analytics
+                          </span>
                         </label>
-                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                          <input type="checkbox" name="challenges[]" value="Customer loyalty" class="mr-3 text-blue-600 focus:ring-blue-500">
-                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Customer loyalty & retention</span>
+                        <label
+                          class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer"
+                        >
+                          <input
+                            type="checkbox"
+                            name="challenges[]"
+                            value="Customer loyalty"
+                            class="mr-3 text-blue-600 focus:ring-blue-500"
+                          />
+                          <span class="text-gray-700 font-medium" style="color: #374151 !important">
+                            Customer loyalty & retention
+                          </span>
                         </label>
-                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                          <input type="checkbox" name="challenges[]" value="Payment processing" class="mr-3 text-blue-600 focus:ring-blue-500">
-                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Payment processing & integration</span>
+                        <label
+                          class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer"
+                        >
+                          <input
+                            type="checkbox"
+                            name="challenges[]"
+                            value="Payment processing"
+                            class="mr-3 text-blue-600 focus:ring-blue-500"
+                          />
+                          <span class="text-gray-700 font-medium" style="color: #374151 !important">
+                            Payment processing & integration
+                          </span>
                         </label>
-                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                          <input type="checkbox" name="challenges[]" value="Multi-location" class="mr-3 text-blue-600 focus:ring-blue-500">
-                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Multi-location management</span>
+                        <label
+                          class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer"
+                        >
+                          <input
+                            type="checkbox"
+                            name="challenges[]"
+                            value="Multi-location"
+                            class="mr-3 text-blue-600 focus:ring-blue-500"
+                          />
+                          <span class="text-gray-700 font-medium" style="color: #374151 !important">
+                            Multi-location management
+                          </span>
                         </label>
-                        <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer">
-                          <input type="checkbox" name="challenges[]" value="Staff management" class="mr-3 text-blue-600 focus:ring-blue-500">
-                          <span class="text-gray-700 font-medium" style="color: #374151 !important;">Staff management & scheduling</span>
+                        <label
+                          class="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:border-blue-300 transition-all duration-300 cursor-pointer"
+                        >
+                          <input
+                            type="checkbox"
+                            name="challenges[]"
+                            value="Staff management"
+                            class="mr-3 text-blue-600 focus:ring-blue-500"
+                          />
+                          <span class="text-gray-700 font-medium" style="color: #374151 !important">
+                            Staff management & scheduling
+                          </span>
                         </label>
                       </div>
                     </div>
 
                     <!-- Additional Message -->
                     <div class="form-group">
-                      <label for="message" class="block text-sm font-bold text-gray-800 mb-3" style="color: #1f2937 !important;">
-                        <i class="fas fa-comment-dots text-blue-600 mr-2" style="color: #2563eb !important;"></i>
+                      <label
+                        for="message"
+                        class="block text-sm font-bold text-gray-800 mb-3"
+                        style="color: #1f2937 !important"
+                      >
+                        <i
+                          class="fas fa-comment-dots text-blue-600 mr-2"
+                          style="color: #2563eb !important"
+                        ></i>
                         Additional Information (Optional)
                       </label>
                       <textarea
@@ -2420,13 +2902,27 @@
                           required
                           class="mt-1 mr-4 h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                         />
-                        <span class="text-sm text-gray-700 leading-relaxed" style="color: #374151 !important;">
-                          I agree to the <a href="./index-en.html#" class="text-blue-600 hover:text-blue-700 underline font-medium" style="color: #2563eb !important;">Privacy Policy</a>
-                          and consent to being contacted by FC Shop about their Belgian retail POS system.
-                          I understand that I can unsubscribe at any time. *
+                        <span
+                          class="text-sm text-gray-700 leading-relaxed"
+                          style="color: #374151 !important"
+                        >
+                          I agree to the
+                          <a
+                            href="./index-en.html#"
+                            class="text-blue-600 hover:text-blue-700 underline font-medium"
+                            style="color: #2563eb !important"
+                          >
+                            Privacy Policy
+                          </a>
+                          and consent to being contacted by FC Shop about their Belgian retail POS
+                          system. I understand that I can unsubscribe at any time. *
                         </span>
                       </label>
-                      <span class="error-message text-red-500 text-sm font-medium hidden mt-2 block">Please accept our privacy policy to continue</span>
+                      <span
+                        class="error-message text-red-500 text-sm font-medium hidden mt-2 block"
+                      >
+                        Please accept our privacy policy to continue
+                      </span>
                     </div>
 
                     <!-- Submit Button -->
@@ -2435,35 +2931,64 @@
                         type="submit"
                         id="submit-btn"
                         class="w-full bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 font-bold py-5 px-8 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
-                        style="background-color: #2563eb !important; color: white !important;"
+                        style="background-color: #2563eb !important; color: white !important"
                       >
-                        <span class="submit-text flex items-center justify-center" style="color: white !important;">
-                          <i class="fas fa-rocket mr-3 text-xl" style="color: white !important;"></i>
+                        <span
+                          class="submit-text flex items-center justify-center"
+                          style="color: white !important"
+                        >
+                          <i class="fas fa-rocket mr-3 text-xl" style="color: white !important"></i>
                           Get My Free Demo Now
                         </span>
-                        <span class="loading-text hidden flex items-center justify-center" style="color: white !important;">
-                          <i class="fas fa-spinner fa-spin mr-3 text-xl" style="color: white !important;"></i>
+                        <span
+                          class="loading-text hidden flex items-center justify-center"
+                          style="color: white !important"
+                        >
+                          <i
+                            class="fas fa-spinner fa-spin mr-3 text-xl"
+                            style="color: white !important"
+                          ></i>
                           Sending Your Request...
                         </span>
                       </button>
 
                       <!-- Trust Indicators Below Button -->
                       <div class="mt-6 text-center">
-                        <div class="flex items-center justify-center space-x-6 text-sm text-gray-600">
+                        <div
+                          class="flex items-center justify-center space-x-6 text-sm text-gray-600"
+                        >
                           <div class="flex items-center">
-                            <i class="fas fa-shield-alt text-green-500 mr-2" style="color: #10b981 !important;"></i>
-                            <span class="font-medium" style="color: #4b5563 !important;">100% Secure</span>
+                            <i
+                              class="fas fa-shield-alt text-green-500 mr-2"
+                              style="color: #10b981 !important"
+                            ></i>
+                            <span class="font-medium" style="color: #4b5563 !important">
+                              100% Secure
+                            </span>
                           </div>
                           <div class="flex items-center">
-                            <i class="fas fa-clock text-blue-500 mr-2" style="color: #3b82f6 !important;"></i>
-                            <span class="font-medium" style="color: #4b5563 !important;">30-min Demo</span>
+                            <i
+                              class="fas fa-clock text-blue-500 mr-2"
+                              style="color: #3b82f6 !important"
+                            ></i>
+                            <span class="font-medium" style="color: #4b5563 !important">
+                              30-min Demo
+                            </span>
                           </div>
                           <div class="flex items-center">
-                            <i class="fas fa-gift text-purple-500 mr-2" style="color: #8b5cf6 !important;"></i>
-                            <span class="font-medium" style="color: #4b5563 !important;">Completely Free</span>
+                            <i
+                              class="fas fa-gift text-purple-500 mr-2"
+                              style="color: #8b5cf6 !important"
+                            ></i>
+                            <span class="font-medium" style="color: #4b5563 !important">
+                              Completely Free
+                            </span>
                           </div>
                         </div>
-                        <p class="text-xs text-gray-500 mt-3 max-w-md mx-auto" style="color: #6b7280 !important;">
+                        <p
+                          class="text-xs text-gray-500 mt-3 max-w-md mx-auto"
+                          style="color: #6b7280 !important"
+                        >
                           Your information is secure and will never be shared with third parties.
                           Our Belgian specialists will contact you within 24 hours.
                         </p>
@@ -2477,34 +3002,66 @@
 
           <!-- Additional Trust Section -->
           <div class="mt-20 text-center" data-aos="fade-up">
-            <div class="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto border border-gray-100">
-              <h4 class="text-2xl font-bold text-gray-900 mb-6" style="color: #111827 !important;">Why Choose FC Commerce Management for Your Belgian Business?</h4>
+            <div
+              class="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto border border-gray-100"
+            >
+              <h4 class="text-2xl font-bold text-gray-900 mb-6" style="color: #111827 !important">
+                Why Choose FC Commerce Management for Your Belgian Business?
+              </h4>
               <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="text-center">
-                  <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-certificate text-blue-600 text-2xl" style="color: #2563eb !important;"></i>
+                  <div
+                    class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+                  >
+                    <i
+                      class="fas fa-certificate text-blue-600 text-2xl"
+                      style="color: #2563eb !important"
+                    ></i>
                   </div>
-                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Belgian Certified</h5>
-                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important;">Fully compliant with Belgian business regulations and GDPR requirements</p>
+                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
+                    Belgian Certified
+                  </h5>
+                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important">
+                    Fully compliant with Belgian business regulations and GDPR requirements
+                  </p>
                 </div>
                 <div class="text-center">
-                  <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-building text-green-600 text-2xl" style="color: #059669 !important;"></i>
+                  <div
+                    class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+                  >
+                    <i
+                      class="fas fa-building text-green-600 text-2xl"
+                      style="color: #059669 !important"
+                    ></i>
                   </div>
-                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">500+ Companies</h5>
-                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important;">Trusted by businesses across Brussels, Antwerp, and Ghent</p>
+                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
+                    500+ Companies
+                  </h5>
+                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important">
+                    Trusted by businesses across Brussels, Antwerp, and Ghent
+                  </p>
                 </div>
                 <div class="text-center">
-                  <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-headset text-blue-600 text-2xl" style="color: #2563eb !important;"></i>
+                  <div
+                    class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+                  >
+                    <i
+                      class="fas fa-headset text-blue-600 text-2xl"
+                      style="color: #2563eb !important"
+                    ></i>
                   </div>
-                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Local Support</h5>
-                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important;">Belgian-based support team available in French, Dutch, and English</p>
+                  <h5 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
+                    Local Support
+                  </h5>
+                  <p class="text-gray-600 text-sm" style="color: #4b5563 !important">
+                    Belgian-based support team available in French, Dutch, and English
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -2659,9 +3216,13 @@
 
         <div class="mt-12 pt-8 border-t border-gray-200 text-center">
           <p class="text-sm text-gray-600">
-            &copy; 2025 FAST CAISSE SRL. All rights reserved.
-            |
-            <a href="./general-conditions-en.html" class="hover:text-blue-600 transition-colors duration-300">General Conditions</a>
+            &copy; 2025 FAST CAISSE SRL. All rights reserved. |
+            <a
+              href="./general-conditions-en.html"
+              class="hover:text-blue-600 transition-colors duration-300"
+            >
+              General Conditions
+            </a>
           </p>
         </div>
       </div>

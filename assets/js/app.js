@@ -63,29 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-new Swiper('.clients-swiper', {
-  loop: true,
-  centeredSlides: true,
-  keyboard: {
-    enabled: true,
-    onlyInViewport: true,
-  },
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-  slidesPerView: 1,
-  spaceBetween: 24,
-  breakpoints: {
-    640: { slidesPerView: 2, centeredSlides: false },
-    768: { slidesPerView: 3, centeredSlides: false },
-    1024: { slidesPerView: 5, centeredSlides: false },
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-});
+// Initialize Swiper only if library is loaded and element exists
+if (typeof Swiper !== 'undefined' && document.querySelector('.clients-swiper')) {
+  new Swiper('.clients-swiper', {
+    loop: true,
+    centeredSlides: true,
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 24,
+    breakpoints: {
+      640: { slidesPerView: 2, centeredSlides: false },
+      768: { slidesPerView: 3, centeredSlides: false },
+      1024: { slidesPerView: 5, centeredSlides: false },
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+}
 
 // Initialize AOS
 AOS.init({

@@ -928,6 +928,63 @@
           left: -8px !important;
         }
       }
+              /* Ensure all feature icons are visible */
+        .feature-icon i {
+          color: white !important;
+          font-size: 1.5rem !important;
+          display: inline-block !important;
+        }
+
+        /* Fix check circle icons */
+        .fas.fa-check-circle {
+          color: #059669 !important;
+          font-size: 1.125rem !important;
+        }
+
+        /* Fix section heading icons */
+        .fas.fa-receipt,
+        .fas.fa-shield-alt,
+        .fas.fa-plug,
+        .fas.fa-globe {
+          color: white !important;
+          font-size: 1.5rem !important;
+        }
+
+        /* Ensure feature card text is visible */
+        .benefit-card h3 {
+          color: #111827 !important;
+        }
+
+        .benefit-card p {
+          color: #4b5563 !important;
+        }
+
+        /* Force icon backgrounds */
+        .feature-icon {
+          background-color: var(--icon-bg-color) !important;
+        }
+
+        /* Fallback for missing icons */
+        .feature-icon i:before {
+          content: attr(data-fallback) !important;
+          font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Pro', 'Font Awesome 5 Free', 'Font Awesome 5 Pro', sans-serif !important;
+          font-weight: 900 !important;
+        }
+
+        /* Ensure FontAwesome loads */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+        /* Additional icon fixes */
+        .fas {
+          font-family: 'Font Awesome 6 Free' !important;
+          font-weight: 900 !important;
+        }
+
+        /* Icon loading check */
+        .icon-fallback {
+          font-size: 1.5rem !important;
+          color: white !important;
+        }
     </style>
   </head>
   <body class="font-sans text-gray-900 antialiased bg-white">
@@ -1491,66 +1548,7 @@
         </div>
       </section>
 
-      <!-- Key Features Section -->
-      <style>
-        /* Ensure all feature icons are visible */
-        .feature-icon i {
-          color: white !important;
-          font-size: 1.5rem !important;
-          display: inline-block !important;
-        }
 
-        /* Fix check circle icons */
-        .fas.fa-check-circle {
-          color: #059669 !important;
-          font-size: 1.125rem !important;
-        }
-
-        /* Fix section heading icons */
-        .fas.fa-receipt,
-        .fas.fa-shield-alt,
-        .fas.fa-plug,
-        .fas.fa-globe {
-          color: white !important;
-          font-size: 1.5rem !important;
-        }
-
-        /* Ensure feature card text is visible */
-        .benefit-card h3 {
-          color: #111827 !important;
-        }
-
-        .benefit-card p {
-          color: #4b5563 !important;
-        }
-
-        /* Force icon backgrounds */
-        .feature-icon {
-          background-color: var(--icon-bg-color) !important;
-        }
-
-        /* Fallback for missing icons */
-        .feature-icon i:before {
-          content: attr(data-fallback) !important;
-          font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Pro', 'Font Awesome 5 Free', 'Font Awesome 5 Pro', sans-serif !important;
-          font-weight: 900 !important;
-        }
-
-        /* Ensure FontAwesome loads */
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-
-        /* Additional icon fixes */
-        .fas {
-          font-family: 'Font Awesome 6 Free' !important;
-          font-weight: 900 !important;
-        }
-
-        /* Icon loading check */
-        .icon-fallback {
-          font-size: 1.5rem !important;
-          color: white !important;
-        }
-      </style>
       <section id="features" class="py-12 sm:py-16 lg:py-20 bg-white">
         <div class="container mx-auto px-3 sm:px-4 lg:px-6">
           <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
@@ -2925,18 +2923,7 @@
                   </div>
                 </div>
 
-                <!-- CTA Form -->
-                <div>
-                  <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-6 text-white text-center">
-                    <h4 class="text-xl font-bold mb-4">Ready to Get Started?</h4>
-                    <p class="mb-6">Request your free demo today and see FC Resto in action!</p>
-                    <a href="mailto:info@fastcaisse.be?subject=FC%20Resto%20Demo%20Request&body=Hello%20FC%20Resto%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20demo%20of%20FC%20Resto.%0D%0A%0D%0AThank%20you!"
-                       class="inline-flex items-center bg-white text-orange-600 px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors">
-                      <i class="fas fa-calendar-plus mr-2"></i>
-                      Schedule Demo
-                    </a>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
@@ -2944,48 +2931,121 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-16">
-      <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+   <!-- Footer -->
+    <footer class="bg-white text-gray-900 py-16 relative overflow-hidden" data-aos="fade-up">
+      <div
+        class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMDktMS43OTEtNC00LTRzLTQgMS43OTEtNCA0IDEuNzkxIDQgNCA0IDQtMS43OTEgNC00eiIvPjwvZz48L2c+PC9zdmc+')]"
+      ></div>
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
           <!-- Company Info -->
-          <div class="md:col-span-2">
-            <img
-              src="./images/fastcaisse-logo.png"
-              alt="FAST CAISSE Logo"
-              class="h-12 mb-6"
-              loading="lazy"
-            />
-            <p class="text-gray-600 mb-6 max-w-md">
-              Leading provider of POS and CRM solutions for Belgian businesses since 2010.
-              Trusted by over 1,000 establishments across Belgium.
+          <div class="space-y-5 max-w-sm">
+            <div class="flex items-center gap-4">
+              <img
+                src="./images/fastcaisse-logo.png"
+                alt="FAST CAISSE logo"
+                class="h-14 sm:h-16 md:h-20 w-auto max-w-[180px] object-contain transition-transform duration-300 hover:scale-105"
+                loading="lazy"
+              />
+              <div class="hidden sm:block">
+                <p class="text-sm text-gray-500 font-medium">Since 2010</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              POS, CRM, and smart reporting tools for Belgian restaurants and retail. Trusted by
+              1,000+ businesses.
             </p>
+            <div class="flex items-center gap-2 text-sm text-gray-500">
+              <i class="fas fa-map-marker-alt text-blue-600"></i>
+              <span>Based in Belgium</span>
+            </div>
+            <div class="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
+              <a
+                href="./index-en.html#"
+                class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
+              >
+                <i class="fab fa-facebook-f text-lg sm:text-xl"></i>
+              </a>
+              <a
+                href="./index-en.html#"
+                class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
+              >
+                <i class="fab fa-linkedin-in text-lg sm:text-xl"></i>
+              </a>
+              <a
+                href="./index-en.html#"
+                class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
+              >
+                <i class="fab fa-instagram text-lg sm:text-xl"></i>
+              </a>
+            </div>
           </div>
 
-          <!-- Quick Links -->
+          <!-- Solutions -->
           <div>
-            <h3 class="font-bold text-lg mb-6 text-gray-900">Quick Links</h3>
+            <h3 class="font-bold text-lg mb-6 text-gray-900">Solutions</h3>
             <ul class="space-y-3">
               <li>
-                <a href="./index-en.html" class="text-gray-600 hover:text-orange-600 transition-colors duration-300">
-                  <i class="fas fa-home mr-2 text-sm"></i>
-                  Home
+                <span
+
+                   class="text-blue-600 font-semibold flex items-center p-2 rounded-lg bg-blue-50 border-l-4 border-blue-600"
+
+                  >
+                  <i class="fas fa-utensils mr-2 text-sm"></i>
+                  FC Resto
+                  <i class="fas fa-arrow-left ml-2 text-xs"></i>
+                </span>
+              </li>
+              <li>
+                <a
+                href="./fastcaisse-retail-pos-en.html"
+                 class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
+
+                 >
+                  <i class="fas fa-store mr-2 text-sm"></i>
+                  FC Shop
+
                 </a>
               </li>
               <li>
-                <a href="./index-en.html#about" class="text-gray-600 hover:text-orange-600 transition-colors duration-300">
+                <a
+                  href="./fastcaisse-crm-business-management-en.html"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
+                >
+                  <i class="fas fa-chart-line mr-2 text-sm"></i>
+                  FC Commerce Management
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h3 class="font-bold text-lg mb-6 text-gray-900">Company</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="./index-en.html#about"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
+                >
                   <i class="fas fa-info-circle mr-2 text-sm"></i>
                   About Us
                 </a>
               </li>
               <li>
-                <a href="./index-en.html#clients" class="text-gray-600 hover:text-orange-600 transition-colors duration-300">
+                <a
+                  href="./index-en.html#clients"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
+                >
                   <i class="fas fa-users mr-2 text-sm"></i>
                   Our Clients
                 </a>
               </li>
               <li>
-                <a href="#contact" class="text-gray-600 hover:text-orange-600 transition-colors duration-300">
+                <a
+                  href="#contact"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
+                >
                   <i class="fas fa-envelope mr-2 text-sm"></i>
                   Contact
                 </a>
@@ -2998,18 +3058,24 @@
             <h3 class="font-bold text-lg mb-6 text-gray-900">Contact Us</h3>
             <ul class="space-y-4 text-gray-600">
               <li class="flex items-start">
-                <i class="fas fa-map-marker-alt mt-1 mr-3 text-orange-500"></i>
+                <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-500"></i>
                 <span>Chaussée de Haecht 1749, 1130 Brussels, Belgium</span>
               </li>
               <li class="flex items-center">
-                <i class="fas fa-phone-alt mr-3 text-orange-500"></i>
-                <a href="tel:+3221234567" class="text-gray-600 hover:text-orange-600 transition-colors duration-300">
+                <i class="fas fa-phone-alt mr-3 text-blue-500"></i>
+                <a
+                  href="tel:+3221234567"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                >
                   +32 2 123 45 67
                 </a>
               </li>
               <li class="flex items-center">
-                <i class="fas fa-envelope mr-3 text-orange-500"></i>
-                <a href="mailto:info@fastcaisse.be" class="text-gray-600 hover:text-orange-600 transition-colors duration-300">
+                <i class="fas fa-envelope mr-3 text-blue-500"></i>
+                <a
+                  href="mailto:info@fastcaisse.be?subject=FC%20Shop%20Inquiry&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20FC%20Shop%20for%20my%20retail%20business.%0D%0A%0D%0AThank%20you!"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                >
                   info@fastcaisse.be
                 </a>
               </li>
@@ -3019,11 +3085,11 @@
 
         <hr class="border-gray-200 my-10" />
 
-        <div class="text-center">
+        <div class="mt-12 pt-8 border-t border-gray-200 text-center">
           <p class="text-sm text-gray-600">
             &copy; 2025 FAST CAISSE SRL. All rights reserved.
             |
-            <a href="./general-conditions-en.html" class="hover:text-orange-600 transition-colors duration-300">General Conditions</a>
+            <a href="./general-conditions-en.html" class="hover:text-blue-600 transition-colors duration-300">General Conditions</a>
           </p>
         </div>
       </div>
