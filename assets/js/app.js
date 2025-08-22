@@ -307,3 +307,4 @@ window.addEventListener('click', (e) => {
     langMenuMobile?.classList.add('hidden');
   }
 });
+// FAQ functionality is handled inline in the HTML file to avoid conflicts

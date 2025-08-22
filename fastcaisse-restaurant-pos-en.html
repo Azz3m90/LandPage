@@ -2,7 +2,10 @@
 <html lang="en" class="scroll-smooth" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
     <meta name="theme-color" content="./index-en.html#2563eb" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -386,7 +389,8 @@
       }
 
       /* Smooth icon transitions for toggle button */
-      #menu-toggle i, #menu-toggle span {
+      #menu-toggle i,
+      #menu-toggle span {
         transition: all 0.3s ease-in-out;
         font-weight: 900 !important;
         display: inline-block !important;
@@ -682,22 +686,32 @@
         }
       }
 
-
-
-
-
       /* Mobile First - Base styles for mobile */
       @media (max-width: 640px) {
         /* Typography adjustments */
-        h1 { font-size: 2.5rem !important; line-height: 1.1 !important; }
-        h2 { font-size: 2rem !important; line-height: 1.2 !important; }
-        h3 { font-size: 1.5rem !important; line-height: 1.3 !important; }
+        h1 {
+          font-size: 2.5rem !important;
+          line-height: 1.1 !important;
+        }
+        h2 {
+          font-size: 2rem !important;
+          line-height: 1.2 !important;
+        }
+        h3 {
+          font-size: 1.5rem !important;
+          line-height: 1.3 !important;
+        }
 
         /* Container padding */
-        .container { padding-left: 1rem !important; padding-right: 1rem !important; }
+        .container {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
 
         /* Hero section mobile */
-        .hero-pattern { padding: 2rem 0 !important; }
+        .hero-pattern {
+          padding: 2rem 0 !important;
+        }
 
         /* Dashboard mockup mobile adjustments */
         .dashboard-mockup {
@@ -712,12 +726,23 @@
         }
 
         /* Feature cards mobile */
-        .benefit-card { padding: 1.5rem !important; margin-bottom: 1rem !important; }
-        .feature-icon { width: 3rem !important; height: 3rem !important; }
-        .feature-icon i { font-size: 1.25rem !important; }
+        .benefit-card {
+          padding: 1.5rem !important;
+          margin-bottom: 1rem !important;
+        }
+        .feature-icon {
+          width: 3rem !important;
+          height: 3rem !important;
+        }
+        .feature-icon i {
+          font-size: 1.25rem !important;
+        }
 
         /* Stats grid mobile */
-        .grid.grid-cols-2 { grid-template-columns: 1fr !important; gap: 1rem !important; }
+        .grid.grid-cols-2 {
+          grid-template-columns: 1fr !important;
+          gap: 1rem !important;
+        }
 
         /* Form adjustments */
         .form-group input,
@@ -728,37 +753,63 @@
         }
 
         /* Button adjustments */
-        .btn { padding: 0.875rem 1.5rem !important; font-size: 1rem !important; }
+        .btn {
+          padding: 0.875rem 1.5rem !important;
+          font-size: 1rem !important;
+        }
 
         /* Navigation mobile */
-        .nav-link { padding: 0.75rem 1rem !important; }
+        .nav-link {
+          padding: 0.75rem 1rem !important;
+        }
 
         /* Pricing cards mobile */
-        .dashboard-card { margin-bottom: 1.5rem !important; }
+        .dashboard-card {
+          margin-bottom: 1.5rem !important;
+        }
 
         /* Testimonial mobile */
-        blockquote { font-size: 1rem !important; }
+        blockquote {
+          font-size: 1rem !important;
+        }
       }
 
       /* Tablet styles */
       @media (min-width: 641px) and (max-width: 1024px) {
         /* Typography for tablets */
-        h1 { font-size: 3.5rem !important; }
-        h2 { font-size: 2.5rem !important; }
-        h3 { font-size: 1.75rem !important; }
+        h1 {
+          font-size: 3.5rem !important;
+        }
+        h2 {
+          font-size: 2.5rem !important;
+        }
+        h3 {
+          font-size: 1.75rem !important;
+        }
 
         /* Container padding for tablets */
-        .container { padding-left: 2rem !important; padding-right: 2rem !important; }
+        .container {
+          padding-left: 2rem !important;
+          padding-right: 2rem !important;
+        }
 
         /* Grid adjustments for tablets */
-        .grid.lg\\:grid-cols-3 { grid-template-columns: repeat(2, 1fr) !important; }
-        .grid.md\\:grid-cols-2 { grid-template-columns: repeat(2, 1fr) !important; }
+        .grid.lg\\:grid-cols-3 {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        .grid.md\\:grid-cols-2 {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
 
         /* Feature cards tablet */
-        .benefit-card { padding: 2rem !important; }
+        .benefit-card {
+          padding: 2rem !important;
+        }
 
         /* Hero section tablet */
-        .hero-pattern { padding: 3rem 0 !important; }
+        .hero-pattern {
+          padding: 3rem 0 !important;
+        }
 
         /* Dashboard mockup tablet */
         .dashboard-mockup {
@@ -773,7 +824,9 @@
 
       /* Large tablet and small desktop */
       @media (min-width: 1025px) and (max-width: 1280px) {
-        .container { max-width: 1024px !important; }
+        .container {
+          max-width: 1024px !important;
+        }
 
         /* Optimal width for hero elements on large screens */
         .dashboard-mockup {
@@ -797,26 +850,40 @@
           max-width: 500px !important;
           min-height: 120px !important;
         }
-
-
       }
 
       /* Touch-friendly improvements */
       @media (hover: none) and (pointer: coarse) {
         /* Larger touch targets */
-        .nav-link { min-height: 44px !important; }
-        .btn { min-height: 44px !important; }
+        .nav-link {
+          min-height: 44px !important;
+        }
+        .btn {
+          min-height: 44px !important;
+        }
 
         /* Remove hover effects on touch devices */
-        .dashboard-card:hover { transform: none !important; }
-        .feature-icon:hover { transform: none !important; }
+        .dashboard-card:hover {
+          transform: none !important;
+        }
+        .feature-icon:hover {
+          transform: none !important;
+        }
       }
 
       /* Landscape phone adjustments */
       @media (max-width: 896px) and (orientation: landscape) {
-        .hero-pattern { padding: 2rem 0 !important; }
-        .py-16 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
-        .py-20 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+        .hero-pattern {
+          padding: 2rem 0 !important;
+        }
+        .py-16 {
+          padding-top: 2rem !important;
+          padding-bottom: 2rem !important;
+        }
+        .py-20 {
+          padding-top: 3rem !important;
+          padding-bottom: 3rem !important;
+        }
       }
 
       /* Dashboard proportions */
@@ -845,21 +912,36 @@
       /* Additional mobile optimizations */
       @media (max-width: 640px) {
         /* Optimize images for mobile */
-        img { max-width: 100% !important; height: auto !important; }
+        img {
+          max-width: 100% !important;
+          height: auto !important;
+        }
 
         /* Improve text readability */
-        body { line-height: 1.6 !important; }
+        body {
+          line-height: 1.6 !important;
+        }
 
         /* Optimize spacing */
-        .space-y-8 > * + * { margin-top: 1.5rem !important; }
-        .space-y-6 > * + * { margin-top: 1rem !important; }
-        .space-y-4 > * + * { margin-top: 0.75rem !important; }
+        .space-y-8 > * + * {
+          margin-top: 1.5rem !important;
+        }
+        .space-y-6 > * + * {
+          margin-top: 1rem !important;
+        }
+        .space-y-4 > * + * {
+          margin-top: 0.75rem !important;
+        }
 
         /* Mobile-specific animations */
-        [data-aos] { transition-duration: 0.4s !important; }
+        [data-aos] {
+          transition-duration: 0.4s !important;
+        }
 
         /* Prevent horizontal scroll */
-        .overflow-x-hidden { overflow-x: hidden !important; }
+        .overflow-x-hidden {
+          overflow-x: hidden !important;
+        }
 
         /* Mobile menu improvements - No individual scrollbar */
         #mobile-menu {
@@ -868,28 +950,54 @@
         }
 
         /* Better touch targets */
-        a, button { min-height: 44px !important; min-width: 44px !important; }
+        a,
+        button {
+          min-height: 44px !important;
+          min-width: 44px !important;
+        }
 
         /* Optimize gradients for mobile */
-        .bg-gradient-to-br, .bg-gradient-to-r {
+        .bg-gradient-to-br,
+        .bg-gradient-to-r {
           background-attachment: scroll !important;
         }
       }
 
       /* Very small screens (iPhone SE, etc.) */
       @media (max-width: 375px) {
-        .container { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
-        h1 { font-size: 2rem !important; }
-        h2 { font-size: 1.75rem !important; }
-        h3 { font-size: 1.25rem !important; }
-        .text-xl { font-size: 1.125rem !important; }
-        .text-lg { font-size: 1rem !important; }
+        .container {
+          padding-left: 0.75rem !important;
+          padding-right: 0.75rem !important;
+        }
+        h1 {
+          font-size: 2rem !important;
+        }
+        h2 {
+          font-size: 1.75rem !important;
+        }
+        h3 {
+          font-size: 1.25rem !important;
+        }
+        .text-xl {
+          font-size: 1.125rem !important;
+        }
+        .text-lg {
+          font-size: 1rem !important;
+        }
       }
 
       /* High DPI screens optimization */
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important; }
-        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important; }
+        .shadow-lg {
+          box-shadow:
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+        }
+        .shadow-xl {
+          box-shadow:
+            0 20px 25px -5px rgba(0, 0, 0, 0.1),
+            0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+        }
       }
 
       /* Custom checkbox styling */
@@ -910,7 +1018,9 @@
       /* Green circle mobile positioning fix */
       @media (max-width: 640px) {
         /* Keep green circle positioned like yellow star - relative to container edge */
-        .hero-section .dashboard-mockup div.mobile-green-circle.mobile-green-circle.bg-green-400.bg-green-400 {
+        .hero-section
+          .dashboard-mockup
+          div.mobile-green-circle.mobile-green-circle.bg-green-400.bg-green-400 {
           bottom: -8px !important;
           left: -8px !important;
           transform: none !important;
@@ -928,63 +1038,65 @@
           left: -8px !important;
         }
       }
-              /* Ensure all feature icons are visible */
-        .feature-icon i {
-          color: white !important;
-          font-size: 1.5rem !important;
-          display: inline-block !important;
-        }
+      /* Ensure all feature icons are visible */
+      .feature-icon i {
+        color: white !important;
+        font-size: 1.5rem !important;
+        display: inline-block !important;
+      }
 
-        /* Fix check circle icons */
-        .fas.fa-check-circle {
-          color: #059669 !important;
-          font-size: 1.125rem !important;
-        }
+      /* Fix check circle icons */
+      .fas.fa-check-circle {
+        color: #059669 !important;
+        font-size: 1.125rem !important;
+      }
 
-        /* Fix section heading icons */
-        .fas.fa-receipt,
-        .fas.fa-shield-alt,
-        .fas.fa-plug,
-        .fas.fa-globe {
-          color: white !important;
-          font-size: 1.5rem !important;
-        }
+      /* Fix section heading icons */
+      .fas.fa-receipt,
+      .fas.fa-shield-alt,
+      .fas.fa-plug,
+      .fas.fa-globe {
+        color: white !important;
+        font-size: 1.5rem !important;
+      }
 
-        /* Ensure feature card text is visible */
-        .benefit-card h3 {
-          color: #111827 !important;
-        }
+      /* Ensure feature card text is visible */
+      .benefit-card h3 {
+        color: #111827 !important;
+      }
 
-        .benefit-card p {
-          color: #4b5563 !important;
-        }
+      .benefit-card p {
+        color: #4b5563 !important;
+      }
 
-        /* Force icon backgrounds */
-        .feature-icon {
-          background-color: var(--icon-bg-color) !important;
-        }
+      /* Force icon backgrounds */
+      .feature-icon {
+        background-color: var(--icon-bg-color) !important;
+      }
 
-        /* Fallback for missing icons */
-        .feature-icon i:before {
-          content: attr(data-fallback) !important;
-          font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Pro', 'Font Awesome 5 Free', 'Font Awesome 5 Pro', sans-serif !important;
-          font-weight: 900 !important;
-        }
+      /* Fallback for missing icons */
+      .feature-icon i:before {
+        content: attr(data-fallback) !important;
+        font-family:
+          "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro",
+          sans-serif !important;
+        font-weight: 900 !important;
+      }
 
-        /* Ensure FontAwesome loads */
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+      /* Ensure FontAwesome loads */
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 
-        /* Additional icon fixes */
-        .fas {
-          font-family: 'Font Awesome 6 Free' !important;
-          font-weight: 900 !important;
-        }
+      /* Additional icon fixes */
+      .fas {
+        font-family: "Font Awesome 6 Free" !important;
+        font-weight: 900 !important;
+      }
 
-        /* Icon loading check */
-        .icon-fallback {
-          font-size: 1.5rem !important;
-          color: white !important;
-        }
+      /* Icon loading check */
+      .icon-fallback {
+        font-size: 1.5rem !important;
+        color: white !important;
+      }
     </style>
   </head>
   <body class="font-sans text-gray-900 antialiased bg-white">
@@ -1004,7 +1116,6 @@
     >
       <i class="fas fa-arrow-up"></i>
     </button>
-
 
     <header
       class="fixed bg-white shadow-md text-gray-900 w-full z-50 transition-all duration-300 backdrop-blur-lg shadow-sm"
@@ -1052,24 +1163,43 @@
             About
           </a>
           <div class="nav-dropdown" role="menuitem">
-            <a href="./index-en.html#solutions" class="nav-link" title="POS & CRM Solutions - Restaurant, Retail, Commerce">
+            <a
+              href="./index-en.html#solutions"
+              class="nav-link"
+              title="POS & CRM Solutions - Restaurant, Retail, Commerce"
+            >
               <i class="fas fa-tools mr-2" aria-hidden="true"></i>
               Solutions
               <i class="fas fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
             </a>
             <div class="nav-dropdown-content" role="menu">
-              <a href="./fastcaisse-restaurant-pos-en.html" class="nav-dropdown-item" role="menuitem" title="FC Resto - Restaurant POS System">
-                <i class="fas fa-utensils" style="color: #f97316;" aria-hidden="true"></i>
+              <a
+                href="./fastcaisse-restaurant-pos-en.html"
+                class="nav-dropdown-item"
+                role="menuitem"
+                title="FC Resto - Restaurant POS System"
+              >
+                <i class="fas fa-utensils" style="color: #f97316" aria-hidden="true"></i>
                 <span>FC Resto - Restaurant POS</span>
                 <span class="nav-dropdown-price">€69/mo</span>
               </a>
-              <a href="./fastcaisse-retail-pos-en.html" class="nav-dropdown-item" role="menuitem" title="FC Shop - Retail POS System">
-                <i class="fas fa-store" style="color: #3b82f6;" aria-hidden="true"></i>
+              <a
+                href="./fastcaisse-retail-pos-en.html"
+                class="nav-dropdown-item"
+                role="menuitem"
+                title="FC Shop - Retail POS System"
+              >
+                <i class="fas fa-store" style="color: #3b82f6" aria-hidden="true"></i>
                 <span>FC Shop - Retail POS</span>
                 <span class="nav-dropdown-price">€59/mo</span>
               </a>
-              <a href="./fastcaisse-crm-business-management-en.html" class="nav-dropdown-item" role="menuitem" title="FC Commerce - CRM Platform">
-                <i class="fas fa-chart-line" style="color: #8b5cf6;" aria-hidden="true"></i>
+              <a
+                href="./fastcaisse-crm-business-management-en.html"
+                class="nav-dropdown-item"
+                role="menuitem"
+                title="FC Commerce - CRM Platform"
+              >
+                <i class="fas fa-chart-line" style="color: #8b5cf6" aria-hidden="true"></i>
                 <span>FC Commerce - CRM</span>
                 <span class="nav-dropdown-price">€99/mo</span>
               </a>
@@ -1306,8 +1436,8 @@
                 href="./index-en.html"
                 class="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 ease-in-out flex items-center focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm p-1 -m-1"
               >
-              <i class="fas fa-home mr-1.5 text-xs"></i>
-              <span>Home</span>
+                <i class="fas fa-home mr-1.5 text-xs"></i>
+                <span>Home</span>
               </a>
               <svg
                 class="fill-current w-3 h-3 sm:w-3.5 sm:h-3.5 mx-1.5 sm:mx-2 lg:mx-3 text-gray-400 flex-shrink-0"
@@ -1320,9 +1450,7 @@
                 />
               </svg>
             </li>
-            <li
-              class="flex items-center text-gray-600 font-medium truncate max-w-32 sm:max-w-xs"
-            >
+            <li class="flex items-center text-gray-600 font-medium truncate max-w-32 sm:max-w-xs">
               <i class="fas fa-utensils mr-1 sm:mr-1.5 text-xs text-blue-500"></i>
               <span class="truncate text-xs sm:text-sm">FC Resto</span>
             </li>
@@ -1331,10 +1459,7 @@
       </nav>
 
       <!-- Mobile Menu Content - Positioned below breadcrumb -->
-      <div
-        id="mobile-menu"
-        class="md:hidden hidden"
-      >
+      <div id="mobile-menu" class="md:hidden hidden">
         <a
           href="./index-en.html#home"
           class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
@@ -1382,21 +1507,23 @@
 
     <!-- Main Content -->
     <main id="main-content" class="pt-28 sm:pt-16">
-
-
       <!-- Hero Section -->
       <section
         class="hero-section relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-amber-50 hero-pattern py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24"
       >
         <div class="absolute inset-0 bg-white/40"></div>
         <div class="container mx-auto px-3 sm:px-4 lg:px-6 relative z-10">
-          <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 sm:gap-8 lg:gap-12">
+          <div
+            class="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 sm:gap-8 lg:gap-12"
+          >
             <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-right">
               <div
                 class="inline-flex items-center bg-green-100 text-green-800 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6"
               >
                 <i class="fas fa-check-circle mr-1.5 sm:mr-2 text-xs sm:text-sm"></i>
-                <span class="hidden sm:inline">Trusted by 500+ Belgian Restaurants in Brussels, Antwerp & Ghent</span>
+                <span class="hidden sm:inline">
+                  Trusted by 500+ Belgian Restaurants in Brussels, Antwerp & Ghent
+                </span>
                 <span class="sm:hidden">500+ Belgian Restaurants Trust Us</span>
               </div>
               <h1
@@ -1426,39 +1553,54 @@
               <p class="text-base sm:text-lg text-green-600 font-medium mb-4 sm:mb-4">
                 Powering restaurants across Brussels, Antwerp, Ghent & all of Belgium
               </p>
-              <p class="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
+              <p
+                class="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0"
+              >
                 FC Resto revolutionizes Belgian restaurant operations with Belgium-specific
-                features. Our certified POS system offers seamless Takeaway.com, UberEats & Deliveroo Integration, Belgian VAT compliance, multi-language support (EN/FR/NL), and advanced
-                kitchen display systems. Join 500+ successful Belgian restaurants already using FC
-                Resto.
+                features. Our certified POS system offers seamless Takeaway.com, UberEats &
+                Deliveroo Integration, Belgian VAT compliance, multi-language support (EN/FR/NL),
+                and advanced kitchen display systems. Join 500+ successful Belgian restaurants
+                already using FC Resto.
               </p>
 
               <!-- Key Benefits -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0">
-                <div class="flex items-center justify-center lg:justify-start bg-white/50 rounded-lg p-2 sm:p-3">
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0"
+              >
+                <div
+                  class="flex items-center justify-center lg:justify-start bg-white/50 rounded-lg p-2 sm:p-3"
+                >
                   <i class="fas fa-tv text-blue-600 mr-2 sm:mr-3 text-sm sm:text-base"></i>
                   <span class="font-medium text-sm sm:text-base">Kitchen Display</span>
                 </div>
-                <div class="flex items-center justify-center lg:justify-start bg-white/50 rounded-lg p-2 sm:p-3">
+                <div
+                  class="flex items-center justify-center lg:justify-start bg-white/50 rounded-lg p-2 sm:p-3"
+                >
                   <i class="fas fa-mobile-alt text-blue-600 mr-2 sm:mr-3 text-sm sm:text-base"></i>
                   <span class="font-medium text-sm sm:text-base">Online Ordering</span>
                 </div>
-                <div class="flex items-center justify-center lg:justify-start bg-white/50 rounded-lg p-2 sm:p-3">
+                <div
+                  class="flex items-center justify-center lg:justify-start bg-white/50 rounded-lg p-2 sm:p-3"
+                >
                   <i class="fas fa-desktop text-blue-600 mr-2 sm:mr-3 text-sm sm:text-base"></i>
                   <span class="font-medium text-sm sm:text-base">Self-Service Kiosk</span>
                 </div>
-                <div class="flex items-center justify-center lg:justify-start bg-white/50 rounded-lg p-2 sm:p-3">
+                <div
+                  class="flex items-center justify-center lg:justify-start bg-white/50 rounded-lg p-2 sm:p-3"
+                >
                   <i class="fas fa-truck text-blue-600 mr-2 sm:mr-3 text-sm sm:text-base"></i>
                   <span class="font-medium text-sm sm:text-base">Delivery Integration</span>
                 </div>
               </div>
 
               <!-- CTA Buttons -->
-              <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0">
+              <div
+                class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0"
+              >
                 <button
                   onclick="openVideoModal()"
                   class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center text-sm sm:text-base min-h-12 sm:min-h-14 cursor-pointer"
-                  style="background-color: #2563eb !important; color: white !important;"
+                  style="background-color: #2563eb !important; color: white !important"
                 >
                   <i class="fas fa-play-circle mr-2 text-sm sm:text-base"></i>
                   <span class="hidden sm:inline">Watch Demo</span>
@@ -1474,56 +1616,122 @@
               </div>
 
               <!-- Pricing Highlight -->
-              <div class="pricing-highlight bg-white rounded-lg shadow-lg p-3 sm:p-4 lg:p-6 xl:p-8 border-l-4 border-blue-600 w-full max-w-sm sm:max-w-md lg:max-w-none mx-auto lg:mx-0 mb-6 lg:mb-0">
+              <div
+                class="pricing-highlight bg-white rounded-lg shadow-lg p-3 sm:p-4 lg:p-6 xl:p-8 border-l-4 border-blue-600 w-full max-w-sm sm:max-w-md lg:max-w-none mx-auto lg:mx-0 mb-6 lg:mb-0"
+              >
                 <div class="flex items-center justify-between">
                   <div class="flex-1">
-                    <p class="text-gray-600 text-xs sm:text-sm lg:text-base mb-1 lg:mb-2">Starting from</p>
+                    <p class="text-gray-600 text-xs sm:text-sm lg:text-base mb-1 lg:mb-2">
+                      Starting from
+                    </p>
                     <div class="flex items-baseline gap-1 lg:gap-2">
-                      <p class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900">€69</p>
-                      <span class="text-sm sm:text-base lg:text-lg xl:text-xl font-normal text-gray-600">/month</span>
+                      <p
+                        class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900"
+                      >
+                        €69
+                      </p>
+                      <span
+                        class="text-sm sm:text-base lg:text-lg xl:text-xl font-normal text-gray-600"
+                      >
+                        /month
+                      </span>
                     </div>
-                    <p class="text-xs sm:text-sm lg:text-base text-gray-500 mt-1 lg:mt-2">Annual plan: €828</p>
+                    <p class="text-xs sm:text-sm lg:text-base text-gray-500 mt-1 lg:mt-2">
+                      Annual plan: €828
+                    </p>
                   </div>
                   <div class="flex-shrink-0 ml-3 lg:ml-4">
-                    <i class="fas fa-tag text-blue-600 text-xl sm:text-2xl lg:text-3xl xl:text-4xl"></i>
+                    <i
+                      class="fas fa-tag text-blue-600 text-xl sm:text-2xl lg:text-3xl xl:text-4xl"
+                    ></i>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="w-full lg:w-1/2 mt-6 sm:mt-8 lg:mt-0" data-aos="fade-left" data-aos-delay="200">
-              <div class="dashboard-mockup relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none mx-auto lg:mx-0">
+            <div
+              class="w-full lg:w-1/2 mt-6 sm:mt-8 lg:mt-0"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
+              <div
+                class="dashboard-mockup relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none mx-auto lg:mx-0"
+              >
                 <div
                   class="bg-gradient-to-br from-blue-500 to-amber-600 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 shadow-2xl transform rotate-0 sm:rotate-1 md:rotate-3 hover:rotate-0 transition-transform duration-500 w-full flex items-center"
                 >
-                  <div class="bg-white rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8 transform rotate-0 sm:-rotate-1 md:-rotate-3 w-full">
+                  <div
+                    class="bg-white rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8 transform rotate-0 sm:-rotate-1 md:-rotate-3 w-full"
+                  >
                     <div class="flex items-center justify-between mb-4 sm:mb-5 md:mb-6 lg:mb-7">
-                      <h3 class="font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-800">FC Resto Dashboard</h3>
+                      <h3
+                        class="font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-800"
+                      >
+                        FC Resto Dashboard
+                      </h3>
                       <div class="flex space-x-1.5 sm:space-x-2 md:space-x-2.5">
-                        <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 bg-red-400 rounded-full"></div>
-                        <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 bg-yellow-400 rounded-full"></div>
-                        <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 bg-green-400 rounded-full"></div>
+                        <div
+                          class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 bg-red-400 rounded-full"
+                        ></div>
+                        <div
+                          class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 bg-yellow-400 rounded-full"
+                        ></div>
+                        <div
+                          class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 bg-green-400 rounded-full"
+                        ></div>
                       </div>
                     </div>
                     <div class="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-                      <div class="flex items-center justify-between p-3 sm:p-4 md:p-5 bg-gray-50 rounded-lg">
+                      <div
+                        class="flex items-center justify-between p-3 sm:p-4 md:p-5 bg-gray-50 rounded-lg"
+                      >
                         <div class="flex items-center">
-                          <i class="fas fa-utensils text-blue-600 mr-3 sm:mr-4 text-base sm:text-lg md:text-xl"></i>
-                          <span class="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-700">Orders Today</span>
+                          <i
+                            class="fas fa-utensils text-blue-600 mr-3 sm:mr-4 text-base sm:text-lg md:text-xl"
+                          ></i>
+                          <span
+                            class="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-700"
+                          >
+                            Orders Today
+                          </span>
                         </div>
-                        <span class="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900">42</span>
+                        <span
+                          class="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900"
+                        >
+                          42
+                        </span>
                       </div>
-                      <div class="flex items-center justify-between p-3 sm:p-4 md:p-5 bg-gray-50 rounded-lg">
+                      <div
+                        class="flex items-center justify-between p-3 sm:p-4 md:p-5 bg-gray-50 rounded-lg"
+                      >
                         <div class="flex items-center">
-                          <i class="fas fa-euro-sign text-green-500 mr-3 sm:mr-4 text-base sm:text-lg md:text-xl"></i>
-                          <span class="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-700">Revenue</span>
+                          <i
+                            class="fas fa-euro-sign text-green-500 mr-3 sm:mr-4 text-base sm:text-lg md:text-xl"
+                          ></i>
+                          <span
+                            class="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-700"
+                          >
+                            Revenue
+                          </span>
                         </div>
-                        <span class="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900">€2,450</span>
+                        <span
+                          class="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900"
+                        >
+                          €2,450
+                        </span>
                       </div>
                       <div class="border-t border-gray-200 pt-3 sm:pt-4 md:pt-5">
                         <div class="flex justify-between items-center">
-                          <span class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-800">Occupancy:</span>
-                          <span class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-blue-600">87%</span>
+                          <span
+                            class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-800"
+                          >
+                            Occupancy:
+                          </span>
+                          <span
+                            class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-blue-600"
+                          >
+                            87%
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -1531,13 +1739,18 @@
                 </div>
                 <!-- Floating Elements with explicit positioning -->
                 <div
-                  style="position: absolute; top: -8px; right: -8px; z-index: 30;"
+                  style="position: absolute; top: -8px; right: -8px; z-index: 30"
                   class="bg-yellow-400 rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center shadow-lg animate-bounce"
                 >
                   <i class="fas fa-star text-white text-sm sm:text-base md:text-lg"></i>
                 </div>
                 <div
-                  style="position:absolute; bottom:-8px !important; left:-8px !important; z-index:30;"
+                  style="
+                    position: absolute;
+                    bottom: -8px !important;
+                    left: -8px !important;
+                    z-index: 30;
+                  "
                   class="bg-green-400 rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center shadow-lg mobile-green-circle"
                 >
                   <i class="fas fa-check-circle text-white text-sm sm:text-base md:text-lg"></i>
@@ -1548,20 +1761,25 @@
         </div>
       </section>
 
-
       <section id="features" class="py-12 sm:py-16 lg:py-20 bg-white">
         <div class="container mx-auto px-3 sm:px-4 lg:px-6">
           <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
             <span
               class="inline-block px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-blue-600 rounded-full mb-4 sm:mb-4"
-              style="background-color: #2563eb !important; color: white !important;"
+              style="background-color: #2563eb !important; color: white !important"
             >
               Complete Features
             </span>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 px-4" style="color: #111827 !important;">
+            <h2
+              class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 px-4"
+              style="color: #111827 !important"
+            >
               Discover All FastCaisse Resto POS Advantages
             </h2>
-            <p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4" style="color: #4b5563 !important;">
+            <p
+              class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4"
+              style="color: #4b5563 !important"
+            >
               Everything you need to run your restaurant efficiently and profitably
             </p>
           </div>
@@ -1575,11 +1793,17 @@
             >
               <div
                 class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-lg sm:rounded-xl bg-blue-600 flex items-center justify-center mb-4 sm:mb-6 feature-icon"
-                style="background-color: #2563eb !important;"
+                style="background-color: #2563eb !important"
               >
-                <i class="fas fa-hand-pointer text-white text-lg sm:text-xl lg:text-2xl" style="color: white !important; font-size: 1.25rem !important;" data-fallback="👆"></i>
+                <i
+                  class="fas fa-hand-pointer text-white text-lg sm:text-xl lg:text-2xl"
+                  style="color: white !important; font-size: 1.25rem !important"
+                  data-fallback="👆"
+                ></i>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">User-Friendly Touch Interface</h3>
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+                User-Friendly Touch Interface
+              </h3>
               <p class="text-gray-600 text-sm sm:text-base">
                 Fast and easy to handle touch screen interface designed for restaurant environments.
               </p>
@@ -1593,11 +1817,17 @@
             >
               <div
                 class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-lg sm:rounded-xl bg-blue-600 flex items-center justify-center mb-4 sm:mb-6 feature-icon"
-                style="background-color: #2563eb !important;"
+                style="background-color: #2563eb !important"
               >
-                <i class="fas fa-desktop text-white text-lg sm:text-xl lg:text-2xl" style="color: white !important; font-size: 1.25rem !important;" data-fallback="🖥️"></i>
+                <i
+                  class="fas fa-desktop text-white text-lg sm:text-xl lg:text-2xl"
+                  style="color: white !important; font-size: 1.25rem !important"
+                  data-fallback="🖥️"
+                ></i>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Self-Service Kiosk Module</h3>
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+                Self-Service Kiosk Module
+              </h3>
               <p class="text-gray-600 text-sm sm:text-base">
                 Belgian-certified self-service kiosks with Bancontact, credit card, and cash
                 payments. Reduce waiting times and increase order accuracy in busy Belgian
@@ -1613,9 +1843,13 @@
             >
               <div
                 class="w-14 h-14 rounded-xl bg-purple-600 flex items-center justify-center mb-6 feature-icon"
-                style="background-color: #9333ea !important;"
+                style="background-color: #9333ea !important"
               >
-                <i class="fas fa-users text-white text-2xl" style="color: white !important; font-size: 1.5rem !important;" data-fallback="👥"></i>
+                <i
+                  class="fas fa-users text-white text-2xl"
+                  style="color: white !important; font-size: 1.5rem !important"
+                  data-fallback="👥"
+                ></i>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Multi-User Access</h3>
               <p class="text-gray-600">
@@ -1632,9 +1866,13 @@
             >
               <div
                 class="w-14 h-14 rounded-xl bg-green-600 flex items-center justify-center mb-6 feature-icon"
-                style="background-color: #059669 !important;"
+                style="background-color: #059669 !important"
               >
-                <i class="fas fa-language text-white text-2xl" style="color: white !important; font-size: 1.5rem !important;" data-fallback="🌐"></i>
+                <i
+                  class="fas fa-language text-white text-2xl"
+                  style="color: white !important; font-size: 1.5rem !important"
+                  data-fallback="🌐"
+                ></i>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Belgian Multi-Language Support</h3>
               <p class="text-gray-600">
@@ -1652,9 +1890,13 @@
             >
               <div
                 class="w-14 h-14 rounded-xl bg-amber-600 flex items-center justify-center mb-6 feature-icon"
-                style="background-color: #2563eb !important;"
+                style="background-color: #2563eb !important"
               >
-                <i class="fas fa-map text-white text-2xl" style="color: white !important; font-size: 1.5rem !important;" data-fallback="🗺️"></i>
+                <i
+                  class="fas fa-map text-white text-2xl"
+                  style="color: white !important; font-size: 1.5rem !important"
+                  data-fallback="🗺️"
+                ></i>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Visual Table Plan</h3>
               <p class="text-gray-600">
@@ -1671,9 +1913,13 @@
             >
               <div
                 class="w-14 h-14 rounded-xl bg-red-600 flex items-center justify-center mb-6 feature-icon"
-                style="background-color: #dc2626 !important;"
+                style="background-color: #dc2626 !important"
               >
-                <i class="fas fa-utensils text-white text-2xl" style="color: white !important; font-size: 1.5rem !important;" data-fallback="🍽️"></i>
+                <i
+                  class="fas fa-utensils text-white text-2xl"
+                  style="color: white !important; font-size: 1.5rem !important"
+                  data-fallback="🍽️"
+                ></i>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Simple Menu Configuration</h3>
               <p class="text-gray-600">
@@ -1689,9 +1935,13 @@
             >
               <div
                 class="w-14 h-14 rounded-xl bg-cyan-600 flex items-center justify-center mb-6 feature-icon"
-                style="background-color: #0891b2 !important;"
+                style="background-color: #0891b2 !important"
               >
-                <i class="fas fa-tv text-white text-2xl" style="color: white !important; font-size: 1.5rem !important;" data-fallback="📺"></i>
+                <i
+                  class="fas fa-tv text-white text-2xl"
+                  style="color: white !important; font-size: 1.5rem !important"
+                  data-fallback="📺"
+                ></i>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Customer Display Screens</h3>
               <p class="text-gray-600">
@@ -1707,9 +1957,13 @@
             >
               <div
                 class="w-14 h-14 rounded-xl bg-indigo-600 flex items-center justify-center mb-6 feature-icon"
-                style="background-color: #4f46e5 !important;"
+                style="background-color: #4f46e5 !important"
               >
-                <i class="fas fa-divide text-white text-2xl" style="color: white !important; font-size: 1.5rem !important;" data-fallback="➗"></i>
+                <i
+                  class="fas fa-divide text-white text-2xl"
+                  style="color: white !important; font-size: 1.5rem !important"
+                  data-fallback="➗"
+                ></i>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Individual Order Payments</h3>
               <p class="text-gray-600">
@@ -1725,9 +1979,13 @@
             >
               <div
                 class="w-14 h-14 rounded-xl bg-teal-600 flex items-center justify-center mb-6 feature-icon"
-                style="background-color: #0d9488 !important;"
+                style="background-color: #0d9488 !important"
               >
-                <i class="fas fa-motorcycle text-white text-2xl" style="color: white !important; font-size: 1.5rem !important;" data-fallback="🏍️"></i>
+                <i
+                  class="fas fa-motorcycle text-white text-2xl"
+                  style="color: white !important; font-size: 1.5rem !important"
+                  data-fallback="🏍️"
+                ></i>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Delivery Management</h3>
               <p class="text-gray-600">
@@ -1742,10 +2000,13 @@
       <section class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6" style="color: #111827 !important;">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+              style="color: #111827 !important"
+            >
               More Powerful Features
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto" style="color: #4b5563 !important;">
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto" style="color: #4b5563 !important">
               Advanced capabilities to optimize your restaurant operations
             </p>
           </div>
@@ -1755,8 +2016,15 @@
               class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
               data-aos="fade-right"
             >
-              <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center" style="color: #111827 !important;">
-                <i class="fas fa-receipt text-blue-600 mr-3" style="color: #2563eb !important; font-size: 1.5rem !important;" data-fallback="🧾"></i>
+              <h3
+                class="text-2xl font-bold text-gray-900 mb-6 flex items-center"
+                style="color: #111827 !important"
+              >
+                <i
+                  class="fas fa-receipt text-blue-600 mr-3"
+                  style="color: #2563eb !important; font-size: 1.5rem !important"
+                  data-fallback="🧾"
+                ></i>
                 Financial Management
               </h3>
               <ul class="space-y-4">
@@ -1787,8 +2055,15 @@
               class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
               data-aos="fade-left"
             >
-              <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center" style="color: #111827 !important;">
-                <i class="fas fa-shield-alt text-blue-600 mr-3" style="color: #2563eb !important; font-size: 1.5rem !important;" data-fallback="🛡️"></i>
+              <h3
+                class="text-2xl font-bold text-gray-900 mb-6 flex items-center"
+                style="color: #111827 !important"
+              >
+                <i
+                  class="fas fa-shield-alt text-blue-600 mr-3"
+                  style="color: #2563eb !important; font-size: 1.5rem !important"
+                  data-fallback="🛡️"
+                ></i>
                 Security & Management
               </h3>
               <ul class="space-y-4">
@@ -1819,8 +2094,15 @@
               class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
               data-aos="fade-right"
             >
-              <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center" style="color: #111827 !important;">
-                <i class="fas fa-plug text-blue-600 mr-3" style="color: #2563eb !important; font-size: 1.5rem !important;" data-fallback="🔌"></i>
+              <h3
+                class="text-2xl font-bold text-gray-900 mb-6 flex items-center"
+                style="color: #111827 !important"
+              >
+                <i
+                  class="fas fa-plug text-blue-600 mr-3"
+                  style="color: #2563eb !important; font-size: 1.5rem !important"
+                  data-fallback="🔌"
+                ></i>
                 Hardware Integration
               </h3>
               <ul class="space-y-4">
@@ -1851,8 +2133,15 @@
               class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
               data-aos="fade-left"
             >
-              <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center" style="color: #111827 !important;">
-                <i class="fas fa-globe text-blue-600 mr-3" style="color: #2563eb !important; font-size: 1.5rem !important;" data-fallback="🌍"></i>
+              <h3
+                class="text-2xl font-bold text-gray-900 mb-6 flex items-center"
+                style="color: #111827 !important"
+              >
+                <i
+                  class="fas fa-globe text-blue-600 mr-3"
+                  style="color: #2563eb !important; font-size: 1.5rem !important"
+                  data-fallback="🌍"
+                ></i>
                 Integration & Modules
               </h3>
               <ul class="space-y-4">
@@ -1884,20 +2173,20 @@
 
       <script>
         // Check if FontAwesome icons are loading properly
-        document.addEventListener('DOMContentLoaded', function() {
-          setTimeout(function() {
-            const icons = document.querySelectorAll('.feature-icon i, .fas');
-            icons.forEach(function(icon) {
-              const computedStyle = window.getComputedStyle(icon, ':before');
-              const content = computedStyle.getPropertyValue('content');
+        document.addEventListener("DOMContentLoaded", function () {
+          setTimeout(function () {
+            const icons = document.querySelectorAll(".feature-icon i, .fas");
+            icons.forEach(function (icon) {
+              const computedStyle = window.getComputedStyle(icon, ":before");
+              const content = computedStyle.getPropertyValue("content");
 
               // If FontAwesome didn't load properly, use emoji fallback
-              if (content === 'none' || content === '""' || !content) {
-                const fallback = icon.getAttribute('data-fallback');
+              if (content === "none" || content === '""' || !content) {
+                const fallback = icon.getAttribute("data-fallback");
                 if (fallback) {
                   icon.innerHTML = fallback;
-                  icon.classList.add('icon-fallback');
-                  icon.style.fontFamily = 'Arial, sans-serif';
+                  icon.classList.add("icon-fallback");
+                  icon.style.fontFamily = "Arial, sans-serif";
                 }
               }
             });
@@ -1929,22 +2218,36 @@
           >
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div class="order-2 lg:order-1">
-                <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center lg:text-left">Key Benefits</h3>
+                <h3
+                  class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center lg:text-left"
+                >
+                  Key Benefits
+                </h3>
                 <ul class="space-y-3 sm:space-y-4">
                   <li class="flex items-start">
-                    <i class="fas fa-chart-line text-green-500 mt-1 mr-2 sm:mr-3 text-lg sm:text-xl flex-shrink-0"></i>
-                    <span class="text-base sm:text-lg">Increase profitability by more than 15%</span>
+                    <i
+                      class="fas fa-chart-line text-green-500 mt-1 mr-2 sm:mr-3 text-lg sm:text-xl flex-shrink-0"
+                    ></i>
+                    <span class="text-base sm:text-lg">
+                      Increase profitability by more than 15%
+                    </span>
                   </li>
                   <li class="flex items-start">
-                    <i class="fas fa-hourglass-half text-green-500 mt-1 mr-2 sm:mr-3 text-lg sm:text-xl flex-shrink-0"></i>
+                    <i
+                      class="fas fa-hourglass-half text-green-500 mt-1 mr-2 sm:mr-3 text-lg sm:text-xl flex-shrink-0"
+                    ></i>
                     <span class="text-base sm:text-lg">Avoid queues and waiting times</span>
                   </li>
                   <li class="flex items-start">
-                    <i class="fas fa-user-friends text-green-500 mt-1 mr-2 sm:mr-3 text-lg sm:text-xl flex-shrink-0"></i>
+                    <i
+                      class="fas fa-user-friends text-green-500 mt-1 mr-2 sm:mr-3 text-lg sm:text-xl flex-shrink-0"
+                    ></i>
                     <span class="text-base sm:text-lg">Improve the distribution of staff</span>
                   </li>
                 </ul>
-                <div class="mt-4 sm:mt-6 flex items-center justify-center lg:justify-start text-blue-600 bg-white/50 rounded-lg p-3">
+                <div
+                  class="mt-4 sm:mt-6 flex items-center justify-center lg:justify-start text-blue-600 bg-white/50 rounded-lg p-3"
+                >
                   <i class="fas fa-desktop text-xl sm:text-2xl mr-2 sm:mr-3"></i>
                   <span class="text-base sm:text-lg font-semibold">24/7 Operation</span>
                 </div>
@@ -1972,7 +2275,9 @@
                           <div class="font-bold text-sm sm:text-base">Customize</div>
                           <div class="text-xs text-gray-600">Add • Remove • Special</div>
                         </div>
-                        <div class="bg-blue-500 text-white p-2 sm:p-3 rounded-lg text-center font-bold text-sm sm:text-base">
+                        <div
+                          class="bg-blue-500 text-white p-2 sm:p-3 rounded-lg text-center font-bold text-sm sm:text-base"
+                        >
                           Pay Now
                         </div>
                       </div>
@@ -1998,9 +2303,16 @@
               class="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-4 sm:mb-6 shadow-lg"
             >
               <i class="fas fa-star text-yellow-400 mr-1.5 sm:mr-2 text-sm sm:text-base"></i>
-              <span class="text-xs sm:text-sm font-bold text-blue-600" style="color: #2563eb !important;">Success Stories</span>
+              <span
+                class="text-xs sm:text-sm font-bold text-blue-600"
+                style="color: #2563eb !important"
+              >
+                Success Stories
+              </span>
             </div>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-4 sm:mb-6 px-4">
+            <h2
+              class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-4 sm:mb-6 px-4"
+            >
               <span
                 class="bg-gradient-to-r from-yellow-400 via-blue-400 to-red-400 bg-clip-text text-transparent"
               >
@@ -2008,8 +2320,7 @@
               </span>
             </h2>
             <p class="text-base sm:text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed px-4">
-              See how FC Resto transformed these Belgian restaurants into operational
-              powerhouses
+              See how FC Resto transformed these Belgian restaurants into operational powerhouses
             </p>
           </div>
 
@@ -2018,37 +2329,61 @@
               class="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-blue-600 shadow-xl"
               data-aos="fade-up"
             >
-              <blockquote class="text-sm sm:text-base lg:text-lg text-gray-700 mb-4 sm:mb-6 italic leading-relaxed font-medium" style="color: #374151 !important;">
+              <blockquote
+                class="text-sm sm:text-base lg:text-lg text-gray-700 mb-4 sm:mb-6 italic leading-relaxed font-medium"
+                style="color: #374151 !important"
+              >
                 "FC Resto increased our efficiency by
-                <strong class="text-green-600" style="color: #059669 !important;">40%</strong>
+                <strong class="text-green-600" style="color: #059669 !important">40%</strong>
                 and reduced customer wait times by half. The kiosk module alone brought in an
                 additional
-                <strong class="text-blue-600" style="color: #2563eb !important;">€3,000/month</strong>
+                <strong class="text-blue-600" style="color: #2563eb !important">
+                  €3,000/month
+                </strong>
                 in revenue with zero additional staff."
               </blockquote>
               <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0">
                 <div class="flex justify-center sm:justify-start text-yellow-500">
-                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important;"></i>
-                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important;"></i>
-                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important;"></i>
-                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important;"></i>
-                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important;"></i>
+                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important"></i>
+                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important"></i>
+                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important"></i>
+                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important"></i>
+                  <i class="fas fa-star text-sm sm:text-base" style="color: #eab308 !important"></i>
                 </div>
-                <span class="text-gray-600 sm:ml-2 text-xs sm:text-sm font-semibold text-center sm:text-left" style="color: #4b5563 !important; font-weight: 600 !important;">— Sophie Martin, Restaurant Owner, Brussels</span>
+                <span
+                  class="text-gray-600 sm:ml-2 text-xs sm:text-sm font-semibold text-center sm:text-left"
+                  style="color: #4b5563 !important; font-weight: 600 !important"
+                >
+                  — Sophie Martin, Restaurant Owner, Brussels
+                </span>
               </div>
             </div>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto mt-8 sm:mt-12">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto mt-8 sm:mt-12"
+          >
             <div
               class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-green-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               data-aos="fade-up"
               data-aos-delay="100"
             >
               <div class="text-center">
-                <div class="text-3xl sm:text-4xl font-black text-green-600 mb-2" style="color: #059669 !important; font-weight: 900 !important;">40%</div>
-                <div class="text-xs sm:text-sm text-gray-800 font-semibold" style="color: #111827 !important; font-weight: 600 !important;">Operational Efficiency</div>
-                <div class="text-xs text-gray-600 mt-1" style="color: #4b5563 !important;">Average improvement</div>
+                <div
+                  class="text-3xl sm:text-4xl font-black text-green-600 mb-2"
+                  style="color: #059669 !important; font-weight: 900 !important"
+                >
+                  40%
+                </div>
+                <div
+                  class="text-xs sm:text-sm text-gray-800 font-semibold"
+                  style="color: #111827 !important; font-weight: 600 !important"
+                >
+                  Operational Efficiency
+                </div>
+                <div class="text-xs text-gray-600 mt-1" style="color: #4b5563 !important">
+                  Average improvement
+                </div>
               </div>
             </div>
             <div
@@ -2057,9 +2392,21 @@
               data-aos-delay="200"
             >
               <div class="text-center">
-                <div class="text-3xl sm:text-4xl font-black text-blue-600 mb-2" style="color: #2563eb !important; font-weight: 900 !important;">50%</div>
-                <div class="text-xs sm:text-sm text-gray-800 font-semibold" style="color: #111827 !important; font-weight: 600 !important;">Reduced Wait Times</div>
-                <div class="text-xs text-gray-600 mt-1" style="color: #4b5563 !important;">Customer satisfaction boost</div>
+                <div
+                  class="text-3xl sm:text-4xl font-black text-blue-600 mb-2"
+                  style="color: #2563eb !important; font-weight: 900 !important"
+                >
+                  50%
+                </div>
+                <div
+                  class="text-xs sm:text-sm text-gray-800 font-semibold"
+                  style="color: #111827 !important; font-weight: 600 !important"
+                >
+                  Reduced Wait Times
+                </div>
+                <div class="text-xs text-gray-600 mt-1" style="color: #4b5563 !important">
+                  Customer satisfaction boost
+                </div>
               </div>
             </div>
             <div
@@ -2068,9 +2415,21 @@
               data-aos-delay="300"
             >
               <div class="text-center">
-                <div class="text-3xl sm:text-4xl font-black text-purple-600 mb-2" style="color: #9333ea !important; font-weight: 900 !important;">€3K</div>
-                <div class="text-xs sm:text-sm text-gray-800 font-semibold" style="color: #111827 !important; font-weight: 600 !important;">Monthly Revenue (Kiosk)</div>
-                <div class="text-xs text-gray-600 mt-1" style="color: #4b5563 !important;">Additional income stream</div>
+                <div
+                  class="text-3xl sm:text-4xl font-black text-purple-600 mb-2"
+                  style="color: #9333ea !important; font-weight: 900 !important"
+                >
+                  €3K
+                </div>
+                <div
+                  class="text-xs sm:text-sm text-gray-800 font-semibold"
+                  style="color: #111827 !important; font-weight: 600 !important"
+                >
+                  Monthly Revenue (Kiosk)
+                </div>
+                <div class="text-xs text-gray-600 mt-1" style="color: #4b5563 !important">
+                  Additional income stream
+                </div>
               </div>
             </div>
             <div
@@ -2079,9 +2438,21 @@
               data-aos-delay="400"
             >
               <div class="text-center">
-                <div class="text-3xl sm:text-4xl font-black text-blue-600 mb-2" style="color: #2563eb !important; font-weight: 900 !important;">500+</div>
-                <div class="text-xs sm:text-sm text-gray-900 font-semibold" style="color: #111827 !important; font-weight: 600 !important;">Belgian Restaurants</div>
-                <div class="text-xs text-gray-700 mt-1" style="color: #374151 !important;">Trust FC Resto daily</div>
+                <div
+                  class="text-3xl sm:text-4xl font-black text-blue-600 mb-2"
+                  style="color: #2563eb !important; font-weight: 900 !important"
+                >
+                  500+
+                </div>
+                <div
+                  class="text-xs sm:text-sm text-gray-900 font-semibold"
+                  style="color: #111827 !important; font-weight: 600 !important"
+                >
+                  Belgian Restaurants
+                </div>
+                <div class="text-xs text-gray-700 mt-1" style="color: #374151 !important">
+                  Trust FC Resto daily
+                </div>
               </div>
             </div>
           </div>
@@ -2113,73 +2484,140 @@
           >
             <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-1">
               <div class="bg-white rounded-xl p-6 md:p-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center" style="color: #111827 !important;">
+                <h3
+                  class="text-2xl font-bold text-gray-900 mb-6 text-center"
+                  style="color: #111827 !important"
+                >
                   🏆 Why Choose FC Resto for Your Belgian Restaurant?
                 </h3>
+              </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div
+                  class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
                   <div class="flex items-start">
-                    <div class="bg-blue-600 p-2 rounded-lg mr-4" style="background-color: #2563eb !important;">
-                      <i class="fas fa-cash-register text-white text-lg" style="color: white !important;"></i>
+                    <div
+                      class="bg-blue-600 p-2 rounded-lg mr-4"
+                      style="background-color: #2563eb !important"
+                    >
+                      <i
+                        class="fas fa-cash-register text-white text-lg"
+                        style="color: white !important"
+                      ></i>
                     </div>
                     <div>
-                      <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Belgian Certified Cash Register</h4>
-                      <p class="text-gray-700 text-sm" style="color: #4b5563 !important;">100% compliant with FPS Finance regulations and Belgian VAT requirements</p>
+                      <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
+                        Belgian Certified Cash Register
+                      </h4>
+                      <p class="text-gray-700 text-sm" style="color: #4b5563 !important">
+                        100% compliant with FPS Finance regulations and Belgian VAT requirements
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div
+                  class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
                   <div class="flex items-start">
-                    <div class="bg-blue-600 p-2 rounded-lg mr-4" style="background-color: #2563eb !important;">
-                      <i class="fas fa-tv text-white text-lg" style="color: white !important;"></i>
+                    <div
+                      class="bg-blue-600 p-2 rounded-lg mr-4"
+                      style="background-color: #2563eb !important"
+                    >
+                      <i class="fas fa-tv text-white text-lg" style="color: white !important"></i>
                     </div>
                     <div>
-                      <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Kitchen Display System</h4>
-                      <p class="text-gray-700 text-sm" style="color: #4b5563 !important;">Real-time order management in French, Dutch, or English</p>
+                      <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
+                        Kitchen Display System
+                      </h4>
+                      <p class="text-gray-700 text-sm" style="color: #4b5563 !important">
+                        Real-time order management in French, Dutch, or English
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div
+                  class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
                   <div class="flex items-start">
-                    <div class="bg-blue-600 p-2 rounded-lg mr-4" style="background-color: #2563eb !important;">
-                      <i class="fas fa-credit-card text-white text-lg" style="color: white !important;"></i>
+                    <div
+                      class="bg-blue-600 p-2 rounded-lg mr-4"
+                      style="background-color: #2563eb !important"
+                    >
+                      <i
+                        class="fas fa-credit-card text-white text-lg"
+                        style="color: white !important"
+                      ></i>
                     </div>
                     <div>
-                      <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Bancontact Integration</h4>
-                      <p class="text-gray-700 text-sm" style="color: #4b5563 !important;">Native support for Belgium's preferred payment method plus coin changers</p>
+                      <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
+                        Bancontact Integration
+                      </h4>
+                      <p class="text-gray-700 text-sm" style="color: #4b5563 !important">
+                        Native support for Belgium's preferred payment method plus coin changers
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div
+                  class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
                   <div class="flex items-start">
-                    <div class="bg-blue-600 p-2 rounded-lg mr-4" style="background-color: #2563eb !important;">
-                      <i class="fas fa-desktop text-white text-lg" style="color: white !important;"></i>
+                    <div
+                      class="bg-blue-600 p-2 rounded-lg mr-4"
+                      style="background-color: #2563eb !important"
+                    >
+                      <i
+                        class="fas fa-desktop text-white text-lg"
+                        style="color: white !important"
+                      ></i>
                     </div>
                     <div>
-                      <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Self-Service Kiosk Module</h4>
-                      <p class="text-gray-700 text-sm" style="color: #4b5563 !important;">24/7 ordering systems perfect for busy Brussels, Antwerp & Ghent locations</p>
+                      <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
+                        Self-Service Kiosk Module
+                      </h4>
+                      <p class="text-gray-700 text-sm" style="color: #4b5563 !important">
+                        24/7 ordering systems perfect for busy Brussels, Antwerp & Ghent locations
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 md:col-span-2">
+                <div
+                  class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 md:col-span-2"
+                >
                   <div class="flex items-start">
-                    <div class="bg-blue-600 p-2 rounded-lg mr-4" style="background-color: #2563eb !important;">
-                      <i class="fas fa-truck text-white text-lg" style="color: white !important;"></i>
+                    <div
+                      class="bg-blue-600 p-2 rounded-lg mr-4"
+                      style="background-color: #2563eb !important"
+                    >
+                      <i
+                        class="fas fa-truck text-white text-lg"
+                        style="color: white !important"
+                      ></i>
                     </div>
                     <div>
-                      <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important;">Local Delivery Integration</h4>
-                      <p class="text-gray-700 text-sm" style="color: #4b5563 !important;">Direct integration with Takeaway.com, UberEats, and Belgian delivery services</p>
+                      <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
+                        Local Delivery Integration
+                      </h4>
+                      <p class="text-gray-700 text-sm" style="color: #4b5563 !important">
+                        Direct integration with Takeaway.com, UberEats, and Belgian delivery
+                        services
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="flex items-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
-                <i class="fas fa-shield-alt text-blue-600 text-2xl mr-4" style="color: #2563eb !important;"></i>
-                <p class="text-gray-800 font-medium" style="color: #111827 !important;">
+              <div
+                class="flex items-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm"
+              >
+                <i
+                  class="fas fa-shield-alt text-blue-600 text-2xl mr-4"
+                  style="color: #2563eb !important"
+                ></i>
+                <p class="text-gray-800 font-medium" style="color: #111827 !important">
                   Officially registered and certified by Belgian authorities for complete legal
                   compliance.
                 </p>
@@ -2190,12 +2628,15 @@
       </section>
 
       <!-- Pricing Section -->
-      <section id="pricing" class="py-16 md:py-20 bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100">
+      <section
+        id="pricing"
+        class="py-16 md:py-20 bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100"
+      >
         <div class="container mx-auto px-4 sm:px-6">
           <div class="text-center mb-16" data-aos="fade-up">
             <span
               class="inline-block px-6 py-3 text-sm font-semibold text-white bg-blue-600 rounded-full mb-6 shadow-lg"
-              style="background-color: #2563eb !important; color: white !important;"
+              style="background-color: #2563eb !important; color: white !important"
             >
               💰 BELGIAN PRICING
             </span>
@@ -2203,8 +2644,8 @@
               Flexible Plans for Your Belgian Restaurant
             </h2>
             <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Choose the perfect FC Resto plan for your restaurant. All plans include Belgian VAT compliance,
-              multi-language support, and 24/7 customer support.
+              Choose the perfect FC Resto plan for your restaurant. All plans include Belgian VAT
+              compliance, multi-language support, and 24/7 customer support.
             </p>
           </div>
 
@@ -2363,9 +2804,7 @@
                   <span class="text-5xl font-extrabold text-gray-900">€149</span>
                   <span class="text-gray-500 ml-2">/month</span>
                 </div>
-                <p class="text-gray-500 text-sm mb-2">
-                  For restaurant chains & franchises
-                </p>
+                <p class="text-gray-500 text-sm mb-2">For restaurant chains & franchises</p>
                 <p class="text-gray-500 text-sm mb-6">Complete Restaurant Ecosystem</p>
                 <a
                   href="#contact"
@@ -2409,13 +2848,13 @@
                 Need Help Choosing the Right Plan?
               </h3>
               <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-                Our experts will help you find the perfect FC Resto plan for your Belgian restaurant.
-                Get a free consultation and personalized recommendation.
+                Our experts will help you find the perfect FC Resto plan for your Belgian
+                restaurant. Get a free consultation and personalized recommendation.
               </p>
               <a
                 href="#contact"
                 class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
-                style="background-color: #f97316 !important; color: white !important;"
+                style="background-color: #f97316 !important; color: white !important"
               >
                 <i class="fas fa-phone mr-2"></i>
                 Get Free Consultation
@@ -2424,7 +2863,235 @@
           </div>
         </div>
       </section>
+<style>
+  /* FAQ Accordion Styles */
+.faq-question,
+.accordion-header,
+.accordion-button,
+[data-toggle="collapse"] {
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  background-color: #f8fafc; /* slate-50 */
+  border: 1px solid #e2e8f0; /* slate-200 */
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  color: #1e293b; /* slate-800 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
 
+.faq-question:hover,
+.accordion-header:hover,
+.accordion-button:hover,
+[data-toggle="collapse"]:hover {
+  background-color: #f1f5f9; /* slate-100 */
+}
+
+.faq-question.active,
+.accordion-header.active,
+.accordion-button.active,
+[data-toggle="collapse"][aria-expanded="true"] {
+  background-color: #dbeafe; /* blue-100 */
+  border-color: #93c5fd; /* blue-300 */
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.faq-answer,
+.accordion-body,
+.collapse {
+  display: none;
+  padding: 1rem 1.5rem;
+  background-color: #f8fafc; /* slate-50 */
+  border-left: 1px solid #e2e8f0; /* slate-200 */
+  border-right: 1px solid #e2e8f0; /* slate-200 */
+  border-bottom: 1px solid #e2e8f0; /* slate-200 */
+  border-radius: 0 0 0.5rem 0.5rem;
+  border-left: 4px solid #3b82f6; /* blue-500 */
+}
+
+.faq-answer.open,
+.accordion-body.open,
+.collapse.show {
+  display: block;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.faq-toggle-icon,
+.accordion-button::after,
+[data-toggle="collapse"] .fa-chevron-down,
+[data-toggle="collapse"] .fa-angle-down {
+  transition: transform 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+<script>
+  // FAQ Accordion functionality
+document.addEventListener('DOMContentLoaded', function () {
+  // Select all FAQ questions
+  const faqQuestions = document.querySelectorAll(
+    '.faq-question, .accordion-header, .accordion-button, [data-toggle="collapse"]'
+  );
+
+  // Function to close all FAQs
+  function closeAllFaqs(exceptQuestion = null) {
+    faqQuestions.forEach((q) => {
+      if (q !== exceptQuestion) {
+        q.classList.remove('active');
+        q.setAttribute('aria-expanded', 'false');
+
+        // Find and close the answer
+        let answer;
+        if (
+          q.nextElementSibling &&
+          (q.nextElementSibling.classList.contains('faq-answer') ||
+            q.nextElementSibling.classList.contains('accordion-body') ||
+            q.nextElementSibling.classList.contains('collapse'))
+        ) {
+          answer = q.nextElementSibling;
+        } else if (q.getAttribute('data-target')) {
+          const targetId = q.getAttribute('data-target');
+          answer = document.querySelector(targetId);
+        } else if (q.getAttribute('aria-controls')) {
+          const controlsId = q.getAttribute('aria-controls');
+          answer = document.getElementById(controlsId);
+        }
+
+        if (answer) {
+          answer.classList.remove('open');
+          answer.classList.remove('show');
+
+          // Reset icon rotation
+          const icon = q.querySelector(
+            '.fa-chevron-down, .fa-angle-down, .fa-plus, .fa-minus, .faq-toggle-icon'
+          );
+          if (icon) {
+            icon.style.transform = 'rotate(0)';
+            if (icon.classList.contains('fa-minus')) {
+              icon.classList.remove('fa-minus');
+              icon.classList.add('fa-plus');
+            }
+          }
+        }
+      }
+    });
+  }
+
+  if (faqQuestions.length > 0) {
+    faqQuestions.forEach((question) => {
+      question.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Check if this question is already active
+        const isActive = this.classList.contains('active');
+
+        // Close all other FAQs first
+        closeAllFaqs(this);
+
+        // If it was already active, we just closed it above, so we're done
+        if (isActive) {
+          return;
+        }
+
+        // Otherwise, open this one
+        this.classList.add('active');
+
+        // Find the associated answer
+        let answer;
+        if (
+          this.nextElementSibling &&
+          (this.nextElementSibling.classList.contains('faq-answer') ||
+            this.nextElementSibling.classList.contains('accordion-body') ||
+            this.nextElementSibling.classList.contains('collapse'))
+        ) {
+          answer = this.nextElementSibling;
+        } else if (this.getAttribute('data-target')) {
+          const targetId = this.getAttribute('data-target');
+          answer = document.querySelector(targetId);
+        } else if (this.getAttribute('aria-controls')) {
+          const controlsId = this.getAttribute('aria-controls');
+          answer = document.getElementById(controlsId);
+        }
+
+        // Open this answer
+        if (answer) {
+          answer.classList.add('open');
+          answer.classList.add('show');
+
+          // Set aria-expanded attribute
+          this.setAttribute('aria-expanded', 'true');
+
+          // Rotate the icon if it exists
+          const icon = this.querySelector(
+            '.fa-chevron-down, .fa-angle-down, .fa-plus, .fa-minus, .faq-toggle-icon'
+          );
+          if (icon) {
+            icon.style.transform = 'rotate(180deg)';
+            if (icon.classList.contains('fa-plus')) {
+              icon.classList.remove('fa-plus');
+              icon.classList.add('fa-minus');
+            }
+          }
+        }
+      });
+    });
+
+    // Close FAQs when clicking outside
+    document.addEventListener('click', function (e) {
+      // Check if the click is outside any FAQ question or answer
+      let clickedInsideFaq = false;
+
+      faqQuestions.forEach((question) => {
+        if (question.contains(e.target)) {
+          clickedInsideFaq = true;
+        }
+
+        // Also check if clicked inside an answer
+        let answer;
+        if (
+          question.nextElementSibling &&
+          (question.nextElementSibling.classList.contains('faq-answer') ||
+            question.nextElementSibling.classList.contains('accordion-body') ||
+            question.nextElementSibling.classList.contains('collapse'))
+        ) {
+          answer = question.nextElementSibling;
+        } else if (question.getAttribute('data-target')) {
+          const targetId = question.getAttribute('data-target');
+          answer = document.querySelector(targetId);
+        } else if (question.getAttribute('aria-controls')) {
+          const controlsId = question.getAttribute('aria-controls');
+          answer = document.getElementById(controlsId);
+        }
+
+        if (answer && answer.contains(e.target)) {
+          clickedInsideFaq = true;
+        }
+      });
+
+      if (!clickedInsideFaq) {
+        closeAllFaqs();
+      }
+    });
+  }
+});
+</script>
       <!-- FAQ Section -->
       <section class="py-16 md:py-20 bg-white">
         <div class="container mx-auto px-4 sm:px-6">
@@ -2445,7 +3112,13 @@
           <div class="max-w-3xl mx-auto space-y-4" data-aos="fade-up">
             <!-- FAQ 1 -->
             <div class="faq-item">
-              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq1-answer" id="faq1-question">
+              <button
+                class="faq-question"
+                role="button"
+                aria-expanded="false"
+                aria-controls="faq1-answer"
+                id="faq1-question"
+              >
                 What makes FastCaisse the #1 certified POS in Belgium?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
@@ -2462,7 +3135,13 @@
 
             <!-- FAQ 2 -->
             <div class="faq-item">
-              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq2-answer" id="faq2-question">
+              <button
+                class="faq-question"
+                role="button"
+                aria-expanded="false"
+                aria-controls="faq2-answer"
+                id="faq2-question"
+              >
                 How does the Kitchen Display System work?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
@@ -2480,7 +3159,13 @@
 
             <!-- FAQ 3 -->
             <div class="faq-item">
-              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq3-answer" id="faq3-question">
+              <button
+                class="faq-question"
+                role="button"
+                aria-expanded="false"
+                aria-controls="faq3-answer"
+                id="faq3-question"
+              >
                 What are the benefits of the Self-Service Kiosk Module?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
@@ -2498,7 +3183,13 @@
 
             <!-- FAQ 4 -->
             <div class="faq-item">
-              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq4-answer" id="faq4-question">
+              <button
+                class="faq-question"
+                role="button"
+                aria-expanded="false"
+                aria-controls="faq4-answer"
+                id="faq4-question"
+              >
                 Can I integrate with delivery platforms like UberEats and Takeaway.com?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
@@ -2515,7 +3206,13 @@
 
             <!-- FAQ 5 -->
             <div class="faq-item">
-              <button class="faq-question" role="button" aria-expanded="false" aria-controls="faq5-answer" id="faq5-question">
+              <button
+                class="faq-question"
+                role="button"
+                aria-expanded="false"
+                aria-controls="faq5-answer"
+                id="faq5-question"
+              >
                 Can I have my own e-commerce website?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
@@ -2537,26 +3234,37 @@
       <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <div class="container mx-auto px-6">
           <div class="text-center mb-16" data-aos="fade-up">
-            <span class="inline-block px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-6 shadow-lg">
+            <span
+              class="inline-block px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-6 shadow-lg"
+            >
               🍽️ INDUSTRY EXPERTISE
             </span>
             <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
               Perfect for Every Type of Belgian Restaurant
             </h2>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              FC Resto adapts to your specific restaurant model with customized features and workflows designed for Belgian hospitality standards.
+              FC Resto adapts to your specific restaurant model with customized features and
+              workflows designed for Belgian hospitality standards.
             </p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-
             <!-- Pizzerias -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-              <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
+            <div
+              class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6"
+              >
                 <i class="fas fa-pizza-slice text-white text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Pizzerias</h3>
-              <p class="text-gray-600 mb-6">Specialized for pizza shops with topping management, delivery optimization, and oven coordination.</p>
+              <p class="text-gray-600 mb-6">
+                Specialized for pizza shops with topping management, delivery optimization, and oven
+                coordination.
+              </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -2578,12 +3286,21 @@
             </div>
 
             <!-- Fast Casual & QSR -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-blue-300 hover:border-blue-500 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-              <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+            <div
+              class="bg-white rounded-2xl shadow-xl p-8 border-2 border-blue-300 hover:border-blue-500 transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6"
+              >
                 <i class="fas fa-hamburger text-white text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Fast Casual & QSR</h3>
-              <p class="text-gray-600 mb-6">High-speed service, self-service kiosks, and delivery integration perfect for Belgian fast-food chains.</p>
+              <p class="text-gray-600 mb-6">
+                High-speed service, self-service kiosks, and delivery integration perfect for
+                Belgian fast-food chains.
+              </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -2605,12 +3322,21 @@
             </div>
 
             <!-- Ethnic Cuisine -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="300">
-              <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6">
+            <div
+              class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6"
+              >
                 <i class="fas fa-globe-asia text-white text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Ethnic Cuisine</h3>
-              <p class="text-gray-600 mb-6">Support for diverse cuisines with multi-language menus and specialty preparation tracking.</p>
+              <p class="text-gray-600 mb-6">
+                Support for diverse cuisines with multi-language menus and specialty preparation
+                tracking.
+              </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -2632,12 +3358,21 @@
             </div>
 
             <!-- Fine Dining -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="400">
-              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+            <div
+              class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6"
+              >
                 <i class="fas fa-wine-glass text-white text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Fine Dining</h3>
-              <p class="text-gray-600 mb-6">Elegant table management, wine pairing suggestions, and sophisticated reporting for upscale Belgian establishments.</p>
+              <p class="text-gray-600 mb-6">
+                Elegant table management, wine pairing suggestions, and sophisticated reporting for
+                upscale Belgian establishments.
+              </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -2659,12 +3394,21 @@
             </div>
 
             <!-- Cafés & Bistros -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="500">
-              <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6">
+            <div
+              class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6"
+              >
                 <i class="fas fa-mug-hot text-white text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Cafés & Bistros</h3>
-              <p class="text-gray-600 mb-6">Perfect for Belgian cafés with flexible seating, loyalty programs, and specialty drink management.</p>
+              <p class="text-gray-600 mb-6">
+                Perfect for Belgian cafés with flexible seating, loyalty programs, and specialty
+                drink management.
+              </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -2686,12 +3430,21 @@
             </div>
 
             <!-- Food Trucks & Pop-ups -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="600">
-              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+            <div
+              class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6"
+              >
                 <i class="fas fa-truck text-white text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Food Trucks & Pop-ups</h3>
-              <p class="text-gray-600 mb-6">Mobile-friendly solutions with offline capabilities and location-based pricing for Belgian events.</p>
+              <p class="text-gray-600 mb-6">
+                Mobile-friendly solutions with offline capabilities and location-based pricing for
+                Belgian events.
+              </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
@@ -2719,31 +3472,44 @@
       <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
           <div class="text-center mb-16" data-aos="fade-up">
-            <span class="inline-block px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-green-600 to-blue-600 rounded-full mb-6 shadow-lg">
+            <span
+              class="inline-block px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-green-600 to-blue-600 rounded-full mb-6 shadow-lg"
+            >
               🔗 SEAMLESS INTEGRATIONS
             </span>
             <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
               Connect Everything Your Restaurant Needs
             </h2>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              FC Resto integrates with all major Belgian services and platforms, creating a unified ecosystem for your restaurant operations.
+              FC Resto integrates with all major Belgian services and platforms, creating a unified
+              ecosystem for your restaurant operations.
             </p>
           </div>
 
           <div class="max-w-7xl mx-auto">
             <!-- Main Integration Dashboard -->
-            <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8 mb-12 shadow-2xl" data-aos="fade-up">
+            <div
+              class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8 mb-12 shadow-2xl"
+              data-aos="fade-up"
+            >
               <div class="text-center mb-8">
                 <h3 class="text-3xl font-bold text-gray-900 mb-4">FC Resto Integration Hub</h3>
-                <p class="text-lg text-gray-600">One dashboard to manage all your restaurant's connected services</p>
+                <p class="text-lg text-gray-600">
+                  One dashboard to manage all your restaurant's connected services
+                </p>
               </div>
 
               <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 <!-- Takeaway.com -->
-                <div class="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div
+                  class="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                >
                   <div class="text-center">
-                    <div class="w-12 h-12 bg-orange rounded-lg flex items-center justify-center mx-auto mb-3"  style="background: orange;">
-                       <i class="fas fa-utensils text-white text-lg"></i>
+                    <div
+                      class="w-12 h-12 bg-orange rounded-lg flex items-center justify-center mx-auto mb-3"
+                      style="background: orange"
+                    >
+                      <i class="fas fa-utensils text-white text-lg"></i>
                     </div>
                     <h4 class="font-bold text-sm text-gray-900">Takeaway.com</h4>
                     <p class="text-xs text-gray-600 mt-1">Official Partner</p>
@@ -2751,9 +3517,13 @@
                 </div>
 
                 <!-- UberEats -->
-                <div class="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div
+                  class="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                >
                   <div class="text-center">
-                    <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <div
+                      class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mx-auto mb-3"
+                    >
                       <i class="fas fa-car text-white text-lg"></i>
                     </div>
                     <h4 class="font-bold text-sm text-gray-900">UberEats</h4>
@@ -2762,9 +3532,14 @@
                 </div>
 
                 <!-- Deliveroo -->
-                <div class="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div
+                  class="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                >
                   <div class="text-center">
-                    <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mx-auto mb-3" style="background: #00CCBC;">
+                    <div
+                      class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mx-auto mb-3"
+                      style="background: #00ccbc"
+                    >
                       <i class="fas fa-motorcycle text-white text-lg"></i>
                     </div>
                     <h4 class="font-bold text-sm text-gray-900">Deliveroo</h4>
@@ -2773,9 +3548,13 @@
                 </div>
 
                 <!-- Bancontact -->
-                <div class="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div
+                  class="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                >
                   <div class="text-center">
-                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <div
+                      class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-3"
+                    >
                       <i class="fas fa-credit-card text-white text-lg"></i>
                     </div>
                     <h4 class="font-bold text-sm text-gray-900">Bancontact</h4>
@@ -2784,9 +3563,13 @@
                 </div>
 
                 <!-- Online -->
-                <div class="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div
+                  class="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                >
                   <div class="text-center">
-                    <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <div
+                      class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-3"
+                    >
                       <i class="fas fa-mobile-alt text-white text-lg"></i>
                     </div>
                     <h4 class="font-bold text-sm text-gray-900">Online</h4>
@@ -2795,9 +3578,13 @@
                 </div>
 
                 <!-- QuickBooks -->
-                <div class="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div
+                  class="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                >
                   <div class="text-center">
-                    <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <div
+                      class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-3"
+                    >
                       <i class="fas fa-calculator text-white text-lg"></i>
                     </div>
                     <h4 class="font-bold text-sm text-gray-900">QuickBooks</h4>
@@ -2809,12 +3596,21 @@
 
             <!-- Integration Benefits -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6">
+              <div
+                class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 shadow-lg"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div
+                  class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6"
+                >
                   <i class="fas fa-sync-alt text-white text-2xl"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Real-Time Synchronization</h3>
-                <p class="text-gray-600 mb-6">Orders from all platforms appear instantly in your FC Resto dashboard. Menu changes sync across all channels automatically.</p>
+                <p class="text-gray-600 mb-6">
+                  Orders from all platforms appear instantly in your FC Resto dashboard. Menu
+                  changes sync across all channels automatically.
+                </p>
                 <ul class="space-y-2 text-sm">
                   <li class="flex items-center">
                     <i class="fas fa-check text-green-500 mr-2"></i>
@@ -2831,12 +3627,21 @@
                 </ul>
               </div>
 
-              <div class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
+              <div
+                class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-2xl p-8 shadow-lg"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div
+                  class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6"
+                >
                   <i class="fas fa-chart-line text-white text-2xl"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Unified Analytics</h3>
-                <p class="text-gray-600 mb-6">Get comprehensive insights across all sales channels with Belgian tax compliance and detailed performance metrics.</p>
+                <p class="text-gray-600 mb-6">
+                  Get comprehensive insights across all sales channels with Belgian tax compliance
+                  and detailed performance metrics.
+                </p>
                 <ul class="space-y-2 text-sm">
                   <li class="flex items-center">
                     <i class="fas fa-check text-blue-500 mr-2"></i>
@@ -2853,12 +3658,21 @@
                 </ul>
               </div>
 
-              <div class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6">
-                  <i class="fas fa-shield-alt text-white text-2xl" style="color: white;"></i>
+              <div
+                class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 shadow-lg"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div
+                  class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6"
+                >
+                  <i class="fas fa-shield-alt text-white text-2xl" style="color: white"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Belgian Compliance</h3>
-                <p class="text-gray-600 mb-6">FC Resto ensures full compliance with Belgian restaurant regulations and VAT requirements, giving you peace of mind.</p>
+                <p class="text-gray-600 mb-6">
+                  FC Resto ensures full compliance with Belgian restaurant regulations and VAT
+                  requirements, giving you peace of mind.
+                </p>
                 <ul class="space-y-3">
                   <li class="flex items-center">
                     <i class="fas fa-check text-green-500 mr-2"></i>
@@ -2880,50 +3694,237 @@
       </section>
 
       <!-- Contact Section -->
-      <section class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
-        <div class="container mx-auto px-6">
-          <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
-              Get Your <span class="text-orange-600">Free Demo</span> Today
+      <section
+        id="contact"
+        class="py-20 bg-gradient-to-br from-blue-50 via-white to-amber-50 relative overflow-hidden"
+      >
+        <!-- Background Pattern Elements -->
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-orange-100 rounded-full opacity-30 -mr-32 -mt-32"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-80 h-80 bg-blue-100 rounded-full opacity-30 -ml-40 -mb-40"
+        ></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-12" data-aos="fade-up">
+            <span
+              class="inline-block px-6 py-3 text-sm font-semibold text-black bg-orange-600 rounded-full mb-6 shadow-lg"
+            >
+              🚀 GET STARTED
+            </span>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 text-gray-900">
+              Transform Your Restaurant with a
+              <span class="text-orange-600 relative">
+                Free Demo
+                <svg
+                  class="absolute -bottom-3 left-0 w-full h-3"
+                  viewBox="0 0 200 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 12C20 4 40 2 60 4C80 6 100 10 120 8C140 6 160 3 180 5C190 5.5 198 6.5 198 6.5"
+                    stroke="#f97316"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
             </h2>
-            <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Join 500+ Belgian restaurants already using FC Resto. Our specialists will show you how our POS system can transform your business.
+            <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Join 500+ successful Belgian restaurants already using FC Resto. Our specialists will
+              show you how our POS system can transform your business operations.
             </p>
           </div>
 
-          <div class="max-w-4xl mx-auto">
-            <div class="bg-white rounded-3xl p-8 shadow-2xl">
-              <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Contact Info -->
-                <div>
-                  <h3 class="text-2xl font-bold mb-6 text-gray-900">Contact Our Experts</h3>
-                  <div class="space-y-6">
-                    <div class="flex items-center">
-                      <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mr-4">
-                        <i class="fas fa-phone-alt text-white"></i>
+          <div class="max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+              <div class="grid grid-cols-1 lg:grid-cols-5 gap-0">
+                <!-- Contact Form Section -->
+                <div class="lg:col-span-3 p-8 md:p-10">
+                  <h3 class="text-2xl font-bold mb-6 text-gray-900">Request Your Free Demo</h3>
+                  <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="form-group">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
+                          Full Name
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          placeholder="Your name"
+                          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
+                          required
+                        />
                       </div>
-                      <div>
-                        <p class="text-sm text-gray-600">Call us directly</p>
-                        <a href="tel:+3221234567" class="text-lg font-bold text-gray-900 hover:text-orange-600 transition-colors">
-                          +32 2 123 45 67
-                        </a>
+                      <div class="form-group">
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          placeholder="+32 XXX XXX XXX"
+                          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
+                          required
+                        />
                       </div>
                     </div>
+                    <div class="form-group">
+                      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="your@email.com"
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="restaurant" class="block text-sm font-medium text-gray-700 mb-1">
+                        Restaurant Name
+                      </label>
+                      <input
+                        type="text"
+                        id="restaurant"
+                        name="restaurant"
+                        placeholder="Your restaurant name"
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
+                        Message (Optional)
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows="3"
+                        placeholder="Tell us about your specific needs..."
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
+                      ></textarea>
+                    </div>
+                    <button
+                      type="submit"
+                      class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg"
+                    >
+                      Schedule My Free Demo
+                    </button>
+                  </form>
+                </div>
+
+                <!-- Contact Info Section -->
+                <div
+                  class="lg:col-span-2 bg-gradient-to-br from-blue-600 to-blue-800 text-white p-8 md:p-10 flex flex-col justify-between"
+                >
+                  <div>
+                    <h3 class="text-2xl font-bold mb-8">Contact Our Experts</h3>
+                    <div class="space-y-8">
+                      <div class="flex items-start">
+                        <div
+                          class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mr-4 flex-shrink-0"
+                        >
+                          <i class="fas fa-phone-alt text-white"></i>
+                        </div>
+                        <div>
+                          <p class="text-sm text-blue-100 mb-1">Call us directly</p>
+                          <a
+                            href="tel:+3221234567"
+                            class="text-lg font-bold text-white hover:text-orange-300 transition-colors"
+                          >
+                            +32 2 123 45 67
+                          </a>
+                        </div>
+                      </div>
+                      <div class="flex items-start">
+                        <div
+                          class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mr-4 flex-shrink-0"
+                        >
+                          <i class="fas fa-envelope text-white"></i>
+                        </div>
+                        <div>
+                          <p class="text-sm text-blue-100 mb-1">Email our team</p>
+                          <a
+                            href="mailto:info@fastcaisse.be"
+                            class="text-lg font-bold text-white hover:text-orange-300 transition-colors"
+                          >
+                            info@fastcaisse.be
+                          </a>
+                        </div>
+                      </div>
+                      <div class="flex items-start">
+                        <div
+                          class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mr-4 flex-shrink-0"
+                        >
+                          <i class="fas fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div>
+                          <p class="text-sm text-blue-100 mb-1">Visit our office</p>
+                          <p class="text-lg font-bold text-white">Brussels, Belgium</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Testimonial -->
+                  <div class="mt-12 bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                    <p class="italic text-blue-50 mb-4">
+                      "FC Resto transformed our restaurant operations. The demo showed us exactly
+                      how much time and money we could save."
+                    </p>
                     <div class="flex items-center">
-                      <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mr-4">
-                        <i class="fas fa-envelope text-white"></i>
+                      <div
+                        class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mr-3"
+                      >
+                        <span class="text-white font-bold">JD</span>
                       </div>
                       <div>
-                        <p class="text-sm text-gray-600">Email our team</p>
-                        <a href="mailto:info@fastcaisse.be" class="text-lg font-bold text-gray-900 hover:text-orange-600 transition-colors">
-                          info@fastcaisse.be
-                        </a>
+                        <p class="font-bold text-white">Jean Dupont</p>
+                        <p class="text-xs text-blue-200">Restaurant Owner, Brussels</p>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-
+            <!-- Trust Badges -->
+            <div
+              class="mt-12 flex flex-wrap justify-center items-center gap-8"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="flex items-center bg-white/80 backdrop-blur-sm px-6 py-3 rounded-xl shadow-sm"
+              >
+                <i class="fas fa-shield-alt text-blue-600 text-xl mr-3"></i>
+                <span class="text-sm font-medium text-gray-700">Belgian Certified</span>
+              </div>
+              <div
+                class="flex items-center bg-white/80 backdrop-blur-sm px-6 py-3 rounded-xl shadow-sm"
+              >
+                <i class="fas fa-clock text-blue-600 text-xl mr-3"></i>
+                <span class="text-sm font-medium text-gray-700">24/7 Support</span>
+              </div>
+              <div
+                class="flex items-center bg-white/80 backdrop-blur-sm px-6 py-3 rounded-xl shadow-sm"
+              >
+                <i class="fas fa-users text-blue-600 text-xl mr-3"></i>
+                <span class="text-sm font-medium text-gray-700">500+ Happy Clients</span>
+              </div>
+              <div
+                class="flex items-center bg-white/80 backdrop-blur-sm px-6 py-3 rounded-xl shadow-sm"
+              >
+                <i class="fas fa-thumbs-up text-blue-600 text-xl mr-3"></i>
+                <span class="text-sm font-medium text-gray-700">Satisfaction Guaranteed</span>
               </div>
             </div>
           </div>
@@ -2931,7 +3932,7 @@
       </section>
     </main>
 
-   <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-white text-gray-900 py-16 relative overflow-hidden" data-aos="fade-up">
       <div
         class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMDktMS43OTEtNC00LTRzLTQgMS43OTEtNCA0IDEuNzkxIDQgNCA0IDQtMS43OTEgNC00eiIvPjwvZz48L2c+PC9zdmc+')]"
@@ -2987,10 +3988,8 @@
             <ul class="space-y-3">
               <li>
                 <span
-
-                   class="text-blue-600 font-semibold flex items-center p-2 rounded-lg bg-blue-50 border-l-4 border-blue-600"
-
-                  >
+                  class="text-blue-600 font-semibold flex items-center p-2 rounded-lg bg-blue-50 border-l-4 border-blue-600"
+                >
                   <i class="fas fa-utensils mr-2 text-sm"></i>
                   FC Resto
                   <i class="fas fa-arrow-left ml-2 text-xs"></i>
@@ -2998,13 +3997,11 @@
               </li>
               <li>
                 <a
-                href="./fastcaisse-retail-pos-en.html"
-                 class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
-
-                 >
+                  href="./fastcaisse-retail-pos-en.html"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
+                >
                   <i class="fas fa-store mr-2 text-sm"></i>
                   FC Shop
-
                 </a>
               </li>
               <li>
@@ -3087,9 +4084,13 @@
 
         <div class="mt-12 pt-8 border-t border-gray-200 text-center">
           <p class="text-sm text-gray-600">
-            &copy; 2025 FAST CAISSE SRL. All rights reserved.
-            |
-            <a href="./general-conditions-en.html" class="hover:text-blue-600 transition-colors duration-300">General Conditions</a>
+            &copy; 2025 FAST CAISSE SRL. All rights reserved. |
+            <a
+              href="./general-conditions-en.html"
+              class="hover:text-blue-600 transition-colors duration-300"
+            >
+              General Conditions
+            </a>
           </p>
         </div>
       </div>
