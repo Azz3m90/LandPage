@@ -381,6 +381,67 @@ nav,
     align-items: flex-start !important;
   }
 
+  /* Footer contact info alignment fix for mobile */
+  footer .flex.items-center {
+    align-items: center !important;
+  }
+
+  footer li.flex.items-center {
+    align-items: center !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Footer contact links - keep on single line */
+  footer li.flex.items-center a {
+    white-space: nowrap !important;
+    display: inline !important;
+  }
+
+  /* Footer contact icons - ensure proper spacing */
+  footer li.flex.items-center i {
+    flex-shrink: 0 !important;
+    margin-right: 0.75rem !important;
+  }
+
+  /* Force footer contact items to stay inline - more specific targeting */
+  footer ul.space-y-4 li.flex.items-center {
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Ensure footer contact text doesn't wrap */
+  footer ul.space-y-4 li.flex.items-center a,
+  footer ul.space-y-4 li.flex.items-center span {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Override any conflicting Tailwind spacing */
+  footer ul.space-y-4 li.flex.items-center i.fas {
+    margin-right: 0.75rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    vertical-align: middle !important;
+  }
+
+  /* CRITICAL: Override the conflicting #contact .flex.items-start rule specifically for footer */
+  footer #contact .flex.items-center,
+  footer .flex.items-center {
+    align-items: center !important;
+  }
+
+  /* Extra specific override for footer contact list items */
+  footer div ul.space-y-4.text-gray-600 li.flex.items-center {
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+
   #contact .flex-shrink-0.bg-blue-50 {
     padding: 0.5rem !important;
     width: 2rem !important;
@@ -2782,6 +2843,41 @@ header {
   }
   #contact .flex.items-start {
     align-items: center;
+  }
+  /* Fix footer contact items alignment on mobile */
+  footer #contact .flex.items-center,
+  footer .flex.items-center {
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+  footer .flex.items-center a,
+  footer .flex.items-center span {
+    white-space: nowrap !important;
+    display: inline !important;
+    vertical-align: middle !important;
+  }
+
+  /* Ultra-specific fix for footer contact items - override everything */
+  footer li.flex.items-center {
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    line-height: 1 !important;
+  }
+
+  footer li.flex.items-center * {
+    display: inline !important;
+    vertical-align: middle !important;
+    line-height: inherit !important;
+  }
+
+  footer li.flex.items-center i {
+    display: inline-flex !important;
+    margin-right: 0.75rem !important;
+    flex-shrink: 0 !important;
   }
   #contact .flex.items-start .ml-3,
   #contact .flex.items-start .ml-2 {
