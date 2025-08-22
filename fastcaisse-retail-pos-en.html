@@ -312,6 +312,11 @@
 
       /* Fix breadcrumb overlap on mobile */
       @media (max-width: 640px) {
+                /* Optimize images for mobile */
+        img {
+          max-width: 100% !important;
+          height: auto !important;
+        }
         .hero-section {
           padding-top: 2rem !important; /* Reduced space for retail page */
           margin-top: auto;

@@ -444,7 +444,7 @@ nav,
   }
 
   header nav {
-    min-height: 4rem !important;
+    min-height: 2rem !important;
     align-items: center !important;
   }
 
