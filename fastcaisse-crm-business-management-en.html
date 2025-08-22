@@ -2526,123 +2526,131 @@
           </div>
         </div>
       </section>
-<script>
-// FAQ Accordion functionality
-document.addEventListener('DOMContentLoaded', function () {
-  console.log("FAQ script loaded");
+      <script>
+        // FAQ Accordion functionality
+        document.addEventListener("DOMContentLoaded", function () {
+          console.log("FAQ script loaded");
 
-  // Select all FAQ questions
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  console.log("Found FAQ questions:", faqQuestions.length);
+          // Select all FAQ questions
+          const faqQuestions = document.querySelectorAll(".faq-question");
+          console.log("Found FAQ questions:", faqQuestions.length);
 
-  if (faqQuestions.length > 0) {
-    // Function to close all FAQs
-    function closeAllFaqs(exceptQuestion = null) {
-      faqQuestions.forEach((q) => {
-        if (q !== exceptQuestion) {
-          q.classList.remove('active');
-          q.setAttribute('aria-expanded', 'false');
+          if (faqQuestions.length > 0) {
+            // Function to close all FAQs
+            function closeAllFaqs(exceptQuestion = null) {
+              faqQuestions.forEach((q) => {
+                if (q !== exceptQuestion) {
+                  q.classList.remove("active");
+                  q.setAttribute("aria-expanded", "false");
 
-          // Find and close the answer
-          let answer;
-          if (q.nextElementSibling && q.nextElementSibling.classList.contains('faq-answer')) {
-            answer = q.nextElementSibling;
-          } else if (q.getAttribute('aria-controls')) {
-            const controlsId = q.getAttribute('aria-controls');
-            answer = document.getElementById(controlsId);
-          }
+                  // Find and close the answer
+                  let answer;
+                  if (
+                    q.nextElementSibling &&
+                    q.nextElementSibling.classList.contains("faq-answer")
+                  ) {
+                    answer = q.nextElementSibling;
+                  } else if (q.getAttribute("aria-controls")) {
+                    const controlsId = q.getAttribute("aria-controls");
+                    answer = document.getElementById(controlsId);
+                  }
 
-          if (answer) {
-            answer.classList.remove('open');
-            answer.classList.remove('show');
+                  if (answer) {
+                    answer.classList.remove("open");
+                    answer.classList.remove("show");
 
-            // Reset icon rotation
-            const icon = q.querySelector('.faq-toggle-icon');
-            if (icon) {
-              icon.style.transform = 'rotate(0)';
+                    // Reset icon rotation
+                    const icon = q.querySelector(".faq-toggle-icon");
+                    if (icon) {
+                      icon.style.transform = "rotate(0)";
+                    }
+                  }
+                }
+              });
             }
+
+            // Add click event to each FAQ question
+            faqQuestions.forEach((question) => {
+              question.addEventListener("click", function (e) {
+                console.log("FAQ question clicked");
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Check if this question is already active
+                const isActive = this.classList.contains("active");
+
+                // Close all other FAQs first
+                closeAllFaqs(this);
+
+                // If it was already active, we just closed it above, so we're done
+                if (isActive) {
+                  return;
+                }
+
+                // Otherwise, open this one
+                this.classList.add("active");
+                this.setAttribute("aria-expanded", "true");
+
+                // Find the associated answer
+                let answer;
+                if (
+                  this.nextElementSibling &&
+                  this.nextElementSibling.classList.contains("faq-answer")
+                ) {
+                  answer = this.nextElementSibling;
+                } else if (this.getAttribute("aria-controls")) {
+                  const controlsId = this.getAttribute("aria-controls");
+                  answer = document.getElementById(controlsId);
+                }
+
+                // Open this answer
+                if (answer) {
+                  answer.classList.add("open");
+                  answer.classList.add("show");
+
+                  // Rotate the icon if it exists
+                  const icon = this.querySelector(".faq-toggle-icon");
+                  if (icon) {
+                    icon.style.transform = "rotate(180deg)";
+                  }
+                }
+              });
+            });
+
+            // Close FAQs when clicking outside
+            document.addEventListener("click", function (e) {
+              // Check if the click is outside any FAQ question or answer
+              let clickedInsideFaq = false;
+
+              faqQuestions.forEach((question) => {
+                if (question.contains(e.target)) {
+                  clickedInsideFaq = true;
+                }
+
+                // Also check if clicked inside an answer
+                let answer;
+                if (
+                  question.nextElementSibling &&
+                  question.nextElementSibling.classList.contains("faq-answer")
+                ) {
+                  answer = question.nextElementSibling;
+                } else if (question.getAttribute("aria-controls")) {
+                  const controlsId = question.getAttribute("aria-controls");
+                  answer = document.getElementById(controlsId);
+                }
+
+                if (answer && answer.contains(e.target)) {
+                  clickedInsideFaq = true;
+                }
+              });
+
+              if (!clickedInsideFaq) {
+                closeAllFaqs();
+              }
+            });
           }
-        }
-      });
-    }
-
-    // Add click event to each FAQ question
-    faqQuestions.forEach((question) => {
-      question.addEventListener('click', function (e) {
-        console.log("FAQ question clicked");
-        e.preventDefault();
-        e.stopPropagation();
-
-        // Check if this question is already active
-        const isActive = this.classList.contains('active');
-
-        // Close all other FAQs first
-        closeAllFaqs(this);
-
-        // If it was already active, we just closed it above, so we're done
-        if (isActive) {
-          return;
-        }
-
-        // Otherwise, open this one
-        this.classList.add('active');
-        this.setAttribute('aria-expanded', 'true');
-
-        // Find the associated answer
-        let answer;
-        if (this.nextElementSibling && this.nextElementSibling.classList.contains('faq-answer')) {
-          answer = this.nextElementSibling;
-        } else if (this.getAttribute('aria-controls')) {
-          const controlsId = this.getAttribute('aria-controls');
-          answer = document.getElementById(controlsId);
-        }
-
-        // Open this answer
-        if (answer) {
-          answer.classList.add('open');
-          answer.classList.add('show');
-
-          // Rotate the icon if it exists
-          const icon = this.querySelector('.faq-toggle-icon');
-          if (icon) {
-            icon.style.transform = 'rotate(180deg)';
-          }
-        }
-      });
-    });
-
-    // Close FAQs when clicking outside
-    document.addEventListener('click', function (e) {
-      // Check if the click is outside any FAQ question or answer
-      let clickedInsideFaq = false;
-
-      faqQuestions.forEach((question) => {
-        if (question.contains(e.target)) {
-          clickedInsideFaq = true;
-        }
-
-        // Also check if clicked inside an answer
-        let answer;
-        if (question.nextElementSibling && question.nextElementSibling.classList.contains('faq-answer')) {
-          answer = question.nextElementSibling;
-        } else if (question.getAttribute('aria-controls')) {
-          const controlsId = question.getAttribute('aria-controls');
-          answer = document.getElementById(controlsId);
-        }
-
-        if (answer && answer.contains(e.target)) {
-          clickedInsideFaq = true;
-        }
-      });
-
-      if (!clickedInsideFaq) {
-        closeAllFaqs();
-      }
-    });
-  }
-});
-
-</script>
+        });
+      </script>
 
       <!-- FAQ Section -->
       <section id="faq" class="py-16 md:py-20 bg-white">
