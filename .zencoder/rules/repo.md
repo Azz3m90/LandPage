@@ -62,7 +62,7 @@ The website is automatically deployed to GitHub Pages using GitHub Actions workf
 - fastcaisse-restaurant-pos-en.html: Restaurant POS solution page
 - fastcaisse-retail-pos-en.html: Retail POS solution page
 - fastcaisse-crm-business-management-en.html: CRM solution page
-- general-conditions-en.html, general-conditions-fr.html, general-conditions-nl.html: Terms and conditions in different languages
+- general-conditions-fr.html, general-conditions-fr.html, general-conditions-fr.html: Terms and conditions in different languages
 
 **Features**:
 
