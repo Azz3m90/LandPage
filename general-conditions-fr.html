@@ -134,112 +134,413 @@
       id="header"
     >
       <nav
-        class="container relative mx-auto px-6 py-0.5 flex justify-between items-center"
-        aria-label="Main navigation"
+        class="container relative mx-auto px-6 py-1 flex justify-between items-center"
+        aria-label="Navigation principale"
       >
         <!-- Logo -->
         <div class="flex items-center gap-4">
-          <a href="./index-en.html">
-            <!-- Added link back to home -->
+          <a
+            href="./index.html"
+            title="FAST CAISSE - Accueil"
+            aria-label="Aller à la page d'accueil de FAST CAISSE"
+          >
             <img
               src="./images/fastcaisse-logo.png"
-              alt="FAST CAISSE logo"
+              alt="FAST CAISSE - Solutions POS et CRM leader pour les entreprises belges"
               class="object-contain transition-transform duration-300 hover:scale-105"
-              width="140"
+              width="180"
+              height="60"
               loading="lazy"
             />
           </a>
         </div>
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-4 items-center">
-          <a href="./index-en.html#home" class="nav-link">
-            <i class="fas fa-home mr-2"></i>
-            Home
+
+        <!-- Navigation Desktop -->
+        <div class="hidden md:flex space-x-4 items-center" role="menubar">
+          <a
+            href="./index.html#home"
+            class="nav-link"
+            title="Accueil FAST CAISSE - Solutions POS & CRM"
+            role="menuitem"
+          >
+            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+            Accueil
           </a>
-          <a href="./index-en.html#about" class="nav-link">
-            <i class="fas fa-info-circle mr-2"></i>
-            About
+          <a
+            href="./index.html#about"
+            class="nav-link"
+            title="À propos de FAST CAISSE - Entreprise belge POS & CRM depuis 2010"
+            role="menuitem"
+          >
+            <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
+            À propos
           </a>
-          <a href="./index-en.html#solutions" class="nav-link">
-            <i class="fas fa-tools mr-2"></i>
-            Solutions
-          </a>
-          <a href="./index-en.html#services" class="nav-link">
-            <i class="fas fa-cogs mr-2"></i>
+          <div class="nav-dropdown" role="menuitem">
+            <a
+              href="./index.html#solutions"
+              class="nav-link"
+              title="Solutions POS & CRM - Restaurant, Retail, Commerce"
+            >
+              <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+              Solutions
+              <i class="fas fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown-content" role="menu">
+              <a
+                href="./fastcaisse-restaurant-pos.html"
+                class="nav-dropdown-item"
+                role="menuitem"
+                title="FC Resto - Système de caisse pour restaurants"
+              >
+                <i class="fas fa-utensils" style="color: #f97316" aria-hidden="true"></i>
+                <span>FC Resto - Caisse Restaurant</span>
+                <span class="nav-dropdown-price">69 €/mo</span>
+              </a>
+              <a
+                href="./fastcaisse-retail-pos.html"
+                class="nav-dropdown-item"
+                role="menuitem"
+                title="FC Shop - Système de caisse pour commerce"
+              >
+                <i class="fas fa-store" style="color: #3b82f6" aria-hidden="true"></i>
+                <span>FC Shop - Caisse Retail</span>
+                <span class="nav-dropdown-price">59 €/mo</span>
+              </a>
+              <a
+                href="./fastcaisse-crm-business-management.html"
+                class="nav-dropdown-item"
+                role="menuitem"
+                title="FC Commerce - Plateforme CRM"
+              >
+                <i class="fas fa-chart-line" style="color: #8b5cf6" aria-hidden="true"></i>
+                <span>FC Commerce - CRM</span>
+                <span class="nav-dropdown-price">99 €/mo</span>
+              </a>
+            </div>
+          </div>
+          <a
+            href="./index.html#services"
+            class="nav-link"
+            title="Nos services - Création de sites, développement sur mesure"
+            role="menuitem"
+          >
+            <i class="fas fa-cogs mr-2" aria-hidden="true"></i>
             Services
           </a>
-          <a href="./index-en.html#clients" class="nav-link">
-            <i class="fas fa-users mr-2"></i>
+          <a
+            href="./index.html#clients"
+            class="nav-link"
+            title="Nos clients - Plus de 1000 entreprises belges nous font confiance"
+            role="menuitem"
+          >
+            <i class="fas fa-users mr-2" aria-hidden="true"></i>
             Clients
           </a>
-          <a href="#contact" class="nav-link">
-            <i class="fas fa-envelope mr-2"></i>
+          <a
+            href="#contact-form"
+            class="nav-link"
+            title="Contactez FAST CAISSE - Obtenez une consultation gratuite"
+            role="menuitem"
+          >
+            <i class="fas fa-envelope mr-2" aria-hidden="true"></i>
             Contact
           </a>
-          <!-- Desktop Language Switcher -->
-          <div class="relative">
-            <button id="desktopLangToggle" class="flex items-center rounded focus:outline-none">
-              <img src="./images/flags/united-kingdom.png" alt="EN" class="w-9 h-9" />
+
+          <!-- Sélecteur de langue (Desktop) -->
+          <div class="relative" role="group" aria-label="Sélection de langue" hidden>
+            <button
+              id="desktopLangToggle"
+              class="flex items-center rounded focus:outline-none hover:bg-gray-50 px-2 py-1"
+              aria-label="Sélectionner la langue"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img
+                src="./images/flags/belgium.png"
+                alt="Français"
+                class="w-6 h-6 mr-2"
+                width="24"
+                height="24"
+                loading="lazy"
+              />
+              <i class="fas fa-chevron-down ml-1 text-xs text-gray-500"></i>
             </button>
             <div
               id="desktopLangMenu"
-              class="hidden absolute right-0 w-12 bg-white border border-gray-200 rounded shadow-lg z-50"
+              class="hidden absolute right-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50"
+              role="menu"
+              aria-label="Options de langue"
             >
-              <a href="./index.html" class="block p-0 hover:bg-gray-100">
-                <img src="./images/flags/belgium.png" class="w-9 h-9" />
+              <a
+                href="./fastcaisse-restaurant-pos.html"
+                class="flex items-center px-4 py-3 hover:bg-gray-50 border-b border-gray-100"
+                title="Version française - Solutions POS & CRM Belgique"
+                hreflang="fr"
+                role="menuitem"
+              >
+                <img
+                  src="./images/flags/belgium.png"
+                  alt="Belgique - Français"
+                  class="w-6 h-6 mr-3"
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                />
+                <div>
+                  <div class="text-sm font-medium text-gray-900">FR</div>
+                  <div class="text-xs text-gray-500">Actuel</div>
+                </div>
+                <i class="fas fa-check text-green-600 text-sm ml-2"></i>
               </a>
-              <a href="./index-nl.html" class="block p-0 hover:bg-gray-100">
-                <img src="./images/flags/netherlands.png" class="w-9 h-9" />
+              <a
+                href="./fastcaisse-restaurant-pos-en.html"
+                class="flex items-center px-4 py-3 hover:bg-gray-50 border-b border-gray-100"
+                title="Version anglaise - Solutions POS & CRM Belgique"
+                hreflang="en"
+                role="menuitem"
+              >
+                <img
+                  src="./images/flags/united-kingdom.png"
+                  alt="Anglais"
+                  class="w-6 h-6 mr-3"
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                />
+                <div>
+                  <div class="text-sm font-medium text-gray-900">EN</div>
+                </div>
+              </a>
+              <a
+                href="./fastcaisse-restaurant-pos-nl.html"
+                class="flex items-center px-4 py-3 hover:bg-gray-50"
+                title="Version néerlandaise - POS & CRM Oplossingen België"
+                hreflang="nl"
+                role="menuitem"
+              >
+                <img
+                  src="./images/flags/netherlands.png"
+                  alt="Néerlandais"
+                  class="w-6 h-6 mr-3"
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                />
+                <div>
+                  <div class="text-sm font-medium text-gray-900">NL</div>
+                </div>
               </a>
             </div>
           </div>
         </div>
-        <!-- Mobile Buttons -->
+
+        <!-- Boutons mobile -->
         <div class="md:hidden flex items-center gap-3">
-          <!-- Mobile Language Switcher -->
-          <div class="relative">
-            <button id="mobileLangToggle" class="flex items-center rounded p-1 focus:outline-none">
-              <img src="./images/flags/united-kingdom.png" class="w-8 h-8" />
+          <!-- Sélecteur de langue mobile -->
+          <div class="relative" role="group" aria-label="Sélection de langue mobile" hidden>
+            <button
+              id="mobileLangToggle"
+              class="flex items-center rounded-lg p-2 focus:outline-none hover:bg-gray-50 active:bg-gray-100 transition-colors"
+              aria-label="Sélectionner la langue"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img
+                src="./images/flags/belgium.png"
+                alt="Français"
+                class="w-6 h-6 mr-1.5"
+                width="24"
+                height="24"
+                loading="lazy"
+              />
+              <i class="fas fa-chevron-down text-xs text-gray-500"></i>
             </button>
             <div
               id="mobileLangMenu"
-              class="hidden absolute right-0 bg-white border border-gray-200 rounded shadow-lg z-50"
+              class="hidden absolute right-0 top-full mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-xl z-50 overflow-hidden"
+              role="menu"
+              aria-label="Options de langue mobile"
             >
-              <a href="./index.html" class="block hover:bg-gray-100">
-                <img src="./images/flags/belgium.png" class="w-8 h-8" />
-              </a>
-              <a href="./index-nl.html" class="block hover:bg-gray-100">
-                <img src="./images/flags/netherlands.png" class="w-8 h-8" />
-              </a>
+              <div class="py-1">
+                <a
+                  href="./fastcaisse-restaurant-pos.html"
+                  class="flex items-center px-4 py-3 hover:bg-green-50 transition-colors border-b border-gray-100"
+                  title="Version française - Belgique"
+                  hreflang="fr"
+                  role="menuitem"
+                >
+                  <img
+                    src="./images/flags/belgium.png"
+                    alt="Belgique - Français"
+                    class="w-6 h-6 mr-3 flex-shrink-0"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <div class="text-sm font-medium text-gray-900">FR</div>
+                    <div class="text-xs text-green-600">Actuel</div>
+                  </div>
+                  <i class="fas fa-check text-green-600 text-sm ml-2"></i>
+                </a>
+                <a
+                  href="./fastcaisse-restaurant-pos-en.html"
+                  class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100"
+                  title="Version anglaise - Belgique"
+                  hreflang="en"
+                  role="menuitem"
+                >
+                  <img
+                    src="./images/flags/united-kingdom.png"
+                    alt="Anglais"
+                    class="w-6 h-6 mr-3 flex-shrink-0"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <div class="text-sm font-medium text-gray-900">EN</div>
+                  </div>
+                </a>
+                <a
+                  href="./fastcaisse-restaurant-pos-nl.html"
+                  class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors"
+                  title="Version néerlandaise - Belgique"
+                  hreflang="nl"
+                  role="menuitem"
+                >
+                  <img
+                    src="./images/flags/netherlands.png"
+                    alt="Néerlandais"
+                    class="w-6 h-6 mr-3 flex-shrink-0"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <div class="text-sm font-medium text-gray-900">NL</div>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
-          <!-- Mobile Menu Toggle -->
+
+          <!-- Bouton menu mobile -->
           <button
             id="menu-toggle"
             aria-expanded="false"
-            aria-label="Toggle menu"
+            aria-label="Ouvrir/fermer le menu de navigation"
+            aria-controls="mobile-menu"
             class="focus:outline-none rounded"
           >
             <i
-              class="fas fa-bars text-2xl text-gray-700 transition-all duration-300 ease-in-out"
+              class="fas fa-bars text-2xl text-gray-700 transition-transform duration-300"
+              aria-hidden="true"
             ></i>
           </button>
         </div>
       </nav>
-      <!-- Enhanced Breadcrumb Navigation -->
+
+      <!-- Menu mobile -->
       <nav
-        class="bg-gradient-to-r from-gray-50 to-blue-50 py-1 sm:py-4 px-3 sm:px-4 lg:px-6 text-sm border-b border-gray-200 shadow-sm"
-        aria-label="Breadcrumb"
+        id="mobile-menu"
+        class="hidden md:hidden shadow-lg transform transition-all duration-300"
+        role="menu"
+        aria-label="Menu de navigation mobile"
       >
-        <div class="container mx-auto">
-          <ol class="list-none p-0 inline-flex items-center flex-wrap">
-            <li class="flex items-center mr-2 sm:mr-3">
+        <a
+          href="./index.html#home"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+          title="Accueil FAST CAISSE - Solutions POS & CRM"
+          role="menuitem"
+        >
+          <i class="fas fa-home mr-2" aria-hidden="true"></i>
+          Accueil
+        </a>
+        <a
+          href="./index.html#about"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+          title="À propos de FAST CAISSE - Entreprise belge POS & CRM"
+          role="menuitem"
+        >
+          <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
+          À propos
+        </a>
+        <div class="nav-dropdown">
+          <a
+            href="./index.html#solutions"
+            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            title="Solutions POS & CRM - Restaurant, Retail, Commerce"
+            role="menuitem"
+          >
+            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+            Solutions
+          </a>
+          <div class="nav-dropdown-content">
+            <a href="./fastcaisse-restaurant-pos.html" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-utensils" style="color: #f97316" aria-hidden="true"></i>
+              <span>FC Resto - Caisse Restaurant</span>
+              <span class="nav-dropdown-price">69 €/mo</span>
+            </a>
+            <a href="./fastcaisse-retail-pos.html" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-store" style="color: #3b82f6" aria-hidden="true"></i>
+              <span>FC Shop - Caisse Retail</span>
+              <span class="nav-dropdown-price">59 €/mo</span>
+            </a>
+            <a
+              href="./fastcaisse-crm-business-management.html"
+              class="nav-dropdown-item"
+              role="menuitem"
+            >
+              <i class="fas fa-chart-line" style="color: #8b5cf6" aria-hidden="true"></i>
+              <span>FC Commerce - CRM</span>
+              <span class="nav-dropdown-price">99 €/mo</span>
+            </a>
+          </div>
+        </div>
+        <a
+          href="./index.html#services"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+          title="Nos services - Création de sites, développement sur mesure"
+          role="menuitem"
+        >
+          <i class="fas fa-cogs mr-2" aria-hidden="true"></i>
+          Services
+        </a>
+        <a
+          href="./index.html#clients"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+          title="Nos clients - Plus de 1000 entreprises belges"
+          role="menuitem"
+        >
+          <i class="fas fa-users mr-2" aria-hidden="true"></i>
+          Clients
+        </a>
+        <a
+          href="#contact-form"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+          title="Contactez FAST CAISSE - Obtenez une consultation gratuite"
+          role="menuitem"
+        >
+          <i class="fas fa-envelope mr-2" aria-hidden="true"></i>
+          Contact
+        </a>
+      </nav>
+
+      <!-- Fil d'Ariane -->
+      <nav
+        class="bg-gradient-to-r from-gray-50 to-blue-50 py-1 sm:py-4 border-b border-gray-200"
+        aria-label="Fil d'Ariane"
+      >
+        <div class="container mx-auto px-3 sm:px-4 lg:px-6">
+          <ol class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm">
+            <li class="flex items-center">
               <a
-                href="./index-en.html"
+                href="./index.html"
                 class="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 ease-in-out flex items-center focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm p-1 -m-1"
               >
                 <i class="fas fa-home mr-1.5 text-xs"></i>
-                <span>Home</span>
+                <span>Accueil</span>
               </a>
               <svg
                 class="fill-current w-3 h-3 sm:w-3.5 sm:h-3.5 mx-1.5 sm:mx-2 lg:mx-3 text-gray-400 flex-shrink-0"
@@ -252,93 +553,17 @@
                 />
               </svg>
             </li>
-            <li class="flex items-center text-gray-600 font-medium truncate max-w-xs">
-              <span class="truncate">Conditions Générales</span>
+            <li class="flex items-center text-gray-600 font-medium truncate max-w-32 sm:max-w-xs">
+              <i class="fas fa-file-contract mr-1 sm:mr-1.5 text-xs text-blue-500"></i>
+              <span class="truncate text-xs sm:text-sm">Conditions Générales</span>
             </li>
           </ol>
         </div>
       </nav>
-
-      <!-- Mobile Menu Content - Positioned below breadcrumb -->
-      <div id="mobile-menu" class="md:hidden hidden">
-        <a
-          href="./index-en.html#home"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
-        >
-          <i class="fas fa-home mr-2"></i>
-          Home
-        </a>
-        <a
-          href="./index-en.html#about"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
-        >
-          <i class="fas fa-info-circle mr-2"></i>
-          About
-        </a>
-        <a
-          href="./index-en.html#solutions"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
-        >
-          <i class="fas fa-tools mr-2"></i>
-          Solutions
-        </a>
-        <a
-          href="./index-en.html#services"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
-        >
-          <i class="fas fa-cogs mr-2"></i>
-          Services
-        </a>
-        <a
-          href="./index-en.html#clients"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
-        >
-          <i class="fas fa-users mr-2"></i>
-          Clients
-        </a>
-        <a
-          href="#contact"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-        >
-          <i class="fas fa-envelope mr-2"></i>
-          Contact
-        </a>
-      </div>
     </header>
 
     <!-- Main Content -->
     <main id="main-content" class="pt-16">
-      <!-- Breadcrumb Navigation -->
-      <nav
-        class="bg-gradient-to-r from-gray-50 to-blue-50 py-4 px-4 sm:px-6 text-sm border-b border-gray-200 shadow-sm"
-        aria-label="Fil d'Ariane"
-      >
-        <ol class="list-none p-0 inline-flex items-center flex-wrap">
-          <li class="flex items-center mr-2 sm:mr-3">
-            <a
-              href="./index.html"
-              class="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 ease-in-out flex items-center focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
-            >
-              <i class="fas fa-home mr-1.5 text-xs"></i>
-              <span>Accueil</span>
-            </a>
-            <svg
-              class="fill-current w-3.5 h-3.5 mx-2 sm:mx-3 text-gray-400 flex-shrink-0"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 320 512"
-              aria-hidden="true"
-            >
-              <path
-                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
-              />
-            </svg>
-          </li>
-          <li class="flex items-center text-gray-600 font-medium truncate max-w-xs">
-            <span class="truncate">Conditions Générales</span>
-          </li>
-        </ol>
-      </nav>
-
       <!-- General Conditions Content -->
       <section class="py-12 md:py-16 bg-white">
         <div class="container mx-auto px-4 sm:px-6">
@@ -579,31 +804,33 @@
                 loading="lazy"
               />
               <div class="hidden sm:block">
-                <p class="text-sm text-gray-500 font-medium">Since 2010</p>
+                <p class="text-sm text-gray-500 font-medium">Depuis 2010</p>
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed">
-              POS, CRM, and smart reporting tools for Belgian restaurants and retail. Trusted by
-              1,000+ businesses.
+              Outils POS, CRM et de reporting intelligent pour restaurants et commerces belges.
+              Approuvé par plus de 1 000 entreprises.
             </p>
             <div class="flex items-center gap-2 text-sm text-gray-500">
               <i class="fas fa-map-marker-alt text-blue-600"></i>
-              <span>Based in Belgium</span>
+              <span>Basé en Belgique</span>
             </div>
           </div>
           <!-- Quick Links -->
           <div>
             <h2 class="text-lg font-semibold mb-4">
               <i class="fas fa-link mr-2 text-blue-600"></i>
-              Quick Links
+              Liens Rapides
             </h2>
             <ul class="space-y-2 text-sm">
               <li>
-                <a href="#home" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+                <a href="#home" class="text-gray-600 hover:text-blue-600 transition-colors">
+                  Accueil
+                </a>
               </li>
               <li>
                 <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">
-                  About
+                  À propos
                 </a>
               </li>
               <li>
@@ -623,7 +850,7 @@
               </li>
               <li>
                 <a href="#pricing" class="text-gray-600 hover:text-blue-600 transition-colors">
-                  Pricing
+                  Tarifs
                 </a>
               </li>
               <li>
@@ -637,7 +864,7 @@
           <div>
             <h2 class="text-lg font-semibold mb-4">
               <i class="fas fa-envelope mr-2 text-blue-600"></i>
-              Contact Us
+              Contactez-Nous
             </h2>
             <ul class="space-y-3 text-sm">
               <li class="flex items-start">
@@ -664,15 +891,15 @@
           <div>
             <h2 class="text-lg font-semibold mb-4">
               <i class="fas fa-share-alt mr-2 text-blue-600"></i>
-              Stay Connected
+              Restez Connectés
             </h2>
             <p class="text-gray-600 text-sm mb-4">
-              Subscribe to our newsletter for updates and tips.
+              Abonnez-vous à notre newsletter pour les mises à jour et conseils.
             </p>
             <form class="flex flex-col md:flex-row gap-3 mb-6">
               <input
                 type="email"
-                placeholder="Your email"
+                placeholder="Votre email"
                 class="form-input flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-gray-900 bg-white md:min-w-0"
                 required
               />
@@ -680,7 +907,7 @@
                 type="submit"
                 class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg transition-all duration-300 md:px-4"
               >
-                Subscribe
+                S'abonner
               </button>
             </form>
             <div class="flex space-x-4">
@@ -717,9 +944,9 @@
         </div>
         <div class="mt-12 pt-8 border-t border-gray-200 text-center">
           <p class="text-sm text-gray-600">
-            &copy; 2025 FAST CAISSE SRL. All rights reserved. |
+            &copy; 2025 FAST CAISSE SRL. Tous droits réservés. |
             <a href="./general-conditions-fr.html" class="text-blue-600 hover:underline">
-              General Conditions
+              Conditions Générales
             </a>
           </p>
         </div>

@@ -1116,18 +1116,18 @@
     >
       <nav
         class="container relative mx-auto px-6 py-1 flex justify-between items-center"
-        aria-label="Main navigation"
+        aria-label="Navigation principale"
       >
         <!-- Logo -->
         <div class="flex items-center gap-4">
           <a
-            href="./index-en.html"
-            title="FAST CAISSE - Homepage"
-            aria-label="Go to FAST CAISSE homepage"
+            href="./index.html"
+            title="FAST CAISSE - Accueil"
+            aria-label="Aller à la page d'accueil de FAST CAISSE"
           >
             <img
               src="./images/fastcaisse-logo.png"
-              alt="FAST CAISSE - Leading POS and CRM Solutions for Belgian Businesses Logo"
+              alt="FAST CAISSE - Solutions POS et CRM leader pour les entreprises belges"
               class="object-contain transition-transform duration-300 hover:scale-105"
               width="180"
               height="60"
@@ -1135,31 +1135,32 @@
             />
           </a>
         </div>
-        <!-- Desktop Navigation -->
+
+        <!-- Navigation Desktop -->
         <div class="hidden md:flex space-x-4 items-center" role="menubar">
           <a
-            href="./index-en.html#home"
+            href="./index.html#home"
             class="nav-link"
-            title="FAST CAISSE Homepage - POS & CRM Solutions"
+            title="Accueil FAST CAISSE - Solutions POS & CRM"
             role="menuitem"
           >
             <i class="fas fa-home mr-2" aria-hidden="true"></i>
-            Home
+            Accueil
           </a>
           <a
-            href="./index-en.html#about"
+            href="./index.html#about"
             class="nav-link"
-            title="About FAST CAISSE - Belgian POS & CRM Company Since 2010"
+            title="À propos de FAST CAISSE - Entreprise belge POS & CRM depuis 2010"
             role="menuitem"
           >
             <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
-            About
+            À propos
           </a>
           <div class="nav-dropdown" role="menuitem">
             <a
-              href="./index-en.html#solutions"
+              href="./index.html#solutions"
               class="nav-link"
-              title="POS & CRM Solutions - Restaurant, Retail, Commerce"
+              title="Solutions POS & CRM - Restaurant, Retail, Commerce"
             >
               <i class="fas fa-tools mr-2" aria-hidden="true"></i>
               Solutions
@@ -1167,100 +1168,100 @@
             </a>
             <div class="nav-dropdown-content" role="menu">
               <a
-                href="./fastcaisse-restaurant-pos-en.html"
+                href="./fastcaisse-restaurant-pos.html"
                 class="nav-dropdown-item"
                 role="menuitem"
-                title="FC Resto - Restaurant POS System"
+                title="FC Resto - Système de caisse pour restaurants"
               >
                 <i class="fas fa-utensils" style="color: #f97316" aria-hidden="true"></i>
-                <span>FC Resto - Restaurant POS</span>
-                <span class="nav-dropdown-price">€69/mo</span>
+                <span>FC Resto - Caisse Restaurant</span>
+                <span class="nav-dropdown-price">69 €/mo</span>
               </a>
               <a
-                href="./fastcaisse-retail-pos-en.html"
+                href="./fastcaisse-retail-pos.html"
                 class="nav-dropdown-item"
                 role="menuitem"
-                title="FC Shop - Retail POS System"
+                title="FC Shop - Système de caisse pour commerce"
               >
                 <i class="fas fa-store" style="color: #3b82f6" aria-hidden="true"></i>
-                <span>FC Shop - Retail POS</span>
-                <span class="nav-dropdown-price">€59/mo</span>
+                <span>FC Shop - Caisse Retail</span>
+                <span class="nav-dropdown-price">59 €/mo</span>
               </a>
               <a
-                href="./fastcaisse-crm-business-management-en.html"
+                href="./fastcaisse-crm-business-management.html"
                 class="nav-dropdown-item"
                 role="menuitem"
-                title="FC Commerce - CRM Platform"
+                title="FC Commerce - Plateforme CRM"
               >
                 <i class="fas fa-chart-line" style="color: #8b5cf6" aria-hidden="true"></i>
                 <span>FC Commerce - CRM</span>
-                <span class="nav-dropdown-price">€99/mo</span>
+                <span class="nav-dropdown-price">99 €/mo</span>
               </a>
             </div>
           </div>
           <a
-            href="./index-en.html#services"
+            href="./index.html#services"
             class="nav-link"
-            title="Our Services - Website Creation, Custom Development"
+            title="Nos services - Création de sites, développement sur mesure"
             role="menuitem"
           >
             <i class="fas fa-cogs mr-2" aria-hidden="true"></i>
             Services
           </a>
           <a
-            href="./index-en.html#clients"
+            href="./index.html#clients"
             class="nav-link"
-            title="Our Clients - 1000+ Belgian Businesses Trust FAST CAISSE"
+            title="Nos clients - Plus de 1000 entreprises belges nous font confiance"
             role="menuitem"
           >
             <i class="fas fa-users mr-2" aria-hidden="true"></i>
             Clients
           </a>
           <a
-            href="#contact"
+            href="#contact-form"
             class="nav-link"
-            title="Contact FAST CAISSE - Get Free Consultation"
+            title="Contactez FAST CAISSE - Obtenez une consultation gratuite"
             role="menuitem"
           >
             <i class="fas fa-envelope mr-2" aria-hidden="true"></i>
             Contact
           </a>
-          <!-- Desktop Language Switcher -->
-          <div class="relative" role="group" aria-label="Language selection">
+
+          <!-- Sélecteur de langue (Desktop) -->
+          <div class="relative" role="group" aria-label="Sélection de langue">
             <button
               id="desktopLangToggle"
               class="flex items-center rounded focus:outline-none hover:bg-gray-50 px-2 py-1"
-              aria-label="Select language"
+              aria-label="Sélectionner la langue"
               aria-haspopup="true"
               aria-expanded="false"
             >
               <img
-                src="./images/flags/united-kingdom.png"
-                alt="English"
+                src="./images/flags/belgium.png"
+                alt="Français"
                 class="w-6 h-6 mr-2"
                 width="24"
                 height="24"
                 loading="lazy"
               />
-              <span class="text-sm font-medium text-gray-700">EN</span>
               <i class="fas fa-chevron-down ml-1 text-xs text-gray-500"></i>
             </button>
             <div
               id="desktopLangMenu"
               class="hidden absolute right-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50"
               role="menu"
-              aria-label="Language options"
+              aria-label="Options de langue"
             >
               <a
-                href="./index.html"
+                href="./fastcaisse-restaurant-pos.html"
                 class="flex items-center px-4 py-3 hover:bg-gray-50 border-b border-gray-100"
-                title="French version - FAST CAISSE Solutions POS & CRM Belgique"
+                title="Version française - Solutions POS & CRM Belgique"
                 hreflang="fr"
                 role="menuitem"
               >
                 <img
                   src="./images/flags/belgium.png"
-                  alt="Belgium - French"
+                  alt="Belgique - Français"
                   class="w-6 h-6 mr-3"
                   width="24"
                   height="24"
@@ -1268,18 +1269,20 @@
                 />
                 <div>
                   <div class="text-sm font-medium text-gray-900">FR</div>
+                  <div class="text-xs text-gray-500">Actuel</div>
                 </div>
+                <i class="fas fa-check text-green-600 text-sm ml-2"></i>
               </a>
               <a
                 href="./fastcaisse-restaurant-pos-en.html"
                 class="flex items-center px-4 py-3 hover:bg-gray-50 border-b border-gray-100"
-                title="English version - FAST CAISSE POS & CRM Solutions Belgium"
+                title="Version anglaise - Solutions POS & CRM Belgique"
                 hreflang="en"
                 role="menuitem"
               >
                 <img
                   src="./images/flags/united-kingdom.png"
-                  alt="English"
+                  alt="Anglais"
                   class="w-6 h-6 mr-3"
                   width="24"
                   height="24"
@@ -1290,15 +1293,15 @@
                 </div>
               </a>
               <a
-                href="./index-nl.html"
+                href="./fastcaisse-restaurant-pos-nl.html"
                 class="flex items-center px-4 py-3 hover:bg-gray-50"
-                title="Dutch version - FAST CAISSE POS & CRM Oplossingen België"
+                title="Version néerlandaise - POS & CRM Oplossingen België"
                 hreflang="nl"
                 role="menuitem"
               >
                 <img
                   src="./images/flags/netherlands.png"
-                  alt="Dutch"
+                  alt="Néerlandais"
                   class="w-6 h-6 mr-3"
                   width="24"
                   height="24"
@@ -1311,45 +1314,45 @@
             </div>
           </div>
         </div>
-        <!-- Mobile Buttons -->
+
+        <!-- Boutons mobile -->
         <div class="md:hidden flex items-center gap-3">
-          <!-- Mobile Language Switcher -->
-          <div class="relative" role="group" aria-label="Mobile language selection">
+          <!-- Sélecteur de langue mobile -->
+          <div class="relative" role="group" aria-label="Sélection de langue mobile">
             <button
               id="mobileLangToggle"
               class="flex items-center rounded-lg p-2 focus:outline-none hover:bg-gray-50 active:bg-gray-100 transition-colors"
-              aria-label="Select language"
+              aria-label="Sélectionner la langue"
               aria-haspopup="true"
               aria-expanded="false"
             >
               <img
-                src="./images/flags/united-kingdom.png"
-                alt="English"
+                src="./images/flags/belgium.png"
+                alt="Français"
                 class="w-6 h-6 mr-1.5"
                 width="24"
                 height="24"
                 loading="lazy"
               />
-              <span class="text-xs font-medium text-gray-700 mr-1">EN</span>
               <i class="fas fa-chevron-down text-xs text-gray-500"></i>
             </button>
             <div
               id="mobileLangMenu"
               class="hidden absolute right-0 top-full mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-xl z-50 overflow-hidden"
               role="menu"
-              aria-label="Mobile language options"
+              aria-label="Options de langue mobile"
             >
               <div class="py-1">
                 <a
-                  href="./index.html"
-                  class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100"
-                  title="French version - Belgium"
+                  href="./fastcaisse-restaurant-pos.html"
+                  class="flex items-center px-4 py-3 hover:bg-green-50 transition-colors border-b border-gray-100"
+                  title="Version française - Belgique"
                   hreflang="fr"
                   role="menuitem"
                 >
                   <img
                     src="./images/flags/belgium.png"
-                    alt="Belgium - French"
+                    alt="Belgique - Français"
                     class="w-6 h-6 mr-3 flex-shrink-0"
                     width="24"
                     height="24"
@@ -1357,18 +1360,20 @@
                   />
                   <div class="flex-1 min-w-0">
                     <div class="text-sm font-medium text-gray-900">FR</div>
+                    <div class="text-xs text-green-600">Actuel</div>
                   </div>
+                  <i class="fas fa-check text-green-600 text-sm ml-2"></i>
                 </a>
                 <a
                   href="./fastcaisse-restaurant-pos-en.html"
-                  class="flex items-center px-4 py-3 hover:bg-blue-50 transition-colors border-b border-gray-100"
-                  title="English version - Belgium"
+                  class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100"
+                  title="Version anglaise - Belgique"
                   hreflang="en"
                   role="menuitem"
                 >
                   <img
                     src="./images/flags/united-kingdom.png"
-                    alt="English"
+                    alt="Anglais"
                     class="w-6 h-6 mr-3 flex-shrink-0"
                     width="24"
                     height="24"
@@ -1376,20 +1381,18 @@
                   />
                   <div class="flex-1 min-w-0">
                     <div class="text-sm font-medium text-gray-900">EN</div>
-                    <div class="text-xs text-blue-600">Current</div>
                   </div>
-                  <i class="fas fa-check text-blue-600 text-sm ml-2"></i>
                 </a>
                 <a
-                  href="./index-nl.html"
+                  href="./fastcaisse-restaurant-pos-nl.html"
                   class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors"
-                  title="Dutch version - Belgium"
+                  title="Version néerlandaise - Belgique"
                   hreflang="nl"
                   role="menuitem"
                 >
                   <img
                     src="./images/flags/netherlands.png"
-                    alt="Dutch"
+                    alt="Néerlandais"
                     class="w-6 h-6 mr-3 flex-shrink-0"
                     width="24"
                     height="24"
@@ -1402,11 +1405,12 @@
               </div>
             </div>
           </div>
-          <!-- Mobile Menu Toggle -->
+
+          <!-- Bouton menu mobile -->
           <button
             id="menu-toggle"
             aria-expanded="false"
-            aria-label="Toggle main navigation menu"
+            aria-label="Ouvrir/fermer le menu de navigation"
             aria-controls="mobile-menu"
             class="focus:outline-none rounded"
           >
@@ -1417,20 +1421,107 @@
           </button>
         </div>
       </nav>
-      <!-- Enhanced Breadcrumb Navigation -->
+
+      <!-- Menu mobile -->
       <nav
-        class="bg-gradient-to-r from-gray-50 to-blue-50 py-1 sm:py-4 px-3 sm:px-4 lg:px-6 text-sm border-b border-gray-200 shadow-sm"
-        aria-label="Breadcrumb"
+        id="mobile-menu"
+        class="hidden md:hidden shadow-lg transform transition-all duration-300"
+        role="menu"
+        aria-label="Menu de navigation mobile"
       >
-        <div class="container mx-auto">
-          <ol class="list-none p-0 inline-flex items-center flex-wrap">
-            <li class="flex items-center mr-2 sm:mr-3">
+        <a
+          href="./index.html#home"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+          title="Accueil FAST CAISSE - Solutions POS & CRM"
+          role="menuitem"
+        >
+          <i class="fas fa-home mr-2" aria-hidden="true"></i>
+          Accueil
+        </a>
+        <a
+          href="./index.html#about"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+          title="À propos de FAST CAISSE - Entreprise belge POS & CRM"
+          role="menuitem"
+        >
+          <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
+          À propos
+        </a>
+        <div class="nav-dropdown">
+          <a
+            href="./index.html#solutions"
+            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            title="Solutions POS & CRM - Restaurant, Retail, Commerce"
+            role="menuitem"
+          >
+            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
+            Solutions
+          </a>
+          <div class="nav-dropdown-content">
+            <a href="./fastcaisse-restaurant-pos.html" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-utensils" style="color: #f97316" aria-hidden="true"></i>
+              <span>FC Resto - Caisse Restaurant</span>
+              <span class="nav-dropdown-price">69 €/mo</span>
+            </a>
+            <a href="./fastcaisse-retail-pos.html" class="nav-dropdown-item" role="menuitem">
+              <i class="fas fa-store" style="color: #3b82f6" aria-hidden="true"></i>
+              <span>FC Shop - Caisse Retail</span>
+              <span class="nav-dropdown-price">59 €/mo</span>
+            </a>
+            <a
+              href="./fastcaisse-crm-business-management.html"
+              class="nav-dropdown-item"
+              role="menuitem"
+            >
+              <i class="fas fa-chart-line" style="color: #8b5cf6" aria-hidden="true"></i>
+              <span>FC Commerce - CRM</span>
+              <span class="nav-dropdown-price">99 €/mo</span>
+            </a>
+          </div>
+        </div>
+        <a
+          href="./index.html#services"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+          title="Nos services - Création de sites, développement sur mesure"
+          role="menuitem"
+        >
+          <i class="fas fa-cogs mr-2" aria-hidden="true"></i>
+          Services
+        </a>
+        <a
+          href="./index.html#clients"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+          title="Nos clients - Plus de 1000 entreprises belges"
+          role="menuitem"
+        >
+          <i class="fas fa-users mr-2" aria-hidden="true"></i>
+          Clients
+        </a>
+        <a
+          href="#contact-form"
+          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+          title="Contactez FAST CAISSE - Obtenez une consultation gratuite"
+          role="menuitem"
+        >
+          <i class="fas fa-envelope mr-2" aria-hidden="true"></i>
+          Contact
+        </a>
+      </nav>
+
+      <!-- Fil d'Ariane -->
+      <nav
+        class="bg-gradient-to-r from-gray-50 to-blue-50 py-1 sm:py-4 border-b border-gray-200"
+        aria-label="Fil d'Ariane"
+      >
+        <div class="container mx-auto px-3 sm:px-4 lg:px-6">
+          <ol class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm">
+            <li class="flex items-center">
               <a
-                href="./index-en.html"
+                href="./index.html"
                 class="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 ease-in-out flex items-center focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm p-1 -m-1"
               >
                 <i class="fas fa-home mr-1.5 text-xs"></i>
-                <span>Home</span>
+                <span>Accueil</span>
               </a>
               <svg
                 class="fill-current w-3 h-3 sm:w-3.5 sm:h-3.5 mx-1.5 sm:mx-2 lg:mx-3 text-gray-400 flex-shrink-0"
@@ -1450,82 +1541,11 @@
           </ol>
         </div>
       </nav>
-
-      <!-- Mobile Menu Content - Positioned below breadcrumb -->
-      <div id="mobile-menu" class="md:hidden hidden">
-        <a
-          href="./index-en.html#home"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
-        >
-          <i class="fas fa-home mr-2"></i>
-          Home
-        </a>
-        <a
-          href="./index-en.html#about"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
-        >
-          <i class="fas fa-info-circle mr-2"></i>
-          About
-        </a>
-        <div class="nav-dropdown">
-          <a
-            href="./index-en.html#solutions"
-            class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-            title="POS & CRM Solutions - Restaurant, Retail, Commerce"
-            role="menuitem"
-          >
-            <i class="fas fa-tools mr-2" aria-hidden="true"></i>
-            Solutions
-          </a>
-          <div class="nav-dropdown-content">
-            <a href="./fastcaisse-restaurant-pos-en.html" class="nav-dropdown-item" role="menuitem">
-              <i class="fas fa-utensils" style="color: #f97316" aria-hidden="true"></i>
-              <span>FC Resto - Restaurant POS</span>
-              <span class="nav-dropdown-price">€69/mo</span>
-            </a>
-            <a href="./fastcaisse-retail-pos-en.html" class="nav-dropdown-item" role="menuitem">
-              <i class="fas fa-store" style="color: #3b82f6" aria-hidden="true"></i>
-              <span>FC Shop - Retail POS</span>
-              <span class="nav-dropdown-price">€59/mo</span>
-            </a>
-            <a
-              href="./fastcaisse-crm-business-management-en.html"
-              class="nav-dropdown-item"
-              role="menuitem"
-            >
-              <i class="fas fa-chart-line" style="color: #8b5cf6" aria-hidden="true"></i>
-              <span>FC Commerce - CRM</span>
-              <span class="nav-dropdown-price">€99/mo</span>
-            </a>
-          </div>
-        </div>
-        <a
-          href="./index-en.html#services"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
-        >
-          <i class="fas fa-cogs mr-2"></i>
-          Services
-        </a>
-        <a
-          href="./index-en.html#clients"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
-        >
-          <i class="fas fa-users mr-2"></i>
-          Clients
-        </a>
-        <a
-          href="#contact"
-          class="block px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-        >
-          <i class="fas fa-envelope mr-2"></i>
-          Contact
-        </a>
-      </div>
     </header>
 
     <!-- Main Content -->
     <main id="main-content" class="pt-28 sm:pt-16">
-      <!-- Hero Section -->
+      <!-- Section Héros -->
       <section
         class="hero-section relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-amber-50 hero-pattern py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24"
       >
@@ -1540,9 +1560,9 @@
               >
                 <i class="fas fa-check-circle mr-1.5 sm:mr-2 text-xs sm:text-sm"></i>
                 <span class="hidden sm:inline">
-                  Trusted by 500+ Belgian Restaurants in Brussels, Antwerp & Ghent
+                  Fait confiance à plus de 500 restaurants belges à Bruxelles, Anvers et Gand
                 </span>
-                <span class="sm:hidden">500+ Belgian Restaurants Trust Us</span>
+                <span class="sm:hidden">500+ restaurants belges nous font confiance</span>
               </div>
               <h1
                 class="text-xl sm:text-2xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight mb-4 sm:mb-6"
@@ -1566,42 +1586,42 @@
                 </span>
               </h1>
               <p class="text-lg sm:text-xl lg:text-2xl text-blue-600 font-semibold mb-3 sm:mb-4">
-                Belgium's #1 Certified Restaurant POS System
+                Le système POS n°1 certifié en Belgique
               </p>
               <p class="text-base sm:text-lg text-green-600 font-medium mb-4 sm:mb-4">
-                Powering restaurants across Brussels, Antwerp, Ghent & all of Belgium
+                Puissance pour les restaurants de Bruxelles, Anvers, Gand et toute la Belgique
               </p>
               <p
                 class="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0"
               >
-                FC Resto revolutionizes Belgian restaurant operations with Belgium-specific
-                features. Our certified POS system offers seamless Takeaway.com, UberEats &
-                Deliveroo Integration, Belgian VAT compliance, multi-language support (EN/FR/NL),
-                and advanced kitchen display systems. Join 500+ successful Belgian restaurants
-                already using FC Resto.
+                FC Resto révolutionne la gestion des restaurants belges grâce à des fonctionnalités
+                spécifiques au marché belge. Notre système POS certifié propose une intégration
+                fluide avec Takeaway.com, UberEats et Deliveroo, la conformité à la TVA belge, un
+                support multilingue (FR/NL/EN), ainsi que des systèmes avancés d'affichage en
+                cuisine. Rejoignez plus de 500 restaurants belges déjà satisfaits.
               </p>
 
-              <!-- Key Benefits -->
+              <!-- Avantages clés -->
               <div class="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0">
                 <div class="flex items-center justify-start bg-white/50 rounded-lg p-2 sm:p-3">
                   <i class="fas fa-tv text-blue-600 mr-2 sm:mr-3 text-sm sm:text-base"></i>
-                  <span class="font-medium text-sm sm:text-base">Kitchen Display</span>
+                  <span class="font-medium text-sm sm:text-base">Affichage Cuisine</span>
                 </div>
                 <div class="flex items-center justify-start bg-white/50 rounded-lg p-2 sm:p-3">
                   <i class="fas fa-mobile-alt text-blue-600 mr-2 sm:mr-3 text-sm sm:text-base"></i>
-                  <span class="font-medium text-sm sm:text-base">Online Ordering</span>
+                  <span class="font-medium text-sm sm:text-base">Commande en Ligne</span>
                 </div>
                 <div class="flex items-center justify-start bg-white/50 rounded-lg p-2 sm:p-3">
                   <i class="fas fa-desktop text-blue-600 mr-2 sm:mr-3 text-sm sm:text-base"></i>
-                  <span class="font-medium text-sm sm:text-base">Self-Service Kiosk</span>
+                  <span class="font-medium text-sm sm:text-base">Kiosque Autonome</span>
                 </div>
                 <div class="flex items-center justify-start bg-white/50 rounded-lg p-2 sm:p-3">
                   <i class="fas fa-truck text-blue-600 mr-2 sm:mr-3 text-sm sm:text-base"></i>
-                  <span class="font-medium text-sm sm:text-base">Delivery Integration</span>
+                  <span class="font-medium text-sm sm:text-base">Intégration Livraison</span>
                 </div>
               </div>
 
-              <!-- CTA Buttons -->
+              <!-- Boutons CTA -->
               <div
                 class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0"
               >
@@ -1611,41 +1631,41 @@
                   style="background-color: #2563eb !important; color: white !important"
                 >
                   <i class="fas fa-play-circle mr-2 text-sm sm:text-base"></i>
-                  <span class="hidden sm:inline">Watch Demo</span>
-                  <span class="sm:hidden">Demo</span>
+                  <span class="hidden sm:inline">Voir la démo</span>
+                  <span class="sm:hidden">Démo</span>
                 </button>
                 <a
                   href="#pricing"
                   class="bg-transparent hover:bg-blue-50 text-blue-600 font-semibold py-4 px-8 rounded-full border-2 border-blue-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
                 >
-                  View Pricing
+                  Voir les tarifs
                   <i class="fas fa-arrow-right ml-2"></i>
                 </a>
               </div>
 
-              <!-- Pricing Highlight -->
+              <!-- Mise en avant tarifaire -->
               <div
                 class="pricing-highlight bg-white rounded-lg shadow-lg p-3 sm:p-4 lg:p-6 xl:p-8 border-l-4 border-blue-600 w-full max-w-sm sm:max-w-md lg:max-w-none mx-auto lg:mx-0 mb-6 lg:mb-0"
               >
                 <div class="flex items-center justify-between">
                   <div class="flex-1">
                     <p class="text-gray-600 text-xs sm:text-sm lg:text-base mb-1 lg:mb-2">
-                      Starting from
+                      À partir de
                     </p>
                     <div class="flex items-baseline gap-1 lg:gap-2">
                       <p
                         class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900"
                       >
-                        €69
+                        69 €
                       </p>
                       <span
                         class="text-sm sm:text-base lg:text-lg xl:text-xl font-normal text-gray-600"
                       >
-                        /month
+                        /mois
                       </span>
                     </div>
                     <p class="text-xs sm:text-sm lg:text-base text-gray-500 mt-1 lg:mt-2">
-                      Annual plan: €828
+                      Forfait annuel : 828 €
                     </p>
                   </div>
                   <div class="flex-shrink-0 ml-3 lg:ml-4">
@@ -1675,7 +1695,7 @@
                       <h3
                         class="font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-800"
                       >
-                        FC Resto Dashboard
+                        Tableau de bord FC Resto
                       </h3>
                       <div class="flex space-x-1.5 sm:space-x-2 md:space-x-2.5">
                         <div
@@ -1700,7 +1720,7 @@
                           <span
                             class="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-700"
                           >
-                            Orders Today
+                            Commandes aujourd'hui
                           </span>
                         </div>
                         <span
@@ -1719,13 +1739,13 @@
                           <span
                             class="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-700"
                           >
-                            Revenue
+                            Chiffre d'affaires
                           </span>
                         </div>
                         <span
                           class="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900"
                         >
-                          €2,450
+                          2 450 €
                         </span>
                       </div>
                       <div class="border-t border-gray-200 pt-3 sm:pt-4 md:pt-5">
@@ -1733,19 +1753,19 @@
                           <span
                             class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-800"
                           >
-                            Occupancy:
+                            Occupation :
                           </span>
                           <span
                             class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-blue-600"
                           >
-                            87%
+                            87 %
                           </span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- Floating Elements with explicit positioning -->
+                <!-- Éléments flottants -->
                 <div
                   style="position: absolute; top: -8px; right: -8px; z-index: 30"
                   class="bg-yellow-400 rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center shadow-lg animate-bounce"
@@ -1769,6 +1789,7 @@
         </div>
       </section>
 
+      <!-- Section Fonctionnalités -->
       <section id="features" class="py-12 sm:py-16 lg:py-20 bg-white">
         <div class="container mx-auto px-3 sm:px-4 lg:px-6">
           <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
@@ -1776,24 +1797,24 @@
               class="inline-block px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-blue-600 rounded-full mb-4 sm:mb-4"
               style="background-color: #2563eb !important; color: white !important"
             >
-              Complete Features
+              Fonctionnalités Complètes
             </span>
             <h2
               class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 px-4"
               style="color: #111827 !important"
             >
-              Discover All FastCaisse Resto POS Advantages
+              Découvrez tous les avantages du système POS FC Resto
             </h2>
             <p
               class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4"
               style="color: #4b5563 !important"
             >
-              Everything you need to run your restaurant efficiently and profitably
+              Tout ce dont vous avez besoin pour gérer votre restaurant efficacement et rentablement
             </p>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            <!-- Feature 1 -->
+            <!-- Fonctionnalité 1 -->
             <div
               class="bg-gradient-to-br from-blue-50 to-cyan-50 text-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
               data-aos="fade-up"
@@ -1810,14 +1831,15 @@
                 ></i>
               </div>
               <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
-                User-Friendly Touch Interface
+                Interface tactile intuitive
               </h3>
               <p class="text-gray-600 text-sm sm:text-base">
-                Fast and easy to handle touch screen interface designed for restaurant environments.
+                Interface tactile rapide et facile à utiliser, conçue spécifiquement pour les
+                environnements de restauration.
               </p>
             </div>
 
-            <!-- Feature 2 -->
+            <!-- Fonctionnalité 2 -->
             <div
               class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
               data-aos="fade-up"
@@ -1834,16 +1856,16 @@
                 ></i>
               </div>
               <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
-                Self-Service Kiosk Module
+                Module de kiosque autonome
               </h3>
               <p class="text-gray-600 text-sm sm:text-base">
-                Belgian-certified self-service kiosks with Bancontact, credit card, and cash
-                payments. Reduce waiting times and increase order accuracy in busy Belgian
-                restaurants.
+                Kiosques autonomes certifiés en Belgique avec paiements Bancontact, carte bancaire
+                et espèces. Réduisez les temps d'attente et améliorez la précision des commandes
+                dans les restaurants belges occupés.
               </p>
             </div>
 
-            <!-- Feature 3 -->
+            <!-- Fonctionnalité 3 -->
             <div
               class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-8 border border-purple-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
               data-aos="fade-up"
@@ -1859,14 +1881,14 @@
                   data-fallback="👥"
                 ></i>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Multi-User Access</h3>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Accès multi-utilisateurs</h3>
               <p class="text-gray-600">
-                Accessible locally and remotely from computers, tablets, and smartphones for your
-                entire team.
+                Accessible localement et à distance depuis ordinateurs, tablettes et smartphones
+                pour toute votre équipe.
               </p>
             </div>
 
-            <!-- Feature 4 -->
+            <!-- Fonctionnalité 4 -->
             <div
               class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
               data-aos="fade-up"
@@ -1882,15 +1904,15 @@
                   data-fallback="🌐"
                 ></i>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Belgian Multi-Language Support</h3>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Support multilingue belge</h3>
               <p class="text-gray-600">
-                Complete support for Belgium's official languages: French, Dutch, and English.
-                Perfect for Brussels' multilingual environment and compliant with Belgian language
-                requirements.
+                Support complet des langues officielles de Belgique : français, néerlandais et
+                anglais. Idéal pour l’environnement multilingue de Bruxelles et conforme aux
+                exigences linguistiques belges.
               </p>
             </div>
 
-            <!-- Feature 5 -->
+            <!-- Fonctionnalité 5 -->
             <div
               class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-8 border border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
               data-aos="fade-up"
@@ -1906,14 +1928,14 @@
                   data-fallback="🗺️"
                 ></i>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Visual Table Plan</h3>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Plan de salle visuel</h3>
               <p class="text-gray-600">
-                Interactive floor plan of rooms and terrace with table names or numbers for easy
-                management.
+                Plan interactif des salles et de la terrasse avec noms ou numéros de tables pour une
+                gestion simplifiée.
               </p>
             </div>
 
-            <!-- Feature 6 -->
+            <!-- Fonctionnalité 6 -->
             <div
               class="bg-gradient-to-br from-red-50 to-rose-50 rounded-2xl p-8 border border-red-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
               data-aos="fade-up"
@@ -1929,13 +1951,14 @@
                   data-fallback="🍽️"
                 ></i>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Simple Menu Configuration</h3>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Configuration simple du menu</h3>
               <p class="text-gray-600">
-                Easy setup of menus, categories, and articles to quickly adapt to your offerings.
+                Mise en place facile des menus, catégories et articles pour s’adapter rapidement à
+                votre offre.
               </p>
             </div>
 
-            <!-- Feature 7 -->
+            <!-- Fonctionnalité 7 -->
             <div
               class="bg-gradient-to-br from-cyan-50 to-sky-50 rounded-2xl p-8 border border-cyan-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
               data-aos="fade-up"
@@ -1951,13 +1974,14 @@
                   data-fallback="📺"
                 ></i>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Customer Display Screens</h3>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Écrans d’affichage client</h3>
               <p class="text-gray-600">
-                Queue management and customer information screens for improved waiting experience.
+                Gestion de file d’attente et écrans d’information pour améliorer l’expérience
+                d’attente.
               </p>
             </div>
 
-            <!-- Feature 8 -->
+            <!-- Fonctionnalité 8 -->
             <div
               class="bg-gradient-to-br from-indigo-50 to-violet-50 rounded-2xl p-8 border border-indigo-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
               data-aos="fade-up"
@@ -1973,13 +1997,14 @@
                   data-fallback="➗"
                 ></i>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Individual Order Payments</h3>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Paiements séparés par commande</h3>
               <p class="text-gray-600">
-                Split orders for individual payments, making group dining easier and more flexible.
+                Séparation des commandes pour des paiements individuels, facilitant les repas en
+                groupe et offrant plus de flexibilité.
               </p>
             </div>
 
-            <!-- Feature 9 -->
+            <!-- Fonctionnalité 9 -->
             <div
               class="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl p-8 border border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 benefit-card"
               data-aos="fade-up"
@@ -1995,16 +2020,17 @@
                   data-fallback="🏍️"
                 ></i>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Delivery Management</h3>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Gestion des livraisons</h3>
               <p class="text-gray-600">
-                Complete home delivery management system with pre-loaded streets and cities.
+                Système complet de gestion des livraisons à domicile, avec rues et villes
+                préchargées.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Additional Features Section -->
+      <!-- Section Fonctionnalités Supplémentaires -->
       <section class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="text-center mb-16" data-aos="fade-up">
@@ -2012,14 +2038,15 @@
               class="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
               style="color: #111827 !important"
             >
-              More Powerful Features
+              Encore plus de fonctionnalités puissantes
             </h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto" style="color: #4b5563 !important">
-              Advanced capabilities to optimize your restaurant operations
+              Des fonctionnalités avancées pour optimiser la gestion de votre restaurant
             </p>
           </div>
 
           <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Gestion financière -->
             <div
               class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
               data-aos="fade-right"
@@ -2033,32 +2060,33 @@
                   style="color: #2563eb !important; font-size: 1.5rem !important"
                   data-fallback="🧾"
                 ></i>
-                Financial Management
+                Gestion financière
               </h3>
               <ul class="space-y-4">
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Printing of customer receipts, invoices, and reports</span>
+                  <span>Édition de tickets, factures et rapports pour les clients</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Automatic VAT calculation</span>
+                  <span>Calcul automatique de la TVA</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Refund processing</span>
+                  <span>Traitement des remboursements</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Inventory management and expense tracking</span>
+                  <span>Gestion des stocks et suivi des dépenses</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Cash flow management and prediction</span>
+                  <span>Suivi et prévision de la trésorerie</span>
                 </li>
               </ul>
             </div>
 
+            <!-- Sécurité & Gestion -->
             <div
               class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
               data-aos="fade-left"
@@ -2072,32 +2100,33 @@
                   style="color: #2563eb !important; font-size: 1.5rem !important"
                   data-fallback="🛡️"
                 ></i>
-                Security & Management
+                Sécurité & Gestion
               </h3>
               <ul class="space-y-4">
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Time management (attendance/presence tracking)</span>
+                  <span>Gestion du temps (suivi des présences)</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Role-based security system (access control)</span>
+                  <span>Système de sécurité par rôle (contrôle d'accès)</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Configurable analysis and reports</span>
+                  <span>Analyses et rapports personnalisables</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Electronic menus for customers</span>
+                  <span>Menus électroniques pour les clients</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Choice of fixed and mobile screens</span>
+                  <span>Choix entre écrans fixes ou mobiles</span>
                 </li>
               </ul>
             </div>
 
+            <!-- Intégration matérielle -->
             <div
               class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
               data-aos="fade-right"
@@ -2111,32 +2140,33 @@
                   style="color: #2563eb !important; font-size: 1.5rem !important"
                   data-fallback="🔌"
                 ></i>
-                Hardware Integration
+                Intégration matérielle
               </h3>
               <ul class="space-y-4">
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Electronic scale integration</span>
+                  <span>Intégration avec balance électronique</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Payment terminal integration</span>
+                  <span>Intégration avec terminal de paiement</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Barcode scanner integration</span>
+                  <span>Intégration avec lecteur de codes-barres</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Cash drawer integration</span>
+                  <span>Intégration avec tiroir-caisse</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Automatic coin mechanism integration</span>
+                  <span>Intégration avec système automatique de pièces</span>
                 </li>
               </ul>
             </div>
 
+            <!-- Intégrations & Modules -->
             <div
               class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
               data-aos="fade-left"
@@ -2150,35 +2180,34 @@
                   style="color: #2563eb !important; font-size: 1.5rem !important"
                   data-fallback="🌍"
                 ></i>
-                Integration & Modules
+                Intégrations & Modules
               </h3>
               <ul class="space-y-4">
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Specific integration with Takeaway.com/Pizza.be</span>
+                  <span>Intégration spécifique avec Takeaway.com / Pizza.be</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Specific integration with UberEats</span>
+                  <span>Intégration spécifique avec UberEats</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Discount or loyalty cards module</span>
+                  <span>Module de cartes de fidélité ou de réduction</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>E-commerce website (like Takeaway, EasyOrder)</span>
+                  <span>Site e-commerce (type Takeaway, EasyOrder)</span>
                 </li>
                 <li class="flex items-start">
                   <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span>Mass SMS sending module</span>
+                  <span>Module d'envoi massif de SMS</span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </section>
-
       <script>
         // Check if FontAwesome icons are loading properly
         document.addEventListener("DOMContentLoaded", function () {
@@ -2202,7 +2231,7 @@
         });
       </script>
 
-      <!-- Kiosk Module Section -->
+      <!-- Section Module Kiosque -->
       <section id="kiosk" class="py-12 sm:py-16 lg:py-20 bg-white">
         <div class="container mx-auto px-3 sm:px-4 lg:px-6">
           <div class="max-w-4xl mx-auto text-center mb-8 sm:mb-12" data-aos="fade-up">
@@ -2212,11 +2241,11 @@
               INNOVATION
             </span>
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
-              Self-Service Kiosk Module
+              Module de kiosque autonome
             </h2>
             <p class="text-base sm:text-lg lg:text-xl text-gray-700 px-4">
-              Unattended points of sale with different payment methods: credit card, cash or over
-              the counter. They work independently and continuously.
+              Points de vente sans personnel avec différents modes de paiement : carte bancaire,
+              espèces ou au comptoir. Fonctionnement autonome et continu.
             </p>
           </div>
 
@@ -2229,7 +2258,7 @@
                 <h3
                   class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center lg:text-left"
                 >
-                  Key Benefits
+                  Avantages clés
                 </h3>
                 <ul class="space-y-3 sm:space-y-4">
                   <li class="flex items-start">
@@ -2237,27 +2266,29 @@
                       class="fas fa-chart-line text-green-500 mt-1 mr-2 sm:mr-3 text-lg sm:text-xl flex-shrink-0"
                     ></i>
                     <span class="text-base sm:text-lg">
-                      Increase profitability by more than 15%
+                      Augmentez votre rentabilité de plus de 15 %
                     </span>
                   </li>
                   <li class="flex items-start">
                     <i
                       class="fas fa-hourglass-half text-green-500 mt-1 mr-2 sm:mr-3 text-lg sm:text-xl flex-shrink-0"
                     ></i>
-                    <span class="text-base sm:text-lg">Avoid queues and waiting times</span>
+                    <span class="text-base sm:text-lg">
+                      Évitez les files d’attente et les temps d’attente
+                    </span>
                   </li>
                   <li class="flex items-start">
                     <i
                       class="fas fa-user-friends text-green-500 mt-1 mr-2 sm:mr-3 text-lg sm:text-xl flex-shrink-0"
                     ></i>
-                    <span class="text-base sm:text-lg">Improve the distribution of staff</span>
+                    <span class="text-base sm:text-lg">Optimisez la répartition du personnel</span>
                   </li>
                 </ul>
                 <div
                   class="mt-4 sm:mt-6 flex items-center justify-center lg:justify-start text-blue-600 bg-white/50 rounded-lg p-3"
                 >
                   <i class="fas fa-desktop text-xl sm:text-2xl mr-2 sm:mr-3"></i>
-                  <span class="text-base sm:text-lg font-semibold">24/7 Operation</span>
+                  <span class="text-base sm:text-lg font-semibold">Fonctionnement 24h/24</span>
                 </div>
               </div>
               <div class="flex justify-center order-1 lg:order-2 mb-6 lg:mb-0">
@@ -2267,7 +2298,7 @@
                   >
                     <div class="bg-white rounded-lg sm:rounded-xl p-3 sm:p-4">
                       <div class="flex justify-between mb-3 sm:mb-4">
-                        <div class="text-xs sm:text-sm font-bold">Kiosk Interface</div>
+                        <div class="text-xs sm:text-sm font-bold">Interface Kiosque</div>
                         <div class="flex space-x-1">
                           <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-400 rounded-full"></div>
                           <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-400 rounded-full"></div>
@@ -2277,16 +2308,16 @@
                       <div class="space-y-2 sm:space-y-3">
                         <div class="bg-gray-100 p-2 sm:p-3 rounded-lg text-center">
                           <div class="font-bold text-sm sm:text-base">Menu</div>
-                          <div class="text-xs text-gray-600">Burgers • Pizza • Salads</div>
+                          <div class="text-xs text-gray-600">Burgers • Pizza • Salades</div>
                         </div>
                         <div class="bg-gray-100 p-2 sm:p-3 rounded-lg text-center">
-                          <div class="font-bold text-sm sm:text-base">Customize</div>
-                          <div class="text-xs text-gray-600">Add • Remove • Special</div>
+                          <div class="font-bold text-sm sm:text-base">Personnaliser</div>
+                          <div class="text-xs text-gray-600">Ajouter • Retirer • Spécial</div>
                         </div>
                         <div
                           class="bg-blue-500 text-white p-2 sm:p-3 rounded-lg text-center font-bold text-sm sm:text-base"
                         >
-                          Pay Now
+                          Payer maintenant
                         </div>
                       </div>
                     </div>
@@ -2303,7 +2334,7 @@
         </div>
       </section>
 
-      <!-- Success Stats Section -->
+      <!-- Section Statistiques de réussite -->
       <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="container mx-auto px-3 sm:px-4 lg:px-6">
           <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
@@ -2315,7 +2346,7 @@
                 class="text-xs sm:text-sm font-bold text-blue-600"
                 style="color: #2563eb !important"
               >
-                Success Stories
+                Témoignages
               </span>
             </div>
             <h2
@@ -2324,11 +2355,12 @@
               <span
                 class="bg-gradient-to-r from-yellow-400 via-blue-400 to-red-400 bg-clip-text text-transparent"
               >
-                Real Results from Belgian Restaurants
+                Des résultats concrets dans les restaurants belges
               </span>
             </h2>
             <p class="text-base sm:text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed px-4">
-              See how FC Resto transformed these Belgian restaurants into operational powerhouses
+              Découvrez comment FC Resto a transformé ces restaurants belges en véritables modèles
+              d'efficacité
             </p>
           </div>
 
@@ -2341,14 +2373,14 @@
                 class="text-sm sm:text-base lg:text-lg text-gray-700 mb-4 sm:mb-6 italic leading-relaxed font-medium"
                 style="color: #374151 !important"
               >
-                "FC Resto increased our efficiency by
-                <strong class="text-green-600" style="color: #059669 !important">40%</strong>
-                and reduced customer wait times by half. The kiosk module alone brought in an
-                additional
+                « FC Resto a augmenté notre efficacité de
+                <strong class="text-green-600" style="color: #059669 !important">40 %</strong>
+                et réduit de moitié les temps d’attente des clients. Le module kiosque a généré à
+                lui seul un revenu supplémentaire de
                 <strong class="text-blue-600" style="color: #2563eb !important">
-                  €3,000/month
+                  3 000 €/mois
                 </strong>
-                in revenue with zero additional staff."
+                sans personnel supplémentaire. »
               </blockquote>
               <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0">
                 <div class="flex justify-center sm:justify-start text-yellow-500">
@@ -2362,7 +2394,7 @@
                   class="text-gray-600 sm:ml-2 text-xs sm:text-sm font-semibold text-center sm:text-left"
                   style="color: #4b5563 !important; font-weight: 600 !important"
                 >
-                  — Sophie Martin, Restaurant Owner, Brussels
+                  — Sophie Martin, Gérante de restaurant, Bruxelles
                 </span>
               </div>
             </div>
@@ -2371,6 +2403,7 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto mt-8 sm:mt-12"
           >
+            <!-- Efficacité opérationnelle -->
             <div
               class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-green-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               data-aos="fade-up"
@@ -2381,19 +2414,21 @@
                   class="text-3xl sm:text-4xl font-black text-green-600 mb-2"
                   style="color: #059669 !important; font-weight: 900 !important"
                 >
-                  40%
+                  40 %
                 </div>
                 <div
                   class="text-xs sm:text-sm text-gray-800 font-semibold"
                   style="color: #111827 !important; font-weight: 600 !important"
                 >
-                  Operational Efficiency
+                  Efficacité opérationnelle
                 </div>
                 <div class="text-xs text-gray-600 mt-1" style="color: #4b5563 !important">
-                  Average improvement
+                  Amélioration moyenne
                 </div>
               </div>
             </div>
+
+            <!-- Temps d'attente réduits -->
             <div
               class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               data-aos="fade-up"
@@ -2404,19 +2439,21 @@
                   class="text-3xl sm:text-4xl font-black text-blue-600 mb-2"
                   style="color: #2563eb !important; font-weight: 900 !important"
                 >
-                  50%
+                  50 %
                 </div>
                 <div
                   class="text-xs sm:text-sm text-gray-800 font-semibold"
                   style="color: #111827 !important; font-weight: 600 !important"
                 >
-                  Reduced Wait Times
+                  Temps d’attente réduits
                 </div>
                 <div class="text-xs text-gray-600 mt-1" style="color: #4b5563 !important">
-                  Customer satisfaction boost
+                  Satisfaction client accrue
                 </div>
               </div>
             </div>
+
+            <!-- Revenu mensuel (kiosque) -->
             <div
               class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-purple-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               data-aos="fade-up"
@@ -2427,19 +2464,21 @@
                   class="text-3xl sm:text-4xl font-black text-purple-600 mb-2"
                   style="color: #9333ea !important; font-weight: 900 !important"
                 >
-                  €3K
+                  3 000 €
                 </div>
                 <div
                   class="text-xs sm:text-sm text-gray-800 font-semibold"
                   style="color: #111827 !important; font-weight: 600 !important"
                 >
-                  Monthly Revenue (Kiosk)
+                  Revenu mensuel (kiosque)
                 </div>
                 <div class="text-xs text-gray-600 mt-1" style="color: #4b5563 !important">
-                  Additional income stream
+                  Source de revenus supplémentaire
                 </div>
               </div>
             </div>
+
+            <!-- Restaurants belges -->
             <div
               class="bg-gradient-to-br from-amber-50 to-blue-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-amber-200 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               data-aos="fade-up"
@@ -2456,10 +2495,10 @@
                   class="text-xs sm:text-sm text-gray-900 font-semibold"
                   style="color: #111827 !important; font-weight: 600 !important"
                 >
-                  Belgian Restaurants
+                  Restaurants belges
                 </div>
                 <div class="text-xs text-gray-700 mt-1" style="color: #374151 !important">
-                  Trust FC Resto daily
+                  Nous font confiance quotidiennement
                 </div>
               </div>
             </div>
@@ -2467,22 +2506,23 @@
         </div>
       </section>
 
-      <!-- Certified POS Section -->
+      <!-- Section Système POS Certifié -->
       <section class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="text-center mb-12" data-aos="fade-up">
             <span
               class="inline-block px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-6 shadow-lg"
             >
-              🇧🇪 BELGIAN COMPLIANCE
+              🇧🇪 CONFORMITÉ BELGE
             </span>
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              FC Resto - Belgian Certified POS System (GKS)
+              FC Resto – Système POS certifié en Belgique (GKS)
             </h2>
             <p class="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              FC Resto is officially certified and registered with the Belgian FPS Finance. Our POS
-              system meets all Belgian fiscal requirements, ensuring your restaurant operates
-              legally and compliantly across Brussels, Antwerp, Ghent and all of Belgium.
+              FC Resto est officiellement certifié et enregistré auprès de l'Administration des
+              Services et de la Trésorerie (AST) de la Belgique. Notre système de caisse répond à
+              toutes les exigences fiscales belges, garantissant à votre restaurant un
+              fonctionnement légal et conforme à Bruxelles, Anvers, Gand et dans toute la Belgique.
             </p>
           </div>
 
@@ -2496,10 +2536,11 @@
                   class="text-2xl font-bold text-gray-900 mb-6 text-center"
                   style="color: #111827 !important"
                 >
-                  🏆 Why Choose FC Resto for Your Belgian Restaurant?
+                  🏆 Pourquoi choisir FC Resto pour votre restaurant belge ?
                 </h3>
               </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 px-6 md:px-8">
+                <!-- Caisse certifiée belge -->
                 <div
                   class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
@@ -2515,15 +2556,16 @@
                     </div>
                     <div>
                       <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
-                        Belgian Certified Cash Register
+                        Caisse enregistreuse certifiée
                       </h4>
                       <p class="text-gray-700 text-sm" style="color: #4b5563 !important">
-                        100% compliant with FPS Finance regulations and Belgian VAT requirements
+                        100 % conforme aux réglementations de l’AST et aux exigences TVA belges
                       </p>
                     </div>
                   </div>
                 </div>
 
+                <!-- Système d'affichage cuisine -->
                 <div
                   class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
@@ -2536,15 +2578,16 @@
                     </div>
                     <div>
                       <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
-                        Kitchen Display System
+                        Système d’affichage en cuisine
                       </h4>
                       <p class="text-gray-700 text-sm" style="color: #4b5563 !important">
-                        Real-time order management in French, Dutch, or English
+                        Gestion des commandes en temps réel en français, néerlandais ou anglais
                       </p>
                     </div>
                   </div>
                 </div>
 
+                <!-- Intégration Bancontact -->
                 <div
                   class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
@@ -2560,15 +2603,17 @@
                     </div>
                     <div>
                       <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
-                        Bancontact Integration
+                        Intégration Bancontact
                       </h4>
                       <p class="text-gray-700 text-sm" style="color: #4b5563 !important">
-                        Native support for Belgium's preferred payment method plus coin changers
+                        Support natif du mode de paiement préféré des Belges, avec gestion des
+                        pièces
                       </p>
                     </div>
                   </div>
                 </div>
 
+                <!-- Module kiosque autonome -->
                 <div
                   class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
@@ -2584,15 +2629,17 @@
                     </div>
                     <div>
                       <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
-                        Self-Service Kiosk Module
+                        Module de kiosque autonome
                       </h4>
                       <p class="text-gray-700 text-sm" style="color: #4b5563 !important">
-                        24/7 ordering systems perfect for busy Brussels, Antwerp & Ghent locations
+                        Systèmes de commande 24h/24, idéaux pour les établissements de Bruxelles,
+                        Anvers et Gand
                       </p>
                     </div>
                   </div>
                 </div>
 
+                <!-- Intégration livraison locale -->
                 <div
                   class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 md:col-span-2"
                 >
@@ -2608,26 +2655,28 @@
                     </div>
                     <div>
                       <h4 class="font-bold text-gray-900 mb-2" style="color: #111827 !important">
-                        Local Delivery Integration
+                        Intégration livraison locale
                       </h4>
                       <p class="text-gray-700 text-sm" style="color: #4b5563 !important">
-                        Direct integration with Takeaway.com, UberEats, and Belgian delivery
-                        services
+                        Intégration directe avec Takeaway.com, UberEats et les services de livraison
+                        belges
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <!-- Mention de conformité -->
               <div
-                class="flex items-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm"
+                class="flex items-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm mx-6 mb-6"
               >
                 <i
                   class="fas fa-shield-alt text-blue-600 text-2xl mr-4"
                   style="color: #2563eb !important"
                 ></i>
                 <p class="text-gray-800 font-medium" style="color: #111827 !important">
-                  Officially registered and certified by Belgian authorities for complete legal
-                  compliance.
+                  Officiellement enregistré et certifié par les autorités belges pour une conformité
+                  légale totale.
                 </p>
               </div>
             </div>
@@ -2635,7 +2684,7 @@
         </div>
       </section>
 
-      <!-- Pricing Section -->
+      <!-- Section Tarifs -->
       <section
         id="pricing"
         class="py-16 md:py-20 bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100"
@@ -2646,26 +2695,27 @@
               class="inline-block px-6 py-3 text-sm font-semibold text-white bg-blue-600 rounded-full mb-6 shadow-lg"
               style="background-color: #2563eb !important; color: white !important"
             >
-              💰 BELGIAN PRICING
+              💰 TARIFS BELGES
             </span>
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Flexible Plans for Your Belgian Restaurant
+              Des formules flexibles pour votre restaurant belge
             </h2>
             <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Choose the perfect FC Resto plan for your restaurant. All plans include Belgian VAT
-              compliance, multi-language support, and 24/7 customer support.
+              Choisissez la formule FC Resto idéale pour votre établissement. Toutes incluent la
+              conformité TVA belge, le support multilingue et un service client disponible 24h/24 et
+              7j/7.
             </p>
           </div>
 
-          <!-- Grid container ensuring proper spacing and responsiveness -->
+          <!-- Grille des formules -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            <!-- FC Resto Starter -->
+            <!-- Formule Starter -->
             <div
               class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative overflow-visible"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <!-- Starter Ribbon -->
+              <!-- Badge Starter -->
               <div
                 class="absolute top-0 right-0 bg-gray-500 text-white px-3 py-1 rounded-bl-lg rounded-tr-2xl text-xs font-bold shadow-lg z-10 solutions-ribbon"
                 style="
@@ -2675,17 +2725,17 @@
                   margin-right: -2px;
                 "
               >
-                STARTER
+                DÉBUTANT
               </div>
 
               <div class="text-center mb-8">
                 <h3 class="text-2xl font-bold text-gray-900 mb-2">FC Resto Starter</h3>
                 <div class="mb-4">
-                  <span class="text-5xl font-extrabold text-gray-900">€69</span>
-                  <span class="text-gray-500 ml-2">/month</span>
+                  <span class="text-5xl font-extrabold text-gray-900">69 €</span>
+                  <span class="text-gray-500 ml-2">/mois</span>
                 </div>
-                <p class="text-gray-500 text-sm mb-2">Perfect for small restaurants</p>
-                <p class="text-gray-500 text-sm mb-6">Essential Restaurant Features</p>
+                <p class="text-gray-500 text-sm mb-2">Idéal pour les petits restaurants</p>
+                <p class="text-gray-500 text-sm mb-6">Fonctionnalités essentielles</p>
                 <a
                   href="#contact"
                   class="block w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 text-center"
@@ -2695,41 +2745,41 @@
                     text-decoration: none !important;
                   "
                 >
-                  START FREE TRIAL
+                  COMMENCER L’ESSAI GRATUIT
                 </a>
               </div>
 
               <ul class="space-y-4">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Basic POS System</span>
+                  <span class="text-gray-700">Système POS de base</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Menu Management</span>
+                  <span class="text-gray-700">Gestion du menu</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Order Management</span>
+                  <span class="text-gray-700">Gestion des commandes</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Belgian VAT Compliance</span>
+                  <span class="text-gray-700">Conformité TVA belge</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Basic Sales Reports</span>
+                  <span class="text-gray-700">Rapports de vente basiques</span>
                 </li>
               </ul>
             </div>
 
-            <!-- FC Resto Professional -->
+            <!-- Formule Professionnel -->
             <div
               class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 relative border-2 border-orange-500 overflow-visible"
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <!-- Professional Ribbon -->
+              <!-- Badge le plus populaire -->
               <div
                 class="absolute top-0 right-0 bg-orange-500 text-white px-3 py-1 rounded-bl-lg rounded-tr-2xl text-xs font-bold shadow-lg z-10 solutions-ribbon"
                 style="
@@ -2739,17 +2789,17 @@
                   margin-right: -2px;
                 "
               >
-                MOST POPULAR
+                LE PLUS POPULAIRE
               </div>
 
               <div class="text-center mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">FC Resto Professional</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">FC Resto Professionnel</h3>
                 <div class="mb-4">
-                  <span class="text-5xl font-extrabold text-gray-900">€99</span>
-                  <span class="text-gray-500 ml-2">/month</span>
+                  <span class="text-5xl font-extrabold text-gray-900">99 €</span>
+                  <span class="text-gray-500 ml-2">/mois</span>
                 </div>
-                <p class="text-gray-500 text-sm mb-2">Ideal for growing restaurants</p>
-                <p class="text-gray-500 text-sm mb-6">Complete Restaurant Management</p>
+                <p class="text-gray-500 text-sm mb-2">Parfait pour les restaurants en croissance</p>
+                <p class="text-gray-500 text-sm mb-6">Gestion complète du restaurant</p>
                 <a
                   href="#contact"
                   class="block w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 text-center"
@@ -2759,41 +2809,41 @@
                     text-decoration: none !important;
                   "
                 >
-                  START FREE TRIAL
+                  COMMENCER L’ESSAI GRATUIT
                 </a>
               </div>
 
               <ul class="space-y-4">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Everything in Starter</span>
+                  <span class="text-gray-700">Tout inclus dans Starter</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Kitchen Display System</span>
+                  <span class="text-gray-700">Système d’affichage en cuisine</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Self-Service Kiosks</span>
+                  <span class="text-gray-700">Kiosques autonomes</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Takeaway.com, UberEats & Deliveroo Integration</span>
+                  <span class="text-gray-700">Intégration Takeaway.com, UberEats & Deliveroo</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Advanced Analytics</span>
+                  <span class="text-gray-700">Analyse avancée</span>
                 </li>
               </ul>
             </div>
 
-            <!-- FC Resto Enterprise -->
+            <!-- Formule Entreprise -->
             <div
               class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative overflow-visible"
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              <!-- Enterprise Ribbon -->
+              <!-- Badge Entreprise -->
               <div
                 class="absolute top-0 right-0 bg-purple-500 text-white px-3 py-1 rounded-bl-lg rounded-tr-2xl text-xs font-bold shadow-lg z-10 solutions-ribbon"
                 style="
@@ -2803,61 +2853,62 @@
                   margin-right: -2px;
                 "
               >
-                ENTERPRISE
+                ENTREPRISE
               </div>
 
               <div class="text-center mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">FC Resto Enterprise</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">FC Resto Entreprise</h3>
                 <div class="mb-4">
-                  <span class="text-5xl font-extrabold text-gray-900">€149</span>
-                  <span class="text-gray-500 ml-2">/month</span>
+                  <span class="text-5xl font-extrabold text-gray-900">149 €</span>
+                  <span class="text-gray-500 ml-2">/mois</span>
                 </div>
-                <p class="text-gray-500 text-sm mb-2">For restaurant chains & franchises</p>
-                <p class="text-gray-500 text-sm mb-6">Complete Restaurant Ecosystem</p>
+                <p class="text-gray-500 text-sm mb-2">Pour chaînes et franchises</p>
+                <p class="text-gray-500 text-sm mb-6">Écosystème complet du restaurant</p>
                 <a
                   href="#contact"
                   class="block w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 text-center"
                 >
-                  CONTACT SALES
+                  CONTACTER LES VENTES
                 </a>
               </div>
 
               <ul class="space-y-4">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Everything in Professional</span>
+                  <span class="text-gray-700">Tout inclus dans Professionnel</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Multi-Location Management</span>
+                  <span class="text-gray-700">Gestion multi-sites</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">Custom E-commerce Website</span>
+                  <span class="text-gray-700">Site e-commerce personnalisé</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">CRM & Customer Loyalty</span>
+                  <span class="text-gray-700">CRM et fidélisation client</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span class="text-gray-700">24/7 Priority Support</span>
+                  <span class="text-gray-700">Support prioritaire 24h/24 et 7j/7</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          <!-- Bottom CTA Section -->
+          <!-- Section CTA finale -->
           <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="500">
             <div
               class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 max-w-4xl mx-auto"
             >
               <h3 class="text-2xl font-bold text-gray-900 mb-4">
-                Need Help Choosing the Right Plan?
+                Besoin d’aide pour choisir la bonne formule ?
               </h3>
               <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-                Our experts will help you find the perfect FC Resto plan for your Belgian
-                restaurant. Get a free consultation and personalized recommendation.
+                Nos experts vous aideront à trouver la formule FC Resto parfaite pour votre
+                restaurant belge. Obtenez une consultation gratuite et une recommandation
+                personnalisée.
               </p>
               <a
                 href="#contact"
@@ -2865,7 +2916,7 @@
                 style="background-color: #f97316 !important; color: white !important"
               >
                 <i class="fas fa-phone mr-2"></i>
-                Get Free Consultation
+                Obtenir une consultation gratuite
               </a>
             </div>
           </div>
@@ -3099,7 +3150,7 @@
           }
         });
       </script>
-      <!-- FAQ Section -->
+      <!-- Section FAQ -->
       <section class="py-16 md:py-20 bg-white">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="text-center mb-16" data-aos="fade-up">
@@ -3108,11 +3159,9 @@
             >
               FAQ
             </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Frequently Asked Questions
-            </h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Questions fréquentes</h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find answers to common questions about FC Resto, Belgium's #1 restaurant POS system
+              Réponses aux questions courantes sur FC Resto, le système POS n°1 en Belgique
             </p>
           </div>
 
@@ -3126,16 +3175,18 @@
                 aria-controls="faq1-answer"
                 id="faq1-question"
               >
-                What makes FastCaisse the #1 certified POS in Belgium?
+                Pourquoi FC Resto est-il le système POS certifié n°1 en Belgique ?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
               <div class="faq-answer" id="faq1-answer" aria-labelledby="faq1-question">
                 <p class="text-gray-700">
-                  FastCaisse is officially registered and certified by the Belgian Federal Public
-                  Service Finance (FPS Finance). Our system meets all legal requirements for cash
-                  registers in Belgium, including secure data storage and tamper-proof transaction
-                  logging. This certification ensures complete compliance with Belgian fiscal
-                  regulations, protecting your business from legal issues.
+                  FC Resto est officiellement enregistré et certifié par l'Administration des
+                  Services et de la Trésorerie (AST), l'organisme belge chargé du contrôle fiscal.
+                  Notre système respecte toutes les exigences légales belges en matière de caisses
+                  enregistreuses, notamment le stockage sécurisé des données et la journalisation
+                  inviolable des transactions. Cette certification garantit une conformité totale
+                  avec la réglementation fiscale belge, protégeant ainsi votre établissement de tout
+                  risque juridique.
                 </p>
               </div>
             </div>
@@ -3149,17 +3200,17 @@
                 aria-controls="faq2-answer"
                 id="faq2-question"
               >
-                How does the Kitchen Display System work?
+                Comment fonctionne le système d’affichage en cuisine ?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
               <div class="faq-answer" id="faq2-answer" aria-labelledby="faq2-question">
                 <p class="text-gray-700">
-                  Our Kitchen Display System (KDS) provides real-time communication between the
-                  front-of-house and kitchen. When an order is placed, it instantly appears on
-                  screens in the kitchen and bar areas with clear visual organization by station.
-                  The system supports order timing, order modification alerts, and can be configured
-                  for different preparation stages, ensuring efficient order fulfillment and
-                  reducing errors.
+                  Notre système d’affichage en cuisine (KDS) assure une communication en temps réel
+                  entre le service en salle et la cuisine. Dès qu'une commande est passée, elle
+                  apparaît instantanément sur les écrans de la cuisine et du bar, organisée
+                  visuellement par poste de travail. Le système gère les délais de préparation,
+                  signale les modifications de commande, et peut être configuré selon les étapes de
+                  préparation, ce qui permet une exécution rapide et réduit les erreurs.
                 </p>
               </div>
             </div>
@@ -3173,17 +3224,18 @@
                 aria-controls="faq3-answer"
                 id="faq3-question"
               >
-                What are the benefits of the Self-Service Kiosk Module?
+                Quels sont les avantages du module de kiosque autonome ?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
               <div class="faq-answer" id="faq3-answer" aria-labelledby="faq3-question">
                 <p class="text-gray-700">
-                  The Self-Service Kiosk Module allows customers to place orders independently at
-                  their convenience. This reduces wait times, decreases the workload on staff, and
-                  can lead to increased average order value as customers can browse the menu at
-                  their own pace. Kiosks operate 24/7, increasing potential sales, and help optimize
-                  staff allocation to other critical tasks. They also improve order accuracy as
-                  customers enter their selections directly.
+                  Le module de kiosque autonome permet aux clients de commander eux-mêmes, à tout
+                  moment. Cela réduit les temps d'attente, diminue la charge de travail du personnel
+                  et peut augmenter la valeur moyenne des commandes, car les clients prennent leur
+                  temps pour consulter le menu. Les kiosques fonctionnent 24h/24, augmentant ainsi
+                  les ventes potentielles, et permettent d’optimiser la répartition du personnel sur
+                  d'autres tâches essentielles. Ils améliorent aussi la précision des commandes,
+                  puisque les clients saisissent eux-mêmes leurs choix.
                 </p>
               </div>
             </div>
@@ -3197,16 +3249,17 @@
                 aria-controls="faq4-answer"
                 id="faq4-question"
               >
-                Can I integrate with delivery platforms like UberEats and Takeaway.com?
+                Puis-je intégrer des plateformes de livraison comme UberEats et Takeaway.com ?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
               <div class="faq-answer" id="faq4-answer" aria-labelledby="faq4-question">
                 <p class="text-gray-700">
-                  Yes, FastCaisse offers specific integration modules for major delivery platforms
-                  including UberEats and Takeaway.com. This allows orders from these platforms to
-                  flow directly into your FastCaisse system, streamlining order management and
-                  reducing the chance of errors from manual entry. You can manage all orders,
-                  whether dine-in, takeaway, or delivery, from a single interface.
+                  Oui, FC Resto propose des modules d’intégration spécifiques aux principales
+                  plateformes de livraison, notamment UberEats et Takeaway.com. Grâce à cette
+                  intégration, les commandes passées sur ces plateformes sont automatiquement
+                  transmises à votre système FC Resto, ce qui simplifie la gestion des commandes et
+                  élimine les erreurs de saisie manuelle. Vous pouvez ainsi gérer toutes vos
+                  commandes — sur place, à emporter ou en livraison — depuis une seule interface.
                 </p>
               </div>
             </div>
@@ -3220,16 +3273,17 @@
                 aria-controls="faq5-answer"
                 id="faq5-question"
               >
-                Can I have my own e-commerce website?
+                Puis-je avoir mon propre site e-commerce ?
                 <i class="fas fa-chevron-down faq-toggle-icon"></i>
               </button>
               <div class="faq-answer" id="faq5-answer" aria-labelledby="faq5-question">
                 <p class="text-gray-700">
-                  Yes, FastCaisse offers the ability to provide you with your own dedicated
-                  e-commerce website. This functions similarly to popular platforms like
-                  Takeaway.com or UberEats but is branded for your restaurant. It allows customers
-                  to order directly from you, giving you more control over the customer experience
-                  and keeping delivery fees in-house, potentially increasing your profit margins.
+                  Oui, FC Resto vous permet de disposer de votre propre site e-commerce dédié. Ce
+                  site fonctionne comme Takeaway.com ou UberEats, mais est entièrement personnalisé
+                  avec l’identité de votre restaurant. Il permet aux clients de commander
+                  directement chez vous, ce qui vous donne un meilleur contrôle de l’expérience
+                  client et vous évite les frais de commission des plateformes tierces, augmentant
+                  ainsi votre marge bénéficiaire.
                 </p>
               </div>
             </div>
@@ -3237,21 +3291,22 @@
         </div>
       </section>
 
-      <!-- Enhanced Restaurant Types Section -->
+      <!-- Section Types de restaurants -->
       <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <div class="container mx-auto px-6">
           <div class="text-center mb-16" data-aos="fade-up">
             <span
               class="inline-block px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-6 shadow-lg"
             >
-              🍽️ INDUSTRY EXPERTISE
+              🍽️ EXPERTISE MÉTIER
             </span>
             <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
-              Perfect for Every Type of Belgian Restaurant
+              Adapté à tous les types de restaurants belges
             </h2>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              FC Resto adapts to your specific restaurant model with customized features and
-              workflows designed for Belgian hospitality standards.
+              FC Resto s’adapte à votre modèle de restaurant avec des fonctionnalités et des flux de
+              travail personnalisés, conçus selon les standards de l’hôtellerie-restauration en
+              Belgique.
             </p>
           </div>
 
@@ -3269,25 +3324,25 @@
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Pizzerias</h3>
               <p class="text-gray-600 mb-6">
-                Specialized for pizza shops with topping management, delivery optimization, and oven
-                coordination.
+                Spécialisé pour les pizzerias : gestion des ingrédients, optimisation des livraisons
+                et coordination des fours.
               </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Pizza builder with toppings</span>
+                  <span>Constructeur de pizzas avec choix des ingrédients</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Delivery zone management</span>
+                  <span>Gestion des zones de livraison</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Oven timing coordination</span>
+                  <span>Coordination des temps de cuisson au four</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Takeaway.com integration</span>
+                  <span>Intégration avec Takeaway.com</span>
                 </li>
               </ul>
             </div>
@@ -3303,32 +3358,32 @@
               >
                 <i class="fas fa-hamburger text-white text-2xl"></i>
               </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Fast Casual & QSR</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Restauration rapide & QSR</h3>
               <p class="text-gray-600 mb-6">
-                High-speed service, self-service kiosks, and delivery integration perfect for
-                Belgian fast-food chains.
+                Service ultra-rapide, kiosques autonomes et intégration livraison, idéal pour les
+                chaînes de restauration rapide en Belgique.
               </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Self-service kiosk integration</span>
+                  <span>Intégration des kiosques autonomes</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Rapid order processing</span>
+                  <span>Traitement ultra-rapide des commandes</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Drive-thru optimization</span>
+                  <span>Optimisation du service drive</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Multi-location management</span>
+                  <span>Gestion multi-sites</span>
                 </li>
               </ul>
             </div>
 
-            <!-- Ethnic Cuisine -->
+            <!-- Cuisine ethnique -->
             <div
               class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105"
               data-aos="fade-up"
@@ -3339,32 +3394,32 @@
               >
                 <i class="fas fa-globe-asia text-white text-2xl"></i>
               </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Ethnic Cuisine</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Cuisine ethnique</h3>
               <p class="text-gray-600 mb-6">
-                Support for diverse cuisines with multi-language menus and specialty preparation
-                tracking.
+                Support pour les cuisines diverses : menus multilingues et suivi des préparations
+                spécifiques.
               </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Multi-language menu display</span>
+                  <span>Affichage multilingue des menus</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Spice level customization</span>
+                  <span>Personnalisation du niveau d’épices</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Dietary restriction tracking</span>
+                  <span>Suivi des restrictions alimentaires</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Cultural payment preferences</span>
+                  <span>Préférences de paiement culturelles</span>
                 </li>
               </ul>
             </div>
 
-            <!-- Fine Dining -->
+            <!-- Restaurant gastronomique -->
             <div
               class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105"
               data-aos="fade-up"
@@ -3375,27 +3430,27 @@
               >
                 <i class="fas fa-wine-glass text-white text-2xl"></i>
               </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Fine Dining</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Restaurant gastronomique</h3>
               <p class="text-gray-600 mb-6">
-                Elegant table management, wine pairing suggestions, and sophisticated reporting for
-                upscale Belgian establishments.
+                Gestion élégante des tables, suggestions d’accords mets-vins et rapports
+                sophistiqués pour les établissements haut de gamme.
               </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Advanced table reservation system</span>
+                  <span>Système de réservation avancé</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Wine inventory & pairing management</span>
+                  <span>Gestion des stocks et accords mets-vins</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>VIP customer profiles & preferences</span>
+                  <span>Profils VIP et préférences clients</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Multi-course meal coordination</span>
+                  <span>Coordination des repas multi-services</span>
                 </li>
               </ul>
             </div>
@@ -3413,30 +3468,30 @@
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Cafés & Bistros</h3>
               <p class="text-gray-600 mb-6">
-                Perfect for Belgian cafés with flexible seating, loyalty programs, and specialty
-                drink management.
+                Idéal pour les cafés belges : aménagement flexible, programmes de fidélité et
+                gestion des boissons spéciales.
               </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Flexible seating arrangements</span>
+                  <span>Aménagement flexible des places</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Customer loyalty programs</span>
+                  <span>Programmes de fidélité clients</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Specialty beverage recipes</span>
+                  <span>Recettes de boissons spéciales</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Daily specials management</span>
+                  <span>Gestion des plats du jour</span>
                 </li>
               </ul>
             </div>
 
-            <!-- Food Trucks & Pop-ups -->
+            <!-- Camions & Pop-ups -->
             <div
               class="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:scale-105"
               data-aos="fade-up"
@@ -3447,27 +3502,27 @@
               >
                 <i class="fas fa-truck text-white text-2xl"></i>
               </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Food Trucks & Pop-ups</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Camions & Pop-ups</h3>
               <p class="text-gray-600 mb-6">
-                Mobile-friendly solutions with offline capabilities and location-based pricing for
-                Belgian events.
+                Solutions mobiles avec fonctionnement hors ligne et tarification par emplacement,
+                parfait pour les événements en Belgique.
               </p>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Offline transaction capability</span>
+                  <span>Fonctionnement hors ligne possible</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Mobile payment optimization</span>
+                  <span>Optimisation des paiements mobiles</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Location-based menu pricing</span>
+                  <span>Tarification basée sur l’emplacement</span>
                 </li>
                 <li class="flex items-center">
                   <i class="fas fa-check text-green-500 mr-3"></i>
-                  <span>Event management tools</span>
+                  <span>Outils de gestion d’événements</span>
                 </li>
               </ul>
             </div>
@@ -3475,34 +3530,34 @@
         </div>
       </section>
 
-      <!-- Advanced Integration Features -->
+      <!-- Section Intégrations avancées -->
       <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
           <div class="text-center mb-16" data-aos="fade-up">
             <span
               class="inline-block px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-green-600 to-blue-600 rounded-full mb-6 shadow-lg"
             >
-              🔗 SEAMLESS INTEGRATIONS
+              🔗 INTÉGRATIONS FLUIDES
             </span>
             <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
-              Connect Everything Your Restaurant Needs
+              Connectez tout ce dont votre restaurant a besoin
             </h2>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              FC Resto integrates with all major Belgian services and platforms, creating a unified
-              ecosystem for your restaurant operations.
+              FC Resto s’intègre à tous les principaux services et plateformes belges, créant un
+              écosystème unifié pour la gestion de votre restaurant.
             </p>
           </div>
 
           <div class="max-w-7xl mx-auto">
-            <!-- Main Integration Dashboard -->
+            <!-- Tableau de bord des intégrations -->
             <div
               class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8 mb-12 shadow-2xl"
               data-aos="fade-up"
             >
               <div class="text-center mb-8">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">FC Resto Integration Hub</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Centre d’intégration FC Resto</h3>
                 <p class="text-lg text-gray-600">
-                  One dashboard to manage all your restaurant's connected services
+                  Un seul tableau de bord pour gérer tous les services connectés de votre restaurant
                 </p>
               </div>
 
@@ -3519,7 +3574,7 @@
                       <i class="fas fa-utensils text-white text-lg"></i>
                     </div>
                     <h4 class="font-bold text-sm text-gray-900">Takeaway.com</h4>
-                    <p class="text-xs text-gray-600 mt-1">Official Partner</p>
+                    <p class="text-xs text-gray-600 mt-1">Partenaire officiel</p>
                   </div>
                 </div>
 
@@ -3534,7 +3589,7 @@
                       <i class="fas fa-car text-white text-lg"></i>
                     </div>
                     <h4 class="font-bold text-sm text-gray-900">UberEats</h4>
-                    <p class="text-xs text-gray-600 mt-1">Direct Integration</p>
+                    <p class="text-xs text-gray-600 mt-1">Intégration directe</p>
                   </div>
                 </div>
 
@@ -3550,7 +3605,7 @@
                       <i class="fas fa-motorcycle text-white text-lg"></i>
                     </div>
                     <h4 class="font-bold text-sm text-gray-900">Deliveroo</h4>
-                    <p class="text-xs text-gray-600 mt-1">API Connected</p>
+                    <p class="text-xs text-gray-600 mt-1">Connecté via API</p>
                   </div>
                 </div>
 
@@ -3565,7 +3620,7 @@
                       <i class="fas fa-credit-card text-white text-lg"></i>
                     </div>
                     <h4 class="font-bold text-sm text-gray-900">Bancontact</h4>
-                    <p class="text-xs text-gray-600 mt-1">Belgian Standard</p>
+                    <p class="text-xs text-gray-600 mt-1">Standard belge</p>
                   </div>
                 </div>
 
@@ -3580,7 +3635,7 @@
                       <i class="fas fa-mobile-alt text-white text-lg"></i>
                     </div>
                     <h4 class="font-bold text-sm text-gray-900">Online</h4>
-                    <p class="text-xs text-gray-600 mt-1">Payment Gateway</p>
+                    <p class="text-xs text-gray-600 mt-1">Passerelle de paiement</p>
                   </div>
                 </div>
 
@@ -3595,14 +3650,15 @@
                       <i class="fas fa-calculator text-white text-lg"></i>
                     </div>
                     <h4 class="font-bold text-sm text-gray-900">QuickBooks</h4>
-                    <p class="text-xs text-gray-600 mt-1">Financial reports</p>
+                    <p class="text-xs text-gray-600 mt-1">Rapports financiers</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Integration Benefits -->
+            <!-- Avantages des intégrations -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Synchronisation en temps réel -->
               <div
                 class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 shadow-lg"
                 data-aos="fade-up"
@@ -3613,27 +3669,29 @@
                 >
                   <i class="fas fa-sync-alt text-white text-2xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Real-Time Synchronization</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Synchronisation en temps réel</h3>
                 <p class="text-gray-600 mb-6">
-                  Orders from all platforms appear instantly in your FC Resto dashboard. Menu
-                  changes sync across all channels automatically.
+                  Les commandes provenant de toutes les plateformes apparaissent instantanément dans
+                  votre tableau de bord FC Resto. Les modifications de menu sont synchronisées
+                  automatiquement sur tous les canaux.
                 </p>
                 <ul class="space-y-2 text-sm">
                   <li class="flex items-center">
                     <i class="fas fa-check text-green-500 mr-2"></i>
-                    <span>Instant order notifications</span>
+                    <span>Notifications instantanées des commandes</span>
                   </li>
                   <li class="flex items-center">
                     <i class="fas fa-check text-green-500 mr-2"></i>
-                    <span>Automatic inventory updates</span>
+                    <span>Mise à jour automatique des stocks</span>
                   </li>
                   <li class="flex items-center">
                     <i class="fas fa-check text-green-500 mr-2"></i>
-                    <span>Menu synchronization</span>
+                    <span>Synchronisation des menus</span>
                   </li>
                 </ul>
               </div>
 
+              <!-- Analyse unifiée -->
               <div
                 class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-2xl p-8 shadow-lg"
                 data-aos="fade-up"
@@ -3644,54 +3702,55 @@
                 >
                   <i class="fas fa-chart-line text-white text-2xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Unified Analytics</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Analyse unifiée</h3>
                 <p class="text-gray-600 mb-6">
-                  Get comprehensive insights across all sales channels with Belgian tax compliance
-                  and detailed performance metrics.
+                  Obtenez des indicateurs complets sur tous vos canaux de vente, avec conformité
+                  fiscale belge et métriques détaillées de performance.
                 </p>
                 <ul class="space-y-2 text-sm">
                   <li class="flex items-center">
                     <i class="fas fa-check text-blue-500 mr-2"></i>
-                    <span>Cross-platform reporting</span>
+                    <span>Rapports multi-plateformes</span>
                   </li>
                   <li class="flex items-center">
                     <i class="fas fa-check text-blue-500 mr-2"></i>
-                    <span>Belgian VAT calculations</span>
+                    <span>Calculs automatiques de TVA belge</span>
                   </li>
                   <li class="flex items-center">
                     <i class="fas fa-check text-blue-500 mr-2"></i>
-                    <span>Performance benchmarking</span>
+                    <span>Comparaison des performances</span>
                   </li>
                 </ul>
               </div>
 
+              <!-- Conformité belge -->
               <div
                 class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 shadow-lg"
                 data-aos="fade-up"
-                data-aos-delay="100"
+                data-aos-delay="300"
               >
                 <div
                   class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6"
                 >
                   <i class="fas fa-shield-alt text-white text-2xl" style="color: white"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Belgian Compliance</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Conformité belge</h3>
                 <p class="text-gray-600 mb-6">
-                  FC Resto ensures full compliance with Belgian restaurant regulations and VAT
-                  requirements, giving you peace of mind.
+                  FC Resto garantit une conformité totale aux réglementations belges pour les
+                  restaurants et aux exigences TVA, pour une tranquillité d’esprit totale.
                 </p>
                 <ul class="space-y-3">
                   <li class="flex items-center">
                     <i class="fas fa-check text-green-500 mr-2"></i>
-                    <span>Belgian VAT compliance</span>
+                    <span>Conformité TVA belge</span>
                   </li>
                   <li class="flex items-center">
                     <i class="fas fa-check text-green-500 mr-2"></i>
-                    <span>Legal receipt printing</span>
+                    <span>Édition légale des tickets</span>
                   </li>
                   <li class="flex items-center">
                     <i class="fas fa-check text-green-500 mr-2"></i>
-                    <span>HORECA regulations</span>
+                    <span>Conformité HORECA</span>
                   </li>
                 </ul>
               </div>
@@ -3699,13 +3758,12 @@
           </div>
         </div>
       </section>
-
-      <!-- Contact Section -->
+      <!-- Section Contact -->
       <section
         id="contact"
         class="py-20 bg-gradient-to-br from-blue-50 via-white to-amber-50 relative overflow-hidden"
       >
-        <!-- Background Pattern Elements -->
+        <!-- Éléments de fond décoratifs -->
         <div
           class="absolute top-0 right-0 w-64 h-64 bg-orange-100 rounded-full opacity-30 -mr-32 -mt-32"
         ></div>
@@ -3718,12 +3776,12 @@
             <span
               class="inline-block px-6 py-3 text-sm font-semibold text-black bg-orange-600 rounded-full mb-6 shadow-lg"
             >
-              🚀 GET STARTED
+              🚀 COMMENCEZ MAINTENANT
             </span>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 text-gray-900">
-              Transform Your Restaurant with a
+              Transformez votre restaurant grâce à une
               <span class="text-orange-600 relative">
-                Free Demo
+                démo gratuite
                 <svg
                   class="absolute -bottom-3 left-0 w-full h-3"
                   viewBox="0 0 200 16"
@@ -3741,35 +3799,38 @@
               </span>
             </h2>
             <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Join 500+ successful Belgian restaurants already using FC Resto. Our specialists will
-              show you how our POS system can transform your business operations.
+              Rejoignez plus de 500 restaurants belges déjà satisfaits par FC Resto. Nos experts
+              vous montreront comment notre système POS peut révolutionner la gestion de votre
+              établissement.
             </p>
           </div>
 
           <div class="max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="100">
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
               <div class="grid grid-cols-1 lg:grid-cols-5 gap-0">
-                <!-- Contact Form Section -->
+                <!-- Formulaire de contact -->
                 <div class="lg:col-span-3 p-8 md:p-10">
-                  <h3 class="text-2xl font-bold mb-6 text-gray-900">Request Your Free Demo</h3>
+                  <h3 class="text-2xl font-bold mb-6 text-gray-900">
+                    Demandez votre démo gratuite
+                  </h3>
                   <form id="contact-form" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div class="form-group">
                         <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
-                          Full Name
+                          Nom complet
                         </label>
                         <input
                           type="text"
                           id="name"
                           name="name"
-                          placeholder="Your name"
+                          placeholder="Votre nom"
                           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
                           required
                         />
                       </div>
                       <div class="form-group">
                         <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
-                          Phone Number
+                          Numéro de téléphone
                         </label>
                         <input
                           type="tel"
@@ -3783,39 +3844,39 @@
                     </div>
                     <div class="form-group">
                       <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
-                        Email Address
+                        Adresse e-mail
                       </label>
                       <input
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="your@email.com"
+                        placeholder="vous@email.com"
                         class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
                         required
                       />
                     </div>
                     <div class="form-group">
                       <label for="restaurant" class="block text-sm font-medium text-gray-700 mb-1">
-                        Restaurant Name
+                        Nom du restaurant
                       </label>
                       <input
                         type="text"
                         id="restaurant"
                         name="restaurant"
-                        placeholder="Your restaurant name"
+                        placeholder="Nom de votre restaurant"
                         class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
                         required
                       />
                     </div>
                     <div class="form-group">
                       <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
-                        Message (Optional)
+                        Message (facultatif)
                       </label>
                       <textarea
                         id="message"
                         name="message"
                         rows="3"
-                        placeholder="Tell us about your specific needs..."
+                        placeholder="Parlez-nous de vos besoins spécifiques..."
                         class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
                       ></textarea>
                     </div>
@@ -3823,17 +3884,17 @@
                       type="submit"
                       class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg"
                     >
-                      Schedule My Free Demo
+                      Planifier ma démo gratuite
                     </button>
                   </form>
                 </div>
 
-                <!-- Contact Info Section -->
+                <!-- Informations de contact -->
                 <div
                   class="lg:col-span-2 bg-gradient-to-br from-blue-600 to-blue-800 text-white p-8 md:p-10 flex flex-col justify-between"
                 >
                   <div>
-                    <h3 class="text-2xl font-bold mb-8">Contact Our Experts</h3>
+                    <h3 class="text-2xl font-bold mb-8">Contactez nos experts</h3>
                     <div class="space-y-8">
                       <div class="flex items-start">
                         <div
@@ -3842,7 +3903,7 @@
                           <i class="fas fa-phone text-white"></i>
                         </div>
                         <div>
-                          <p class="text-sm text-blue-100 mb-1">Call us directly</p>
+                          <p class="text-sm text-blue-100 mb-1">Appelez-nous directement</p>
                           <a
                             href="tel:+3221234567"
                             class="text-lg font-bold text-white hover:text-orange-300 transition-colors"
@@ -3858,7 +3919,7 @@
                           <i class="fas fa-envelope text-white"></i>
                         </div>
                         <div>
-                          <p class="text-sm text-blue-100 mb-1">Email our team</p>
+                          <p class="text-sm text-blue-100 mb-1">Écrivez à notre équipe</p>
                           <a
                             href="mailto:info@fastcaisse.be"
                             class="text-lg font-bold text-white hover:text-orange-300 transition-colors"
@@ -3874,18 +3935,18 @@
                           <i class="fas fa-map-marker-alt text-white"></i>
                         </div>
                         <div>
-                          <p class="text-sm text-blue-100 mb-1">Visit our office</p>
-                          <p class="text-lg font-bold text-white">Brussels, Belgium</p>
+                          <p class="text-sm text-blue-100 mb-1">Visitez notre bureau</p>
+                          <p class="text-lg font-bold text-white">Bruxelles, Belgique</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Testimonial -->
+                  <!-- Témoignage client -->
                   <div class="mt-12 bg-white/10 backdrop-blur-sm p-6 rounded-xl">
                     <p class="italic text-blue-50 mb-4">
-                      "FC Resto transformed our restaurant operations. The demo showed us exactly
-                      how much time and money we could save."
+                      « FC Resto a transformé la gestion de notre restaurant. La démo nous a montré
+                      exactement combien de temps et d’argent nous pourrions économiser. »
                     </p>
                     <div class="flex items-center">
                       <div
@@ -3895,7 +3956,7 @@
                       </div>
                       <div>
                         <p class="font-bold text-white">Jean Dupont</p>
-                        <p class="text-xs text-blue-200">Restaurant Owner, Brussels</p>
+                        <p class="text-xs text-blue-200">Gérant de restaurant, Bruxelles</p>
                       </div>
                     </div>
                   </div>
@@ -3903,7 +3964,7 @@
               </div>
             </div>
 
-            <!-- Trust Badges -->
+            <!-- Badges de confiance -->
             <div
               class="mt-12 flex flex-wrap justify-center items-center gap-8"
               data-aos="fade-up"
@@ -3913,25 +3974,25 @@
                 class="flex items-center bg-white/80 backdrop-blur-sm px-6 py-3 rounded-xl shadow-sm"
               >
                 <i class="fas fa-shield-alt text-blue-600 text-xl mr-3"></i>
-                <span class="text-sm font-medium text-gray-700">Belgian Certified</span>
+                <span class="text-sm font-medium text-gray-700">Certifié en Belgique</span>
               </div>
               <div
                 class="flex items-center bg-white/80 backdrop-blur-sm px-6 py-3 rounded-xl shadow-sm"
               >
                 <i class="fas fa-clock text-blue-600 text-xl mr-3"></i>
-                <span class="text-sm font-medium text-gray-700">24/7 Support</span>
+                <span class="text-sm font-medium text-gray-700">Support 24h/24</span>
               </div>
               <div
                 class="flex items-center bg-white/80 backdrop-blur-sm px-6 py-3 rounded-xl shadow-sm"
               >
                 <i class="fas fa-users text-blue-600 text-xl mr-3"></i>
-                <span class="text-sm font-medium text-gray-700">500+ Happy Clients</span>
+                <span class="text-sm font-medium text-gray-700">500+ clients satisfaits</span>
               </div>
               <div
                 class="flex items-center bg-white/80 backdrop-blur-sm px-6 py-3 rounded-xl shadow-sm"
               >
                 <i class="fas fa-thumbs-up text-blue-600 text-xl mr-3"></i>
-                <span class="text-sm font-medium text-gray-700">Satisfaction Guaranteed</span>
+                <span class="text-sm font-medium text-gray-700">Satisfaction garantie</span>
               </div>
             </div>
           </div>
@@ -3939,49 +4000,51 @@
       </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Pied de page -->
     <footer class="bg-white text-gray-900 py-16 relative overflow-hidden" data-aos="fade-up">
+      <!-- Motif de fond subtil -->
       <div
         class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMDktMS43OTEtNC00LTRzLTQgMS43OTEtNCA0IDEuNzkxIDQgNCA0IDQtMS43OTEgNC00eiIvPjwvZz48L2c+PC9zdmc+')]"
       ></div>
+
       <div class="container mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <!-- Company Info -->
+          <!-- Informations société -->
           <div class="space-y-5 max-w-sm">
             <div class="flex items-center gap-4">
               <img
                 src="./images/fastcaisse-logo.png"
-                alt="FAST CAISSE logo"
+                alt="Logo FC Resto"
                 class="h-14 sm:h-16 md:h-20 w-auto max-w-[180px] object-contain transition-transform duration-300 hover:scale-105"
                 loading="lazy"
               />
               <div class="hidden sm:block">
-                <p class="text-sm text-gray-500 font-medium">Since 2010</p>
+                <p class="text-sm text-gray-500 font-medium">Depuis 2010</p>
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed">
-              POS, CRM, and smart reporting tools for Belgian restaurants and retail. Trusted by
-              1,000+ businesses.
+              Systèmes POS, CRM et outils de reporting intelligent pour restaurants et commerces en
+              Belgique. Fait confiance à plus de 1 000 établissements.
             </p>
             <div class="flex items-center gap-2 text-sm text-gray-500">
               <i class="fas fa-map-marker-alt text-blue-600"></i>
-              <span>Based in Belgium</span>
+              <span>Basé en Belgique</span>
             </div>
             <div class="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
               <a
-                href="./index-en.html#"
+                href="./index.html#"
                 class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
               >
                 <i class="fab fa-facebook-f text-lg sm:text-xl"></i>
               </a>
               <a
-                href="./index-en.html#"
+                href="./index.html#"
                 class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
               >
                 <i class="fab fa-linkedin-in text-lg sm:text-xl"></i>
               </a>
               <a
-                href="./index-en.html#"
+                href="./index.html#"
                 class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
               >
                 <i class="fab fa-instagram text-lg sm:text-xl"></i>
@@ -4004,7 +4067,7 @@
               </li>
               <li>
                 <a
-                  href="./fastcaisse-retail-pos-en.html"
+                  href="./fastcaisse-retail-pos.html"
                   class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
                 >
                   <i class="fas fa-store mr-2 text-sm"></i>
@@ -4013,7 +4076,7 @@
               </li>
               <li>
                 <a
-                  href="./fastcaisse-crm-business-management-en.html"
+                  href="./fastcaisse-crm-business-management.html"
                   class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
                 >
                   <i class="fas fa-chart-line mr-2 text-sm"></i>
@@ -4023,26 +4086,26 @@
             </ul>
           </div>
 
-          <!-- Company -->
+          <!-- Entreprise -->
           <div>
-            <h3 class="font-bold text-lg mb-6 text-gray-900">Company</h3>
+            <h3 class="font-bold text-lg mb-6 text-gray-900">Entreprise</h3>
             <ul class="space-y-3">
               <li>
                 <a
-                  href="./index-en.html#about"
+                  href="./index.html#about"
                   class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
                 >
                   <i class="fas fa-info-circle mr-2 text-sm"></i>
-                  About Us
+                  À propos
                 </a>
               </li>
               <li>
                 <a
-                  href="./index-en.html#clients"
+                  href="./index.html#clients"
                   class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
                 >
                   <i class="fas fa-users mr-2 text-sm"></i>
-                  Our Clients
+                  Nos clients
                 </a>
               </li>
               <li>
@@ -4057,13 +4120,13 @@
             </ul>
           </div>
 
-          <!-- Contact Info -->
+          <!-- Informations de contact -->
           <div>
-            <h3 class="font-bold text-lg mb-6 text-gray-900">Contact Us</h3>
+            <h3 class="font-bold text-lg mb-6 text-gray-900">Contactez-nous</h3>
             <ul class="space-y-4 text-gray-600">
               <li class="flex items-start">
                 <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-500"></i>
-                <span>Chaussée de Haecht 1749, 1130 Brussels, Belgium</span>
+                <span>Chaussée de Haecht 1749, 1130 Bruxelles, Belgique</span>
               </li>
               <li class="flex items-center">
                 <i class="fas fa-phone mr-3 text-blue-500"></i>
@@ -4077,7 +4140,7 @@
               <li class="flex items-center">
                 <i class="fas fa-envelope mr-3 text-blue-500"></i>
                 <a
-                  href="mailto:info@fastcaisse.be?subject=FC%20Shop%20Inquiry&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20FC%20Shop%20for%20my%20retail%20business.%0D%0A%0D%0AThank%20you!"
+                  href="mailto:info@fastcaisse.be?subject=Demande%20d'information%20FC%20Resto&body=Bonjour,%0D%0A%0D%0AJ'aimerais%20obtenir%20plus%20d'informations%20sur%20FC%20Resto%20pour%20mon%20restaurant.%0D%0A%0D%00Cordialement"
                   class="text-gray-600 hover:text-blue-600 transition-colors duration-300"
                 >
                   info@fastcaisse.be
@@ -4091,12 +4154,12 @@
 
         <div class="mt-12 pt-8 border-t border-gray-200 text-center">
           <p class="text-sm text-gray-600">
-            &copy; 2025 FAST CAISSE SRL. All rights reserved. |
+            &copy; 2025 FC Resto SRL. Tous droits réservés. |
             <a
               href="./general-conditions-fr.html"
               class="hover:text-blue-600 transition-colors duration-300"
             >
-              General Conditions
+              Conditions générales
             </a>
           </p>
         </div>
