@@ -2946,3 +2946,83 @@ header {
     margin-top: 0.5rem;
   }
 }
+
+/* Enhanced loader with blur effect */
+#loader.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+/* Loader content container for centered spinner */
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced spinner */
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 4px solid #e5e7eb; /* gray-200 */
+  border-top: 4px solid #2563eb; /* blue-600 */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Blur effect for elements during loading */
+.loading-blur {
+  filter: blur(2px);
+  transition: filter 0.3s ease;
+}
+
+/* Ensure header and footer remain visible but with blur effect */
+#loader:not(.hidden) ~ header,
+#loader:not(.hidden) ~ footer {
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10000 !important;
+}
+
+/* Override any existing loader styles */
+#loader[data-preserve-header-footer="true"] {
+  z-index: 9999;
+}
+
+/* Ensure spinner is properly centered */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Prevent scrolling during loading */
+body.loading {
+  overflow: hidden;
+}
+
+/* Ensure loader is hidden when not needed */
+#loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+

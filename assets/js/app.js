@@ -1,18 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
   const loader = document.getElementById('loader');
+  const header = document.getElementById('header');
+  const footer = document.querySelector('footer');
+
+  // Configure loader for blurred background with visible header/footer
+  if (loader) {
+    // Add blur-background class to loader
+    loader.classList.add('blur-background');
+
+    // Make sure loader doesn't hide header and footer
+    loader.setAttribute('data-preserve-header-footer', 'true');
+
+    // Create a separate loader content container if it doesn't exist
+    if (!loader.querySelector('.loader-content')) {
+      const spinnerElement = loader.querySelector('.spinner');
+      const loaderContent = document.createElement('div');
+      loaderContent.className = 'loader-content';
+
+      if (spinnerElement) {
+        // Move existing spinner into the new container
+        spinnerElement.parentNode.removeChild(spinnerElement);
+        loaderContent.appendChild(spinnerElement);
+      } else {
+        // Create a new spinner if none exists
+        const newSpinner = document.createElement('div');
+        newSpinner.className = 'spinner';
+        loaderContent.appendChild(newSpinner);
+      }
+
+      loader.appendChild(loaderContent);
+    }
+  }
 
   window.showLoader = function () {
-    loader.classList.remove('hidden');
-    document.body.classList.add('loading');
+    if (loader) {
+      loader.classList.remove('hidden');
+      document.body.classList.add('loading');
+
+      // Ensure header and footer remain visible but with blur effect
+      if (header) {
+        header.style.visibility = 'visible';
+        header.classList.add('loading-blur');
+      }
+      if (footer) {
+        footer.style.visibility = 'visible';
+        footer.classList.add('loading-blur');
+      }
+
+      // Add blur to main content
+      const mainContent = document.querySelector('main');
+      if (mainContent) {
+        mainContent.classList.add('loading-blur');
+      }
+    }
   };
 
   window.hideLoader = function () {
-    loader.classList.add('hidden');
-    document.body.classList.remove('loading');
+    if (loader) {
+      loader.classList.add('hidden');
+      document.body.classList.remove('loading');
+
+      // Remove blur effect
+      document.querySelectorAll('.loading-blur').forEach((el) => {
+        el.classList.remove('loading-blur');
+      });
+    }
   };
 
-  // Initial page load - loader is already visible, just hide it after 3 seconds
-  setTimeout(hideLoader, 3000);
+  // Initial page load - loader is already visible, just hide it after 1 second
+  setTimeout(hideLoader, 1000);
 
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
