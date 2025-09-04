@@ -3025,3 +3025,72 @@ body.loading {
   opacity: 0;
   pointer-events: none;
 }
+/* Mobile header controls layout - Language switcher beside toggle */
+@media (max-width: 767px) {
+  /* Container for mobile controls */
+  .md\:hidden.flex.items-center.gap-3 {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 0.5rem !important; /* Reduce gap between language switcher and menu toggle */
+  }
+
+  /* Language switcher button styling */
+  #mobileLangToggle {
+    padding: 0 !important;
+    margin-right: 0.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Menu toggle button styling */
+  #menu-toggle {
+    padding: 0rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Ensure language menu appears properly */
+  #mobileLangMenu {
+    right: auto !important;
+    left: 0 !important;
+    top: 100% !important;
+    margin-top: 0.5rem !important;
+  }
+  /* Target the logo image in the header */
+  header img {
+    max-height: 3.5rem !important; /* Increase height for mobile */
+    width: auto !important;
+    transform: scale(1.2) !important; /* Add a slight scale effect */
+    transform-origin: left center !important; /* Scale from left side */
+    margin-right: 1rem !important; /* Add some space to the right */
+    transition: all 0.3s ease !important; /* Smooth transition */
+  }
+
+  /* Ensure the logo container has enough space */
+  header .flex.items-center.gap-4 {
+    flex: 1 !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Adjust header height to accommodate larger logo */
+  header nav {
+    min-height: 4.5rem !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+
+  /* Ensure mobile controls stay properly aligned */
+  .md\:hidden.flex.items-center.gap-3 {
+    margin-left: auto !important;
+  }
+}
+
+/* Even larger logo for very small mobile screens */
+@media (max-width: 374px) {
+  header img {
+    max-height: 3rem !important; /* Slightly smaller on very small screens */
+    transform: scale(1.15) !important; /* Slightly reduced scale */
+  }
+}

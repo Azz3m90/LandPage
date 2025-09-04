@@ -97,86 +97,6 @@
     <link rel="icon" type="image/webp" href="./images/fastcaisse-logo.png" />
     <!-- Swiper CSS and JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <style>
-      /* Mobile tweaks to mirror EN page for About and Solutions */
-      @media (max-width: 640px) {
-        /* Solutions */
-        #solutions {
-          padding-top: 2rem !important;
-          padding-bottom: 2rem !important;
-        }
-        #solutions .grid {
-          gap: 1rem !important;
-        }
-        #solutions .p-8 {
-          padding: 1rem !important;
-        }
-        #solutions li,
-        #solutions li span {
-          white-space: normal !important;
-          word-break: break-word;
-        }
-        #solutions .solutions-ribbon {
-          top: 0.25rem !important;
-          right: 0.25rem !important;
-          transform: scale(0.9);
-        }
-        #solutions .text-5xl {
-          font-size: 2rem !important;
-          line-height: 2.25rem !important;
-        }
-        /* Hero heading scale down on mobile */
-        #solutions #solutions-heading {
-          font-size: 1.5rem !important;
-          line-height: 1.2 !important;
-        }
-        #solutions #solutions-heading span {
-          font-size: 1.125rem !important;
-          line-height: 1.35 !important;
-        }
-        /* Badge at top of Solutions section */
-        #solutions header .inline-flex {
-          white-space: nowrap !important;
-          padding: 0.25rem 0.5rem !important;
-          font-size: 0.6875rem !important;
-          line-height: 1rem !important;
-          flex-wrap: nowrap !important;
-          max-width: calc(100% - 1rem) !important;
-          margin: 0 auto !important;
-          justify-content: center !important;
-          text-align: center !important;
-          border-radius: 0.75rem !important;
-          gap: 0.25rem !important;
-        }
-        #solutions header .inline-flex svg {
-          width: 12px !important;
-          height: 12px !important;
-          margin-right: 0.25rem !important;
-          flex: 0 0 auto !important;
-        }
-        #solutions header .inline-flex span {
-          display: inline !important;
-          flex: 0 1 auto !important;
-          white-space: nowrap !important;
-          overflow: hidden !important;
-          text-overflow: ellipsis !important;
-        }
-        /* About */
-        #about .rounded-2xl.overflow-hidden {
-          height: auto !important;
-        }
-        #about .flex-col.sm\:flex-row > * {
-          width: 100% !important;
-        }
-        /* Hide About feature descriptions on mobile */
-        #about .flex.items-start .ml-4 > p.text-gray-600.text-sm {
-          display: none !important;
-        }
-        #about .flex.items-start .ml-4 > p.text-gray-800.font-semibold {
-          margin-bottom: 0 !important;
-        }
-      }
-    </style>
     <!-- Enhanced Structured Data -->
     <script type="application/ld+json">
       {
@@ -387,7 +307,7 @@
             <img
               src="./images/fastcaisse-logo.png"
               alt="FAST CAISSE - Leidende POS en CRM Oplossingen voor Belgische Bedrijven Logo"
-              class="object-contain transition-transform duration-300 hover:scale-105"
+              class="object-contain transition-transform duration-300 hover:scale-105 w-13 h-13"
               width="180"
               height="60"
               loading="lazy"
@@ -761,7 +681,7 @@
     <main>
       <section
         id="home"
-        class="py-24 md:py-32 bg-white text-gray-900 relative overflow-hidden"
+        class="pt-32 md:pt-40 pb-24 md:pb-32 bg-white text-gray-900 relative overflow-hidden"
         data-aos="fade-up"
       >
         <div class="absolute inset-0 opacity-20">
@@ -2307,7 +2227,12 @@
               <h3 class="text-xl sm:text-2xl font-semibold mb-6 text-gray-900">
                 Stuur een Bericht
               </h3>
-              <form id="contact-form" class="space-y-4 flex-1 flex flex-col justify-between">
+              <form
+                id="contact-form"
+                action="#"
+                method="POST"
+                class="space-y-4 flex-1 flex flex-col justify-between"
+              >
                 <div class="grid grid-cols-1 gap-4">
                   <div>
                     <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">
@@ -2349,6 +2274,18 @@
                     />
                   </div>
                   <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                      Telefoonnummer
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="form-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
+                      placeholder="+32 XXX XX XX XX"
+                    />
+                  </div>
+                  <div>
                     <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">
                       Onderwerp
                     </label>
@@ -2387,9 +2324,13 @@
                   />
                   <label for="gdpr-consent" class="ml-2 text-xs text-gray-700">
                     Ik ga akkoord met het
-                    <a href="#" class="text-blue-600 hover:underline">privacybeleid</a>
+                    <a href="./general-conditions-fr.html" class="text-blue-600 hover:underline">
+                      privacybeleid
+                    </a>
                     en de
-                    <a href="#" class="text-blue-600 hover:underline">algemene voorwaarden</a>
+                    <a href="./general-conditions-fr.html" class="text-blue-600 hover:underline">
+                      algemene voorwaarden
+                    </a>
                   </label>
                 </div>
                 <div
@@ -2565,11 +2506,6 @@
               <li>
                 <a href="#clients" class="text-gray-600 hover:text-blue-600 transition-colors">
                   Klanten
-                </a>
-              </li>
-              <li>
-                <a href="#pricing" class="text-gray-600 hover:text-blue-600 transition-colors">
-                  Prijzen
                 </a>
               </li>
               <li>
