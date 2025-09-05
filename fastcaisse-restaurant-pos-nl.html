@@ -119,6 +119,7 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="./assets/css/maincss.css" />
+    <link rel="stylesheet" href="./assets/css/crm-business-management.css" />
 
     <!-- Structured Data / JSON-LD voor SEO -->
     <script type="application/ld+json">
@@ -327,773 +328,6 @@
         ]
       }
     </script>
-
-    <style>
-      /* Enhance visual appeal */
-      .feature-icon {
-        transition: transform 0.3s ease-in-out;
-      }
-      .feature-icon:hover {
-        transform: scale(1.1);
-      }
-      .hero-pattern {
-        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      }
-      .text-gradient {
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .back-to-top {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        z-index: 40;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease-in-out;
-      }
-
-      /* Mobile menu base styles */
-      #mobile-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        z-index: 50;
-        background: white;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        border-top: 1px solid #e5e7eb;
-        opacity: 0;
-        transform: translateY(-10px);
-        pointer-events: none;
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      /* Active state for mobile menu */
-      #mobile-menu.active {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-        max-height: none; /* Remove height restriction */
-        overflow-y: visible; /* Remove individual scrollbar */
-      }
-
-      /* Force display when active on mobile */
-      @media (max-width: 767px) {
-        #mobile-menu.active {
-          display: block !important;
-          opacity: 1 !important;
-          visibility: visible !important;
-          transform: translateY(0) !important;
-        }
-      }
-
-      /* Smooth icon transitions for toggle button */
-      #menu-toggle i,
-      #menu-toggle span {
-        transition: all 0.3s ease-in-out;
-        font-weight: 900 !important;
-        display: inline-block !important;
-      }
-
-      /* FontAwesome 6 Support */
-      #menu-toggle i {
-        font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", sans-serif !important;
-      }
-
-      /* Ensure FontAwesome icons are properly displayed - FA6 */
-      #menu-toggle .fa-solid.fa-bars:before,
-      #menu-toggle .fas.fa-bars:before {
-        content: "\f0c9" !important;
-      }
-
-      #menu-toggle .fa-solid.fa-xmark:before,
-      #menu-toggle .fas.fa-times:before {
-        content: "\f00d" !important;
-      }
-
-      /* Unicode fallback styling */
-      #menu-toggle span {
-        font-family: Arial, sans-serif !important;
-        line-height: 1 !important;
-      }
-
-      /* Optional: Add a subtle rotation effect during transition */
-      #menu-toggle i.fa-times,
-      #menu-toggle i.fa-xmark {
-        transform: rotate(90deg);
-      }
-
-      #menu-toggle i.fa-bars {
-        transform: rotate(0deg);
-      }
-
-      .back-to-top.show {
-        opacity: 1;
-        visibility: visible;
-      }
-      .pricing-card:hover {
-        transform: translateY(-5px);
-        box-shadow:
-          0 20px 25px -5px rgba(0, 0, 0, 0.1),
-          0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      }
-
-      /* Enhanced Mobile & Tablet Responsive Styles */
-
-      /* Fix breadcrumb overlap on mobile */
-      @media (max-width: 640px) {
-        .hero-section {
-          padding-top: 8rem !important; /* Extra space for breadcrumb - increased for mobile */
-          margin-top: auto;
-        }
-      }
-
-      /* Mobile menu hidden state */
-      #mobile-menu.hidden {
-        display: none;
-      }
-
-      /* Mobile menu visible state when not hidden */
-      #mobile-menu:not(.hidden) {
-        display: block;
-      }
-
-      /* JavaScript will handle showing/hiding - CSS just provides base styles */
-      #mobile-menu a {
-        display: block !important;
-        color: #374151 !important;
-        text-decoration: none !important;
-        padding: 12px 24px !important;
-        border-bottom: 1px solid #f3f4f6 !important;
-        transition: all 0.2s ease !important;
-        background: white !important;
-      }
-
-      #mobile-menu a:hover {
-        background-color: #f0f9ff !important;
-        color: #2563eb !important;
-      }
-
-      #mobile-menu a i {
-        display: inline-block !important;
-        margin-right: 8px !important;
-        width: 16px !important;
-        color: inherit !important;
-      }
-      .benefit-card:hover {
-        transform: translateY(-3px);
-      }
-      /* Scroll margin for anchor links */
-      #features,
-      #pricing,
-      #contact,
-      #kiosk {
-        scroll-margin-top: 3rem; /* Adjusted for shorter header */
-      }
-      /* FAQ Styles */
-      .faq-question {
-        background-color: #f8fafc; /* slate-50 */
-        border: 1px solid #e2e8f0; /* slate-200 */
-        border-radius: 0.5rem;
-        padding: 1rem 1.5rem;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: all 0.3s ease;
-        width: 100%;
-        text-align: left;
-        font-weight: 600;
-        color: #1e293b; /* slate-800 */
-      }
-      .faq-question:hover {
-        background-color: #f1f5f9; /* slate-100 */
-      }
-      .faq-question.active {
-        background-color: #dbeafe; /* blue-100 */
-        border-color: #93c5fd; /* blue-300 */
-      }
-      .faq-answer {
-        display: none;
-        padding: 1rem 1.5rem;
-        background-color: #f8fafc; /* slate-50 */
-        border-left: 4px solid #3b82f6; /* blue-500 */
-        border-right: 1px solid #e2e8f0; /* slate-200 */
-        border-bottom: 1px solid #e2e8f0; /* slate-200 */
-        border-radius: 0 0 0.5rem 0.5rem;
-      }
-      .faq-answer.open {
-        display: block;
-        animation: fadeIn 0.3s ease-out;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .faq-toggle-icon {
-        transition: transform 0.3s ease;
-      }
-      .dashboard-card {
-        transition: all 0.3s ease;
-        border-radius: 1rem;
-        overflow: hidden;
-        box-shadow:
-          0 4px 6px -1px rgba(0, 0, 0, 0.1),
-          0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      }
-      .dashboard-card.featured {
-        border-color: #f97316; /* blue-500 */
-        box-shadow:
-          0 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        transform: scale(1.02);
-      }
-      .dashboard-card:hover {
-        transform: translateY(-5px);
-        box-shadow:
-          0 20px 25px -5px rgba(0, 0, 0, 0.1),
-          0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      }
-      .dashboard-card.featured:hover {
-        transform: scale(1.02) translateY(-5px);
-      }
-
-      /* Enhanced Contact Form Styles */
-      .form-group {
-        position: relative;
-      }
-
-      .form-group input:focus,
-      .form-group textarea:focus,
-      .form-group select:focus {
-        box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
-        border-color: #f97316;
-      }
-
-      .form-group input.border-red-500:focus {
-        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
-        border-color: #ef4444;
-      }
-
-      .form-group input.border-green-500:focus {
-        box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
-        border-color: #22c55e;
-      }
-
-      .form-group label {
-        font-weight: 500;
-        color: #374151;
-      }
-
-      .form-group input::placeholder,
-      .form-group textarea::placeholder {
-        color: #9ca3af;
-        opacity: 1;
-      }
-
-      /* Loading animation for submit button */
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      .fa-spinner.fa-spin {
-        animation: spin 1s linear infinite;
-      }
-
-      /* Success and error message animations */
-      #success-message,
-      #error-message {
-        animation: slideIn 0.3s ease-out;
-      }
-
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Contact info hover effects */
-      .contact-info-item {
-        transition: all 0.3s ease;
-      }
-
-      .contact-info-item:hover {
-        transform: translateX(5px);
-      }
-
-      /* Phone and email link styles */
-      a[href^="tel:"],
-      a[href^="mailto:"] {
-        text-decoration: none;
-        position: relative;
-      }
-
-      a[href^="tel:"]:hover,
-      a[href^="mailto:"]:hover {
-        text-decoration: underline;
-      }
-
-      /* Mobile menu styles */
-      #mobile-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        z-index: 40;
-        background: rgba(255, 255, 255, 0.98);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-      }
-
-      #mobile-menu.hidden {
-        display: none !important;
-      }
-
-      #mobile-menu:not(.hidden) {
-        display: block;
-        animation: slideDown 0.3s ease-out;
-      }
-
-      @keyframes slideDown {
-        from {
-          transform: translateY(-10px);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-
-      @media (min-width: 768px) {
-        #mobile-menu {
-          display: none !important;
-        }
-      }
-
-      /* Mobile First - Base styles for mobile */
-      @media (max-width: 640px) {
-        /* Typography adjustments */
-        h1 {
-          font-size: 2.5rem !important;
-          line-height: 1.1 !important;
-        }
-        h2 {
-          font-size: 2rem !important;
-          line-height: 1.2 !important;
-        }
-        h3 {
-          font-size: 1.5rem !important;
-          line-height: 1.3 !important;
-        }
-
-        /* Container padding */
-        .container {
-          padding-left: 1rem !important;
-          padding-right: 1rem !important;
-        }
-
-        /* Hero section mobile */
-        .hero-pattern {
-          padding: 2rem 0 !important;
-        }
-
-        /* Dashboard mockup mobile adjustments */
-        .dashboard-mockup {
-          max-width: 320px !important;
-          margin: 0 auto !important;
-        }
-
-        /* Pricing card mobile */
-        .pricing-highlight {
-          margin-bottom: 1.5rem !important;
-          max-width: 300px !important;
-        }
-
-        /* Feature cards mobile */
-        .benefit-card {
-          padding: 1.5rem !important;
-          margin-bottom: 1rem !important;
-        }
-        .feature-icon {
-          width: 3rem !important;
-          height: 3rem !important;
-        }
-        .feature-icon i {
-          font-size: 1.25rem !important;
-        }
-
-        /* Form adjustments */
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-          font-size: 16px; /* Prevents zoom on iOS */
-          padding: 0.875rem !important;
-        }
-
-        /* Button adjustments */
-        .btn {
-          padding: 0.875rem 1.5rem !important;
-          font-size: 1rem !important;
-        }
-
-        /* Navigation mobile */
-        .nav-link {
-          padding: 0.75rem 1rem !important;
-        }
-
-        /* Pricing cards mobile */
-        .dashboard-card {
-          margin-bottom: 1.5rem !important;
-        }
-
-        /* Testimonial mobile */
-        blockquote {
-          font-size: 1rem !important;
-        }
-      }
-
-      /* Tablet styles */
-      @media (min-width: 641px) and (max-width: 1024px) {
-        /* Typography for tablets */
-        h1 {
-          font-size: 3.5rem !important;
-        }
-        h2 {
-          font-size: 2.5rem !important;
-        }
-        h3 {
-          font-size: 1.75rem !important;
-        }
-
-        /* Container padding for tablets */
-        .container {
-          padding-left: 2rem !important;
-          padding-right: 2rem !important;
-        }
-
-        /* Grid adjustments for tablets */
-        .grid.lg\\:grid-cols-3 {
-          grid-template-columns: repeat(2, 1fr) !important;
-        }
-        .grid.md\\:grid-cols-2 {
-          grid-template-columns: repeat(2, 1fr) !important;
-        }
-
-        /* Feature cards tablet */
-        .benefit-card {
-          padding: 2rem !important;
-        }
-
-        /* Hero section tablet */
-        .hero-pattern {
-          padding: 3rem 0 !important;
-        }
-
-        /* Dashboard mockup tablet */
-        .dashboard-mockup {
-          max-width: 450px !important;
-        }
-
-        /* Pricing card tablet */
-        .pricing-highlight {
-          max-width: 500px !important;
-        }
-      }
-
-      /* Large tablet and small desktop */
-      @media (min-width: 1025px) and (max-width: 1280px) {
-        .container {
-          max-width: 1024px !important;
-        }
-
-        /* Optimal width for hero elements on large screens */
-        .dashboard-mockup {
-          max-width: 600px !important;
-        }
-
-        .pricing-highlight {
-          max-width: 450px !important;
-          min-height: 100px !important;
-        }
-      }
-
-      /* Desktop and larger screens */
-      @media (min-width: 1281px) {
-        /* Optimal width for hero elements on desktop */
-        .dashboard-mockup {
-          max-width: 700px !important;
-        }
-
-        .pricing-highlight {
-          max-width: 500px !important;
-          min-height: 120px !important;
-        }
-      }
-
-      /* Touch-friendly improvements */
-      @media (hover: none) and (pointer: coarse) {
-        /* Larger touch targets */
-        .nav-link {
-          min-height: 44px !important;
-        }
-        .btn {
-          min-height: 44px !important;
-        }
-
-        /* Remove hover effects on touch devices */
-        .dashboard-card:hover {
-          transform: none !important;
-        }
-        .feature-icon:hover {
-          transform: none !important;
-        }
-      }
-
-      /* Landscape phone adjustments */
-      @media (max-width: 896px) and (orientation: landscape) {
-        .hero-pattern {
-          padding: 2rem 0 !important;
-        }
-        .py-16 {
-          padding-top: 2rem !important;
-          padding-bottom: 2rem !important;
-        }
-        .py-20 {
-          padding-top: 3rem !important;
-          padding-bottom: 3rem !important;
-        }
-      }
-
-      /* Dashboard proportions */
-      .dashboard-mockup .bg-gradient-to-br {
-        min-height: 280px;
-      }
-
-      @media (min-width: 641px) {
-        .dashboard-mockup .bg-gradient-to-br {
-          min-height: 320px;
-        }
-      }
-
-      @media (min-width: 1025px) {
-        .dashboard-mockup .bg-gradient-to-br {
-          min-height: 350px;
-        }
-      }
-
-      @media (min-width: 1281px) {
-        .dashboard-mockup .bg-gradient-to-br {
-          min-height: 380px;
-        }
-      }
-
-      /* Additional mobile optimizations */
-      @media (max-width: 640px) {
-        /* Optimize images for mobile */
-        img {
-          max-width: 100% !important;
-          height: auto !important;
-        }
-
-        /* Improve text readability */
-        body {
-          line-height: 1.6 !important;
-        }
-
-        /* Optimize spacing */
-        .space-y-8 > * + * {
-          margin-top: 1.5rem !important;
-        }
-        .space-y-6 > * + * {
-          margin-top: 1rem !important;
-        }
-        .space-y-4 > * + * {
-          margin-top: 0.75rem !important;
-        }
-
-        /* Mobile-specific animations */
-        [data-aos] {
-          transition-duration: 0.4s !important;
-        }
-
-        /* Prevent horizontal scroll */
-        .overflow-x-hidden {
-          overflow-x: hidden !important;
-        }
-
-        /* Mobile menu improvements - No individual scrollbar */
-        #mobile-menu {
-          max-height: none !important; /* Remove height restriction */
-          overflow-y: visible !important; /* Remove individual scrollbar */
-        }
-
-        /* Better touch targets */
-        a,
-        button {
-          min-width: 44px !important;
-        }
-
-        /* Optimize gradients for mobile */
-        .bg-gradient-to-br,
-        .bg-gradient-to-r {
-          background-attachment: scroll !important;
-        }
-      }
-
-      /* Very small screens (iPhone SE, etc.) */
-      @media (max-width: 375px) {
-        .container {
-          padding-left: 0.75rem !important;
-          padding-right: 0.75rem !important;
-        }
-        h1 {
-          font-size: 2rem !important;
-        }
-        h2 {
-          font-size: 1.75rem !important;
-        }
-        h3 {
-          font-size: 1.25rem !important;
-        }
-        .text-xl {
-          font-size: 1.125rem !important;
-        }
-        .text-lg {
-          font-size: 1rem !important;
-        }
-      }
-
-      /* High DPI screens optimization */
-      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        .shadow-lg {
-          box-shadow:
-            0 10px 15px -3px rgba(0, 0, 0, 0.1),
-            0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
-        }
-        .shadow-xl {
-          box-shadow:
-            0 20px 25px -5px rgba(0, 0, 0, 0.1),
-            0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-        }
-      }
-
-      /* Custom checkbox styling */
-      input[type="checkbox"] {
-        accent-color: #f97316;
-      }
-
-      /* Select dropdown styling */
-      select {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-        background-position: right 0.5rem center;
-        background-repeat: no-repeat;
-        background-size: 1.5em 1.5em;
-        padding-right: 2.5rem;
-        appearance: none;
-      }
-
-      /* Green circle mobile positioning fix */
-      @media (max-width: 640px) {
-        /* Keep green circle positioned like yellow star - relative to container edge */
-        .hero-section
-          .dashboard-mockup
-          div.mobile-green-circle.mobile-green-circle.bg-green-400.bg-green-400 {
-          bottom: -8px !important;
-          left: -8px !important;
-          transform: none !important;
-          position: absolute !important;
-        }
-
-        /* Ensure parent container maintains positioning context */
-        .hero-section .dashboard-mockup {
-          position: relative !important;
-        }
-
-        /* Alternative approach - force positioning */
-        div.mobile-green-circle[style*="position:absolute"] {
-          bottom: -8px !important;
-          left: -8px !important;
-        }
-      }
-      /* Ensure all feature icons are visible */
-      .feature-icon i {
-        color: white !important;
-        font-size: 1.5rem !important;
-        display: inline-block !important;
-      }
-
-      /* Fix check circle icons */
-      .fas.fa-check-circle {
-        color: #059669 !important;
-        font-size: 1.125rem !important;
-      }
-
-      /* Fix section heading icons */
-      .fas.fa-receipt,
-      .fas.fa-shield-alt,
-      .fas.fa-plug,
-      .fas.fa-globe {
-        color: white !important;
-        font-size: 1.5rem !important;
-      }
-
-      /* Ensure feature card text is visible */
-      .benefit-card h3 {
-        color: #111827 !important;
-      }
-
-      .benefit-card p {
-        color: #4b5563 !important;
-      }
-
-      /* Force icon backgrounds */
-      .feature-icon {
-        background-color: var(--icon-bg-color) !important;
-      }
-
-      /* Fallback for missing icons */
-      .feature-icon i:before {
-        content: attr(data-fallback) !important;
-        font-family:
-          "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro",
-          sans-serif !important;
-        font-weight: 900 !important;
-      }
-
-      /* Ensure FontAwesome loads */
-      @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
-
-      /* Additional icon fixes */
-      .fas {
-        font-family: "Font Awesome 6 Free" !important;
-        font-weight: 900 !important;
-      }
-
-      /* Icon loading check */
-      .icon-fallback {
-        font-size: 1.5rem !important;
-        color: white !important;
-      }
-    </style>
   </head>
   <body class="font-sans text-gray-900 antialiased bg-white">
     <!-- Spinner Loader -->
@@ -1319,7 +553,7 @@
         </div>
 
         <!-- Mobiele knoppen -->
-        <div class="md:hidden flex items-center gap-3">
+        <div class="md:hidden flex items-center gap-0">
           <!-- Taalkeuze mobiel -->
           <div class="relative" role="group" aria-label="Mobiele taalkeuze">
             <button
@@ -1332,9 +566,9 @@
               <img
                 src="./images/flags/netherlands.png"
                 alt="Nederlands"
-                class="w-6 h-6 mr-1.5"
-                width="24"
-                height="24"
+                class="w-5 h-5 mr-1.5"
+                width="20"
+                height="20"
                 loading="lazy"
               />
               <i class="fas fa-chevron-down text-xs text-gray-500"></i>
@@ -1356,9 +590,9 @@
                   <img
                     src="./images/flags/belgium.png"
                     alt="België - Frans"
-                    class="w-6 h-6 mr-3 flex-shrink-0"
-                    width="24"
-                    height="24"
+                    class="w-5 h-5 mr-3 flex-shrink-0"
+                    width="20"
+                    height="20"
                     loading="lazy"
                   />
                   <div class="flex-1 min-w-0">
@@ -1375,9 +609,9 @@
                   <img
                     src="./images/flags/united-kingdom.png"
                     alt="Engels"
-                    class="w-6 h-6 mr-3 flex-shrink-0"
-                    width="24"
-                    height="24"
+                    class="w-5 h-5 mr-3 flex-shrink-0"
+                    width="20"
+                    height="20"
                     loading="lazy"
                   />
                   <div class="flex-1 min-w-0">
@@ -1394,9 +628,9 @@
                   <img
                     src="./images/flags/netherlands.png"
                     alt="Nederlands"
-                    class="w-6 h-6 mr-3 flex-shrink-0"
-                    width="24"
-                    height="24"
+                    class="w-5 h-5 mr-3 flex-shrink-0"
+                    width="20"
+                    height="20"
                     loading="lazy"
                   />
                   <div class="flex-1 min-w-0">
@@ -1408,7 +642,6 @@
               </div>
             </div>
           </div>
-
           <!-- Menu-toggle mobiel -->
           <button
             id="menu-toggle"
@@ -1510,41 +743,48 @@
           Contact
         </a>
       </nav>
-
-      <!-- Broodkruimelpad -->
-      <nav
-        class="bg-gradient-to-r from-gray-50 to-blue-50 py-1 sm:py-4 border-b border-gray-200"
-        aria-label="Broodkruimelpad"
-      >
-        <div class="container mx-auto px-3 sm:px-4 lg:px-6">
-          <ol class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm">
-            <li class="flex items-center">
-              <a
-                href="./index-nl.html"
-                class="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 ease-in-out flex items-center focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm p-1 -m-1"
-              >
-                <i class="fas fa-home mr-1.5 text-xs"></i>
-                <span>Start</span>
-              </a>
-              <svg
-                class="fill-current w-3 h-3 sm:w-3.5 sm:h-3.5 mx-1.5 sm:mx-2 lg:mx-3 text-gray-400 flex-shrink-0"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 320 512"
-                aria-hidden="true"
-              >
-                <path
-                  d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
-                />
-              </svg>
-            </li>
-            <li class="flex items-center text-gray-600 font-medium truncate max-w-32 sm:max-w-xs">
-              <i class="fas fa-utensils mr-1 sm:mr-1.5 text-xs text-blue-500"></i>
-              <span class="truncate text-xs sm:text-sm">FC Resto</span>
-            </li>
-          </ol>
-        </div>
-      </nav>
     </header>
+
+    <!-- Verbeterd Broodkruimelpad -->
+    <nav
+      class="fixed top-16 md:top-20 left-0 right-0 bg-gradient-to-r from-blue-50 via-white to-blue-50 py-2 md:py-1.5 border-b border-gray-200 shadow-sm z-40"
+      aria-label="Broodkruimelpad"
+    >
+      <div class="container mx-auto px-4 sm:px-6">
+        <ol class="flex flex-wrap items-center gap-1 md:gap-2 text-xs md:text-sm">
+          <li class="flex items-center">
+            <a
+              href="./index-nl.html"
+              class="inline-flex items-center gap-1 text-gray-600 hover:text-blue-600 transition-colors group"
+            >
+              <i class="fas fa-home text-blue-500 group-hover:text-blue-600 text-sm"></i>
+              <span class="font-medium">Start</span>
+            </a>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-chevron-right text-gray-400 text-xs mx-1 md:mx-2"></i>
+          </li>
+          <li class="flex items-center">
+            <a
+              href="./index-nl.html#solutions"
+              class="text-gray-600 hover:text-blue-600 transition-colors font-medium"
+            >
+              Oplossingen
+            </a>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-chevron-right text-gray-400 text-xs mx-1 md:mx-2"></i>
+          </li>
+          <li class="flex items-center">
+            <span
+              class="text-blue-600 font-semibold bg-blue-100 px-2 py-0.5 md:py-1 rounded text-xs md:text-sm"
+            >
+              FC Resto
+            </span>
+          </li>
+        </ol>
+      </div>
+    </nav>
 
     <!-- Main Content -->
     <main id="main-content" class="pt-28 sm:pt-16">
@@ -2914,83 +2154,7 @@
           </div>
         </div>
       </section>
-      <style>
-        /* FAQ Accordion Styles */
-        .faq-question,
-        .accordion-header,
-        .accordion-button,
-        [data-toggle="collapse"] {
-          cursor: pointer;
-          padding: 1rem 1.5rem;
-          background-color: #f8fafc; /* slate-50 */
-          border: 1px solid #e2e8f0; /* slate-200 */
-          border-radius: 0.5rem;
-          transition: all 0.3s ease;
-          width: 100%;
-          text-align: left;
-          font-weight: 600;
-          color: #1e293b; /* slate-800 */
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 0;
-        }
 
-        .faq-question:hover,
-        .accordion-header:hover,
-        .accordion-button:hover,
-        [data-toggle="collapse"]:hover {
-          background-color: #f1f5f9; /* slate-100 */
-        }
-
-        .faq-question.active,
-        .accordion-header.active,
-        .accordion-button.active,
-        [data-toggle="collapse"][aria-expanded="true"] {
-          background-color: #dbeafe; /* blue-100 */
-          border-color: #93c5fd; /* blue-300 */
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
-        }
-
-        .faq-answer,
-        .accordion-body,
-        .collapse {
-          display: none;
-          padding: 1rem 1.5rem;
-          background-color: #f8fafc; /* slate-50 */
-          border-left: 1px solid #e2e8f0; /* slate-200 */
-          border-right: 1px solid #e2e8f0; /* slate-200 */
-          border-bottom: 1px solid #e2e8f0; /* slate-200 */
-          border-radius: 0 0 0.5rem 0.5rem;
-          border-left: 4px solid #3b82f6; /* blue-500 */
-        }
-
-        .faq-answer.open,
-        .accordion-body.open,
-        .collapse.show {
-          display: block;
-          animation: fadeIn 0.3s ease-out;
-        }
-
-        .faq-toggle-icon,
-        .accordion-button::after,
-        [data-toggle="collapse"] .fa-chevron-down,
-        [data-toggle="collapse"] .fa-angle-down {
-          transition: transform 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      </style>
       <script>
         // FAQ Accordion functionality
         document.addEventListener("DOMContentLoaded", function () {
