@@ -37,7 +37,7 @@
       property="og:description"
       content="Transform your business with FAST CAISSE's comprehensive POS and CRM solutions. Trusted by 1000+ Belgian restaurants and retailers. Get certified Belgian POS systems with 24/7 support."
     />
-    <meta property="og:image" content="https://fastcaisse.be/images/fastcaisse-logo.png" />
+    <meta property="og:image" content="https://fastcaisse.be/FastCaisse/images/fastcaisse-logo.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
@@ -59,7 +59,7 @@
       name="twitter:description"
       content="Streamline your Belgian business with FAST CAISSE's certified POS and CRM solutions. Trusted by 1000+ businesses since 2010."
     />
-    <meta name="twitter:image" content="https://fastcaisse.be/images/fastcaisse-logo.png" />
+    <meta name="twitter:image" content="https://fastcaisse.be/FastCaisse/images/fastcaisse-logo.png" />
     <meta name="twitter:image:alt" content="FAST CAISSE POS and CRM Solutions Logo" />
 
     <!-- Basic Meta -->
@@ -109,11 +109,11 @@
         "url": "https://fastcaisse.be",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://fastcaisse.be/images/fastcaisse-logo.png",
+          "url": "https://fastcaisse.be/FastCaisse/images/fastcaisse-logo.png",
           "width": 180,
           "height": 60
         },
-        "image": "https://fastcaisse.be/images/fastcaisse-logo.png",
+        "image": "https://fastcaisse.be/FastCaisse/images/fastcaisse-logo.png",
         "foundingDate": "2010",
         "slogan": "Empower Your Business with FAST CAISSE",
         "address": {
@@ -1404,7 +1404,7 @@
               "@type": "Organization",
               "name": "FAST CAISSE SRL",
               "url": "https://fastcaisse.be",
-              "logo": "https://fastcaisse.be/images/fastcaisse-logo.png",
+              "logo": "https://fastcaisse.be/FastCaisse/images/fastcaisse-logo.png",
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "BE",
@@ -2193,8 +2193,7 @@
               <h3 class="text-xl sm:text-2xl font-semibold mb-6 text-gray-900">Send a Message</h3>
               <form
                 id="contact-form"
-                action="#"
-                method="POST"
+                novalidate
                 class="space-y-4 flex-1 flex flex-col justify-between"
               >
                 <div class="grid grid-cols-1 gap-4">
@@ -2205,7 +2204,7 @@
                     <input
                       type="text"
                       id="first-name"
-                      name="first-name"
+                      name="firstName"
                       required
                       class="form-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
                       placeholder="First Name"
@@ -2218,26 +2217,26 @@
                     <input
                       type="text"
                       id="last-name"
-                      name="last-name"
+                      name="lastName"
                       required
                       class="form-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
                       placeholder="Last Name"
                     />
                   </div>
-                  <div>
+                  <div class="form-group">
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
-                      Email *
+                      Email <span class="required">*</span>
                     </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       required
-                      class="form-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
-                      placeholder="your@email.com"
+                      class="form-control w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
+                      placeholder="your.email@example.com"
                     />
                   </div>
-                  <div>
+                  <div class="form-group">
                     <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
                       Phone Number
                     </label>
@@ -2245,8 +2244,8 @@
                       type="tel"
                       id="phone"
                       name="phone"
-                      class="form-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
-                      placeholder="+32 XXX XX XX XX"
+                      class="form-control w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
+                      placeholder="+32 xxx xxx xxx"
                     />
                   </div>
                   <div>
@@ -2255,6 +2254,8 @@
                     </label>
                     <select
                       id="subject"
+                      name="subject"
+                      required
                       class="form-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-sm"
                     >
                       <option value="">Select a subject</option>
@@ -2298,21 +2299,22 @@
                   </label>
                 </div>
                 <div
-                  class="g-recaptcha"
-                  data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                  class="cf-turnstile"
+                  data-sitekey="0x4AAAAAABzaI4wjmvjZys3o"
                   data-callback="enableBtn"
                   data-expired-callback="disableBtn"
+                  data-error-callback="disableBtn"
                 ></div>
                 <p class="text-xs text-gray-500 mt-2">
-                  This site is protected by reCAPTCHA and the Google
+                  This site is protected by Cloudflare Turnstile and the Cloudflare
                   <a
-                    href="https://policies.google.com/privacy"
+                    href="https://www.cloudflare.com/privacypolicy/"
                     class="text-blue-600 hover:underline"
                   >
                     Privacy Policy
                   </a>
                   and
-                  <a href="https://policies.google.com/terms" class="text-blue-600 hover:underline">
+                  <a href="https://www.cloudflare.com/website-terms/" class="text-blue-600 hover:underline">
                     Terms of Service
                   </a>
                   apply.
@@ -2576,8 +2578,12 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Contact form handler -->
+    <script src="./assets/js/contact-form.js"></script>
+
     <script src="./assets/js/app.js"></script>
 
     <!-- Video Modal -->
