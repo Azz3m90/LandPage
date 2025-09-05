@@ -698,11 +698,12 @@
         <div class="container mx-auto px-6 relative z-10">
           <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right" data-aos-delay="100">
-              <span
+              <!-- <span
                 class="inline-block px-4 py-2 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full mb-6"
               >
                 Vertrouwd door Meer dan 1000 Belgische Bedrijven
               </span>
+            -->
               <h1
                 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.1] mb-4 sm:mb-6 tracking-tight"
               >
@@ -2643,21 +2644,30 @@
           <iframe
             id="youtubeVideo"
             class="w-full h-full"
-            src=""
-            title="FAST CAISSE Demo Video"
+            src="https://www.youtube.com/embed/axJDkmh6zvc?si=U5lM3Y23UH67OFNv"
+            title="YouTube video player"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
+            title="FAST CAISSE Demo Video"
           ></iframe>
 
           <!-- Local Video (hidden by default) -->
           <video id="localVideo" class="w-full h-full hidden" controls preload="metadata">
-            <source src="" type="video/mp4" />
+            <source
+              src="https://www.youtube.com/embed/axJDkmh6zvc?si=U5lM3Y23UH67OFNv"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              type="video/mp4"
+            />
             Your browser does not support the video tag.
           </video>
         </div>
 
         <!-- Video Controls -->
+        <!--
         <div class="mt-4 flex justify-center space-x-4">
           <button
             onclick="switchToYoutube()"
@@ -2676,14 +2686,13 @@
             Local Demo
           </button>
         </div>
-      </div>
+      --></div>
     </div>
 
-    <!-- Video Modal JavaScript -->
+     <!-- Video Modal JavaScript -->
     <script>
       // Video URLs - you can change these
-      const YOUTUBE_VIDEO_ID = "dU1xS07N-FA"; // POS system demo video
-      const LOCAL_VIDEO_URL = "./assets/videos/demo.mp4"; // Update this path when you have a local video
+      const YOUTUBE_VIDEO_ID = "axJDkmh6zvc?si=U5lM3Y23UH67OFNv"; // POS system demo video
 
       let currentVideoType = "youtube";
 
@@ -2696,61 +2705,21 @@
         if (currentVideoType === "youtube") {
           loadYouTubeVideo();
         } else {
-          loadLocalVideo();
+          return True;
         }
       }
 
       function closeVideoModal() {
         const modal = document.getElementById("videoModal");
         const youtubeVideo = document.getElementById("youtubeVideo");
-        const localVideo = document.getElementById("localVideo");
+
 
         modal.classList.add("hidden");
         document.body.style.overflow = "auto"; // Restore scrolling
 
         // Stop videos
         youtubeVideo.src = "";
-        localVideo.pause();
-        localVideo.currentTime = 0;
-      }
 
-      function switchToYoutube() {
-        currentVideoType = "youtube";
-        loadYouTubeVideo();
-
-        // Update button states
-        document.getElementById("youtubeBtn").classList.remove("opacity-50");
-        document.getElementById("localBtn").classList.add("opacity-50");
-      }
-
-      function switchToLocal() {
-        currentVideoType = "local";
-        loadLocalVideo();
-
-        // Update button states
-        document.getElementById("localBtn").classList.remove("opacity-50");
-        document.getElementById("youtubeBtn").classList.add("opacity-50");
-      }
-
-      function loadYouTubeVideo() {
-        const youtubeVideo = document.getElementById("youtubeVideo");
-        const localVideo = document.getElementById("localVideo");
-
-        youtubeVideo.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`;
-        youtubeVideo.classList.remove("hidden");
-        localVideo.classList.add("hidden");
-        localVideo.pause();
-      }
-
-      function loadLocalVideo() {
-        const youtubeVideo = document.getElementById("youtubeVideo");
-        const localVideo = document.getElementById("localVideo");
-
-        localVideo.src = LOCAL_VIDEO_URL;
-        localVideo.classList.remove("hidden");
-        youtubeVideo.classList.add("hidden");
-        youtubeVideo.src = "";
-        localVideo.play();
       }
 
       // Close modal with Escape key
