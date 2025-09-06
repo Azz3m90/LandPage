@@ -2942,10 +2942,162 @@
               >
                 <i class="fab fa-facebook-f text-lg sm:text-xl"></i>
               </a>
+              <a
+                href="./index-en.html#"
+                class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
+              >
+                <i class="fab fa-linkedin-in text-lg sm:text-xl"></i>
+              </a>
+              <a
+                href="./index-en.html#"
+                class="text-gray-600 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
+              >
+                <i class="fab fa-instagram text-lg sm:text-xl"></i>
+              </a>
             </div>
           </div>
+
+          <!-- Solutions -->
+          <div>
+            <h3 class="font-bold text-lg mb-6 text-gray-900">Solutions</h3>
+            <ul class="space-y-3">
+              <li>
+                <span
+                  class="text-blue-600 font-semibold flex items-center p-2 rounded-lg bg-blue-50 border-l-4 border-blue-600"
+                >
+                  <i class="fas fa-chart-line mr-2 text-sm"></i>
+                  FC Resto
+                  <i class="fas fa-arrow-left ml-2 text-xs"></i>
+                </span>
+              </li>
+              <li>
+                <a
+                  href="./fastcaisse-retail-pos-en.html"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
+                >
+                  <i class="fas fa-store mr-2 text-sm"></i>
+                  FC Shop
+                </a>
+              </li>
+              <li>
+                <a
+                  href="./fastcaisse-crm-business-management-en.html"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center p-2 rounded-lg hover:bg-gray-50"
+                >
+                  <i class="fas fa-utensils mr-2 text-sm"></i>
+                  FC Commerce Management
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h3 class="font-bold text-lg mb-6 text-gray-900">Company</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="./index-en.html#about"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
+                >
+                  <i class="fas fa-info-circle mr-2 text-sm"></i>
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="./index-en.html#clients"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
+                >
+                  <i class="fas fa-users mr-2 text-sm"></i>
+                  Our Clients
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center"
+                >
+                  <i class="fas fa-envelope mr-2 text-sm"></i>
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h3 class="font-bold text-lg mb-6 text-gray-900">Contact Us</h3>
+            <ul class="space-y-4 text-gray-600">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-500"></i>
+                <span>Chaussée de Haecht 1749, 1130 Brussels, Belgium</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone mr-3 text-blue-500"></i>
+                <a
+                  href="tel:+32485223448 "
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                >
+                  +32 485 22 34 48
+                </a>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-3 text-blue-500"></i>
+                <a
+                  href="mailto:fc@fastcaisse.be?subject=FC%20Shop%20Inquiry&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20FC%20Shop%20for%20my%20retail%20business.%0D%0A%0D%0AThank%20you!"
+                  class="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                >
+                  fc@fastcaisse.be
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="border-gray-200 my-10" />
+
+        <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+          <p class="text-sm text-gray-600">
+            &copy; 2025 FAST CAISSE SRL. All rights reserved. |
+            <a
+              href="./general-conditions-fr.html"
+              class="hover:text-blue-600 transition-colors duration-300"
+            >
+              General Conditions
+            </a>
+          </p>
         </div>
       </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/app.js"></script>
+
+    <!-- Loader Management -->
+    <script>
+      // Hide loader after page loads
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
+        if (loader) {
+          setTimeout(() => {
+            loader.style.opacity = "0";
+            setTimeout(() => {
+              loader.style.display = "none";
+            }, 300);
+          }, 500);
+        }
+      });
+
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+      });
+    </script>
   </body>
 </html>
