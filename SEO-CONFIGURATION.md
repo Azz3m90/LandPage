@@ -100,7 +100,7 @@
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+32-XXX-XXX-XXX",
+      "telephone": "+32-485-223-448 ",
       "contactType": "customer service",
       "email": "contact@fastcaisse.be",
       "availableLanguage": ["French", "English", "Dutch"]
@@ -152,7 +152,7 @@
     "image": "https://fastcaisse.be/images/fastcaisse-logo.png",
     "@id": "https://fastcaisse.be",
     "url": "https://fastcaisse.be",
-    "telephone": "+32-XXX-XXX-XXX",
+    "telephone": "+32-485-223-448 ",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "BE"
