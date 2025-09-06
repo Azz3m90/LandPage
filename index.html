@@ -1,13 +1,30 @@
 <!doctype html>
 <html lang="fr" class="scroll-smooth" dir="ltr">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-N2947X9D");
+    </script>
+    <!-- End Google Tag Manager -->
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KLYR85GNLM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-KLYR85GNLM');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-KLYR85GNLM");
     </script>
 
     <meta name="theme-color" content="#2563eb" />
@@ -93,7 +110,10 @@
     <meta name="DC.title" content="FAST CAISSE - Solutions POS & CRM n°1 en Belgique" />
     <meta name="DC.creator" content="FAST CAISSE SRL" />
     <meta name="DC.subject" content="POS, CRM, systèmes de caisse, gestion restaurant, Belgique" />
-    <meta name="DC.description" content="Solutions POS et CRM leaders pour restaurants et commerces belges" />
+    <meta
+      name="DC.description"
+      content="Solutions POS et CRM leaders pour restaurants et commerces belges"
+    />
     <meta name="DC.publisher" content="FAST CAISSE SRL" />
     <meta name="DC.contributor" content="FAST CAISSE SRL" />
     <meta name="DC.date" content="2010" />
@@ -311,6 +331,17 @@
     </script>
   </head>
   <body class="bg-white text-gray-900 antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-N2947X9D"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div
       id="loader"
       class="fixed inset-0 bg-white/90 backdrop-blur-sm flex items-center justify-center z-50"
@@ -2244,7 +2275,8 @@
                 <div class="grid grid-cols-1 gap-4">
                   <div class="form-group">
                     <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">
-                      Prénom <span class="required">*</span>
+                      Prénom
+                      <span class="required">*</span>
                     </label>
                     <input
                       type="text"
@@ -2257,7 +2289,8 @@
                   </div>
                   <div class="form-group">
                     <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">
-                      Nom <span class="required">*</span>
+                      Nom
+                      <span class="required">*</span>
                     </label>
                     <input
                       type="text"
@@ -2270,7 +2303,8 @@
                   </div>
                   <div class="form-group">
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
-                      Email <span class="required">*</span>
+                      Email
+                      <span class="required">*</span>
                     </label>
                     <input
                       type="email"
@@ -2295,7 +2329,8 @@
                   </div>
                   <div class="form-group">
                     <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">
-                      Sujet <span class="required">*</span>
+                      Sujet
+                      <span class="required">*</span>
                     </label>
                     <select
                       id="subject"
@@ -2317,7 +2352,8 @@
                   </div>
                   <div class="form-group">
                     <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
-                      Message <span class="required">*</span>
+                      Message
+                      <span class="required">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -2365,7 +2401,10 @@
                     Règles de Confidentialité
                   </a>
                   et
-                  <a href="https://www.cloudflare.com/website-terms/" class="text-blue-600 hover:underline">
+                  <a
+                    href="https://www.cloudflare.com/website-terms/"
+                    class="text-blue-600 hover:underline"
+                  >
                     Conditions d'Utilisation
                   </a>
                   de Cloudflare s'appliquent.
@@ -2710,7 +2749,7 @@
       </div>
     </div>
 
-       <!-- Video Modal JavaScript -->
+    <!-- Video Modal JavaScript -->
     <script>
       // Video URLs - you can change these
       const YOUTUBE_VIDEO_ID = "axJDkmh6zvc?si=U5lM3Y23UH67OFNv"; // POS system demo video
@@ -2734,13 +2773,11 @@
         const modal = document.getElementById("videoModal");
         const youtubeVideo = document.getElementById("youtubeVideo");
 
-
         modal.classList.add("hidden");
         document.body.style.overflow = "auto"; // Restore scrolling
 
         // Stop videos
         youtubeVideo.src = "";
-
       }
 
       // Close modal with Escape key

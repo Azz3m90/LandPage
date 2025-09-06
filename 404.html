@@ -1,232 +1,264 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="fr">
-<head>
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-N2947X9D");
+    </script>
+    <!-- End Google Tag Manager -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KLYR85GNLM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-KLYR85GNLM');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-KLYR85GNLM");
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 - Page Non Trouvée | FastCaisse</title>
-    <meta name="description" content="La page que vous recherchez n'existe pas sur FastCaisse.">
-    <meta name="robots" content="noindex, follow">
-    <link rel="canonical" href="https://fastcaisse.be/404.html">
+    <meta name="description" content="La page que vous recherchez n'existe pas sur FastCaisse." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://fastcaisse.be/404.html" />
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
 
-        .error-container {
-            text-align: center;
-            max-width: 600px;
-            animation: fadeIn 0.5s ease-in;
-        }
+      .error-container {
+        text-align: center;
+        max-width: 600px;
+        animation: fadeIn 0.5s ease-in;
+      }
 
+      .error-code {
+        font-size: 120px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        animation: bounce 1s ease-in-out;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .error-message {
+        font-size: 18px;
+        margin-bottom: 40px;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 32px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-primary {
+        background: white;
+        color: #764ba2;
+      }
+
+      .btn-primary:hover {
+        background: #f0f0f0;
+      }
+
+      .language-selector {
+        margin-top: 40px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .lang-link {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .lang-link:hover {
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @media (max-width: 480px) {
         .error-code {
-            font-size: 120px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            animation: bounce 1s ease-in-out;
+          font-size: 80px;
         }
 
         h1 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            font-weight: 600;
+          font-size: 24px;
         }
 
         .error-message {
-            font-size: 18px;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            opacity: 0.9;
+          font-size: 16px;
         }
-
-        .buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .btn-primary {
-            background: white;
-            color: #764ba2;
-        }
-
-        .btn-primary:hover {
-            background: #f0f0f0;
-        }
-
-        .language-selector {
-            margin-top: 40px;
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .lang-link {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .lang-link:hover {
-            color: white;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .error-code {
-                font-size: 80px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            .error-message {
-                font-size: 16px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-N2947X9D"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div class="error-container">
-        <div class="error-code">404</div>
-        <h1>Page Non Trouvée</h1>
-        <p class="error-message">
-            Désolé, la page que vous recherchez n'existe pas ou a été déplacée.
-            Veuillez vérifier l'URL ou retourner à la page d'accueil.
-        </p>
+      <div class="error-code">404</div>
+      <h1>Page Non Trouvée</h1>
+      <p class="error-message">
+        Désolé, la page que vous recherchez n'existe pas ou a été déplacée. Veuillez vérifier l'URL
+        ou retourner à la page d'accueil.
+      </p>
 
-        <div class="buttons">
-            <a href="/" class="btn btn-primary">Retour à l'Accueil</a>
-            <a href="javascript:history.back()" class="btn">Page Précédente</a>
-            <a href="mailto:contact@fastcaisse.be" class="btn">Contactez-nous</a>
-        </div>
+      <div class="buttons">
+        <a href="/" class="btn btn-primary">Retour à l'Accueil</a>
+        <a href="javascript:history.back()" class="btn">Page Précédente</a>
+        <a href="mailto:contact@fastcaisse.be" class="btn">Contactez-nous</a>
+      </div>
 
-        <div class="language-selector">
-            <a href="#" class="lang-link" onclick="switchLanguage('fr')">Français</a>
-            <a href="#" class="lang-link" onclick="switchLanguage('en')">English</a>
-            <a href="#" class="lang-link" onclick="switchLanguage('nl')">Nederlands</a>
-        </div>
+      <div class="language-selector">
+        <a href="#" class="lang-link" onclick="switchLanguage('fr')">Français</a>
+        <a href="#" class="lang-link" onclick="switchLanguage('en')">English</a>
+        <a href="#" class="lang-link" onclick="switchLanguage('nl')">Nederlands</a>
+      </div>
     </div>
 
     <script>
-        // Language switcher
-        function switchLanguage(lang) {
-            const translations = {
-                fr: {
-                    title: 'Page Non Trouvée',
-                    message: "Désolé, la page que vous recherchez n'existe pas ou a été déplacée. Veuillez vérifier l'URL ou retourner à la page d'accueil.",
-                    home: "Retour à l'Accueil",
-                    back: 'Page Précédente',
-                    contact: 'Contactez-nous'
-                },
-                en: {
-                    title: 'Page Not Found',
-                    message: "Sorry, the page you are looking for doesn't exist or has been moved. Please check the URL or return to the homepage.",
-                    home: 'Back to Home',
-                    back: 'Previous Page',
-                    contact: 'Contact Us'
-                },
-                nl: {
-                    title: 'Pagina Niet Gevonden',
-                    message: "Sorry, de pagina die u zoekt bestaat niet of is verplaatst. Controleer de URL of ga terug naar de homepage.",
-                    home: 'Terug naar Home',
-                    back: 'Vorige Pagina',
-                    contact: 'Contacteer Ons'
-                }
-            };
+      // Language switcher
+      function switchLanguage(lang) {
+        const translations = {
+          fr: {
+            title: "Page Non Trouvée",
+            message:
+              "Désolé, la page que vous recherchez n'existe pas ou a été déplacée. Veuillez vérifier l'URL ou retourner à la page d'accueil.",
+            home: "Retour à l'Accueil",
+            back: "Page Précédente",
+            contact: "Contactez-nous",
+          },
+          en: {
+            title: "Page Not Found",
+            message:
+              "Sorry, the page you are looking for doesn't exist or has been moved. Please check the URL or return to the homepage.",
+            home: "Back to Home",
+            back: "Previous Page",
+            contact: "Contact Us",
+          },
+          nl: {
+            title: "Pagina Niet Gevonden",
+            message:
+              "Sorry, de pagina die u zoekt bestaat niet of is verplaatst. Controleer de URL of ga terug naar de homepage.",
+            home: "Terug naar Home",
+            back: "Vorige Pagina",
+            contact: "Contacteer Ons",
+          },
+        };
 
-            const trans = translations[lang];
-            document.querySelector('h1').textContent = trans.title;
-            document.querySelector('.error-message').textContent = trans.message;
-            document.querySelectorAll('.btn')[0].textContent = trans.home;
-            document.querySelectorAll('.btn')[1].textContent = trans.back;
-            document.querySelectorAll('.btn')[2].textContent = trans.contact;
-        }
+        const trans = translations[lang];
+        document.querySelector("h1").textContent = trans.title;
+        document.querySelector(".error-message").textContent = trans.message;
+        document.querySelectorAll(".btn")[0].textContent = trans.home;
+        document.querySelectorAll(".btn")[1].textContent = trans.back;
+        document.querySelectorAll(".btn")[2].textContent = trans.contact;
+      }
 
-        // Detect language from URL or browser
-        const url = window.location.pathname;
-        let lang = 'fr';
-        if (url.includes('-en.') || url.includes('/en/')) lang = 'en';
-        if (url.includes('-nl.') || url.includes('/nl/')) lang = 'nl';
+      // Detect language from URL or browser
+      const url = window.location.pathname;
+      let lang = "fr";
+      if (url.includes("-en.") || url.includes("/en/")) lang = "en";
+      if (url.includes("-nl.") || url.includes("/nl/")) lang = "nl";
 
-        // Apply detected language
-        if (lang !== 'fr') {
-            switchLanguage(lang);
-        }
+      // Apply detected language
+      if (lang !== "fr") {
+        switchLanguage(lang);
+      }
 
-        // Track 404 error in analytics if available
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'error', {
-                'event_category': '404',
-                'event_label': window.location.href
-            });
-        }
+      // Track 404 error in analytics if available
+      if (typeof gtag !== "undefined") {
+        gtag("event", "error", {
+          event_category: "404",
+          event_label: window.location.href,
+        });
+      }
     </script>
-</body>
+  </body>
 </html>
