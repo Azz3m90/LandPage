@@ -1,0 +1,64 @@
+# FastCaisse Robots.txt
+# Generated for https://fastcaisse.be/
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Specific directives for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Protect sensitive files and directories
+Disallow: /vendor/
+Disallow: /.github/
+Disallow: /.vscode/
+Disallow: /.zencoder/
+Disallow: /test-*.html
+Disallow: /verify-*.html
+Disallow: /*.php$
+Disallow: /*.log$
+Disallow: /*.tmp$
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /.editorconfig
+Disallow: /.gitignore
+Disallow: /.prettierrc
+Disallow: /CONTACT-FORM-*.md
+Disallow: /EMAIL-*.md
+Disallow: /FORM-*.md
+Disallow: /MULTILINGUAL-*.md
+Disallow: /TESTING-*.md
+Disallow: /reset-rate-limit.php
+Disallow: /test-email.php
+Disallow: /contact-form-config.php
+Disallow: /contact-handler.php
+
+# Allow important assets
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /images/
+Allow: /*.html$
+
+# Sitemap location
+Sitemap: https://fastcaisse.be/sitemap.xml

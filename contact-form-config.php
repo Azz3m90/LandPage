@@ -6,20 +6,20 @@
  */
 
 // Email Configuration
-define('ADMIN_EMAIL', 'contact@fastcaisse.be'); // Updated to correct domain
+define('ADMIN_EMAIL', 'contact@fastcaisse.be'); // Updated to correct admin email
 define('COMPANY_NAME', 'FastCaisse');
 define('COMPANY_ADDRESS', 'Chaussée de Haecht 1749, 1130 Brussels, Belgium');
 
 // reCAPTCHA Configuration (Optional)
-define('RECAPTCHA_SECRET_KEY', 'YOUR_RECAPTCHA_SECRET_KEY_HERE');
-define('RECAPTCHA_SITE_KEY', 'YOUR_RECAPTCHA_SITE_KEY_HERE');
+define('RECAPTCHA_SECRET_KEY', '0x4AAAAAABzaI6mJ9vTZWTTGJEjdGyRtPBA');
+define('RECAPTCHA_SITE_KEY', '0x4AAAAAABzaI4wjmvjZys3o');
 
 // SMTP Configuration (Optional - for better email delivery)
-define('USE_SMTP', false); // Set to true to use SMTP
-define('SMTP_HOST', 'smtp.your-provider.com');
+define('USE_SMTP', true); // Set to true to use SMTP
+define('SMTP_HOST', 'mail.infomaniak.com');
 define('SMTP_PORT', 587);
-define('SMTP_USERNAME', 'your-email@domain.com');
-define('SMTP_PASSWORD', 'your-email-password');
+define('SMTP_USERNAME', 'contact@fastcaisse.be');
+define('SMTP_PASSWORD', '2VeryFast4u&me');
 define('SMTP_ENCRYPTION', 'tls'); // tls or ssl
 
 // File Upload Configuration (if you want to add file uploads)
@@ -41,7 +41,7 @@ define('ERROR_LOG_FILE', 'contact-errors.log');
 // Security Configuration
 define('ENABLE_HONEYPOT', true); // Add hidden honeypot field to catch bots
 define('REQUIRE_REFERER', true); // Require HTTP_REFERER header
-define('ALLOWED_DOMAINS', ['fastcaisse.be', 'www.fastcaisse.be', 'fastcaisse.com', 'www.fastcaisse.com']); // Add your domains
+define('ALLOWED_DOMAINS', ['fastcaisse.be', 'www.fastcaisse.be', 'fastcaisse.com', 'www.fastcaisse.com','localhost']); // Add your domains
 
 // Response Configuration
 define('REDIRECT_AFTER_SUCCESS', false); // Set to URL to redirect after success

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Verification - FastCaisse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-8 max-w-4xl">
+        <h1 class="text-3xl font-bold mb-8 text-center">Contact Form Verification Dashboard</h1>
+
+        <!-- Form Flow Test -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Form Submission Flow Test</h2>
+            <div class="space-y-2">
+                <div class="flex items-center">
+                    <span id="validation-check" class="inline-block w-6 h-6 mr-2">⏳</span>
+                    <span>1. Form Validation (should only trigger after all fields filled)</span>
+                </div>
+                <div class="flex items-center">
+                    <span id="loading-check" class="inline-block w-6 h-6 mr-2">⏳</span>
+                    <span>2. Loading Message (should appear after validation passes)</span>
+                </div>
+                <div class="flex items-center">
+                    <span id="submission-check" class="inline-block w-6 h-6 mr-2">⏳</span>
+                    <span>3. Form Submission (PHP handler)</span>
+                </div>
+                <div class="flex items-center">
+                    <span id="success-check" class="inline-block w-6 h-6 mr-2">⏳</span>
+                    <span>4. Success/Error Response</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Configuration Check -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Configuration Status</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <h3 class="font-semibold">Admin Email:</h3>
+                    <p class="text-sm text-gray-600">contact@fastcaisse.be</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold">SMTP Host:</h3>
+                    <p class="text-sm text-gray-600">mail.infomaniak.com:587</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold">Form Handler:</h3>
+                    <p class="text-sm text-gray-600">contact-handler.php</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold">JavaScript:</h3>
+                    <p class="text-sm text-gray-600">assets/js/contact-form.js</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rate Limiting Status -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Rate Limiting Status</h2>
+            <div class="flex items-center justify-between">
+                <div>
+                    <p id="rate-limit-status" class="text-sm text-gray-600">Checking...</p>
+                    <p id="rate-limit-timer" class="text-lg font-semibold mt-1"></p>
+                </div>
+                <button id="clear-rate-limit" class="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded">
+                    Clear Rate Limit
+                </button>
+            </div>
+        </div>
+
+        <!-- Quick Test Form -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Quick Test</h2>
+            <button id="test-valid" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded mr-2">
+                Test Valid Submission
+            </button>
+            <button id="test-invalid" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded mr-2">
+                Test Invalid Submission
+            </button>
+            <button id="test-smtp" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded">
+                Test SMTP Connection
+            </button>
+        </div>
+
+        <!-- Console Output -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-xl font-semibold mb-4">Console Output</h2>
+            <div id="console-output" class="bg-gray-900 text-green-400 p-4 rounded font-mono text-sm h-48 overflow-y-auto">
+                Ready for testing...
+            </div>
+        </div>
+
+        <!-- Links -->
+        <div class="mt-6 text-center">
+            <a href="test-contact-form.html" class="text-blue-600 hover:underline mr-4">Full Form Test</a>
+            <a href="test-email.php" class="text-blue-600 hover:underline mr-4">SMTP Test</a>
+            <a href="index.html" class="text-blue-600 hover:underline">Main Site</a>
+        </div>
+    </div>
+
+    <script>
+        const output = document.getElementById('console-output');
+
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const color = type === 'error' ? 'text-red-400' : type === 'success' ? 'text-green-400' : 'text-yellow-400';
+            output.innerHTML += `<div class="${color}">[${timestamp}] ${message}</div>`;
+            output.scrollTop = output.scrollHeight;
+        }
+
+        // Rate Limiting Management
+        const RATE_LIMIT_DURATION = 60000; // 1 minute
+        let rateLimitInterval;
+
+        function checkRateLimit() {
+            const lastSubmission = localStorage.getItem('lastFormSubmission');
+            const statusEl = document.getElementById('rate-limit-status');
+            const timerEl = document.getElementById('rate-limit-timer');
+
+            if (!lastSubmission) {
+                statusEl.textContent = 'No rate limit active';
+                statusEl.className = 'text-sm text-green-600';
+                timerEl.textContent = 'Form can be submitted';
+                timerEl.className = 'text-lg font-semibold text-green-600';
+                return;
+            }
+
+            const timeSince = Date.now() - parseInt(lastSubmission);
+            const remaining = RATE_LIMIT_DURATION - timeSince;
+
+            if (remaining <= 0) {
+                statusEl.textContent = 'No rate limit active';
+                statusEl.className = 'text-sm text-green-600';
+                timerEl.textContent = 'Form can be submitted';
+                timerEl.className = 'text-lg font-semibold text-green-600';
+                localStorage.removeItem('lastFormSubmission');
+            } else {
+                const seconds = Math.ceil(remaining / 1000);
+                statusEl.textContent = 'Rate limit is active';
+                statusEl.className = 'text-sm text-red-600';
+                timerEl.textContent = `${seconds} seconds remaining`;
+                timerEl.className = 'text-lg font-semibold text-red-600';
+            }
+        }
+
+        // Update rate limit status every second
+        function startRateLimitMonitor() {
+            checkRateLimit();
+            clearInterval(rateLimitInterval);
+            rateLimitInterval = setInterval(checkRateLimit, 1000);
+        }
+
+        // Clear rate limit button
+        document.getElementById('clear-rate-limit').addEventListener('click', function() {
+            localStorage.removeItem('lastFormSubmission');
+            log('Rate limit cleared', 'success');
+            checkRateLimit();
+        });
+
+        // Start monitoring
+        startRateLimitMonitor();
+
+        // Test valid submission
+        document.getElementById('test-valid').addEventListener('click', function() {
+            // Check rate limit before testing
+            const lastSubmission = localStorage.getItem('lastFormSubmission');
+            if (lastSubmission) {
+                const timeSince = Date.now() - parseInt(lastSubmission);
+                const remaining = RATE_LIMIT_DURATION - timeSince;
+                if (remaining > 0) {
+                    const seconds = Math.ceil(remaining / 1000);
+                    log(`Rate limit active! Wait ${seconds} seconds before testing.`, 'error');
+                    return;
+                }
+            }
+
+            log('Starting valid submission test...', 'info');
+
+            const testData = {
+                firstName: 'Test',
+                lastName: 'User',
+                email: 'test@example.com',
+                phone: '+32 123 456 789',
+                subject: 'Demo Request',
+                message: 'This is a test message to verify the contact form is working correctly.',
+                'gdpr-consent': 'on',
+                language: 'en'
+            };
+
+            log('Sending data: ' + JSON.stringify(testData), 'info');
+
+            fetch('contact-handler.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(testData),
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    log('✅ Success: ' + result.message, 'success');
+                    document.getElementById('submission-check').textContent = '✅';
+                    document.getElementById('success-check').textContent = '✅';
+
+                    // Set rate limit after successful submission
+                    localStorage.setItem('lastFormSubmission', Date.now().toString());
+                    log('Rate limit activated for 1 minute', 'info');
+                    startRateLimitMonitor(); // Update the display
+                } else {
+                    log('❌ Error: ' + result.message, 'error');
+                    document.getElementById('submission-check').textContent = '❌';
+                }
+            })
+            .catch(error => {
+                log('❌ Network error: ' + error.message, 'error');
+            });
+        });
+
+        // Test invalid submission
+        document.getElementById('test-invalid').addEventListener('click', function() {
+            log('Starting invalid submission test...', 'info');
+
+            const testData = {
+                firstName: '',
+                lastName: '',
+                email: 'invalid-email',
+                subject: '',
+                message: 'Test',
+                language: 'en'
+            };
+
+            log('Sending incomplete data...', 'info');
+
+            fetch('contact-handler.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(testData),
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (!result.success) {
+                    log('✅ Validation working: ' + result.message, 'success');
+                    document.getElementById('validation-check').textContent = '✅';
+                } else {
+                    log('❌ Validation failed - form accepted invalid data!', 'error');
+                    document.getElementById('validation-check').textContent = '❌';
+                }
+            })
+            .catch(error => {
+                log('❌ Network error: ' + error.message, 'error');
+            });
+        });
+
+        // Test SMTP connection
+        document.getElementById('test-smtp').addEventListener('click', function() {
+            log('Opening SMTP test page...', 'info');
+            window.open('test-email.php', '_blank');
+        });
+
+        // Monitor form events
+        if (typeof window.contactForm !== 'undefined') {
+            log('Contact form handler loaded', 'success');
+            document.getElementById('loading-check').textContent = '✅';
+        }
+
+        // Initial status
+        log('Verification dashboard loaded', 'success');
+        log('Ready to test contact form functionality', 'info');
+    </script>
+</body>
+</html>

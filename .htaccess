@@ -1,0 +1,188 @@
+# FastCaisse .htaccess Configuration
+# SEO and Performance Optimizations
+
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Force HTTPS (uncomment when SSL is configured)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Remove www (or add www - choose one)
+# Remove www:
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Add www (alternative - use only one):
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Language detection based on Accept-Language header
+RewriteCond %{HTTP:Accept-Language} ^fr [NC]
+RewriteRule ^$ /index.html [L]
+
+RewriteCond %{HTTP:Accept-Language} ^en [NC]
+RewriteRule ^$ /index-en.html [L]
+
+RewriteCond %{HTTP:Accept-Language} ^nl [NC]
+RewriteRule ^$ /index-nl.html [L]
+
+# Default to French
+RewriteRule ^$ /index.html [L]
+
+# Remove .html extension (SEO-friendly URLs)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "(^\.|\.bak$|\.config$|\.sql$|\.log$|\.md$|composer\.(json|lock)|package\.(json|lock))">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block access to vendor directory
+RewriteRule ^vendor/ - [F,L]
+
+# Enable compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Enable browser caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Default expiration: 1 month
+    ExpiresDefault "access plus 1 month"
+
+    # HTML - 1 hour
+    ExpiresByType text/html "access plus 1 hour"
+
+    # CSS and JavaScript - 1 month
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+
+    # Images - 1 year
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/ico "access plus 1 year"
+
+    # Fonts - 1 year
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+
+    # Videos - 1 year
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
+</IfModule>
+
+# Cache control headers
+<IfModule mod_headers.c>
+    # 1 Year for images, fonts, and videos
+    <FilesMatch "\.(ico|jpg|jpeg|png|gif|webp|svg|js|css|woff|woff2|ttf|otf|eot|mp4|webm)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+
+    # 1 Hour for HTML
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=3600, must-revalidate"
+    </FilesMatch>
+
+    # Security headers
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Remove server signature
+    Header unset Server
+    Header unset X-Powered-By
+</IfModule>
+
+# GZIP compression alternative
+<IfModule mod_gzip.c>
+    mod_gzip_on Yes
+    mod_gzip_dechunk Yes
+    mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+    mod_gzip_item_include handler ^cgi-script$
+    mod_gzip_item_include mime ^text/.*
+    mod_gzip_item_include mime ^application/x-javascript.*
+    mod_gzip_item_exclude mime ^image/.*
+    mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</IfModule>
+
+# Prevent hotlinking
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?fastcaisse\.be [NC]
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?google\. [NC]
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?bing\. [NC]
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?facebook\. [NC]
+RewriteRule \.(jpg|jpeg|png|gif|webp|svg)$ - [F,NC,L]
+
+# Custom error pages (create these files)
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+ErrorDocument 500 /500.html
+
+# Redirect old URLs to new (add your redirects here)
+# Redirect 301 /old-page.html /new-page.html
+
+# Block bad bots
+RewriteCond %{HTTP_USER_AGENT} ^.*(AhrefsBot|SemrushBot|MJ12bot|DotBot).* [NC]
+RewriteRule .* - [F,L]
+
+# Enable keep-alive
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>
+
+# Disable ETags
+FileETag None
+Header unset ETag
+
+# UTF-8 encoding
+AddCharset utf-8 .css .js .xml .json .html .htm
+
+# Correct MIME types
+AddType application/javascript js
+AddType text/css css
+AddType image/svg+xml svg svgz
+AddType application/vnd.ms-fontobject eot
+AddType application/x-font-ttf ttf ttc
+AddType font/opentype otf
+AddType application/x-font-woff woff
+AddType application/font-woff2 woff2
+AddType image/webp webp
+
+# PHP settings (if needed)
+<IfModule mod_php7.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+</IfModule>

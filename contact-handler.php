@@ -105,21 +105,43 @@ try {
     $data['cf-turnstile-response'] = isset($input['cf-turnstile-response']) ? $input['cf-turnstile-response'] : '';
     $data['honeypot'] = isset($input['honeypot']) ? $input['honeypot'] : '';
 
-    // Verify Turnstile if provided
-    if (!empty($data['cf-turnstile-response'])) {
-        $turnstileResult = verifyTurnstile($data['cf-turnstile-response']);
-        if (!$turnstileResult['success']) {
-            $translations = getTranslations($language);
-            $securityMessage = $language === 'en' ? 'Security verification failed. Please try again.' :
-                              ($language === 'fr' ? 'Échec de la vérification de sécurité. Veuillez réessayer.' :
-                               'Veiligheidsverificatie mislukt. Probeer het opnieuw.');
-            echo json_encode([
-                'success' => false,
-                'message' => $securityMessage,
-                'type' => 'error'
-            ]);
-            exit();
-        }
+    // REQUIRE Turnstile verification - Block ALL submissions without it
+    if (empty($data['cf-turnstile-response'])) {
+        $translations = getTranslations($language);
+        $securityMessage = $language === 'en' ? 'Security verification is required. Please complete the captcha to submit.' :
+                          ($language === 'fr' ? 'La vérification de sécurité est requise. Veuillez compléter le captcha pour soumettre.' :
+                           ($language === 'nl' ? 'Beveiligingsverificatie is vereist. Voltooi de captcha om te verzenden.' :
+                            'Security verification is required. Please complete the captcha to submit.'));
+
+        error_log('[SECURITY] Form submission blocked - No Turnstile token provided');
+
+        echo json_encode([
+            'success' => false,
+            'message' => $securityMessage,
+            'type' => 'security_error',
+            'error_code' => 'CAPTCHA_REQUIRED'
+        ]);
+        exit();
+    }
+
+    // Verify the Turnstile response (now mandatory)
+    $turnstileResult = verifyTurnstile($data['cf-turnstile-response']);
+    if (!$turnstileResult['success']) {
+        $translations = getTranslations($language);
+        $securityMessage = $language === 'en' ? 'Security verification failed. Please try again.' :
+                          ($language === 'fr' ? 'Échec de la vérification de sécurité. Veuillez réessayer.' :
+                           ($language === 'nl' ? 'Veiligheidsverificatie mislukt. Probeer het opnieuw.' :
+                            'Security verification failed. Please try again.'));
+
+        error_log('[SECURITY] Form submission blocked - Invalid Turnstile token');
+
+        echo json_encode([
+            'success' => false,
+            'message' => $securityMessage,
+            'type' => 'security_error',
+            'error_code' => 'CAPTCHA_INVALID'
+        ]);
+        exit();
     }
 
     // Basic spam protection
@@ -144,6 +166,26 @@ try {
 
     // Log the submission (optional)
     logSubmission($data);
+
+    // Check if at least admin email was sent
+    if (!$adminEmailSent) {
+        // If admin email failed, this is a critical error
+        $translations = getTranslations($language);
+        $errorMessage = $language === 'en' ? 'Unable to send your message at this time. Please try again later or contact us directly at contact@fastcaisse.be' :
+                       ($language === 'fr' ? 'Impossible d\'envoyer votre message pour le moment. Veuillez réessayer plus tard ou nous contacter directement à contact@fastcaisse.be' :
+                        'Kan uw bericht momenteel niet verzenden. Probeer het later opnieuw of neem rechtstreeks contact op via contact@fastcaisse.be');
+
+        echo json_encode([
+            'success' => false,
+            'message' => $errorMessage,
+            'type' => 'error',
+            'details' => [
+                'adminNotified' => false,
+                'confirmationSent' => false
+            ]
+        ]);
+        exit();
+    }
 
     // Return success response
     $translations = getTranslations($language);
@@ -295,7 +337,7 @@ function getValidationMessages($language) {
             'length_min' => '%s must be at least %d characters',
             'length_max' => '%s must be less than %d characters',
             'spam_content' => 'Message contains suspicious content',
-            'rate_limit' => 'Please wait at least 2 minutes between submissions'
+            'rate_limit' => 'Please wait at least 1 minute between submissions'
         ],
         'fr' => [
             'required' => '%s est requis',
@@ -309,7 +351,7 @@ function getValidationMessages($language) {
             'length_min' => '%s doit contenir au moins %d caractères',
             'length_max' => '%s doit contenir moins de %d caractères',
             'spam_content' => 'Le message contient du contenu suspect',
-            'rate_limit' => 'Veuillez attendre au moins 2 minutes entre les soumissions'
+            'rate_limit' => 'Veuillez attendre au moins 1 minute entre les soumissions'
         ],
         'nl' => [
             'required' => '%s is vereist',
@@ -323,7 +365,7 @@ function getValidationMessages($language) {
             'length_min' => '%s moet minimaal %d tekens bevatten',
             'length_max' => '%s moet minder dan %d tekens bevatten',
             'spam_content' => 'Bericht bevat verdachte inhoud',
-            'rate_limit' => 'Wacht minstens 2 minuten tussen inzendingen'
+            'rate_limit' => 'Wacht minstens 1 minuut tussen inzendingen'
         ]
     ];
 
@@ -497,7 +539,8 @@ function sendAdminNotification($data, $language = 'fr') {
     </html>";
 
     // Always use SMTP with PHPMailer
-    return sendEmailSMTP($to, $subject, $body, 'noreply@fastcaisse.be', 'FastCaisse Website', $data['email']);
+    // Use SMTP_USERNAME as from address to match authentication
+    return sendEmailSMTP($to, $subject, $body, SMTP_USERNAME, 'FastCaisse Website', $data['email']);
 }
 
 /**
@@ -563,15 +606,16 @@ function sendClientConfirmation($data, $language = 'fr') {
     </html>";
 
     // Always use SMTP with PHPMailer
-    return sendEmailSMTP($to, $subject, $body, 'noreply@fastcaisse.be', 'FastCaisse Team');
+    // Use SMTP_USERNAME as from address to match authentication
+    return sendEmailSMTP($to, $subject, $body, SMTP_USERNAME, 'FastCaisse Team');
 }
 
 /**
- * Basic spam detection
+ * Basic spam detection (lenient for business inquiries)
  */
 function detectSpam($data) {
-    $spamKeywords = ['viagra', 'casino', 'lottery', 'winner', 'urgent', 'click here', 'free money'];
-    $message = strtolower($data['message'] . ' ' . $data['subject']);
+    $spamKeywords = ['viagra', 'casino', 'lottery', 'click here', 'free money'];
+    $message = strtolower($data['message']);
 
     foreach ($spamKeywords as $keyword) {
         if (strpos($message, $keyword) !== false) {
@@ -579,8 +623,15 @@ function detectSpam($data) {
         }
     }
 
-    // Check for too many links
-    if (preg_match_all('/http[s]?:\/\//', $data['message']) > 2) {
+    // Check for too many links (increased limit for business messages)
+    if (preg_match_all('/http[s]?:\/\//', $data['message']) > 5) {
+        return true;
+    }
+
+    // Check for excessive caps (more than 50% of the message)
+    $capsCount = preg_match_all('/[A-Z]/', $data['message']);
+    $totalLetters = preg_match_all('/[a-zA-Z]/', $data['message']);
+    if ($totalLetters > 0 && ($capsCount / $totalLetters) > 0.5) {
         return true;
     }
 
@@ -658,21 +709,24 @@ function validateFormData($data, $language = 'fr') {
         }
     }
 
-    // Content validation - check for suspicious patterns
+    // Content validation - check for suspicious patterns (more lenient for business messages)
     $suspiciousPatterns = [
-        '/\b(?:viagra|cialis|casino|lottery|winner|urgent|click here|free money|make money|weight loss|debt)\b/i',
-        '/\b(?:http|www|\.com|\.net|\.org)\b/i', // URLs in message
+        '/\b(?:viagra|cialis|casino|lottery|winner|click here|free money|make money|weight loss)\b/i',
+        // Removed URL pattern check to allow business website mentions
         '/[<>{}]/i', // HTML/script tags
         '/\b(?:script|javascript|onclick|onload)\b/i', // Script content
-        '/(\w)\1{10,}/i', // Too many repeated characters
+        '/(\w)\1{15,}/i', // Increased to 15 repeated characters (was 10)
     ];
 
     foreach (['subject', 'message'] as $field) {
         if (!empty($data[$field])) {
-            foreach ($suspiciousPatterns as $pattern) {
-                if (preg_match($pattern, $data[$field])) {
-                    $errors['spam'] = $messages['spam_content'];
-                    break 2;
+            // Only check message field for spam patterns, not subject
+            if ($field === 'message') {
+                foreach ($suspiciousPatterns as $pattern) {
+                    if (preg_match($pattern, $data[$field])) {
+                        $errors['spam'] = $messages['spam_content'];
+                        break 2;
+                    }
                 }
             }
         }
@@ -683,7 +737,7 @@ function validateFormData($data, $language = 'fr') {
         $rateLimitFile = 'rate_limit_' . md5($data['email']) . '.tmp';
         if (file_exists($rateLimitFile)) {
             $lastSubmission = (int)file_get_contents($rateLimitFile);
-            if (time() - $lastSubmission < 120) { // 2 minutes
+            if (time() - $lastSubmission < 60) { // 1 minute
                 $errors['rate_limit'] = $messages['rate_limit'];
             }
         }
@@ -783,7 +837,15 @@ function sendEmailSMTP($to, $subject, $htmlBody, $fromEmail, $fromName = '', $re
         return $result;
 
     } catch (Exception $e) {
-        error_log("PHPMailer Error: " . $e->getMessage());
+        // Log detailed error for debugging
+        error_log("PHPMailer Error sending to $to: " . $e->getMessage());
+        error_log("PHPMailer Debug Info: " . $mail->ErrorInfo);
+
+        // Additional debug information
+        if (defined('DEBUG_MODE') && DEBUG_MODE) {
+            error_log("SMTP Settings - Host: " . SMTP_HOST . ", Port: " . SMTP_PORT . ", User: " . SMTP_USERNAME);
+        }
+
         return false;
     }
 }
