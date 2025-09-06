@@ -56,6 +56,12 @@ pnpm-lock.yaml
 .cache/
 coverage/
 
+# Contact form logs and sensitive data
+contact-submissions.log
+contact-errors.log
+rate_limit_*.tmp
+config-local.php
+
 # OS generated files
 .DS_Store
 .DS_Store?

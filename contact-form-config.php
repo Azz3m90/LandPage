@@ -19,7 +19,7 @@ define('USE_SMTP', true); // Set to true to use SMTP
 define('SMTP_HOST', 'mail.infomaniak.com');
 define('SMTP_PORT', 587);
 define('SMTP_USERNAME', 'contact@fastcaisse.be');
-define('SMTP_PASSWORD', '2VeryFast4u&me');
+define('SMTP_PASSWORD', 'Boir1/MM5#U.90');
 define('SMTP_ENCRYPTION', 'tls'); // tls or ssl
 
 // File Upload Configuration (if you want to add file uploads)

@@ -29,7 +29,7 @@ if (file_exists('contact-form-config.php')) {
     define('SMTP_HOST', 'mail.infomaniak.com');
     define('SMTP_PORT', 587);
     define('SMTP_USERNAME', 'contact@fastcaisse.be');
-    define('SMTP_PASSWORD', '2VeryFast4u&me');
+    define('SMTP_PASSWORD', 'Boir1/MM5#U.90');
     define('SMTP_ENCRYPTION', 'tls');
 }
 
