@@ -22,26 +22,51 @@ use PHPMailer\PHPMailer\Exception;
 if (file_exists('contact-form-config.php')) {
     require_once 'contact-form-config.php';
 } else {
-    // Fallback configuration
-    define('COMPANY_NAME', 'FastCaisse');
-    define('ADMIN_EMAIL', 'contact@fastcaisse.be');
-    define('USE_SMTP', true);
-    define('SMTP_HOST', 'mail.infomaniak.com');
-    define('SMTP_PORT', 587);
-    define('SMTP_USERNAME', 'contact@fastcaisse.be');
-    define('SMTP_PASSWORD', 'Boir1/MM5#U.90');
-    define('SMTP_ENCRYPTION', 'tls');
+    // Load environment variables from .env file if config doesn't exist
+    $envFile = __DIR__ . '/.env';
+    if (file_exists($envFile)) {
+        $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        foreach ($lines as $line) {
+            if (strpos(trim($line), '#') === 0) continue;
+            if (strpos($line, '=') === false) continue;
+
+            list($name, $value) = explode('=', $line, 2);
+            $name = trim($name);
+            $value = trim($value);
+
+            // Remove quotes if present
+            if ((substr($value, 0, 1) === '"' && substr($value, -1) === '"') ||
+                (substr($value, 0, 1) === "'" && substr($value, -1) === "'")) {
+                $value = substr($value, 1, -1);
+            }
+
+            // Set as environment variable if not already set
+            if (!getenv($name)) {
+                putenv("$name=$value");
+            }
+        }
+    }
+
+    // Fallback configuration (without hardcoded passwords!)
+    define('COMPANY_NAME', getenv('COMPANY_NAME') ?: 'FastCaisse');
+    define('ADMIN_EMAIL', getenv('ADMIN_EMAIL') ?: 'contact@fastcaisse.be');
+    define('USE_SMTP', filter_var(getenv('USE_SMTP') ?: 'true', FILTER_VALIDATE_BOOLEAN));
+    define('SMTP_HOST', getenv('SMTP_HOST') ?: 'mail.infomaniak.com');
+    define('SMTP_PORT', intval(getenv('SMTP_PORT') ?: 587));
+    define('SMTP_USERNAME', getenv('SMTP_USERNAME') ?: 'contact@fastcaisse.be');
+    define('SMTP_PASSWORD', getenv('SMTP_PASSWORD') ?: ''); // NEVER hardcode passwords!
+    define('SMTP_ENCRYPTION', getenv('SMTP_ENCRYPTION') ?: 'tls');
 }
 
 // Only define fallback keys if not already defined in config
 if (!defined('RECAPTCHA_SECRET_KEY')) {
-    define('RECAPTCHA_SECRET_KEY', 'YOUR_RECAPTCHA_SECRET_KEY_HERE');
+    define('RECAPTCHA_SECRET_KEY', getenv('RECAPTCHA_SECRET_KEY') ?: '');
 }
 if (!defined('TURNSTILE_SECRET_KEY')) {
-    define('TURNSTILE_SECRET_KEY', '0x4AAAAAABzaI6mJ9vTZWTTGJEjdGyRtPBA');
+    define('TURNSTILE_SECRET_KEY', getenv('TURNSTILE_SECRET_KEY') ?: '');
 }
 if (!defined('TURNSTILE_SITE_KEY')) {
-    define('TURNSTILE_SITE_KEY', '0x4AAAAAABzaI4wjmvjZys3o');
+    define('TURNSTILE_SITE_KEY', getenv('TURNSTILE_SITE_KEY') ?: '');
 }
 
 // Set content type for JSON responses

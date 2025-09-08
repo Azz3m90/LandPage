@@ -4,6 +4,9 @@
 # Enable Rewrite Engine
 RewriteEngine On
 
+# IMPORTANT: Set directory index priority - PHP first for domain routing
+DirectoryIndex index.php index.html index-en.html index-nl.html
+
 # Force HTTPS (uncomment when SSL is configured)
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
@@ -20,17 +23,30 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 # Set default charset
 AddDefaultCharset UTF-8
 
-# Language detection based on Accept-Language header
+# Check if index.php exists and use it for domain routing (restaurant aliases)
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{DOCUMENT_ROOT}/index.php -f
+RewriteRule ^$ /index.php [L]
+
+# If index.php doesn't exist or doesn't handle the request, use language detection
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{DOCUMENT_ROOT}/index.php !-f
 RewriteCond %{HTTP:Accept-Language} ^fr [NC]
 RewriteRule ^$ /index.html [L]
 
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{DOCUMENT_ROOT}/index.php !-f
 RewriteCond %{HTTP:Accept-Language} ^en [NC]
 RewriteRule ^$ /index-en.html [L]
 
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{DOCUMENT_ROOT}/index.php !-f
 RewriteCond %{HTTP:Accept-Language} ^nl [NC]
 RewriteRule ^$ /index-nl.html [L]
 
-# Default to French
+# Default to French HTML if no PHP and no language match
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{DOCUMENT_ROOT}/index.php !-f
 RewriteRule ^$ /index.html [L]
 
 # Remove .html extension (SEO-friendly URLs)

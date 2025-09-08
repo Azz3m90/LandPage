@@ -2,25 +2,50 @@
 /**
  * FastCaisse Contact Form Configuration
  *
- * Copy this file and customize the settings for your environment
+ * This file loads configuration from environment variables for security
  */
 
+// Load environment variables from .env file if it exists
+$envFile = __DIR__ . '/.env';
+if (file_exists($envFile)) {
+    $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos(trim($line), '#') === 0) continue;
+        if (strpos($line, '=') === false) continue;
+
+        list($name, $value) = explode('=', $line, 2);
+        $name = trim($name);
+        $value = trim($value);
+
+        // Remove quotes if present
+        if ((substr($value, 0, 1) === '"' && substr($value, -1) === '"') ||
+            (substr($value, 0, 1) === "'" && substr($value, -1) === "'")) {
+            $value = substr($value, 1, -1);
+        }
+
+        // Set as environment variable if not already set
+        if (!getenv($name)) {
+            putenv("$name=$value");
+        }
+    }
+}
+
 // Email Configuration
-define('ADMIN_EMAIL', 'contact@fastcaisse.be'); // Updated to correct admin email
-define('COMPANY_NAME', 'FastCaisse');
-define('COMPANY_ADDRESS', 'Chaussée de Haecht 1749, 1130 Brussels, Belgium');
+define('ADMIN_EMAIL', getenv('ADMIN_EMAIL') ?: 'contact@fastcaisse.be');
+define('COMPANY_NAME', getenv('COMPANY_NAME') ?: 'FastCaisse');
+define('COMPANY_ADDRESS', getenv('COMPANY_ADDRESS') ?: 'Chaussée de Haecht 1749, 1130 Brussels, Belgium');
 
 // reCAPTCHA Configuration (Optional)
-define('RECAPTCHA_SECRET_KEY', '0x4AAAAAABzaI6mJ9vTZWTTGJEjdGyRtPBA');
-define('RECAPTCHA_SITE_KEY', '0x4AAAAAABzaI4wjmvjZys3o');
+define('RECAPTCHA_SECRET_KEY', getenv('RECAPTCHA_SECRET_KEY') ?: '');
+define('RECAPTCHA_SITE_KEY', getenv('RECAPTCHA_SITE_KEY') ?: '');
 
 // SMTP Configuration (Optional - for better email delivery)
-define('USE_SMTP', true); // Set to true to use SMTP
-define('SMTP_HOST', 'mail.infomaniak.com');
-define('SMTP_PORT', 587);
-define('SMTP_USERNAME', 'contact@fastcaisse.be');
-define('SMTP_PASSWORD', 'Boir1/MM5#U.90');
-define('SMTP_ENCRYPTION', 'tls'); // tls or ssl
+define('USE_SMTP', filter_var(getenv('USE_SMTP') ?: 'true', FILTER_VALIDATE_BOOLEAN));
+define('SMTP_HOST', getenv('SMTP_HOST') ?: 'mail.infomaniak.com');
+define('SMTP_PORT', intval(getenv('SMTP_PORT') ?: 587));
+define('SMTP_USERNAME', getenv('SMTP_USERNAME') ?: 'contact@fastcaisse.be');
+define('SMTP_PASSWORD', getenv('SMTP_PASSWORD') ?: ''); // NEVER hardcode passwords!
+define('SMTP_ENCRYPTION', getenv('SMTP_ENCRYPTION') ?: 'tls'); // tls or ssl
 
 // File Upload Configuration (if you want to add file uploads)
 define('ALLOW_FILE_UPLOADS', false);
