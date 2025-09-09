@@ -19,7 +19,7 @@ $testData = json_encode([
 // Set up the request environment
 $_SERVER['REQUEST_METHOD'] = 'POST';
 $_SERVER['CONTENT_TYPE'] = 'application/json';
-$_SERVER['HTTP_REFERER'] = 'https://fastcaisse.be/index-en.html';
+$_SERVER['HTTP_REFERER'] = 'https://fastcaisse.be/home-en.html';
 
 // Capture the output
 ob_start();

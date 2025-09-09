@@ -10,31 +10,31 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fastcaisse.be/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fastcaisse.be/index-en.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://fastcaisse.be/index-nl.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fastcaisse.be/home-en.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://fastcaisse.be/home-nl.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fastcaisse.be/"/>
   </url>
 
   <!-- Homepage (English) -->
   <url>
-    <loc>https://fastcaisse.be/index-en.html</loc>
+    <loc>https://fastcaisse.be/home-en.html</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fastcaisse.be/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fastcaisse.be/index-en.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://fastcaisse.be/index-nl.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fastcaisse.be/home-en.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://fastcaisse.be/home-nl.html"/>
   </url>
 
   <!-- Homepage (Dutch) -->
   <url>
-    <loc>https://fastcaisse.be/index-nl.html</loc>
+    <loc>https://fastcaisse.be/home-nl.html</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fastcaisse.be/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fastcaisse.be/index-en.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://fastcaisse.be/index-nl.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fastcaisse.be/home-en.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://fastcaisse.be/home-nl.html"/>
   </url>
 
   <!-- Restaurant POS (French) -->

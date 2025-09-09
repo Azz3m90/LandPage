@@ -198,17 +198,17 @@ The advanced test script (`test-email-advanced.php`) includes:
 ### Basic Form Submission
 
 ```html
-<!-- French page: index.html -->
+<!-- French page: home.html -->
 <form id="contact-form">
   <!-- Form automatically detects 'fr' language -->
 </form>
 
-<!-- English page: index-en.html -->
+<!-- English page: home-en.html -->
 <form id="contact-form">
   <!-- Form automatically detects 'en' language -->
 </form>
 
-<!-- Dutch page: index-nl.html -->
+<!-- Dutch page: home-nl.html -->
 <form id="contact-form">
   <!-- Form automatically detects 'nl' language -->
 </form>

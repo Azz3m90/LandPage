@@ -58,7 +58,7 @@ The website is automatically deployed to GitHub Pages using GitHub Actions workf
 
 **Main Pages**:
 
-- index-en.html: Main landing page (English)
+- home-en.html: Main landing page (English)
 - fastcaisse-restaurant-pos-en.html: Restaurant POS solution page
 - fastcaisse-retail-pos-en.html: Retail POS solution page
 - fastcaisse-crm-business-management-en.html: CRM solution page

@@ -123,7 +123,7 @@
 
 ### ✅ Test 12: French Version
 
-1. Open: http://localhost/LandPage/index.html
+1. Open: http://localhost/LandPage/home.html
 2. Navigate to contact form section
 3. Submit form
 4. **Expected Result:**
@@ -133,7 +133,7 @@
 
 ### ✅ Test 13: English Version
 
-1. Open: http://localhost/LandPage/index-en.html
+1. Open: http://localhost/LandPage/home-en.html
 2. Navigate to contact form section
 3. Submit form
 4. **Expected Result:**
@@ -143,7 +143,7 @@
 
 ### ✅ Test 14: Dutch Version
 
-1. Open: http://localhost/LandPage/index-nl.html
+1. Open: http://localhost/LandPage/home-nl.html
 2. Navigate to contact form section
 3. Submit form
 4. **Expected Result:**

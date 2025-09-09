@@ -61,21 +61,21 @@ http://localhost/LandPage/test-multilingual.html
 **French Pages:**
 
 ```
-http://localhost/LandPage/index.html (auto-detects 'fr')
+http://localhost/LandPage/home.html (auto-detects 'fr')
 http://localhost/LandPage/fastcaisse-restaurant-pos.html
 ```
 
 **English Pages:**
 
 ```
-http://localhost/LandPage/index-en.html (auto-detects 'en')
+http://localhost/LandPage/home-en.html (auto-detects 'en')
 http://localhost/LandPage/fastcaisse-restaurant-pos-en.html
 ```
 
 **Dutch Pages:**
 
 ```
-http://localhost/LandPage/index-nl.html (auto-detects 'nl')
+http://localhost/LandPage/home-nl.html (auto-detects 'nl')
 http://localhost/LandPage/fastcaisse-restaurant-pos-nl.html
 ```
 
@@ -140,9 +140,9 @@ http://localhost/LandPage/fastcaisse-restaurant-pos-nl.html
 
 ```javascript
 // Should auto-detect:
-'index.html' → 'fr' (French)
-'index-en.html' → 'en' (English)
-'index-nl.html' → 'nl' (Dutch)
+'home.html' → 'fr' (French)
+'home-en.html' → 'en' (English)
+'home-nl.html' → 'nl' (Dutch)
 ```
 
 **2. Manual Override:**

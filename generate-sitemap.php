@@ -20,28 +20,28 @@ $pages = [
         'changefreq' => 'weekly',
         'hreflang' => [
             'fr' => '/',
-            'en' => '/index-en.html',
-            'nl' => '/index-nl.html'
+            'en' => '/home-en.html',
+            'nl' => '/home-nl.html'
         ]
     ],
     [
-        'loc' => '/index-en.html',
+        'loc' => '/home-en.html',
         'priority' => '1.0',
         'changefreq' => 'weekly',
         'hreflang' => [
             'fr' => '/',
-            'en' => '/index-en.html',
-            'nl' => '/index-nl.html'
+            'en' => '/home-en.html',
+            'nl' => '/home-nl.html'
         ]
     ],
     [
-        'loc' => '/index-nl.html',
+        'loc' => '/home-nl.html',
         'priority' => '1.0',
         'changefreq' => 'weekly',
         'hreflang' => [
             'fr' => '/',
-            'en' => '/index-en.html',
-            'nl' => '/index-nl.html'
+            'en' => '/home-en.html',
+            'nl' => '/home-nl.html'
         ]
     ],
 

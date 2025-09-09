@@ -130,9 +130,9 @@ contact@fastcaisse.be
    - Check email inbox
 
 3. **Test on Production Pages:**
-   - French: `/index.html`
-   - English: `/index-en.html`
-   - Dutch: `/index-nl.html`
+   - French: `/home.html`
+   - English: `/home-en.html`
+   - Dutch: `/home-nl.html`
 
 ## Required Fields
 

@@ -69,8 +69,8 @@
 
 <!-- Hreflang Tags (for multilingual) -->
 <link rel="alternate" hreflang="fr" href="https://fastcaisse.be/" />
-<link rel="alternate" hreflang="en" href="https://fastcaisse.be/index-en.html" />
-<link rel="alternate" hreflang="nl" href="https://fastcaisse.be/index-nl.html" />
+<link rel="alternate" hreflang="en" href="https://fastcaisse.be/home-en.html" />
+<link rel="alternate" hreflang="nl" href="https://fastcaisse.be/home-nl.html" />
 <link rel="alternate" hreflang="x-default" href="https://fastcaisse.be/" />
 
 <!-- Favicon -->
@@ -267,8 +267,8 @@ Add this code before closing `</head>` tag:
 ```html
 <!-- Language selector with proper SEO -->
 <link rel="alternate" hreflang="fr" href="https://fastcaisse.be/" />
-<link rel="alternate" hreflang="en" href="https://fastcaisse.be/index-en.html" />
-<link rel="alternate" hreflang="nl" href="https://fastcaisse.be/index-nl.html" />
+<link rel="alternate" hreflang="en" href="https://fastcaisse.be/home-en.html" />
+<link rel="alternate" hreflang="nl" href="https://fastcaisse.be/home-nl.html" />
 <link rel="alternate" hreflang="x-default" href="https://fastcaisse.be/" />
 ```
 

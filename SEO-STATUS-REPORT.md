@@ -19,9 +19,9 @@ Your FastCaisse website has successfully implemented comprehensive SEO optimizat
 
 #### Pages with GA4 Tracking:
 
-- ✅ index.html (Homepage - French)
-- ✅ index-en.html (Homepage - English)
-- ✅ index-nl.html (Homepage - Dutch)
+- ✅ home.html (Homepage - French)
+- ✅ home-en.html (Homepage - English)
+- ✅ home-nl.html (Homepage - Dutch)
 - ✅ fastcaisse-restaurant-pos.html (Restaurant POS - French)
 - ✅ fastcaisse-restaurant-pos-en.html (Restaurant POS - English)
 - ✅ fastcaisse-restaurant-pos-nl.html (Restaurant POS - Dutch)

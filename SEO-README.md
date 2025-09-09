@@ -83,7 +83,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 ### 4. **Add Meta Tags to Homepage** 🏷️
 
 ```html
-<!-- Add these to index.html, index-en.html, index-nl.html -->
+<!-- Add these to home.html, home-en.html, home-nl.html -->
 <title>FastCaisse - Solution POS & CRM pour Restaurants et Commerces en Belgique</title>
 <meta
   name="description"
